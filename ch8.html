@@ -296,6 +296,136 @@ $$p(h) = p_0\exp\left(-\frac{Mgh}{RT}\right)$$
 </ul></div>
 </div>
 
+<h2 id="s11">8.11 气体动理论计算专题</h2>
+<div class="card">
+
+<div class="ex">
+<strong>例1（隔板混合气体）</strong>：一容器被隔板分成体积相等的两半，左半部分装有温度 $T_1 = 300\,\text{K}$、压强 $p_1 = 1.0\times10^5\,\text{Pa}$ 的氮气（N₂），右半部分装有温度 $T_2 = 600\,\text{K}$、压强 $p_2 = 2.0\times10^5\,\text{Pa}$ 的氧气（O₂）。抽去隔板后达到平衡，求混合气体的温度、压强和各组分分压。
+<div class="sol"><div class="st">解</div>
+<p>设每半个容器体积为 $V$，总体积为 $2V$。</p>
+
+<p><strong>Step 1：求各组分物质的量</strong></p>
+<p>由 $pV = \nu RT$：</p>
+<p>$\nu_1 = \frac{p_1 V}{RT_1} = \frac{1.0\times10^5 V}{8.314\times300}$</p>
+<p>$\nu_2 = \frac{p_2 V}{RT_2} = \frac{2.0\times10^5 V}{8.314\times600}$</p>
+<p>注意 $\nu_2/\nu_1 = \frac{p_2 T_1}{p_1 T_2} = \frac{2.0\times300}{1.0\times600} = 1$，故 $\nu_1 = \nu_2 = \nu$。</p>
+
+<p><strong>Step 2：由能量守恒求平衡温度</strong></p>
+<p>N₂ 为双原子分子（$i_1 = 5$），O₂ 为双原子分子（$i_2 = 5$）。</p>
+<p>总内能守恒（绝热过程）：</p>
+$$\nu_1\frac{i_1}{2}RT_1 + \nu_2\frac{i_2}{2}RT_2 = (\nu_1+\nu_2)\frac{i_{\text{mix}}}{2}RT_f$$
+<p>因为 $i_1 = i_2 = 5$ 且 $\nu_1 = \nu_2$：</p>
+$$\nu\cdot\frac{5}{2}R\cdot300 + \nu\cdot\frac{5}{2}R\cdot600 = 2\nu\cdot\frac{5}{2}R\cdot T_f$$
+$$300 + 600 = 2T_f \quad\Rightarrow\quad T_f = 450\,\text{K}$$
+
+<p><strong>Step 3：求平衡压强</strong></p>
+<p>总物质的量 $\nu_{tot} = 2\nu$，总体积 $2V$：</p>
+$$p_f = \frac{2\nu R T_f}{2V} = \frac{\nu R T_f}{V}$$
+<p>而 $\nu R/V = p_1/T_1 = 1.0\times10^5/300$，故：</p>
+$$p_f = \frac{1.0\times10^5}{300}\times450 = 1.5\times10^5\,\text{Pa}$$
+
+<p><strong>Step 4：分压</strong></p>
+<p>$\nu_1 = \nu_2$，故两组分摩尔分数各为 $1/2$：</p>
+<p>$p_{\text{N}_2} = p_{\text{O}_2} = p_f/2 = 0.75\times10^5\,\text{Pa}$</p>
+</div></div>
+
+<div class="ex">
+<strong>例2（由密度和压强求速率和温度）</strong>：某理想气体密度 $\rho = 1.29\,\text{kg/m}^3$，压强 $p = 1.013\times10^5\,\text{Pa}$，已知其摩尔质量 $M = 0.029\,\text{kg/mol}$。求方均根速率和气体温度。
+<div class="sol"><div class="st">解</div>
+<p><strong>方均根速率</strong>：由压强公式 $p = \frac{1}{3}\rho\overline{v^2}$（其中 $nm = \rho$）：</p>
+$$\overline{v^2} = \frac{3p}{\rho} = \frac{3\times1.013\times10^5}{1.29} = 2.356\times10^5\,\text{m}^2/\text{s}^2$$
+$$v_{rms} = \sqrt{\overline{v^2}} = \sqrt{2.356\times10^5} \approx 485\,\text{m/s}$$
+
+<p><strong>温度</strong>：由理想气体状态方程 $pV = \nu RT$ 和 $\rho = \nu M/V$：</p>
+$$p = \frac{\rho RT}{M} \quad\Rightarrow\quad T = \frac{pM}{\rho R}$$
+$$T = \frac{1.013\times10^5\times0.029}{1.29\times8.314} = \frac{2938}{10.73} \approx 274\,\text{K}$$
+<p>（接近 $0°\text{C}$，这正是标准状况下空气的参数。）</p>
+</div></div>
+
+<div class="ex">
+<strong>例3（Maxwell分布近似计算）</strong>：求 N₂ 在 $T = 300\,\text{K}$ 下速率在 $v_p$ 到 $1.01v_p$ 范围内的分子比率。
+<div class="sol"><div class="st">解</div>
+<p>速率区间 $\Delta v = 1.01v_p - v_p = 0.01v_p$，区间很小，可用 $f(v_p)\Delta v$ 近似。</p>
+<p>先求 $v_p$：</p>
+$$v_p = \sqrt{\frac{2RT}{M}} = \sqrt{\frac{2\times8.314\times300}{0.028}} = \sqrt{178157} \approx 422\,\text{m/s}$$
+<p>求 $f(v_p)$（速率分布函数在最概然速率处的值）：</p>
+$$f(v_p) = \frac{4}{\sqrt{\pi}\,v_p\,e} = \frac{4}{\sqrt{\pi}\times422\times2.718}$$
+$$= \frac{4}{1.7725\times422\times2.718} = \frac{4}{2032} = 1.97\times10^{-3}\,\text{s/m}$$
+<p>分子比率：</p>
+$$\frac{\Delta N}{N} = f(v_p)\cdot\Delta v = f(v_p)\times 0.01v_p$$
+$$= 1.97\times10^{-3}\times0.01\times422 = 8.3\times10^{-3} \approx 0.83\%$$
+<p>即约有 $0.83\%$ 的分子速率在 $v_p$ 到 $1.01v_p$ 之间。</p>
+</div></div>
+
+<div class="tip"><strong>近似方法适用条件</strong>：当速率区间 $\Delta v$ 相对于 $v_p$ 很小（如 $\Delta v/v_p \le 0.02$）时，可直接用 $f(v)\Delta v$ 代替积分。否则需精确积分 $\int_{v_1}^{v_2}f(v)\dd v$。</div>
+
+<div class="warn"><strong>$f(v_p)$ 公式推导</strong>：将 $v = v_p = \sqrt{2kT/m}$ 代入 Maxwell 分布函数，利用 $m/(2kT) = 1/v_p^2$，化简后得 $f(v_p) = \frac{4}{\sqrt{\pi}\,e}\cdot\frac{1}{v_p}$。此公式在选择题中常直接使用。</div>
+</div>
+
+<h2 id="s12">8.12 平均自由程与碰撞频率应用</h2>
+<div class="card">
+<div class="fb">
+<div class="t">真空度与平均自由程的关系</div>
+<p>平均自由程 $\bar{\lambda} = \frac{kT}{\sqrt{2}\pi d^2 p}$ 与压强成反比。压强越低（真空度越高），平均自由程越长。</p>
+<table>
+<tr><th>真空度</th><th>压强范围 (Pa)</th><th>平均自由程量级</th><th>气体行为特征</th></tr>
+<tr><td>粗真空</td><td>$10^5 \sim 10^2$</td><td>$10^{-7}\sim10^{-4}\,\text{m}$</td><td>频繁碰撞，连续介质</td></tr>
+<tr><td>低真空</td><td>$10^2 \sim 10^{-1}$</td><td>$10^{-4}\sim10^{-1}\,\text{m}$</td><td>过渡区域</td></tr>
+<tr><td>高真空</td><td>$10^{-1}\sim10^{-5}$</td><td>$10^{-1}\sim10^3\,\text{m}$</td><td>$\bar{\lambda}$ 远大于容器尺寸</td></tr>
+<tr><td>超高真空</td><td>$< 10^{-5}$</td><td>$> 10^3\,\text{m}$</td><td>分子流区域，几乎无碰撞</td></tr>
+</table>
+<p><strong>物理意义</strong>：当 $\bar{\lambda}$ 远大于容器特征尺寸 $L$ 时，分子与容器壁碰撞远多于分子间碰撞，气体输运性质发生本质改变（从黏滞流转为分子流）。</p>
+</div>
+
+<div class="ex">
+<strong>例（计算平均自由程和碰撞频率）</strong>：已知 N₂ 的有效直径 $d = 3.7\times10^{-10}\,\text{m}$，在 $T = 300\,\text{K}$、$p = 1.013\times10^5\,\text{Pa}$ 下，计算平均自由程 $\bar{\lambda}$ 和平均碰撞频率 $\bar{Z}$。
+<div class="sol"><div class="st">解</div>
+<p><strong>平均自由程</strong>：</p>
+$$\bar{\lambda} = \frac{kT}{\sqrt{2}\pi d^2 p}$$
+$$= \frac{1.38\times10^{-23}\times300}{\sqrt{2}\times\pi\times(3.7\times10^{-10})^2\times1.013\times10^5}$$
+<p>分子：$4.14\times10^{-21}$</p>
+<p>分母：$\sqrt{2}\times3.1416\times1.369\times10^{-19}\times1.013\times10^5$</p>
+<p>$= 1.4142\times3.1416\times1.369\times10^{-19}\times1.013\times10^5$</p>
+<p>$= 1.4142\times3.1416\times1.387\times10^{-14}$</p>
+<p>$= 6.16\times10^{-14}$</p>
+$$\bar{\lambda} = \frac{4.14\times10^{-21}}{6.16\times10^{-14}} = 6.7\times10^{-8}\,\text{m} \approx 67\,\text{nm}$$
+
+<p><strong>平均速率</strong>：</p>
+$$\bar{v} = \sqrt{\frac{8RT}{\pi M}} = \sqrt{\frac{8\times8.314\times300}{\pi\times0.028}} = \sqrt{2.27\times10^5} \approx 476\,\text{m/s}$$
+
+<p><strong>平均碰撞频率</strong>：</p>
+$$\bar{Z} = \frac{\bar{v}}{\bar{\lambda}} = \frac{476}{6.7\times10^{-8}} = 7.1\times10^{9}\,\text{s}^{-1}$$
+<p>即每个 N₂ 分子每秒平均碰撞约 $71$ 亿次。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（真空条件下的自由程）</strong>：若将上例中的压强降至 $p = 0.1\,\text{Pa}$（高真空），温度不变，求新的平均自由程。
+<div class="sol"><div class="st">解</div>
+<p>$\bar{\lambda} \propto 1/p$，压强降低了 $1.013\times10^5/0.1 = 1.013\times10^6$ 倍，故：</p>
+$$\bar{\lambda}' = 6.7\times10^{-8}\times1.013\times10^6 \approx 0.068\,\text{m} = 6.8\,\text{cm}$$
+<p>已经与普通容器尺寸相当，气体开始进入分子流区域。</p>
+</div></div>
+
+<div class="fb">
+<div class="t">碰撞频率的两种表达</div>
+<p>平均碰撞频率可以用两种方式表达：</p>
+$$\bar{Z} = \frac{\bar{v}}{\bar{\lambda}} = \sqrt{2}\pi d^2 n\bar{v} = \sqrt{2}\pi d^2\frac{p}{kT}\bar{v}$$
+<p>由此可见：</p>
+<ul>
+<li>$\bar{Z} \propto p/\sqrt{T}$（压强增大或温度降低都使碰撞更频繁）</li>
+<li>$\bar{\lambda} \propto T/p$（温度升高或压强降低都使自由程增大）</li>
+<li>$\bar{\lambda}$ 与 $\bar{v}$ 无关（$\bar{v}$ 在 $\bar{Z}$ 的分子分母中约去）</li>
+</ul>
+</div>
+
+<div class="tip"><strong>考试常用结论</strong>：
+<ul>
+<li>等温过程中 $\bar{\lambda} \propto 1/p$，$\bar{Z} \propto p$</li>
+<li>等压过程中 $\bar{\lambda} \propto T$，$\bar{Z} \propto 1/\sqrt{T}$（$\bar{Z} = \bar{v}/\bar{\lambda}$，$\bar{v}\propto\sqrt{T}$，$\bar{\lambda}\propto T$）</li>
+<li>等容过程中 $\bar{\lambda}$ 不变（$n$ 不变），$\bar{Z} \propto \sqrt{T}$</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 8-4, 8-5, 8-8, 8-10, 8-11, 8-14, 8-18, 8-21</div>
 
 <script src="toc.js"></script>

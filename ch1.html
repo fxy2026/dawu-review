@@ -356,6 +356,192 @@ $$t=\int_A^B\frac{\sqrt{1+y'^2}}{\sqrt{2gy}}\dd x$$
 </ul></div>
 </div>
 
+<!-- ===== 1.11 运动学图形分析 ===== -->
+<h2 id="s11">1.11 运动学图形分析（PPT重点）</h2>
+<div class="card">
+<h3>x-t 图（位移-时间图）</h3>
+<div class="fb">
+<div class="t">x-t 图的物理意义</div>
+<ul>
+<li><strong>斜率 = 速度</strong>：直线的斜率为匀速运动的速度 $v = \Delta x / \Delta t$</li>
+<li><strong>切线斜率 = 瞬时速度</strong>：曲线上某点切线的斜率即为该时刻的瞬时速度 $v = \dd x / \dd t$</li>
+<li>斜率为正 → 沿正方向运动；斜率为负 → 沿负方向运动；斜率为零 → 瞬时静止（极值点）</li>
+<li>斜率越大（越陡）→ 速度越大；曲线弯曲 → 做变速运动</li>
+</ul>
+<p><strong>常见图形</strong>：</p>
+<table>
+<tr><th>图形形状</th><th>运动类型</th></tr>
+<tr><td>水平线</td><td>静止（$v=0$）</td></tr>
+<tr><td>过原点的直线（斜率 $k$）</td><td>匀速运动（$v=k$）</td></tr>
+<tr><td>抛物线（开口向上）</td><td>匀加速运动（$x = x_0 + v_0 t + \frac{1}{2}at^2$）</td></tr>
+<tr><td>抛物线（开口向下）</td><td>匀减速运动</td></tr>
+</table>
+</div>
+
+<h3>v-t 图（速度-时间图）</h3>
+<div class="fb">
+<div class="t">v-t 图的物理意义</div>
+<ul>
+<li><strong>斜率 = 加速度</strong>：$a = \dd v / \dd t$，切线斜率即瞬时加速度</li>
+<li><strong>图线与时间轴围成的面积 = 位移</strong>：$\Delta x = \int_{t_1}^{t_2} v\,\dd t$</li>
+<li>$v>0$ 部分面积为正位移，$v<0$ 部分面积为负位移</li>
+<li>面积在时间轴上方为正，下方为负，<strong>总位移 = 代数和</strong></li>
+</ul>
+<p><strong>常见图形</strong>：</p>
+<table>
+<tr><th>图形形状</th><th>运动类型</th><th>加速度</th></tr>
+<tr><td>水平线</td><td>匀速运动</td><td>$a=0$</td></tr>
+<tr><td>倾斜直线</td><td>匀加速/匀减速</td><td>$a=\text{const}$</td></tr>
+<tr><td>曲线（斜率递减）</td><td>加速度逐渐减小</td><td>$a$ 递减</td></tr>
+</table>
+</div>
+<div class="tip"><strong>区分位移与路程</strong>：v-t 图中面积的代数和是位移，面积的绝对值之和是路程。当速度改变方向（$v$ 穿越零轴）时两者不同。</div>
+
+<h3>a-t 图（加速度-时间图）</h3>
+<div class="fb">
+<div class="t">a-t 图的物理意义</div>
+<ul>
+<li><strong>图线与时间轴围成的面积 = 速度变化量</strong>：$\Delta v = \int_{t_1}^{t_2} a\,\dd t$</li>
+<li>面积为正 → 速度增加；面积为负 → 速度减小</li>
+<li>已知 $v_0$，可由面积逐段累加得到 $v(t)$</li>
+</ul>
+</div>
+
+<div class="fb">
+<div class="t">三种图形的对应关系总结</div>
+<table>
+<tr><th>图形</th><th>斜率的意义</th><th>面积的意义</th></tr>
+<tr><td>x-t 图</td><td>速度 $v$</td><td>（无直接物理意义）</td></tr>
+<tr><td>v-t 图</td><td>加速度 $a$</td><td>位移 $\Delta x$</td></tr>
+<tr><td>a-t 图</td><td>（加速度的变化率）</td><td>速度变化量 $\Delta v$</td></tr>
+</table>
+</div>
+
+<div class="ex">
+<strong>例11（v-t图分析：分段线性）</strong>：质点沿直线运动，其 v-t 图如下描述：$0\sim2\,\text{s}$ 内速度从 $0$ 线性增到 $4\,\text{m/s}$；$2\sim5\,\text{s}$ 内速度保持 $4\,\text{m/s}$；$5\sim7\,\text{s}$ 内速度从 $4\,\text{m/s}$ 线性减到 $0$。求：(1) 各段加速度；(2) $0\sim7\,\text{s}$ 总位移。
+<div class="sol">
+<div class="st">解</div>
+<p><strong>(1) 各段加速度</strong>（v-t 图斜率）：</p>
+<ul>
+<li>$0\sim2\,\text{s}$：$a_1 = \dfrac{4-0}{2-0} = 2\,\text{m/s}^2$（匀加速）</li>
+<li>$2\sim5\,\text{s}$：$a_2 = 0$（匀速）</li>
+<li>$5\sim7\,\text{s}$：$a_3 = \dfrac{0-4}{7-5} = -2\,\text{m/s}^2$（匀减速）</li>
+</ul>
+<p><strong>(2) 总位移</strong>（v-t 图下面积）：</p>
+$$x = \underbrace{\frac{1}{2}\times2\times4}_{三角形} + \underbrace{3\times4}_{矩形} + \underbrace{\frac{1}{2}\times2\times4}_{三角形} = 4 + 12 + 4 = 20\,\text{m}$$
+<p>也可以看成一个梯形：$x = \frac{1}{2}(2+7-0)\times4$...不对，用分段法更清晰。</p>
+<p>整体看，图形为梯形（上底 $= 5-2 = 3\,\text{s}$，下底 $= 7\,\text{s}$，高 $= 4\,\text{m/s}$）：</p>
+$$x = \frac{1}{2}(3+7)\times 4 = 20\,\text{m} \checkmark$$
+</div>
+</div>
+
+<div class="warn"><strong>考试陷阱</strong>：
+<ul>
+<li>v-t 图中速度为负的部分，面积要取负值计算位移，但取绝对值计算路程</li>
+<li>x-t 图不是轨迹图！x-t 图是一维运动的位置随时间变化，不表示二维空间的运动轨迹</li>
+<li>v-t 图中两条曲线交点表示两物体速度相等，不一定表示相遇</li>
+</ul></div>
+</div>
+
+<!-- ===== 1.12 追及与相遇问题 ===== -->
+<h2 id="s12">1.12 追及与相遇问题</h2>
+<div class="card">
+<h3>追及问题的核心思路</h3>
+<div class="fb">
+<div class="t">追及问题分析方法</div>
+<p><strong>追及条件</strong>：后方物体的位移 = 前方物体的位移 + 初始间距</p>
+$$x_{追} = x_{被追} + d_0$$
+<p>其中 $d_0$ 为初始距离。</p>
+<p><strong>关键时刻</strong>：当两者<strong>速度相等</strong>时，两者距离最小或最大：</p>
+<ul>
+<li>若追者速度从大于被追者到等于被追者 → 此时距离<strong>最小</strong>（之后追者变慢，距离拉大）</li>
+<li>若追者速度从小于被追者到等于被追者 → 此时距离<strong>最大</strong>（之后追者变快，开始追上）</li>
+</ul>
+</div>
+
+<div class="fb">
+<div class="t">判断能否追上的方法</div>
+<ol>
+<li>令 $v_{追} = v_{被追}$，求出此临界时刻 $t^*$</li>
+<li>计算 $t^*$ 时刻两者的距离差 $\Delta x(t^*)$</li>
+<li>若 $\Delta x(t^*) \leq 0$（追者已到达或超过被追者位置）→ <strong>能追上</strong>，在 $t^*$ 之前已追上</li>
+<li>若 $\Delta x(t^*) > 0$（追者仍在后方）→ <strong>追不上</strong>，$t^*$ 时刻距离最近</li>
+</ol>
+</div>
+
+<h3>相遇问题的核心思路</h3>
+<div class="fb">
+<div class="t">相遇条件</div>
+<p><strong>同一时刻 $t$，两物体到达同一位置</strong>：$x_1(t) = x_2(t)$</p>
+<p>对于相向运动的两物体，相遇条件为：</p>
+$$x_1(t) + x_2(t) = d_0$$
+<p>其中 $d_0$ 为初始距离，$x_1,x_2$ 分别为各自出发点的位移。</p>
+</div>
+
+<div class="tip"><strong>解题策略</strong>：
+<ul>
+<li><strong>方程法</strong>：分别写出两物体运动方程，令位移满足追及/相遇条件，联立求解</li>
+<li><strong>图形法</strong>：画两物体的 x-t 图，交点即为相遇时刻和位置；画 v-t 图，面积差等于初始间距时即追上</li>
+<li><strong>相对运动法</strong>：以一个物体为参考系，分析另一物体的相对运动</li>
+</ul></div>
+
+<div class="ex">
+<strong>例12（经典追及问题）</strong>：A车以恒定速度 $v_0$ 做匀速直线运动。B车从A车后方距离 $d$ 处由静止出发，以加速度 $a$ 做匀加速直线运动追赶A车。求：(1) B追上A需要多长时间？(2) 追上前两车最大距离是多少？
+<div class="sol">
+<div class="st">解</div>
+<p>设 $t=0$ 时B车出发，取B车出发点为原点，正方向为运动方向。</p>
+<p>A车位置：$x_A = d + v_0 t$</p>
+<p>B车位置：$x_B = \frac{1}{2}at^2$</p>
+
+<p><strong>(1) 追上条件</strong>：$x_B = x_A$</p>
+$$\frac{1}{2}at^2 = d + v_0 t$$
+$$\frac{1}{2}at^2 - v_0 t - d = 0$$
+$$t = \frac{v_0 + \sqrt{v_0^2 + 2ad}}{a}$$
+<p>（取正根）</p>
+
+<p><strong>(2) 最大距离</strong>：两车速度相等时距离最大</p>
+$$v_B = v_A \implies at^* = v_0 \implies t^* = \frac{v_0}{a}$$
+<p>此时距离差：</p>
+$$\Delta x = x_A(t^*) - x_B(t^*) = \left(d + v_0\cdot\frac{v_0}{a}\right) - \frac{1}{2}a\left(\frac{v_0}{a}\right)^2 = d + \frac{v_0^2}{2a}$$
+</div>
+</div>
+
+<div class="ex">
+<strong>例13（相向运动相遇）</strong>：甲、乙两人相距 $L=100\,\text{m}$，甲以 $v_1=3\,\text{m/s}$ 匀速向乙运动，同时乙从静止以 $a=2\,\text{m/s}^2$ 匀加速向甲运动。求何时相遇？
+<div class="sol">
+<div class="st">解</div>
+<p>取甲的出发位置为原点，向乙方向为正。</p>
+<p>甲的位置：$x_1 = v_1 t = 3t$</p>
+<p>乙的位置：$x_2 = L - \frac{1}{2}at^2 = 100 - t^2$</p>
+<p>相遇条件：$x_1 = x_2$</p>
+$$3t = 100 - t^2 \implies t^2 + 3t - 100 = 0$$
+$$t = \frac{-3 + \sqrt{9+400}}{2} = \frac{-3+\sqrt{409}}{2} \approx \frac{-3+20.22}{2} \approx 8.6\,\text{s}$$
+<p>相遇位置：$x = 3\times8.6 \approx 25.8\,\text{m}$（距甲出发点）。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例14（追及临界问题）</strong>：警车从静止以 $a=2.5\,\text{m/s}^2$ 加速追赶前方 $d=50\,\text{m}$ 处以 $v_0=10\,\text{m/s}$ 匀速行驶的汽车。但警车最高速度为 $v_m=20\,\text{m/s}$。求追上所需时间。
+<div class="sol">
+<div class="st">解</div>
+<p><strong>阶段分析</strong>：警车先匀加速到 $v_m$，然后匀速。</p>
+<p>加速阶段持续时间：$t_1 = v_m/a = 20/2.5 = 8\,\text{s}$</p>
+<p>$t_1$ 时刻位移：警车 $x_B = \frac{1}{2}\times2.5\times64 = 80\,\text{m}$；汽车 $x_A = 50 + 10\times8 = 130\,\text{m}$</p>
+<p>距离差：$130 - 80 = 50\,\text{m}$（仍未追上）</p>
+<p>$t > t_1$ 后，警车以 $v_m = 20\,\text{m/s}$ 匀速，汽车以 $v_0 = 10\,\text{m/s}$ 匀速，相对速度 $\Delta v = 10\,\text{m/s}$。</p>
+<p>剩余距离追赶时间：$t_2 = 50/10 = 5\,\text{s}$</p>
+<p>总时间：$t = t_1 + t_2 = 8 + 5 = 13\,\text{s}$</p>
+</div>
+</div>
+
+<div class="warn"><strong>追及问题常见陷阱</strong>：
+<ul>
+<li>有最大速度限制时，不能一直用匀加速公式，需分段讨论</li>
+<li>若 $v_0^2 + 2ad < 0$（判别式为负），说明追不上（但本题中 $d > 0$ 时判别式总为正）</li>
+<li>二次方程两个根：较小的正根为第一次追上（从后面追上），较大正根为第二次相遇（追过后减速再被追上的情况）</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 1-7, 1-17, 1-19, 1-21, 1-23, 1-24, 1-25, 1-31, 1-32</div>
 
 <script src="toc.js"></script>

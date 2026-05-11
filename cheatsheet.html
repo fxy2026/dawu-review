@@ -220,6 +220,91 @@ $$\nu' = \nu\frac{u\pm v_{obs}}{u\mp v_{src}}$$
 <p>口诀：接近频率升高。观察者接近→分子取 $+$；源接近→分母取 $-$。</p></div>
 </div>
 
+<h2 id="s7">七、常用数学技巧速查</h2>
+<div class="card">
+
+<h3>高斯积分及相关公式</h3>
+<div class="fb">
+<div class="t">20. $\int x^n e^{-ax^2}\dd x$ 类高斯积分</div>
+<p>基本高斯积分：</p>
+$$\int_0^{\infty}e^{-ax^2}\dd x = \frac{1}{2}\sqrt{\frac{\pi}{a}}$$
+<p>常用推广（$a > 0$）：</p>
+<table>
+<tr><th>积分</th><th>结果</th><th>常见用途</th></tr>
+<tr><td>$\int_0^{\infty}x\,e^{-ax^2}\dd x$</td><td>$\frac{1}{2a}$</td><td>平均速率</td></tr>
+<tr><td>$\int_0^{\infty}x^2 e^{-ax^2}\dd x$</td><td>$\frac{1}{4}\sqrt{\frac{\pi}{a^3}}$</td><td>方均根速率</td></tr>
+<tr><td>$\int_0^{\infty}x^3 e^{-ax^2}\dd x$</td><td>$\frac{1}{2a^2}$</td><td>压强推导</td></tr>
+<tr><td>$\int_0^{\infty}x^4 e^{-ax^2}\dd x$</td><td>$\frac{3}{8}\sqrt{\frac{\pi}{a^5}}$</td><td>能量分布</td></tr>
+</table>
+<p>记忆规律：奇数次幂结果不含 $\sqrt{\pi}$，偶数次幂结果含 $\sqrt{\pi}$。</p>
+<p>递推关系：$I_{n+2} = -\frac{\dd}{\dd a}I_n$，其中 $I_n = \int_0^\infty x^n e^{-ax^2}\dd x$</p>
+</div>
+
+<h3>泰勒展开近似</h3>
+<div class="fb">
+<div class="t">21. 常用近似公式（$|x|\ll1$）</div>
+<table>
+<tr><th>精确表达式</th><th>一阶近似</th><th>二阶近似</th></tr>
+<tr><td>$(1+x)^n$</td><td>$\approx 1+nx$</td><td>$\approx 1+nx+\frac{n(n-1)}{2}x^2$</td></tr>
+<tr><td>$e^x$</td><td>$\approx 1+x$</td><td>$\approx 1+x+\frac{x^2}{2}$</td></tr>
+<tr><td>$\sin x$</td><td>$\approx x$</td><td>$\approx x-\frac{x^3}{6}$</td></tr>
+<tr><td>$\cos x$</td><td>$\approx 1$</td><td>$\approx 1-\frac{x^2}{2}$</td></tr>
+<tr><td>$\tan x$</td><td>$\approx x$</td><td>$\approx x+\frac{x^3}{3}$</td></tr>
+<tr><td>$\ln(1+x)$</td><td>$\approx x$</td><td>$\approx x-\frac{x^2}{2}$</td></tr>
+<tr><td>$\frac{1}{1+x}$</td><td>$\approx 1-x$</td><td>$\approx 1-x+x^2$</td></tr>
+<tr><td>$\frac{1}{\sqrt{1+x}}$</td><td>$\approx 1-\frac{x}{2}$</td><td>$\approx 1-\frac{x}{2}+\frac{3x^2}{8}$</td></tr>
+</table>
+<p><strong>物理中的典型应用</strong>：</p>
+<ul>
+<li>洛伦兹因子低速近似：$\gamma = (1-\beta^2)^{-1/2}\approx 1+\frac{\beta^2}{2}$</li>
+<li>单摆小角度：$\sin\theta\approx\theta$ → 简谐运动</li>
+<li>引力势能近似：$(1+h/R)^{-1}\approx 1-h/R$（$h\ll R$）</li>
+</ul>
+</div>
+
+<h3>向量运算</h3>
+<div class="fb">
+<div class="t">22. 向量叉乘与右手定则</div>
+<p><strong>叉乘定义</strong>：$\vv{A}\times\vv{B} = |\vv{A}||\vv{B}|\sin\theta\,\hat{n}$，方向由右手定则确定。</p>
+<p><strong>右手定则</strong>：四指从 $\vv{A}$ 弯向 $\vv{B}$（取小于 $180°$ 的角），拇指指向即为 $\vv{A}\times\vv{B}$ 的方向。</p>
+<p><strong>分量形式</strong>：</p>
+$$\vv{A}\times\vv{B} = \begin{vmatrix}\hat{i}&\hat{j}&\hat{k}\\A_x&A_y&A_z\\B_x&B_y&B_z\end{vmatrix} = (A_yB_z-A_zB_y)\hat{i}+(A_zB_x-A_xB_z)\hat{j}+(A_xB_y-A_yB_x)\hat{k}$$
+<p><strong>重要性质</strong>：</p>
+<ul>
+<li>反交换律：$\vv{A}\times\vv{B} = -\vv{B}\times\vv{A}$</li>
+<li>平行则为零：$\vv{A}\times\vv{A} = \vv{0}$</li>
+<li>基矢量：$\hat{i}\times\hat{j}=\hat{k}$，$\hat{j}\times\hat{k}=\hat{i}$，$\hat{k}\times\hat{i}=\hat{j}$（$ijk$ 轮换）</li>
+</ul>
+<p><strong>物理应用</strong>：力矩 $\vv{M}=\vv{r}\times\vv{F}$，角动量 $\vv{L}=\vv{r}\times\vv{p}$，洛伦兹力 $\vv{F}=q\vv{v}\times\vv{B}$</p>
+</div>
+
+<h3>三角恒等式</h3>
+<div class="fb">
+<div class="t">23. 常用三角恒等式</div>
+<p><strong>和差公式</strong>：</p>
+<p>$\sin(\alpha\pm\beta) = \sin\alpha\cos\beta\pm\cos\alpha\sin\beta$</p>
+<p>$\cos(\alpha\pm\beta) = \cos\alpha\cos\beta\mp\sin\alpha\sin\beta$</p>
+<p><strong>和差化积</strong>（干涉/拍频常用）：</p>
+$$\sin A+\sin B = 2\sin\frac{A+B}{2}\cos\frac{A-B}{2}$$
+$$\cos A+\cos B = 2\cos\frac{A+B}{2}\cos\frac{A-B}{2}$$
+$$\cos A-\cos B = -2\sin\frac{A+B}{2}\sin\frac{A-B}{2}$$
+<p><strong>积化和差</strong>：</p>
+$$\sin\alpha\cos\beta = \frac{1}{2}[\sin(\alpha+\beta)+\sin(\alpha-\beta)]$$
+$$\cos\alpha\cos\beta = \frac{1}{2}[\cos(\alpha+\beta)+\cos(\alpha-\beta)]$$
+<p><strong>倍角公式</strong>：</p>
+<p>$\sin2\alpha = 2\sin\alpha\cos\alpha$</p>
+<p>$\cos2\alpha = \cos^2\alpha-\sin^2\alpha = 2\cos^2\alpha-1 = 1-2\sin^2\alpha$</p>
+<p><strong>半角公式</strong>（推导用）：</p>
+<p>$\sin^2\frac{\alpha}{2} = \frac{1-\cos\alpha}{2}$，$\cos^2\frac{\alpha}{2} = \frac{1+\cos\alpha}{2}$</p>
+<p><strong>物理应用</strong>：</p>
+<ul>
+<li>两列波叠加 → 和差化积 → 干涉/拍频</li>
+<li>斜抛射程 $R = v_0^2\sin2\theta/g$ → 倍角公式</li>
+<li>光的干涉条纹间距推导 → 小角近似 + 半角公式</li>
+</ul>
+</div>
+</div>
+
 <div class="note"><strong>使用建议</strong>：考前30分钟快速过一遍易错清单，在心里对每个点说"我知道了"。考场上遇到相关题目先回忆易错点再下笔。</div>
 
 <script src="toc.js"></script>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第4章 刚体力学 | 大物复习</title>
+<title>第5章 刚体力学 | 大物复习</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
@@ -15,11 +15,11 @@
 <link rel="stylesheet" href="toc.css">
 </head>
 <body>
-<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch4.html">← 动量与角动量</a><a href="ch5-ex.html">第4章习题 →</a></div>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch4.html">← 动量与角动量</a><a href="ch5-ex.html">第5章习题 →</a></div>
 
-<h1>第4章 刚体力学</h1>
+<h1>第5章 刚体力学</h1>
 
-<h2 id="s1">4.1 转动惯量</h2>
+<h2 id="s1">5.1 转动惯量</h2>
 <div class="card">
 <div class="fb">
 <div class="t">转动惯量的定义</div>
@@ -51,7 +51,7 @@ $J_{端} = J_C + M(L/2)^2 = \frac{1}{12}ML^2 + \frac{1}{4}ML^2 = \frac{1}{3}ML^2
 </div></div>
 </div>
 
-<h2 id="s2">4.2 转动定律</h2>
+<h2 id="s2">5.2 转动定律</h2>
 <div class="card">
 <div class="fb">
 <div class="t">定轴转动的基本方程</div>
@@ -70,7 +70,7 @@ $$M = J\alpha$$
 </div></div>
 </div>
 
-<h2 id="s3">4.3 转动中的角动量与能量</h2>
+<h2 id="s3">5.3 转动中的角动量与能量</h2>
 <div class="card">
 <div class="fb">
 <div class="t">刚体角动量守恒</div>
@@ -103,7 +103,7 @@ $$v = \sqrt{\frac{10gh}{7}}$$
 <div class="tip"><strong>比较</strong>：同一斜面同一高度，纯滑动最快，圆环最慢（$J$最大），顺序：滑动 > 实心球 > 圆盘 > 球壳 > 圆环</div>
 </div>
 
-<h2 id="s6">4.6 转动惯量的积分计算（PPT重点）</h2>
+<h2 id="s6">5.6 转动惯量的积分计算（PPT重点）</h2>
 <div class="card">
 <div class="fb">
 <div class="t">转动惯量积分法详解</div>
@@ -129,7 +129,7 @@ $$J=\int_{-R}^{R}\frac{1}{2}\rho\pi(R^2-z^2)^2\dd z=\frac{2}{5}MR^2$$
 </div></div>
 </div>
 
-<h2 id="s7">4.7 刚体问题解题模板</h2>
+<h2 id="s7">5.7 刚体问题解题模板</h2>
 <div class="card">
 <div class="fb">
 <div class="t">平动+转动联立方程</div>
@@ -159,7 +159,7 @@ $$\omega=\sqrt{\frac{3g\sin\theta}{L}}$$
 </ul></div>
 </div>
 
-<h2 id="s8">4.8 进动（定性了解）</h2>
+<h2 id="s8">5.8 进动（定性了解）</h2>
 <div class="card">
 <div class="fb">
 <div class="t">陀螺进动</div>
@@ -170,7 +170,7 @@ $$\omega=\sqrt{\frac{3g\sin\theta}{L}}$$
 </div>
 </div>
 
-<h2 id="s9">4.9 刚体综合问题解题模板</h2>
+<h2 id="s9">5.9 刚体综合问题解题模板</h2>
 <div class="card">
 <div class="ex">
 <strong>例（滑轮+斜面综合）</strong>：质量 $M$、半径 $R$ 的实心圆柱（转动惯量 $J=\frac{1}{2}MR^2$）绕定轴转动，用轻绳连接在斜面上的物体（质量 $m$，倾角 $\theta$，无摩擦）。求系统加速度。
@@ -197,6 +197,134 @@ $$a=\frac{mg\sin\theta}{m+M/2},\quad T=\frac{Mmg\sin\theta}{2m+M}$$
 <li>约束条件写全（$a=R\alpha$、绳不伸长等）</li>
 <li>有质量滑轮两侧 $T_1\neq T_2$</li>
 <li>能量法可以验证结果（或直接用能量法求解）</li>
+</ul></div>
+</div>
+
+<h2 id="s10">5.10 功能法解刚体问题（PPT高频）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">刚体总动能</div>
+<p>刚体做一般运动（平动+转动）时，总动能为：</p>
+$$E_k = \frac{1}{2}Mv_C^2 + \frac{1}{2}J_C\omega^2$$
+<p>其中 $v_C$ 为质心速度，$J_C$ 为绕过质心轴的转动惯量。</p>
+<p><strong>功能定理</strong>：外力做功（包括重力、摩擦力等）= 系统总动能的增量</p>
+$$W_{外} = \Delta E_k = \frac{1}{2}Mv_C^2 + \frac{1}{2}J_C\omega^2 - \frac{1}{2}Mv_{C0}^2 - \frac{1}{2}J_C\omega_0^2$$
+</div>
+
+<div class="tip"><strong>功能法 vs 牛顿法</strong>：功能法不需要求中间力（如绳张力、静摩擦力），直接从初末状态求解，对于"求末速度"类问题非常高效。</div>
+
+<div class="ex">
+<strong>例（圆柱沿斜面无滑动滚下 vs 纯滑动）</strong>：质量 $M$、半径 $R$ 的均匀实心圆柱从高 $h$ 处沿斜面无滑动滚下，用功能定理求底部速度，并与纯滑动（无摩擦）情形对比。
+<div class="sol"><div class="st">解</div>
+<p><strong>纯滚动情形</strong>：</p>
+<p>纯滚动条件：$v_C = R\omega$，圆柱转动惯量 $J_C = \frac{1}{2}MR^2$。</p>
+<p>静摩擦力不做功（纯滚动接触点瞬时速度为零），只有重力做功：</p>
+$$Mgh = \frac{1}{2}Mv^2 + \frac{1}{2}\cdot\frac{1}{2}MR^2\cdot\frac{v^2}{R^2} = \frac{1}{2}Mv^2 + \frac{1}{4}Mv^2 = \frac{3}{4}Mv^2$$
+$$\boxed{v = \sqrt{\frac{4gh}{3}} \approx 1.155\sqrt{gh}}$$
+
+<p><strong>纯滑动情形</strong>（无摩擦斜面）：</p>
+<p>圆柱不转动，全部势能转化为平动动能：</p>
+$$Mgh = \frac{1}{2}Mv^2 \implies v = \sqrt{2gh} \approx 1.414\sqrt{gh}$$
+
+<p><strong>对比</strong>：纯滑动的底部速度更大，因为纯滚动时部分势能转化为转动动能。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（均匀杆绕一端从水平释放）</strong>：均匀细杆（质量 $M$，长 $L$），一端固定在光滑铰链上可绕水平轴自由转动。从水平位置静止释放，求转到竖直位置时的角速度和自由端速度。
+<div class="sol"><div class="st">解</div>
+<p>杆绕端点的转动惯量：$J = \frac{1}{3}ML^2$</p>
+<p>从水平到竖直，质心下降高度 $h = \frac{L}{2}$。</p>
+<p>由功能定理（只有重力做功，铰链力力矩为零）：</p>
+$$Mg\frac{L}{2} = \frac{1}{2}J\omega^2 = \frac{1}{2}\cdot\frac{ML^2}{3}\cdot\omega^2 = \frac{ML^2\omega^2}{6}$$
+$$\omega = \sqrt{\frac{3g}{L}}$$
+<p>自由端速度（端点做圆周运动，半径为 $L$）：</p>
+$$v_{端} = L\omega = L\sqrt{\frac{3g}{L}} = \sqrt{3gL}$$
+<p>注意 $v_{端} = \sqrt{3gL} > \sqrt{2gL}$（自由落体从同高度 $L$ 落下的速度），这是因为杆的质心下降 $L/2$ 释放的势能全部集中在端点的动能上。</p>
+</div></div>
+
+<div class="warn"><strong>易错点</strong>：功能法中要注意纯滚动时静摩擦力不做功，不要把摩擦力做功项写进去！但如果有滑动摩擦（非纯滚动），则摩擦力做负功。</div>
+</div>
+
+<h2 id="s11">5.11 垂直轴定理（薄板）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">垂直轴定理</div>
+<p>对于<strong>薄板</strong>（质量分布在一个平面内的刚体），取薄板所在平面内两条互相垂直的轴 $x$ 和 $y$，以及垂直于薄板的轴 $z$（三轴交于一点），则：</p>
+$$\boxed{J_z = J_x + J_y}$$
+<p><strong>注意</strong>：此定理<strong>只适用于薄板</strong>！不能用于三维物体（球体、圆柱体等）。</p>
+</div>
+
+<div class="tip"><strong>证明思路</strong>：对于薄板上的质量元 $\dd m$，到 $z$ 轴距离 $r^2 = x^2+y^2$，到 $x$ 轴距离 $y$，到 $y$ 轴距离 $x$。因此 $J_z = \int r^2\dd m = \int(x^2+y^2)\dd m = J_y + J_x$。</div>
+
+<div class="ex">
+<strong>例（由垂直轴定理推导圆盘绕直径的转动惯量）</strong>：已知均匀圆盘绕中心轴（垂直盘面）转动惯量 $J_z = \frac{1}{2}MR^2$，求绕任意一条直径的转动惯量。
+<div class="sol"><div class="st">解</div>
+<p>取圆盘所在平面内两条互相垂直的直径为 $x$ 轴和 $y$ 轴，$z$ 轴垂直于盘面过圆心。</p>
+<p>由对称性：$J_x = J_y$（绕任何直径的转动惯量都相等）。</p>
+<p>由垂直轴定理：</p>
+$$J_z = J_x + J_y = 2J_x$$
+$$J_x = \frac{J_z}{2} = \frac{1}{2}\cdot\frac{1}{2}MR^2 = \boxed{\frac{1}{4}MR^2}$$
+<p>这是一个非常优雅的推导——无需做任何积分！</p>
+</div></div>
+
+<div class="ex">
+<strong>例（正方形薄板）</strong>：均匀正方形薄板，边长 $a$，质量 $M$。求绕过中心且垂直板面的轴的转动惯量。
+<div class="sol"><div class="st">解</div>
+<p>先求绕过中心且平行于一边的轴的转动惯量。将薄板看作许多平行细棒，每根绕中心的转动惯量为 $\frac{1}{12}(\dd m)a^2$，积分后：</p>
+$$J_x = \frac{1}{12}Ma^2$$
+<p>由对称性 $J_y = J_x = \frac{1}{12}Ma^2$。</p>
+<p>由垂直轴定理：$J_z = J_x + J_y = \frac{1}{6}Ma^2$。</p>
+</div></div>
+</div>
+
+<h2 id="s12">5.12 角动量守恒在刚体中的应用</h2>
+<div class="card">
+<div class="fb">
+<div class="t">角动量守恒条件</div>
+<p>当系统所受<strong>合外力矩为零</strong>时，系统的总角动量守恒：</p>
+$$L_{初} = L_{末} \implies J_1\omega_1 = J_2\omega_2$$
+<p>常见情形：内力改变了转动惯量（人收缩手臂、转盘对接等），但无外力矩。</p>
+</div>
+
+<div class="ex">
+<strong>例（子弹射入转盘边缘）</strong>：质量 $m$ 的子弹以速度 $v_0$ 沿转盘的切线方向射入质量 $M$、半径 $R$ 的静止均匀圆盘边缘并嵌入其中。转盘可绕过中心的光滑竖直轴自由转动。求射入后转盘的角速度和系统动能损失。
+<div class="sol"><div class="st">解</div>
+<p><strong>角动量守恒</strong>（对转盘中心轴，外力矩为零）：</p>
+<p>初态：子弹对轴的角动量 $L_0 = mv_0R$，转盘静止。</p>
+<p>末态：子弹嵌入边缘后，系统转动惯量为</p>
+$$J_{末} = J_{盘} + mR^2 = \frac{1}{2}MR^2 + mR^2 = \left(\frac{M}{2}+m\right)R^2$$
+<p>角动量守恒：$mv_0R = J_{末}\omega$</p>
+$$\boxed{\omega = \frac{mv_0}{(\frac{M}{2}+m)R} = \frac{2mv_0}{(M+2m)R}}$$
+
+<p><strong>动能损失</strong>：</p>
+<p>初动能：$E_{k0} = \frac{1}{2}mv_0^2$</p>
+<p>末动能：$E_{k} = \frac{1}{2}J_{末}\omega^2 = \frac{1}{2}\left(\frac{M}{2}+m\right)R^2\cdot\frac{4m^2v_0^2}{(M+2m)^2R^2} = \frac{m^2v_0^2}{M+2m}$</p>
+<p>动能损失：</p>
+$$\Delta E_k = \frac{1}{2}mv_0^2 - \frac{m^2v_0^2}{M+2m} = \frac{1}{2}mv_0^2\cdot\frac{M}{M+2m} = \frac{Mmv_0^2}{2(M+2m)}$$
+<p>这是一个完全非弹性碰撞，部分动能转化为热能和形变能。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（两个同轴转盘对接）</strong>：两个同轴的均匀圆盘，转盘A的转动惯量为 $J_1$，角速度 $\omega_1$；转盘B的转动惯量为 $J_2$，角速度 $\omega_2$（方向与A相同）。两转盘对接后达到共同角速度。求末角速度和能量损失。
+<div class="sol"><div class="st">解</div>
+<p><strong>角动量守恒</strong>（对接过程中摩擦力为内力矩，无外力矩）：</p>
+$$J_1\omega_1 + J_2\omega_2 = (J_1+J_2)\omega$$
+$$\boxed{\omega = \frac{J_1\omega_1+J_2\omega_2}{J_1+J_2}}$$
+
+<p><strong>能量损失</strong>：</p>
+$$\Delta E = E_{k,初} - E_{k,末} = \frac{1}{2}J_1\omega_1^2 + \frac{1}{2}J_2\omega_2^2 - \frac{1}{2}(J_1+J_2)\omega^2$$
+<p>代入 $\omega$ 化简后：</p>
+$$\boxed{\Delta E = \frac{J_1J_2}{2(J_1+J_2)}(\omega_1-\omega_2)^2}$$
+<p>$\Delta E \geq 0$，等号当且仅当 $\omega_1 = \omega_2$ 时成立。</p>
+<p>能量损失转化为摩擦热。这个公式的结构类似于一维完全非弹性碰撞的动能损失公式 $\Delta E_k = \frac{m_1m_2}{2(m_1+m_2)}(v_1-v_2)^2$。</p>
+</div></div>
+
+<div class="tip"><strong>特殊情形</strong>：若转盘B初始静止（$\omega_2=0$），则 $\omega = \frac{J_1\omega_1}{J_1+J_2}$，能量损失 $\Delta E = \frac{J_1J_2\omega_1^2}{2(J_1+J_2)}$。若 $J_1=J_2$，则角速度减半，损失初始动能的一半。</div>
+
+<div class="warn"><strong>常见陷阱</strong>：
+<ul>
+<li>两转盘转向相反时，$\omega_2$ 取负值！若 $J_1\omega_1 = J_2|\omega_2|$，对接后 $\omega=0$，全部动能损失。</li>
+<li>角动量守恒不代表动能守恒——对接过程中有摩擦力做功，属于非弹性碰撞。</li>
 </ul></div>
 </div>
 

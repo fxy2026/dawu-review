@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第5章 狭义相对论 | 大物复习</title>
+<title>第6章 狭义相对论 | 大物复习</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
@@ -15,11 +15,11 @@
 <link rel="stylesheet" href="toc.css">
 </head>
 <body>
-<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch5.html">← 刚体力学</a><a href="ch6-ex.html">第5章习题 →</a></div>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch5.html">← 刚体力学</a><a href="ch6-ex.html">第6章习题 →</a></div>
 
-<h1>第5章 狭义相对论</h1>
+<h1>第6章 狭义相对论</h1>
 
-<h2 id="s1">5.1 基本假设与Lorentz变换</h2>
+<h2 id="s1">6.1 基本假设与Lorentz变换</h2>
 <div class="card">
 <div class="fb">
 <div class="t">两个基本假设</div>
@@ -39,7 +39,7 @@ $$x = \gamma(x'+vt'),\quad t = \gamma\left(t'+\frac{vx'}{c^2}\right)$$
 </div>
 </div>
 
-<h2 id="s2">5.2 时间膨胀与长度收缩</h2>
+<h2 id="s2">6.2 时间膨胀与长度收缩</h2>
 <div class="card">
 <div class="fb">
 <div class="t">时间膨胀（运动的钟变慢）</div>
@@ -64,7 +64,7 @@ $$L = \frac{L_0}{\gamma} = L_0\sqrt{1-\beta^2}$$
 </div></div>
 </div>
 
-<h2 id="s3">5.3 速度变换</h2>
+<h2 id="s3">6.3 速度变换</h2>
 <div class="card">
 <div class="fb">
 <div class="t">相对论速度叠加</div>
@@ -73,7 +73,7 @@ $$u_x = \frac{u_x'+v}{1+u_x'v/c^2},\quad u_y = \frac{u_y'}{\gamma(1+u_x'v/c^2)}$
 </div>
 </div>
 
-<h2 id="s4">5.4 相对论动量与能量（重中之重！）</h2>
+<h2 id="s4">6.4 相对论动量与能量（重中之重！）</h2>
 <div class="card">
 <div class="fb">
 <div class="t">相对论动量</div>
@@ -104,7 +104,7 @@ $$E^2 = (pc)^2 + (m_0c^2)^2$$
 </div></div>
 </div>
 
-<h2 id="s5">5.5 时空间隔不变量</h2>
+<h2 id="s5">6.5 时空间隔不变量</h2>
 <div class="card">
 <div class="fb">
 <div class="t">时空间隔（Lorentz不变量）</div>
@@ -118,7 +118,7 @@ $$(\Delta s)^2 = c^2(\Delta t)^2 - (\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2$$
 </div>
 </div>
 
-<h2 id="s6">5.6 相对论解题要点（PPT总结）</h2>
+<h2 id="s6">6.6 相对论解题要点（PPT总结）</h2>
 <div class="card">
 <div class="fb">
 <div class="t">固有量判断口诀</div>
@@ -170,7 +170,7 @@ $$(\Delta s)^2 = c^2(\Delta t)^2 - (\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2$$
 </ul></div>
 </div>
 
-<h2 id="s7">5.7 相对论综合计算题模板</h2>
+<h2 id="s7">6.7 相对论综合计算题模板</h2>
 <div class="card">
 <div class="ex">
 <strong>例（质子加速器）</strong>：质子静能 $E_0=938\,\text{MeV}$。若质子动能 $E_k=2000\,\text{MeV}$，求速度（用 $c$ 表示）和动量。
@@ -210,7 +210,128 @@ $$(\Delta s)^2 = c^2(\Delta t)^2 - (\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2$$
 </ul></div>
 </div>
 
-<div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 5-3, 5-4, 5-7, 5-10, 5-12, 5-13, 5-16, 5-19</div>
+<h2 id="s8">6.8 Lorentz变换典型应用</h2>
+<div class="card">
+<div class="fb">
+<div class="t">Lorentz变换应用要点</div>
+<p>使用Lorentz变换时，首先明确：</p>
+<ol>
+<li>哪个是 $S$ 系，哪个是 $S'$ 系，$S'$ 相对 $S$ 的速度 $v$ 的方向</li>
+<li>已知量在哪个参考系中，需要变换到哪个参考系</li>
+<li>用正变换还是逆变换</li>
+</ol>
+</div>
+
+<div class="ex">
+<strong>例（两个事件的Lorentz变换）</strong>：在 $S$ 系中，事件1发生在 $(x_1=0,\,t_1=0)$，事件2发生在 $(x_2=3\times10^8\,\text{m},\,t_2=2\,\text{s})$。$S'$ 系以 $v=0.6c$ 沿 $x$ 方向运动。求两事件在 $S'$ 系中的时空坐标和时空间隔。
+<div class="sol"><div class="st">解</div>
+<p>$\beta = 0.6$，$\gamma = 1/\sqrt{1-0.36} = 1/\sqrt{0.64} = 1/0.8 = 1.25$</p>
+
+<p><strong>事件1</strong>（$x_1=0,\,t_1=0$）：</p>
+<p>$x_1' = \gamma(x_1-vt_1) = 1.25\times(0-0) = 0$</p>
+<p>$t_1' = \gamma(t_1-vx_1/c^2) = 1.25\times(0-0) = 0$</p>
+
+<p><strong>事件2</strong>（$x_2=3\times10^8\,\text{m},\,t_2=2\,\text{s}$）：</p>
+<p>$x_2' = \gamma(x_2-vt_2) = 1.25\times(3\times10^8 - 0.6\times3\times10^8\times2)$</p>
+<p>$= 1.25\times(3\times10^8 - 3.6\times10^8) = 1.25\times(-0.6\times10^8) = -0.75\times10^8\,\text{m}$</p>
+<p>$t_2' = \gamma(t_2-vx_2/c^2) = 1.25\times\left(2 - \frac{0.6\times3\times10^8\times3\times10^8}{(3\times10^8)^2}\right)$</p>
+<p>$= 1.25\times(2 - 0.6) = 1.25\times1.4 = 1.75\,\text{s}$</p>
+
+<p><strong>验证时空间隔不变性</strong>：</p>
+<p>$S$ 系：$(\Delta s)^2 = c^2(\Delta t)^2 - (\Delta x)^2 = (3\times10^8)^2\times4 - (3\times10^8)^2 = 3\times(3\times10^8)^2$</p>
+<p>$S'$ 系：$(\Delta s)^2 = c^2(1.75)^2 - (0.75\times10^8)^2 = (3\times10^8)^2\times3.0625 - 0.5625\times10^{16}$</p>
+<p>$= 27.5625\times10^{16} - 0.5625\times10^{16} = 27\times10^{16} = 3\times(3\times10^8)^2$ ✓</p>
+</div></div>
+
+<div class="ex">
+<strong>例（长度的相对性：飞船与空间站）</strong>：一艘飞船固有长度 $L_0=100\,\text{m}$，以 $v=0.6c$ 飞过一个固有长度也为 $L_0=100\,\text{m}$ 的空间站。求：(1) 空间站观测者测量飞船的长度；(2) 飞船观测者测量空间站的长度。
+<div class="sol"><div class="st">解</div>
+<p>$\gamma = 1.25$</p>
+
+<p><strong>(1) 空间站测飞船长度</strong>：</p>
+<p>飞船相对空间站运动，飞船的长度发生收缩：</p>
+$$L_{飞船} = \frac{L_0}{\gamma} = \frac{100}{1.25} = 80\,\text{m}$$
+
+<p><strong>(2) 飞船测空间站长度</strong>：</p>
+<p>空间站相对飞船运动，空间站的长度发生收缩：</p>
+$$L_{空间站} = \frac{L_0}{\gamma} = \frac{100}{1.25} = 80\,\text{m}$$
+
+<p><strong>关键理解</strong>：长度收缩是对称的！双方都认为对方变短了。这不矛盾——因为"同时测量两端坐标"在两个参考系中对应不同的事件（同时性的相对性）。</p>
+</div></div>
+
+<div class="tip"><strong>Lorentz变换 vs 时间膨胀/长度收缩</strong>：时间膨胀和长度收缩公式是Lorentz变换的特殊情形。当问题涉及单一时间间隔或单一长度测量时用简单公式即可；当涉及两个事件的完整时空坐标时，必须用完整的Lorentz变换。</div>
+</div>
+
+<h2 id="s9">6.9 相对论质量与光子</h2>
+<div class="card">
+<div class="fb">
+<div class="t">光子的性质总结</div>
+<table>
+<tr><th>物理量</th><th>表达式</th><th>说明</th></tr>
+<tr><td>静质量</td><td>$m_0 = 0$</td><td>光子没有静质量</td></tr>
+<tr><td>速度</td><td>$v = c$（恒定）</td><td>在任何参考系中都是 $c$</td></tr>
+<tr><td>能量</td><td>$E = h\nu = \frac{hc}{\lambda}$</td><td>$h=6.626\times10^{-34}\,\text{J}\cdot\text{s}$</td></tr>
+<tr><td>动量</td><td>$p = \frac{E}{c} = \frac{h\nu}{c} = \frac{h}{\lambda}$</td><td>由 $E=pc$（$m_0=0$）得出</td></tr>
+<tr><td>等效质量</td><td>$m = \frac{E}{c^2} = \frac{h\nu}{c^2}$</td><td>引力效应中使用（光线弯曲）</td></tr>
+</table>
+</div>
+
+<div class="ex">
+<strong>例（简化Compton散射：光子与静止电子碰撞）</strong>：一个能量为 $E_\gamma = 0.511\,\text{MeV}$ 的光子与一个静止电子（$m_0c^2 = 0.511\,\text{MeV}$）发生正碰，光子被反向散射（散射角 $180°$）。求反冲电子的动能。
+<div class="sol"><div class="st">解</div>
+<p>设散射后光子能量 $E_\gamma'$，电子总能 $E_e$，电子动量 $p_e$。</p>
+
+<p><strong>能量守恒</strong>：</p>
+$$E_\gamma + m_0c^2 = E_\gamma' + E_e$$
+$$0.511 + 0.511 = E_\gamma' + E_e$$
+$$E_\gamma' + E_e = 1.022\,\text{MeV} \quad \cdots(1)$$
+
+<p><strong>动量守恒</strong>（取初始光子方向为正，散射后光子反向）：</p>
+$$\frac{E_\gamma}{c} = -\frac{E_\gamma'}{c} + p_e$$
+$$p_ec = E_\gamma + E_\gamma' = 0.511 + E_\gamma' \quad \cdots(2)$$
+
+<p>由能量-动量关系 $E_e^2 = (p_ec)^2 + (m_0c^2)^2$：</p>
+<p>从 (1)：$E_e = 1.022 - E_\gamma'$</p>
+<p>从 (2)：$p_ec = 0.511 + E_\gamma'$</p>
+$$(1.022 - E_\gamma')^2 = (0.511 + E_\gamma')^2 + (0.511)^2$$
+$$1.0449 - 2.044E_\gamma' + E_\gamma'^2 = 0.2611 + 1.022E_\gamma' + E_\gamma'^2 + 0.2611$$
+$$1.0449 - 2.044E_\gamma' = 0.5222 + 1.022E_\gamma'$$
+$$0.5227 = 3.066E_\gamma'$$
+$$E_\gamma' = 0.1705\,\text{MeV}$$
+
+<p>反冲电子动能：</p>
+$$E_k = E_e - m_0c^2 = (1.022 - 0.1705) - 0.511 = \boxed{0.3405\,\text{MeV}}$$
+<p>光子损失了约 $2/3$ 的能量传递给了电子。</p>
+</div></div>
+
+<h3>质量亏损与核能</h3>
+<div class="fb">
+<div class="t">质能等价在核反应中的应用</div>
+<p>在核反应中，反应前后总质量发生变化（质量亏损 $\Delta m$），对应释放或吸收的能量为：</p>
+$$\boxed{\Delta E = \Delta m\cdot c^2}$$
+<p>$1\,\text{u} = 1.6605\times10^{-27}\,\text{kg}$ 对应 $931.5\,\text{MeV}$。</p>
+</div>
+
+<div class="ex">
+<strong>例（氘氚聚变释放能量）</strong>：氘核（$^2_1\text{H}$，质量 $2.0141\,\text{u}$）和氚核（$^3_1\text{H}$，质量 $3.0161\,\text{u}$）聚变生成氦核（$^4_2\text{He}$，质量 $4.0026\,\text{u}$）和一个中子（$n$，质量 $1.0087\,\text{u}$）。求释放的能量。
+<div class="sol"><div class="st">解</div>
+<p>反应方程：$^2_1\text{H} + ^3_1\text{H} \to ^4_2\text{He} + ^1_0n$</p>
+<p>质量亏损：</p>
+$$\Delta m = (2.0141 + 3.0161) - (4.0026 + 1.0087) = 5.0302 - 5.0113 = 0.0189\,\text{u}$$
+<p>释放能量：</p>
+$$\Delta E = 0.0189\times931.5\,\text{MeV} = \boxed{17.6\,\text{MeV}}$$
+<p>这就是氢弹和可控核聚变的原理。每次聚变释放 $17.6\,\text{MeV}$，远超化学反应的 $\sim\text{eV}$ 量级。</p>
+</div></div>
+
+<div class="warn"><strong>易错提醒</strong>：
+<ul>
+<li>质量亏损 $\Delta m$ = 反应物总质量 - 生成物总质量。$\Delta m > 0$ 释放能量，$\Delta m < 0$ 吸收能量。</li>
+<li>光子参与的反应：光子有动量无静质量，不要遗漏光子的能量和动量贡献。</li>
+<li>$1\,\text{u} = 931.5\,\text{MeV}/c^2$ 是常用换算，务必记住。</li>
+</ul></div>
+</div>
+
+<div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 6-3, 6-4, 6-7, 6-10, 6-12, 6-13, 6-16, 6-19</div>
 
 <script src="toc.js"></script>
 <script src="progress.js"></script>
