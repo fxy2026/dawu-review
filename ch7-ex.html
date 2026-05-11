@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第6&7章习题 振动与波 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch7.html">← 第6&7章知识点</a></div>
+<h1>第6&7章习题 振动与波</h1>
+
+<!-- ==================== 6-2 ==================== -->
+<h2 id="ex6-2">题 6-2 弹簧振子振动方程</h2>
+
+<div class="ex">
+<b>题目：</b>一弹簧振子，弹簧劲度系数 $k=50\;\text{N/m}$，物体质量 $m=2\;\text{kg}$。$t=0$ 时 $x_0=0.05\;\text{m}$，$v_0=0$。写出振动方程。
+</div>
+
+<div class="sol">
+<div class="st">解题过程</div>
+
+<p><b>第一步：求角频率 $\omega$</b></p>
+$$\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{50}{2}} = \sqrt{25} = 5\;\text{rad/s}$$
+
+<p><b>第二步：求振幅 $A$</b></p>
+<p>利用初始条件公式：</p>
+$$A = \sqrt{x_0^2 + \left(\frac{v_0}{\omega}\right)^2} = \sqrt{(0.05)^2 + 0} = 0.05\;\text{m}$$
+
+<p><b>第三步：求初相 $\varphi_0$</b></p>
+<p>由初相判据：</p>
+$$\tan\varphi_0 = -\frac{v_0}{\omega x_0} = -\frac{0}{5 \times 0.05} = 0$$
+<p>$\tan\varphi_0 = 0$ 有两个解：$\varphi_0 = 0$ 或 $\varphi_0 = \pi$。</p>
+<p>因为 $x_0 = 0.05 > 0$，即 $A\cos\varphi_0 > 0$，所以 $\cos\varphi_0 > 0$，取 $\varphi_0 = 0$。</p>
+
+<p><b>第四步：写出振动方程</b></p>
+$$\boxed{x = 0.05\cos(5t)\;\text{m}}$$
+</div>
+
+<div class="tip">
+<b>提示：</b>确定初相 $\varphi_0$ 时，仅靠 $\tan\varphi_0$ 的值不够，还需结合 $x_0$ 和 $v_0$ 的正负号来确定 $\varphi_0$ 所在象限。规则：$x_0 = A\cos\varphi_0$ 定余弦符号，$v_0 = -A\omega\sin\varphi_0$ 定正弦符号。
+</div>
+
+<!-- ==================== 6-7 ==================== -->
+<h2 id="ex6-7">题 6-7 SHM 的运动学量</h2>
+
+<div class="ex">
+<b>题目：</b>一简谐振动 $x = 0.04\cos(2\pi t + \pi/3)$（m）。求：<br>
+(1) 振幅、周期、初相；<br>
+(2) $t=0$ 时的位移、速度、加速度；<br>
+(3) 最大速度和最大加速度。
+</div>
+
+<div class="sol">
+<div class="st">解题过程</div>
+
+<p><b>(1) 基本参量</b></p>
+<p>与标准形式 $x = A\cos(\omega t + \varphi_0)$ 对比可得：</p>
+<ul>
+  <li>振幅 $A = 0.04\;\text{m}$</li>
+  <li>角频率 $\omega = 2\pi\;\text{rad/s}$，周期 $T = \dfrac{2\pi}{\omega} = 1\;\text{s}$</li>
+  <li>初相 $\varphi_0 = \dfrac{\pi}{3}$</li>
+</ul>
+
+<p><b>(2) $t = 0$ 时刻的运动学量</b></p>
+
+<p>位移：</p>
+$$x(0) = 0.04\cos\frac{\pi}{3} = 0.04 \times 0.5 = 0.02\;\text{m}$$
+
+<p>速度（对位移求导）：</p>
+$$v = \frac{\dd x}{\dd t} = -A\omega\sin(\omega t + \varphi_0)$$
+$$v(0) = -0.04 \times 2\pi \times \sin\frac{\pi}{3} = -0.04 \times 2\pi \times \frac{\sqrt{3}}{2} \approx -0.218\;\text{m/s}$$
+
+<p>加速度（对速度求导）：</p>
+$$a = \frac{\dd v}{\dd t} = -A\omega^2\cos(\omega t + \varphi_0)$$
+$$a(0) = -0.04 \times (2\pi)^2 \times \cos\frac{\pi}{3} = -0.04 \times 4\pi^2 \times 0.5 \approx -0.789\;\text{m/s}^2$$
+
+<p><b>(3) 最大速度和最大加速度</b></p>
+$$v_{\max} = A\omega = 0.04 \times 2\pi \approx 0.251\;\text{m/s}$$
+$$a_{\max} = A\omega^2 = 0.04 \times 4\pi^2 \approx 1.579\;\text{m/s}^2$$
+</div>
+
+<div class="warn">
+<b>易错点：</b>速度公式带负号！$v = -A\omega\sin(\omega t + \varphi_0)$，不要漏掉负号。加速度与位移反号：$a = -\omega^2 x$，这是 SHM 的本质特征。
+</div>
+
+<!-- ==================== 6-11 ==================== -->
+<h2 id="ex6-11">题 6-11 同频率 SHM 的合成</h2>
+
+<div class="ex">
+<b>题目：</b>两个同频率简谐振动：$x_1 = 3\cos(2t + \pi/6)\;\text{cm}$，$x_2 = 4\cos(2t + 2\pi/3)\;\text{cm}$。求合振动。
+</div>
+
+<div class="sol">
+<div class="st">解题过程</div>
+
+<p><b>第一步：确定已知量</b></p>
+<ul>
+  <li>$A_1 = 3\;\text{cm}$，$\varphi_1 = \pi/6$</li>
+  <li>$A_2 = 4\;\text{cm}$，$\varphi_2 = 2\pi/3$</li>
+  <li>相位差 $\Delta\varphi = \varphi_2 - \varphi_1 = \dfrac{2\pi}{3} - \dfrac{\pi}{6} = \dfrac{\pi}{2}$</li>
+</ul>
+
+<p><b>第二步：求合振幅</b></p>
+$$A = \sqrt{A_1^2 + A_2^2 + 2A_1 A_2\cos\Delta\varphi}$$
+$$= \sqrt{9 + 16 + 2 \times 3 \times 4 \times \cos\frac{\pi}{2}}$$
+$$= \sqrt{9 + 16 + 0} = \sqrt{25} = 5\;\text{cm}$$
+
+<p><b>第三步：求合振动初相</b></p>
+<p>用旋转矢量的分量合成：</p>
+$$\tan\varphi = \frac{A_1\sin\varphi_1 + A_2\sin\varphi_2}{A_1\cos\varphi_1 + A_2\cos\varphi_2}$$
+
+<p>分子：</p>
+$$3\sin\frac{\pi}{6} + 4\sin\frac{2\pi}{3} = 3 \times 0.5 + 4 \times \frac{\sqrt{3}}{2} = 1.5 + 3.464 = 4.964$$
+
+<p>分母：</p>
+$$3\cos\frac{\pi}{6} + 4\cos\frac{2\pi}{3} = 3 \times \frac{\sqrt{3}}{2} + 4 \times (-0.5) = 2.598 - 2 = 0.598$$
+
+$$\tan\varphi = \frac{4.964}{0.598} \approx 8.30$$
+
+<p>分子 $> 0$，分母 $> 0$，$\varphi$ 在第一象限：</p>
+$$\varphi = \arctan(8.30) \approx 83.1° \approx 1.45\;\text{rad}$$
+
+<p><b>第四步：写出合振动</b></p>
+$$\boxed{x = 5\cos(2t + 1.45)\;\text{cm}}$$
+</div>
+
+<div class="tip">
+<b>提示：</b>当 $\Delta\varphi = \pi/2$（正交）时，合振幅简化为 $A = \sqrt{A_1^2 + A_2^2}$，即 3-4-5 直角三角形。这是一个很好的快速验算手段。
+</div>
+
+<div class="warn">
+<b>易错点：</b>用 $\arctan$ 求初相时，必须判断分子分母的正负号来确定象限。计算器只返回 $(-\pi/2, \pi/2)$ 的值，若分母为负需加 $\pi$。
+</div>
+
+<!-- ==================== 6-14 ==================== -->
+<h2 id="ex6-14">题 6-14 平面简谐波的波动方程</h2>
+
+<div class="ex">
+<b>题目：</b>一平面简谐波沿 $+x$ 方向传播，波速 $u = 10\;\text{m/s}$，频率 $\nu = 5\;\text{Hz}$。在 $x = 0$ 处 $t = 0$ 时 $y = 0$，$\dfrac{\partial y}{\partial t} > 0$。振幅 $A = 0.02\;\text{m}$。写出波动方程。
+</div>
+
+<div class="sol">
+<div class="st">解题过程</div>
+
+<p><b>第一步：求波动参量</b></p>
+$$\omega = 2\pi\nu = 2\pi \times 5 = 10\pi\;\text{rad/s}$$
+$$k = \frac{\omega}{u} = \frac{10\pi}{10} = \pi\;\text{rad/m}$$
+
+<p><b>第二步：确定初相 $\varphi_0$</b></p>
+<p>波动方程一般形式（沿 $+x$ 传播）：</p>
+$$y = A\cos(\omega t - kx + \varphi_0)$$
+
+<p>在 $x = 0$，$t = 0$ 处：</p>
+$$y(0,0) = A\cos\varphi_0 = 0 \implies \varphi_0 = \pm\frac{\pi}{2}$$
+
+<p>振动速度：</p>
+$$v_y = \frac{\partial y}{\partial t} = -A\omega\sin(\omega t - kx + \varphi_0)$$
+$$v_y(0,0) = -A\omega\sin\varphi_0 > 0 \implies \sin\varphi_0 < 0$$
+
+<p>$\sin\varphi_0 < 0$，所以 $\varphi_0 = -\dfrac{\pi}{2}$。</p>
+
+<p><b>第三步：写出波动方程</b></p>
+$$y = 0.02\cos\!\left(10\pi t - \pi x - \frac{\pi}{2}\right)\;\text{m}$$
+
+<p>利用 $\cos(\theta - \pi/2) = \sin\theta$，化简为：</p>
+$$\boxed{y = 0.02\sin(10\pi t - \pi x)\;\text{m}}$$
+</div>
+
+<div class="warn">
+<b>易错点：</b>初相 $\varphi_0$ 的确定是波动方程最容易出错的环节。务必同时利用 $y$ 和 $v_y$ 的初始条件来联合判断 $\varphi_0$ 的象限。
+</div>
+
+<div class="note">
+<b>注意：</b>波动方程中的初相是原点（$x=0$）处质点的初相。若题目给出的是其他点的初始状态，需要先将 $x$ 值代入方程来建立约束。
+</div>
+
+<!-- ==================== 6-16 ==================== -->
+<h2 id="ex6-16">题 6-16 由波动方程求各量</h2>
+
+<div class="ex">
+<b>题目：</b>已知波动方程 $y = 0.05\cos(10\pi t - 4\pi x)$（SI）。求：<br>
+(1) 波的振幅、频率、波长、波速；<br>
+(2) $x = 0.5\;\text{m}$ 处质点的振动方程和初相。
+</div>
+
+<div class="sol">
+<div class="st">解题过程</div>
+
+<p><b>(1) 各波动参量</b></p>
+<p>与标准形式 $y = A\cos(\omega t - kx)$ 对比：</p>
+<ul>
+  <li>振幅：$A = 0.05\;\text{m}$</li>
+  <li>角频率：$\omega = 10\pi\;\text{rad/s}$，频率 $\nu = \dfrac{\omega}{2\pi} = 5\;\text{Hz}$</li>
+  <li>波数：$k = 4\pi\;\text{rad/m}$，波长 $\lambda = \dfrac{2\pi}{k} = \dfrac{2\pi}{4\pi} = 0.5\;\text{m}$</li>
+  <li>波速：$u = \dfrac{\omega}{k} = \dfrac{10\pi}{4\pi} = 2.5\;\text{m/s}$</li>
+</ul>
+
+<p><b>(2) $x = 0.5\;\text{m}$ 处的振动方程</b></p>
+<p>将 $x = 0.5$ 代入波动方程：</p>
+$$y = 0.05\cos(10\pi t - 4\pi \times 0.5) = 0.05\cos(10\pi t - 2\pi)$$
+<p>因为 $\cos(\theta - 2\pi) = \cos\theta$：</p>
+$$\boxed{y = 0.05\cos(10\pi t)\;\text{m}}$$
+<p>初相 $\varphi = 0$。</p>
+</div>
+
+<div class="tip">
+<b>提示：</b>$x = 0.5\;\text{m}$ 恰好等于一个波长 $\lambda$，所以该点与原点同相。一般地，相距整数个波长的两点总是同相振动。
+</div>
+
+<!-- ==================== 6-18 ==================== -->
+<h2 id="ex6-18">题 6-18 弦线驻波</h2>
+
+<div class="ex">
+<b>题目：</b>一弦线固定两端相距 $L = 1\;\text{m}$，基频 $\nu_1 = 100\;\text{Hz}$。求：<br>
+(1) 波速；<br>
+(2) 第三谐波的频率和波长。
+</div>
+
+<div class="sol">
+<div class="st">解题过程</div>
+
+<p><b>前置知识：</b>两端固定弦线的驻波条件</p>
+$$L = n\frac{\lambda_n}{2} \quad (n = 1, 2, 3, \ldots)$$
+$$\nu_n = \frac{nu}{2L} = n\nu_1$$
+
+<p><b>(1) 求波速</b></p>
+<p>基频对应 $n = 1$：</p>
+$$\nu_1 = \frac{u}{2L} \implies u = 2L\nu_1 = 2 \times 1 \times 100 = 200\;\text{m/s}$$
+
+<p><b>(2) 第三谐波（$n = 3$）</b></p>
+<p>频率：</p>
+$$\nu_3 = 3\nu_1 = 3 \times 100 = 300\;\text{Hz}$$
+<p>波长：</p>
+$$\lambda_3 = \frac{u}{\nu_3} = \frac{200}{300} = \frac{2}{3}\;\text{m}$$
+<p>也可由 $\lambda_3 = \dfrac{2L}{3} = \dfrac{2}{3}\;\text{m}$ 直接得出。</p>
+</div>
+
+<div class="tip">
+<b>提示：</b>两端固定弦线只能产生基频的整数倍谐波。第 $n$ 次谐波有 $n$ 个波腹和 $n+1$ 个波节（含两端）。
+</div>
+
+<!-- ==================== 6-22 ==================== -->
+<h2 id="ex6-22">题 6-22 多普勒效应</h2>
+
+<div class="ex">
+<b>题目：</b>波源频率 $\nu_0 = 1000\;\text{Hz}$，波速 $v = 340\;\text{m/s}$。<br>
+(1) 波源以 $v_s = 20\;\text{m/s}$ 向静止观测者运动，求观测频率；<br>
+(2) 观测者以 $v_o = 20\;\text{m/s}$ 向静止波源运动，求观测频率。
+</div>
+
+<div class="sol">
+<div class="st">解题过程</div>
+
+<p><b>多普勒效应公式：</b></p>
+$$\nu' = \nu_0 \frac{v + v_o}{v - v_s}$$
+<p>其中 $v_o$：观测者靠近波源取 $+$；$v_s$：波源靠近观测者取 $+$。</p>
+
+<p><b>(1) 波源运动，观测者静止（$v_o = 0$，$v_s = 20\;\text{m/s}$）</b></p>
+$$\nu' = \nu_0 \frac{v}{v - v_s} = 1000 \times \frac{340}{340 - 20} = 1000 \times \frac{340}{320} = 1062.5\;\text{Hz}$$
+
+<p><b>(2) 观测者运动，波源静止（$v_o = 20\;\text{m/s}$，$v_s = 0$）</b></p>
+$$\nu' = \nu_0 \frac{v + v_o}{v} = 1000 \times \frac{340 + 20}{340} = 1000 \times \frac{360}{340} \approx 1058.8\;\text{Hz}$$
+
+<p><b>对比：两种情况结果不同！</b></p>
+<ul>
+  <li>波源运动：$\nu' = 1062.5\;\text{Hz}$</li>
+  <li>观测者运动：$\nu' \approx 1058.8\;\text{Hz}$</li>
+</ul>
+<p>虽然相对速度相同（都是 $20\;\text{m/s}$ 的相互靠近），但多普勒效应与媒质参考系有关，不仅取决于相对运动。</p>
+</div>
+
+<div class="warn">
+<b>易错点 - 符号约定：</b>使用公式 $\nu' = \nu_0\dfrac{v + v_o}{v - v_s}$ 时，$v_o$ 和 $v_s$ 的符号取决于运动方向：<br>
+- $v_o$：观测者<b>靠近</b>波源取正，<b>远离</b>取负；<br>
+- $v_s$：波源<b>靠近</b>观测者取正，<b>远离</b>取负。<br>
+<b>记忆口诀：</b>"近正远负，上接下离"（$v_o$ 在分子，靠近加；$v_s$ 在分母，靠近减）。
+</div>
+
+<div class="note">
+<b>物理解释：</b>波源运动改变的是波长（压缩或拉伸波列），观测者运动改变的是单位时间内接收的波峰数。两种机制不同，因此结果不同。只有当 $v_s, v_o \ll v$ 时，两者近似相等。
+</div>
+
+<!-- ==================== 6-24 ==================== -->
+<h2 id="ex6-24">题 6-24 相干波叠加</h2>
+
+<div class="ex">
+<b>题目：</b>两列相干波在某点的相位差 $\Delta\varphi = 3\pi$，振幅 $A_1 = A_2 = A$。求该点的合振幅。
+</div>
+
+<div class="sol">
+<div class="st">解题过程</div>
+
+<p><b>合振幅公式：</b></p>
+$$A_\text{合} = \sqrt{A_1^2 + A_2^2 + 2A_1 A_2\cos\Delta\varphi}$$
+
+<p><b>代入数据：</b></p>
+$$A_\text{合} = \sqrt{A^2 + A^2 + 2A^2\cos 3\pi}$$
+
+<p>注意 $\cos 3\pi = \cos\pi = -1$：</p>
+$$A_\text{合} = \sqrt{2A^2 + 2A^2 \times (-1)} = \sqrt{2A^2 - 2A^2} = \sqrt{0} = 0$$
+
+$$\boxed{A_\text{合} = 0 \quad\text{（完全相消干涉）}}$$
+</div>
+
+<div class="tip">
+<b>干涉条件速查：</b><br>
+- $\Delta\varphi = 2n\pi$（$n = 0, \pm1, \pm2, \ldots$）：<b>完全加强</b>，$A_\text{合} = A_1 + A_2$<br>
+- $\Delta\varphi = (2n+1)\pi$：<b>完全减弱</b>，$A_\text{合} = |A_1 - A_2|$<br>
+- 本题 $\Delta\varphi = 3\pi = (2 \times 1 + 1)\pi$，属于完全减弱；又因 $A_1 = A_2$，合振幅为零。
+</div>
+
+<div class="warn">
+<b>易错点：</b>$\cos 3\pi \neq \cos 3 \times 180° = +1$。正确做法：$3\pi$ 是奇数倍 $\pi$，所以 $\cos 3\pi = \cos\pi = -1$。做题时先判断 $\Delta\varphi$ 是偶数倍还是奇数倍 $\pi$，再确定加强还是减弱。
+</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

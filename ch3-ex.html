@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2章习题 功和能 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch3.html">← 第2章知识点</a></div>
+<h1>第2章习题 功和能</h1>
+
+<h2 id="p4">题 2-4</h2>
+<div class="ex">
+<strong>题目</strong>：力 $\vv{F}=(3+2x)\vv{i}$（N）作用在质量 $m=2\,\text{kg}$ 的物体上，使其沿 $x$ 轴从 $x=0$ 运动到 $x=4\,\text{m}$。求力 $F$ 做的功。
+<div class="sol"><div class="st">解</div>
+$$W=\int_0^4(3+2x)\dd x=\left[3x+x^2\right]_0^4=12+16=28\,\text{J}$$
+</div></div>
+
+<h2 id="p5">题 2-5</h2>
+<div class="ex">
+<strong>题目</strong>：力 $F=F_0\cos\omega t$ 作用于质量 $m$ 的物体（初始静止，沿 $x$ 轴运动）。求 $t=0$ 到 $t=\pi/(2\omega)$ 内力做的功。
+<div class="sol"><div class="st">解</div>
+<p>由 $ma=F_0\cos\omega t$，积分得速度：</p>
+$$v=\int_0^t \frac{F_0}{m}\cos\omega t'\,\dd t'=\frac{F_0}{m\omega}\sin\omega t$$
+<p>用动能定理（比直接积分 $W=\int F\dd x$ 更简洁）：</p>
+$$W=\Delta E_k=\frac{1}{2}mv^2=\frac{1}{2}m\left(\frac{F_0}{m\omega}\right)^2\sin^2\frac{\pi}{2}=\frac{F_0^2}{2m\omega^2}$$
+</div></div>
+<div class="tip"><strong>技巧</strong>：当力与位移的函数关系复杂时，优先考虑用动能定理 $W=\Delta E_k$ 间接求功。</div>
+
+<h2 id="p6">题 2-6</h2>
+<div class="ex">
+<strong>题目</strong>：质量 $m$ 的物体以初速 $v_0$ 沿粗糙水平面滑行距离 $s$ 后停下，摩擦系数 $\mu$。用动能定理验证。
+<div class="sol"><div class="st">解</div>
+<p>摩擦力做功：$W_f=-\mu mg\cdot s$</p>
+<p>动能变化：$\Delta E_k=0-\dfrac{1}{2}mv_0^2=-\dfrac{1}{2}mv_0^2$</p>
+<p>由动能定理：$W_f=\Delta E_k$</p>
+$$-\mu mgs=-\frac{1}{2}mv_0^2 \implies \mu=\frac{v_0^2}{2gs}$$
+</div></div>
+
+<h2 id="p8">题 2-8</h2>
+<div class="ex">
+<strong>题目</strong>：弹簧原长 $L_0$，劲度系数 $k$。从伸长 $x_1$ 继续拉到伸长 $x_2$，求第二段过程中弹性力做的功。
+<div class="sol"><div class="st">解</div>
+<p>弹性力 $F=-kx$（回复方向），做功：</p>
+$$W=\int_{x_1}^{x_2}(-kx)\dd x=-\frac{1}{2}k(x_2^2-x_1^2)$$
+<p>注意 $W<0$（弹性力方向与拉伸方向相反）。</p>
+<p>或用势能：$W=-\Delta E_p=-\left(\frac{1}{2}kx_2^2-\frac{1}{2}kx_1^2\right)$，结果一致。</p>
+</div></div>
+
+<h2 id="p10">题 2-10</h2>
+<div class="ex">
+<strong>题目</strong>：质量 $m$ 的物体从高 $h$ 处自由落下，落入泥中深 $d$ 后停止。求泥的平均阻力。
+<div class="sol"><div class="st">解</div>
+<p>全过程（从高 $h$ 到泥中深 $d$）用动能定理：</p>
+$$W_{合}=\Delta E_k=0-0=0$$
+<p>合力做功：重力 $mg(h+d)$（向下全程），阻力 $-F_{\text{avg}}\cdot d$（仅在泥中）：</p>
+$$mg(h+d)-F_{\text{avg}}\cdot d=0$$
+$$F_{\text{avg}}=mg\left(1+\frac{h}{d}\right)$$
+</div></div>
+<div class="warn"><strong>易错</strong>：落入泥中时重力仍做功！高度变化为 $h+d$，不是 $h$。</div>
+
+<h2 id="p11">题 2-11</h2>
+<div class="ex">
+<strong>题目</strong>：质量 $m$ 的物体沿半径 $R$ 的光滑竖直圆轨道内侧运动。求：(1) 通过最高点的最小速率；(2) 对应的底部速率。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1)</strong> 最高点：$mg+N=\dfrac{mv^2}{R}$</p>
+<p>最小速率对应 $N=0$（即将脱离轨道）：</p>
+$$v_{\min}=\sqrt{gR}$$
+
+<p><strong>(2)</strong> 由机械能守恒（底部到顶部，高度差 $2R$）：</p>
+$$\frac{1}{2}mv_0^2=\frac{1}{2}mv_{\min}^2+mg\cdot2R$$
+$$v_0=\sqrt{v_{\min}^2+4gR}=\sqrt{gR+4gR}=\sqrt{5gR}$$
+</div></div>
+
+<h2 id="p13">题 2-13</h2>
+<div class="ex">
+<strong>题目</strong>：一维势能 $E_p(x)=a/x^2-b/x$（$a,b>0$，$x>0$）。求：(1) 力 $F(x)$；(2) 平衡位置；(3) 平衡处势能。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1)</strong> $F=-\dfrac{\dd E_p}{\dd x}=-\left(-\dfrac{2a}{x^3}+\dfrac{b}{x^2}\right)=\dfrac{2a}{x^3}-\dfrac{b}{x^2}$</p>
+
+<p><strong>(2)</strong> 平衡位置 $F=0$：</p>
+$$\frac{2a}{x_0^3}=\frac{b}{x_0^2} \implies x_0=\frac{2a}{b}$$
+<p>验证稳定性：$\dfrac{\dd^2 E_p}{\dd x^2}\bigg|_{x_0}=\dfrac{6a}{x_0^4}-\dfrac{2b}{x_0^3}=\dfrac{b^4}{8a^3}-\dfrac{b^4}{4a^3}\cdot\dfrac{1}{...}$（可验证 $>0$，稳定平衡）</p>
+
+<p><strong>(3)</strong> $E_p(x_0)=\dfrac{a}{(2a/b)^2}-\dfrac{b}{2a/b}=\dfrac{ab^2}{4a^2}-\dfrac{b^2}{2a}=\dfrac{b^2}{4a}-\dfrac{b^2}{2a}=-\dfrac{b^2}{4a}$</p>
+</div></div>
+
+<h2 id="p14">题 2-14</h2>
+<div class="ex">
+<strong>题目</strong>：一维弹性正碰。质量 $m_1$ 以 $v_0$ 碰静止的 $m_2$。求：(1) 碰后速度；(2) 动能转移比例；(3) 何时转移最大。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1)</strong> 由动量守恒和动能守恒：</p>
+$$v_1'=\frac{m_1-m_2}{m_1+m_2}v_0,\quad v_2'=\frac{2m_1}{m_1+m_2}v_0$$
+
+<p><strong>(2)</strong> $m_2$ 获得的动能占比：</p>
+$$\eta=\frac{\frac{1}{2}m_2 v_2'^2}{\frac{1}{2}m_1 v_0^2}=\frac{4m_1 m_2}{(m_1+m_2)^2}$$
+
+<p><strong>(3)</strong> 令 $k=m_2/m_1$，$\eta=\dfrac{4k}{(1+k)^2}$。对 $k$ 求导令其为零：$\dfrac{\dd\eta}{\dd k}=\dfrac{4(1+k)^2-4k\cdot 2(1+k)}{(1+k)^4}=\dfrac{4(1-k)}{(1+k)^3}=0$ → $k=1$，即 $m_1=m_2$。</p>
+<p>此时 $\eta=1$，即 100% 动能转移（$m_1$ 停下，$m_2$ 以 $v_0$ 运动）。</p>
+</div></div>
+<div class="tip"><strong>重要结论</strong>：等质量弹性碰撞交换速度。这是台球运动的物理基础。</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

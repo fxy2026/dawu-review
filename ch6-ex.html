@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第5章习题 狭义相对论 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch6.html">← 第5章知识点</a></div>
+<h1>第5章习题 狭义相对论</h1>
+
+<h2 id="p3">题 5-3</h2>
+<div class="ex">
+<strong>题目</strong>：飞船以 $0.99c$ 经过地球，飞船上时钟走了1小时。地球上经过多少时间？
+<div class="sol"><div class="st">解</div>
+<p>飞船上是固有时间（同一地点的两个事件）：$\Delta\tau=1\,\text{h}$</p>
+<p>$\gamma=\dfrac{1}{\sqrt{1-0.99^2}}=\dfrac{1}{\sqrt{0.0199}}\approx7.09$</p>
+$$\Delta t=\gamma\Delta\tau=7.09\times1\approx7.09\,\text{h}$$
+</div></div>
+
+<h2 id="p4">题 5-4（高频真题型）</h2>
+<div class="ex">
+<strong>题目</strong>：$\mu$ 子固有寿命 $\tau_0=2\times10^{-6}\,\text{s}$，以 $v=0.998c$ 运动。求：(1) 实验室中观测寿命；(2) 实验室中飞行距离；(3) $\mu$ 子参考系中飞行距离。
+<div class="sol"><div class="st">解</div>
+<p>$\gamma=1/\sqrt{1-0.998^2}=1/\sqrt{0.004}\approx15.82$</p>
+<p><strong>(1)</strong> $\Delta t=\gamma\tau_0=15.82\times2\times10^{-6}=3.16\times10^{-5}\,\text{s}$</p>
+<p><strong>(2)</strong> $d=v\Delta t=0.998\times3\times10^8\times3.16\times10^{-5}\approx9460\,\text{m}\approx9.46\,\text{km}$</p>
+<p><strong>(3)</strong> 两种理解方式：</p>
+<ul>
+<li>$d'=v\tau_0=0.998\times3\times10^8\times2\times10^{-6}\approx599\,\text{m}$</li>
+<li>长度收缩：$d'=d/\gamma=9460/15.82\approx599\,\text{m}$ ✓</li>
+</ul>
+</div></div>
+<div class="tip"><strong>关键判断</strong>：谁的寿命是固有时间？在 $\mu$ 子自身参考系中，出生和衰变发生在同一地点 → $\tau_0$ 是固有时间。</div>
+
+<h2 id="p7">题 5-7</h2>
+<div class="ex">
+<strong>题目</strong>：尺在 $S$ 系中与 $x$ 轴成 $45°$，固有长 $L_0$。$S'$ 以 $v$ 沿 $x$ 轴运动。求 $S'$ 中尺的长度和角度。
+<div class="sol"><div class="st">解</div>
+<p>$S$ 系中分量：$L_x=L_0\cos45°=L_0/\sqrt{2}$，$L_y=L_0\sin45°=L_0/\sqrt{2}$</p>
+<p>$S'$ 系中：$L_x'=L_x/\gamma=L_0/(\gamma\sqrt{2})$（运动方向收缩），$L_y'=L_y=L_0/\sqrt{2}$（垂直方向不变）</p>
+$$L'=\sqrt{L_x'^2+L_y'^2}=\frac{L_0}{\sqrt{2}}\sqrt{\frac{1}{\gamma^2}+1}$$
+$$\tan\theta'=\frac{L_y'}{L_x'}=\gamma,\quad \theta'=\arctan\gamma$$
+<p>由于 $\gamma>1$，所以 $\theta'>45°$：在运动系中尺更"竖直"。</p>
+</div></div>
+
+<h2 id="p10">题 5-10</h2>
+<div class="ex">
+<strong>题目</strong>：两事件在 $S$ 系同时发生，相距 $\Delta x=1000\,\text{m}$。在 $S'$ 系中相距 $\Delta x'=2000\,\text{m}$。求 $S'$ 的速度和时间间隔。
+<div class="sol"><div class="st">解</div>
+<p>Lorentz变换：$\Delta x'=\gamma(\Delta x-v\Delta t)$。同时 $\Delta t=0$：</p>
+$$\Delta x'=\gamma\Delta x \implies \gamma=\frac{2000}{1000}=2$$
+<p>$\gamma=2 \implies \beta=\sqrt{1-1/4}=\frac{\sqrt{3}}{2}$，$v=\frac{\sqrt{3}}{2}c$</p>
+<p>时间间隔：$\Delta t'=\gamma\left(\Delta t-\dfrac{v\Delta x}{c^2}\right)=-\gamma\dfrac{v\Delta x}{c^2}=-2\times\dfrac{\sqrt{3}c/2\times1000}{c^2}=-\dfrac{1000\sqrt{3}}{c}$</p>
+$$|\Delta t'|=\frac{1000\sqrt{3}}{3\times10^8}\approx5.77\times10^{-6}\,\text{s}\approx5.77\,\mu\text{s}$$
+</div></div>
+<div class="warn"><strong>同时性的相对性</strong>：在 $S$ 系同时的两事件，在 $S'$ 系中不同时。$\Delta t'<0$ 说明在 $S'$ 中后一个事件先发生。</div>
+
+<h2 id="p12">题 5-12</h2>
+<div class="ex">
+<strong>题目</strong>：光子能量等于电子静能。求光子频率和波长。
+<div class="sol"><div class="st">解</div>
+<p>$E=m_0c^2=0.511\,\text{MeV}=h\nu$</p>
+$$\nu=\frac{m_0c^2}{h}=\frac{0.511\times10^6\times1.6\times10^{-19}}{6.626\times10^{-34}}=1.23\times10^{20}\,\text{Hz}$$
+$$\lambda=\frac{c}{\nu}=\frac{3\times10^8}{1.23\times10^{20}}=2.43\times10^{-12}\,\text{m}=0.00243\,\text{nm}$$
+<p>这是 $\gamma$ 射线波段。$\lambda=h/(m_0c)$ 就是电子的 Compton 波长。</p>
+</div></div>
+
+<h2 id="p13">题 5-13（高频真题型）</h2>
+<div class="ex">
+<strong>题目</strong>：电子动能等于其静能的 $n$ 倍，求速度和动量。
+<div class="sol"><div class="st">解</div>
+<p>$E_k=nm_0c^2$，总能 $E=E_k+E_0=(n+1)m_0c^2$</p>
+<p>又 $E=\gamma m_0c^2$，所以 $\gamma=n+1$</p>
+$$v=c\sqrt{1-\frac{1}{\gamma^2}}=c\sqrt{1-\frac{1}{(n+1)^2}}$$
+<p>由能量-动量关系 $E^2=(pc)^2+(m_0c^2)^2$：</p>
+$$p=\frac{1}{c}\sqrt{E^2-E_0^2}=m_0c\sqrt{(n+1)^2-1}=m_0c\sqrt{n^2+2n}$$
+</div></div>
+
+<h2 id="p16">题 5-16</h2>
+<div class="ex">
+<strong>题目</strong>：质子动能 $E_k=100\,\text{MeV}$，静能 $E_0=938.3\,\text{MeV}$。求速度、动量和总能。
+<div class="sol"><div class="st">解</div>
+<p>$E=E_k+E_0=1038.3\,\text{MeV}$</p>
+<p>$\gamma=E/E_0=1038.3/938.3=1.1066$</p>
+<p>$v=c\sqrt{1-1/\gamma^2}=c\sqrt{1-0.817}=0.428c$</p>
+<p>$p=\sqrt{E^2-E_0^2}/c=\sqrt{1038.3^2-938.3^2}/c=\sqrt{197600}/c\approx444.5\,\text{MeV}/c$</p>
+</div></div>
+
+<h2 id="p19">题 5-19</h2>
+<div class="ex">
+<strong>题目</strong>：$\pi^0$ 介子静止衰变为两个光子。$\pi^0$ 静能 $134.96\,\text{MeV}$。求每个光子的能量。
+<div class="sol"><div class="st">解</div>
+<p>动量守恒：两光子方向相反，动量等大。所以能量也相等。</p>
+<p>能量守恒：$E_0=2E_\gamma$</p>
+$$E_\gamma=\frac{E_0}{2}=\frac{134.96}{2}=67.48\,\text{MeV}$$
+<p>$\nu=E_\gamma/h=67.48\times10^6\times1.6\times10^{-19}/(6.626\times10^{-34})\approx1.63\times10^{22}\,\text{Hz}$</p>
+</div></div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

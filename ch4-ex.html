@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3章习题 动量与角动量 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch4.html">← 第3章知识点</a></div>
+<h1>第3章习题 动量与角动量</h1>
+
+<h2 id="p3">题 3-3</h2>
+<div class="ex">
+<strong>题目</strong>：$m_1=1\,\text{kg}$ 的小球以 $v_1=3\,\text{m/s}$ 向右运动，与静止的 $m_2=2\,\text{kg}$ 小球正碰。求碰后速度：(1) 完全弹性碰撞；(2) 完全非弹性碰撞。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1) 完全弹性碰撞</strong></p>
+$$v_1'=\frac{m_1-m_2}{m_1+m_2}v_1=\frac{1-2}{3}\times3=-1\,\text{m/s}（反弹）$$
+$$v_2'=\frac{2m_1}{m_1+m_2}v_1=\frac{2}{3}\times3=2\,\text{m/s}$$
+<p>验证动量：$1\times(-1)+2\times2=3$ ✓ 动能：$\frac{1}{2}(1+8)=4.5=\frac{1}{2}\times1\times9$ ✓</p>
+
+<p><strong>(2) 完全非弹性碰撞</strong></p>
+$$v=\frac{m_1 v_1}{m_1+m_2}=\frac{3}{3}=1\,\text{m/s}$$
+<p>动能损失：$\Delta E_k=\frac{1}{2}\times1\times9-\frac{1}{2}\times3\times1=4.5-1.5=3\,\text{J}$</p>
+</div></div>
+
+<h2 id="p4">题 3-4</h2>
+<div class="ex">
+<strong>题目</strong>：子弹 $m=10\,\text{g}$ 以 $v_0=400\,\text{m/s}$ 射入静止木块 $M=1\,\text{kg}$，嵌入一起运动。求共同速度和动能损失。
+<div class="sol"><div class="st">解</div>
+<p>$v=\dfrac{mv_0}{m+M}=\dfrac{0.01\times400}{1.01}\approx3.96\,\text{m/s}$</p>
+<p>$\Delta E_k=\frac{1}{2}mv_0^2-\frac{1}{2}(m+M)v^2=800-7.92\approx792\,\text{J}$</p>
+<p>损失比例：$792/800=99\%$（几乎全部转化为热能）</p>
+</div></div>
+
+<h2 id="p7">题 3-7</h2>
+<div class="ex">
+<strong>题目</strong>：质量 $M$ 的炮车静止，发射质量 $m$ 的炮弹，炮弹速度 $v_1$（对地）。求炮车反冲速度。
+<div class="sol"><div class="st">解</div>
+<p>系统初动量为零：$0=(M-m)V+mv_1$</p>
+$$V=-\frac{mv_1}{M-m}$$
+<p>负号表示炮车与炮弹方向相反（后坐力）。</p>
+</div></div>
+
+<h2 id="p10">题 3-10</h2>
+<div class="ex">
+<strong>题目</strong>：$m_1$ 以 $v_0$ 碰静止 $m_2$，完全非弹性碰撞。求动能损失比例。
+<div class="sol"><div class="st">解</div>
+$$v=\frac{m_1 v_0}{m_1+m_2}$$
+$$\frac{\Delta E_k}{E_{k0}}=1-\frac{(m_1+m_2)v^2}{m_1 v_0^2}=1-\frac{m_1}{m_1+m_2}=\frac{m_2}{m_1+m_2}$$
+</div></div>
+
+<h2 id="p13">题 3-13</h2>
+<div class="ex">
+<strong>题目</strong>：求均匀半圆形薄板（半径 $R$，质量 $M$）的质心位置。
+<div class="sol"><div class="st">解</div>
+<p>取圆心为原点，对称轴为 $y$ 轴。由对称性 $x_C=0$。</p>
+<p>面密度 $\sigma=M/(\frac{1}{2}\pi R^2)=2M/(\pi R^2)$</p>
+<p>取微元：半径 $r$ 到 $r+\dd r$ 的半环，$\dd m=\sigma\cdot\pi r\,\dd r$</p>
+<p>该微元质心在 $y=2r/\pi$（半圆环质心）处，或者用极坐标面积元：</p>
+$$y_C=\frac{1}{M}\int\int y\,\dd m=\frac{\sigma}{M}\int_0^R\int_0^\pi r\sin\theta\cdot r\,\dd r\,\dd\theta$$
+$$=\frac{\sigma}{M}\int_0^R r^2\dd r\int_0^\pi\sin\theta\,\dd\theta=\frac{\sigma}{M}\cdot\frac{R^3}{3}\cdot2=\frac{4R}{3\pi}$$
+</div></div>
+
+<h2 id="p19">题 3-19</h2>
+<div class="ex">
+<strong>题目</strong>：质点 $m$ 在半径 $R$ 的圆上运动，速率 $v=ct$。求：(1) 对圆心角动量 $L(t)$；(2) 合力矩 $M$。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1)</strong> 速度始终垂直于半径：$L=mvR=m(ct)R=mcRt$</p>
+<p><strong>(2)</strong> $M=\dfrac{\dd L}{\dd t}=mcR$（恒量）</p>
+<p>验证：$a_\tau=c$，切向力 $F_\tau=mc$，力矩 $M=F_\tau\cdot R=mcR$ ✓</p>
+<p>（法向力指向圆心，对圆心力矩为零）</p>
+</div></div>
+
+<h2 id="p23">题 3-23</h2>
+<div class="ex">
+<strong>题目</strong>：人站在转台中央手持哑铃，伸臂时 $J_1=6\,\text{kg·m}^2$，$\omega_1=1\,\text{rev/s}$；收臂后 $J_2=2\,\text{kg·m}^2$。求 $\omega_2$。
+<div class="sol"><div class="st">解</div>
+<p>外力矩为零，角动量守恒：$J_1\omega_1=J_2\omega_2$</p>
+$$\omega_2=\frac{J_1\omega_1}{J_2}=\frac{6\times1}{2}=3\,\text{rev/s}$$
+<p>转速增为3倍。转动动能变化：$\Delta E_k=\frac{1}{2}J_2\omega_2^2-\frac{1}{2}J_1\omega_1^2=\frac{1}{2}(2\times9-6\times1)(2\pi)^2=24\pi^2\,\text{J}$</p>
+<p>（动能增加来自人体内力做功）</p>
+</div></div>
+
+<h2 id="p27">题 3-27</h2>
+<div class="ex">
+<strong>题目</strong>：弹道摆：质量 $m$ 的子弹以 $v_0$ 水平射入悬挂的质量 $M$ 的木块（杆长 $l$），求摆起最大角 $\theta$。
+<div class="sol"><div class="st">解</div>
+<p><strong>第一阶段</strong>（碰撞，动量守恒）：$mv_0=(m+M)v$</p>
+<p><strong>第二阶段</strong>（摆起，机械能守恒）：</p>
+$$\frac{1}{2}(m+M)v^2=(m+M)gl(1-\cos\theta)$$
+$$v^2=2gl(1-\cos\theta)$$
+<p>代入 $v=mv_0/(m+M)$：</p>
+$$\cos\theta=1-\frac{m^2v_0^2}{2(m+M)^2gl}$$
+</div></div>
+<div class="warn"><strong>关键</strong>：碰撞瞬间不能用能量守恒（有能量损失），只能用动量守恒；碰后摆动过程可用机械能守恒。</div>
+
+<h2 id="p28">题 3-28</h2>
+<div class="ex">
+<strong>题目</strong>：光滑水平面上质量 $M$ 的板上放质量 $m$ 的物块（摩擦系数 $\mu$），给物块初速 $v_0$。求：(1) 共同速度；(2) 物块相对板的位移；(3) 摩擦产生的热量。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1)</strong> 动量守恒：$mv_0=(m+M)v$</p>
+$$v=\frac{mv_0}{m+M}$$
+
+<p><strong>(2)</strong> 物块：$a_1=-\mu g$，板：$a_2=\mu mg/M$（向前）</p>
+<p>达共同速度的时间：$v_0-\mu gt^*=\mu mg t^*/M$ → $t^*=\dfrac{Mv_0}{(m+M)\mu g}$</p>
+<p>物块位移：$s_1=v_0 t^*-\frac{1}{2}\mu g t^{*2}$</p>
+<p>板的位移：$s_2=\frac{1}{2}\cdot\frac{\mu mg}{M}\cdot t^{*2}$</p>
+<p>更简洁的方法——用能量：</p>
+
+<p><strong>(3)</strong> 摩擦产生的热量（用约化质量公式）：</p>
+$$Q=\frac{1}{2}\frac{mM}{m+M}v_0^2$$
+<p>而 $Q=\mu mg\cdot\Delta s$，所以相对位移：</p>
+$$\Delta s=\frac{Q}{\mu mg}=\frac{Mv_0^2}{2(m+M)\mu g}$$
+</div></div>
+<div class="tip"><strong>约化质量公式</strong>：完全非弹性碰撞的能量损失 $Q=\frac{1}{2}\mu_r v_{rel}^2$，其中 $\mu_r=\frac{m_1 m_2}{m_1+m_2}$ 为约化质量。此公式非常实用！</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

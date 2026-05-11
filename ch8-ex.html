@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第8章习题 气体动理论 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch8.html">← 第8章知识点</a></div>
+<h1>第8章习题 气体动理论</h1>
+
+<h2 id="p4">题 8-4</h2>
+<div class="ex">
+<strong>题目</strong>：$N_2$（$M=28\,\text{g/mol}$），$T=300\,\text{K}$。求：(1) 分子平均平动动能；(2) 1 mol气体内能。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1)</strong> $\bar{\varepsilon}_k=\dfrac{3}{2}kT=\dfrac{3}{2}\times1.38\times10^{-23}\times300=6.21\times10^{-21}\,\text{J}$</p>
+<p><strong>(2)</strong> $N_2$ 为刚性双原子分子，$i=5$</p>
+$$E=\nu\frac{i}{2}RT=1\times\frac{5}{2}\times8.314\times300=6235.5\,\text{J}$$
+</div></div>
+<div class="warn"><strong>易错</strong>：平均平动动能 $\frac{3}{2}kT$ 对所有理想气体都成立（只取决于温度），但内能 $\frac{i}{2}RT$ 与分子自由度有关！</div>
+
+<h2 id="p5">题 8-5</h2>
+<div class="ex">
+<strong>题目</strong>：$O_2$（$M=32\,\text{g/mol}$），$p=1\,\text{atm}$，$\rho=1.30\,\text{kg/m}^3$。求方均根速率和温度。
+<div class="sol"><div class="st">解</div>
+<p>由压强公式 $p=\frac{1}{3}\rho\overline{v^2}$：</p>
+$$v_{rms}=\sqrt{\frac{3p}{\rho}}=\sqrt{\frac{3\times1.013\times10^5}{1.30}}=\sqrt{233769}\approx483\,\text{m/s}$$
+<p>由 $v_{rms}=\sqrt{3RT/M}$：</p>
+$$T=\frac{Mv_{rms}^2}{3R}=\frac{0.032\times483^2}{3\times8.314}\approx299\,\text{K}$$
+</div></div>
+
+<h2 id="p8">题 8-8</h2>
+<div class="ex">
+<strong>题目</strong>：理想气体 $p=1.0\times10^5\,\text{Pa}$，$n=1.0\times10^{25}\,\text{m}^{-3}$。求温度和分子平均平动动能。
+<div class="sol"><div class="st">解</div>
+<p>$p=nkT$ → $T=p/(nk)=\dfrac{1.0\times10^5}{1.0\times10^{25}\times1.38\times10^{-23}}=\dfrac{10^5}{138}\approx725\,\text{K}$</p>
+<p>$\bar{\varepsilon}_k=\dfrac{3}{2}kT=\dfrac{3}{2}\times1.38\times10^{-23}\times725=1.50\times10^{-20}\,\text{J}$</p>
+</div></div>
+
+<h2 id="p10">题 8-10</h2>
+<div class="ex">
+<strong>题目</strong>：标准状态（$0°\text{C}$，$1\,\text{atm}$）下气体密度 $\rho=1.25\,\text{kg/m}^3$。求摩尔质量和方均根速率。
+<div class="sol"><div class="st">解</div>
+<p>由 $pV=\nu RT=(m/M)RT$，$p=\rho RT/M$：</p>
+$$M=\frac{\rho RT}{p}=\frac{1.25\times8.314\times273}{1.013\times10^5}=0.028\,\text{kg/mol}=28\,\text{g/mol}$$
+<p>这是 $N_2$！</p>
+$$v_{rms}=\sqrt{\frac{3RT}{M}}=\sqrt{\frac{3\times8.314\times273}{0.028}}\approx493\,\text{m/s}$$
+</div></div>
+
+<h2 id="p11">题 8-11</h2>
+<div class="ex">
+<strong>题目</strong>：求标准状态下 $O_2$ 的三种速率。
+<div class="sol"><div class="st">解</div>
+<p>$T=273\,\text{K}$，$M=0.032\,\text{kg/mol}$</p>
+$$v_p=\sqrt{\frac{2RT}{M}}=\sqrt{\frac{2\times8.314\times273}{0.032}}\approx377\,\text{m/s}$$
+$$\bar{v}=\sqrt{\frac{8RT}{\pi M}}=\sqrt{\frac{8\times8.314\times273}{\pi\times0.032}}\approx425\,\text{m/s}$$
+$$v_{rms}=\sqrt{\frac{3RT}{M}}=\sqrt{\frac{3\times8.314\times273}{0.032}}\approx461\,\text{m/s}$$
+<p>验证：$v_p<\bar{v}<v_{rms}$（$377<425<461$）✓</p>
+</div></div>
+
+<h2 id="p14">题 8-14</h2>
+<div class="ex">
+<strong>题目</strong>：由Maxwell速率分布函数 $f(v)$ 推导最概然速率 $v_p$。
+<div class="sol"><div class="st">解</div>
+<p>$f(v)=4\pi\left(\dfrac{m}{2\pi kT}\right)^{3/2}v^2\exp\left(-\dfrac{mv^2}{2kT}\right)$</p>
+<p>令 $\dfrac{\dd f}{\dd v}=0$，只需对 $v^2 e^{-mv^2/(2kT)}$ 求导：</p>
+$$\frac{\dd}{\dd v}\left(v^2 e^{-\frac{mv^2}{2kT}}\right)=2v\cdot e^{-\frac{mv^2}{2kT}}+v^2\left(-\frac{mv}{kT}\right)e^{-\frac{mv^2}{2kT}}=0$$
+<p>除以 $v\cdot e^{-mv^2/(2kT)}\neq0$：</p>
+$$2-\frac{mv^2}{kT}=0 \implies v_p=\sqrt{\frac{2kT}{m}}=\sqrt{\frac{2RT}{M}}$$
+</div></div>
+
+<h2 id="p18">题 8-18</h2>
+<div class="ex">
+<strong>题目</strong>：$O_2$ 有效直径 $d=3.6\times10^{-10}\,\text{m}$，标准状态下求平均自由程和碰撞频率。
+<div class="sol"><div class="st">解</div>
+<p>分子数密度：$n=p/(kT)=\dfrac{1.013\times10^5}{1.38\times10^{-23}\times273}=2.69\times10^{25}\,\text{m}^{-3}$</p>
+$$\bar{\lambda}=\frac{1}{\sqrt{2}\pi d^2 n}=\frac{1}{\sqrt{2}\times\pi\times(3.6\times10^{-10})^2\times2.69\times10^{25}}$$
+$$=\frac{1}{1.548\times10^7}\approx6.46\times10^{-8}\,\text{m}\approx64.6\,\text{nm}$$
+<p>碰撞频率：$\bar{Z}=\bar{v}/\bar{\lambda}=425/(6.46\times10^{-8})\approx6.58\times10^9\,\text{s}^{-1}$</p>
+</div></div>
+
+<h2 id="p21">题 8-21</h2>
+<div class="ex">
+<strong>题目</strong>：$H_2$（$M=2$）和 $He$（$M=4$）混合，$T=300\,\text{K}$。求：(1) 平均平动动能比；(2) 平均速率比；(3) 方均根速率比。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1)</strong> $\bar{\varepsilon}_k=\frac{3}{2}kT$，只与 $T$ 有关 → 比值 $=1:1$</p>
+<p><strong>(2)</strong> $\bar{v}\propto\sqrt{1/M}$ → $\bar{v}_{H_2}/\bar{v}_{He}=\sqrt{M_{He}/M_{H_2}}=\sqrt{4/2}=\sqrt{2}$</p>
+<p><strong>(3)</strong> $v_{rms}\propto\sqrt{1/M}$ → $v_{rms,H_2}/v_{rms,He}=\sqrt{4/2}=\sqrt{2}$</p>
+</div></div>
+<div class="tip"><strong>核心</strong>：温度相同 → 平均平动动能相同；但速率与摩尔质量有关（轻分子跑得快）。</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

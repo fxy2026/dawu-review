@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1章习题 质点运动学 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch1.html">← 第1章知识点</a></div>
+<h1>第1章习题 质点运动学</h1>
+
+<h2 id="p7">题 1-7</h2>
+<div class="ex">
+<strong>题目</strong>：一质点沿 $x$ 轴运动，运动方程为 $x=2t-2t^2+t^3$（SI）。求：(1) 前2s内的位移和路程；(2) 前2s内的平均速度和平均速率；(3) $t=2\,\text{s}$ 时的瞬时速度和加速度。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1) 位移和路程</strong></p>
+<p>速度：$v=\dfrac{\dd x}{\dd t}=2-4t+3t^2$</p>
+<p>令 $v=0$：$3t^2-4t+2=0$，$t=\dfrac{4\pm\sqrt{16-24}}{6}$，判别式 $\Delta<0$，说明 $v$ 无实数零点。</p>
+<p>检查：$v(0)=2>0$，$v(1)=1>0$，$v(2)=6>0$，说明质点始终沿正方向运动。</p>
+<p>位移：$\Delta x=x(2)-x(0)=(4-8+8)-0=4\,\text{m}$</p>
+<p>路程：质点无折返，路程 $=$ 位移 $=4\,\text{m}$</p>
+
+<p><strong>(2) 平均速度和平均速率</strong></p>
+<p>$\bar{v}=\dfrac{\Delta x}{\Delta t}=\dfrac{4}{2}=2\,\text{m/s}$</p>
+<p>质点无折返，平均速率 $=$ 平均速度 $=2\,\text{m/s}$</p>
+
+<p><strong>(3) 瞬时速度和加速度</strong></p>
+<p>$v(2)=2-8+12=6\,\text{m/s}$</p>
+<p>$a=\dfrac{\dd v}{\dd t}=-4+6t$，$a(2)=-4+12=8\,\text{m/s}^2$</p>
+</div></div>
+
+<h2 id="p17">题 1-17</h2>
+<div class="ex">
+<strong>题目</strong>：一质点沿半径为 $R$ 的圆周运动，角位置 $\theta=t^3/3$（SI）。求 $t=2\,\text{s}$ 时：(1) 角速度和角加速度；(2) 切向加速度和法向加速度；(3) 总加速度的大小和方向。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1) 角量</strong></p>
+<p>$\omega=\dfrac{\dd\theta}{\dd t}=t^2$，$\alpha=\dfrac{\dd\omega}{\dd t}=2t$</p>
+<p>$t=2\,\text{s}$：$\omega=4\,\text{rad/s}$，$\alpha=4\,\text{rad/s}^2$</p>
+
+<p><strong>(2) 线加速度</strong></p>
+<p>$a_\tau=R\alpha=4R\,\text{m/s}^2$</p>
+<p>$a_n=R\omega^2=16R\,\text{m/s}^2$</p>
+
+<p><strong>(3) 总加速度</strong></p>
+$$a=\sqrt{a_\tau^2+a_n^2}=R\sqrt{16+256}=4R\sqrt{17}\,\text{m/s}^2$$
+<p>与半径方向的夹角：$\tan\beta=\dfrac{a_\tau}{a_n}=\dfrac{4R}{16R}=\dfrac{1}{4}$，$\beta=\arctan(1/4)\approx14.0°$</p>
+</div></div>
+
+<h2 id="p19">题 1-19</h2>
+<div class="ex">
+<strong>题目</strong>：飞轮以初角速度 $\omega_0=100\,\text{rad/s}$ 转动，受摩擦力矩作用产生角加速度 $\alpha=-5\,\text{rad/s}^2$。求：(1) 飞轮经多长时间停转；(2) 停转前共转多少圈。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1)</strong> $\omega=\omega_0+\alpha t=0$</p>
+<p>$t=-\omega_0/\alpha=100/5=20\,\text{s}$</p>
+
+<p><strong>(2)</strong> $\theta=\omega_0 t+\frac{1}{2}\alpha t^2=100\times20+\frac{1}{2}(-5)\times400=2000-1000=1000\,\text{rad}$</p>
+<p>$N=\theta/(2\pi)=1000/(2\pi)\approx159.2$ 圈</p>
+<p>或用 $\omega^2=\omega_0^2+2\alpha\theta$：$\theta=\omega_0^2/(2|\alpha|)=10000/10=1000\,\text{rad}$ ✓</p>
+</div></div>
+
+<h2 id="p21">题 1-21</h2>
+<div class="ex">
+<strong>题目</strong>：一质点作曲线运动，某时刻速度大小为 $v$，速率变化率为 $\dd v/\dd t$，总加速度大小为 $a$。求该时刻：(1) 切向和法向加速度；(2) 曲率半径。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1)</strong> 切向加速度就是速率变化率：$a_\tau=\dfrac{\dd v}{\dd t}$</p>
+<p>法向加速度：$a_n=\sqrt{a^2-a_\tau^2}=\sqrt{a^2-\left(\dfrac{\dd v}{\dd t}\right)^2}$</p>
+
+<p><strong>(2)</strong> 由 $a_n=v^2/\rho$：</p>
+$$\rho=\frac{v^2}{a_n}=\frac{v^2}{\sqrt{a^2-({\dd v}/{\dd t})^2}}$$
+</div></div>
+<div class="warn"><strong>易错</strong>：$\dd v/\dd t$（速率变化率）$\neq$ $|\dd\vv{v}/\dd t|$（加速度大小）。前者是切向加速度，后者是总加速度。</div>
+
+<h2 id="p23">题 1-23</h2>
+<div class="ex">
+<strong>题目</strong>：一质点以初速 $v_0$ 沿光滑斜面（倾角 $\theta$）上滑。求：(1) 质点沿斜面上滑的最远距离；(2) 返回出发点的速度。
+<div class="sol"><div class="st">解</div>
+<p>沿斜面建坐标，向上为正。加速度 $a=-g\sin\theta$。</p>
+<p><strong>(1)</strong> 在最远处 $v=0$：</p>
+$$v^2=v_0^2+2a\cdot s=v_0^2-2g\sin\theta\cdot s_{\max}=0$$
+$$s_{\max}=\frac{v_0^2}{2g\sin\theta}$$
+
+<p><strong>(2)</strong> 光滑斜面无摩擦，由对称性（或能量守恒），返回速度大小为 $v_0$，方向沿斜面向下。</p>
+</div></div>
+
+<h2 id="p24">题 1-24</h2>
+<div class="ex">
+<strong>题目</strong>：质点沿 $x$ 轴运动，加速度 $a=4t$（SI），初条件 $t=0$ 时 $x_0=0$，$v_0=0$。求运动方程。
+<div class="sol"><div class="st">解</div>
+<p>积分求速度：$v=\int a\,\dd t=\int 4t\,\dd t=2t^2+C_1$</p>
+<p>$v(0)=0 \Rightarrow C_1=0$，$v=2t^2$</p>
+<p>积分求位置：$x=\int v\,\dd t=\int 2t^2\,\dd t=\dfrac{2}{3}t^3+C_2$</p>
+<p>$x(0)=0 \Rightarrow C_2=0$</p>
+$$\boxed{x=\frac{2}{3}t^3\,\text{(m)}}$$
+</div></div>
+
+<h2 id="p25">题 1-25</h2>
+<div class="ex">
+<strong>题目</strong>：从高 $H$ 处自由下落一物体，在最后 $1\,\text{s}$ 内下落 $25\,\text{m}$。求 $H$。（取 $g=10\,\text{m/s}^2$）
+<div class="sol"><div class="st">解</div>
+<p>设总下落时间为 $T$，则 $H=\frac{1}{2}gT^2$</p>
+<p>前 $(T-1)\,\text{s}$ 下落：$h_1=\frac{1}{2}g(T-1)^2$</p>
+<p>最后1s下落距离：$H-h_1=25$</p>
+$$\frac{1}{2}g[T^2-(T-1)^2]=25$$
+$$\frac{1}{2}g(2T-1)=25$$
+<p>代入 $g=10$：$5(2T-1)=25$，$2T-1=5$，$T=3\,\text{s}$</p>
+$$H=\frac{1}{2}\times10\times9=45\,\text{m}$$
+</div></div>
+
+<h2 id="p31">题 1-31</h2>
+<div class="ex">
+<strong>题目</strong>：质点在 $xOy$ 平面运动，$x=2t$，$y=2t^2$（SI）。求：(1) 轨迹方程；(2) $t=1\,\text{s}$ 时速度和加速度；(3) $t=1\,\text{s}$ 时切向和法向加速度。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1) 轨迹方程</strong></p>
+<p>由 $x=2t$ 得 $t=x/2$，代入 $y=2t^2$：</p>
+$$y=2(x/2)^2=\frac{x^2}{2}$$
+
+<p><strong>(2) 速度和加速度</strong></p>
+<p>$v_x=\dot{x}=2$，$v_y=\dot{y}=4t$</p>
+<p>$t=1$：$v=\sqrt{v_x^2+v_y^2}=\sqrt{4+16}=2\sqrt{5}\approx4.47\,\text{m/s}$</p>
+<p>$a_x=0$，$a_y=4$，$a=4\,\text{m/s}^2$（方向沿 $y$ 轴正方向）</p>
+
+<p><strong>(3) 切向和法向加速度</strong></p>
+<p>$v=\sqrt{4+16t^2}$，$a_\tau=\dfrac{\dd v}{\dd t}=\dfrac{16t}{\sqrt{4+16t^2}}$</p>
+<p>$t=1$：$a_\tau=\dfrac{16}{\sqrt{20}}=\dfrac{16}{2\sqrt{5}}=\dfrac{8\sqrt{5}}{5}\approx3.58\,\text{m/s}^2$</p>
+<p>$a_n=\sqrt{a^2-a_\tau^2}=\sqrt{16-\dfrac{64}{5}}=\sqrt{\dfrac{16}{5}}=\dfrac{4\sqrt{5}}{5}\approx1.79\,\text{m/s}^2$</p>
+<p>验证：$a_\tau^2+a_n^2=64/5+16/5=80/5=16=a^2$ ✓</p>
+</div></div>
+
+<h2 id="p32">题 1-32</h2>
+<div class="ex">
+<strong>题目</strong>：抛体运动，初速 $v_0$，抛射角 $\theta$。求：(1) 轨迹最高点的曲率半径；(2) 落地点的曲率半径。
+<div class="sol"><div class="st">解</div>
+<p>抛体运动中，加速度始终为 $g$（竖直向下）。</p>
+
+<p><strong>(1) 最高点</strong></p>
+<p>最高点速度只有水平分量：$v=v_0\cos\theta$</p>
+<p>此时加速度完全沿法向（速度水平，加速度竖直）：$a_n=g$</p>
+$$\rho_{\text{顶}}=\frac{v^2}{a_n}=\frac{v_0^2\cos^2\theta}{g}$$
+
+<p><strong>(2) 落地点</strong></p>
+<p>落地时速度大小 $v=v_0$（对称性），与水平方向夹角 $\theta$</p>
+<p>加速度 $g$ 的法向分量：$a_n=g\cos\theta$（加速度与速度方向的夹角为 $90°-\theta$，法向分量取垂直于速度方向的分量）</p>
+$$\rho_{\text{落}}=\frac{v^2}{a_n}=\frac{v_0^2}{g\cos\theta}$$
+</div></div>
+<div class="tip"><strong>方法总结</strong>：求曲率半径的关键是找到该点的速度 $v$ 和法向加速度 $a_n$。注意法向加速度是总加速度在垂直于速度方向上的分量。</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>
