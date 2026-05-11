@@ -152,6 +152,81 @@ $$v = v_1 e^{-\mu(t-t_1)/(M+m_0)}$$
 </ul></div>
 </div>
 
+<h2 id="s9">3.9 角动量守恒典型问题（PPT重点）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（人+转台问题——真题高频）</strong>：人站在光滑转台上，手持哑铃伸臂旋转。初始状态总转动惯量 $J_1$，角速度 $\omega_1$。收臂后 $J_2$（$J_2<J_1$），求末角速度和动能变化。
+<div class="sol"><div class="st">解</div>
+<p>无外力矩 → 角动量守恒：$J_1\omega_1=J_2\omega_2$</p>
+<p>$\omega_2=\frac{J_1}{J_2}\omega_1 > \omega_1$（转快了）</p>
+<p>动能变化：$\Delta E_k=\frac{1}{2}J_2\omega_2^2-\frac{1}{2}J_1\omega_1^2=\frac{1}{2}J_1\omega_1^2(\frac{J_1}{J_2}-1)>0$</p>
+<p>动能增加！能量来源：人收臂做的功（内力做功）。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（子弹打木块+角动量）</strong>：质量 $m$ 的子弹以 $v_0$ 水平射入悬挂在细绳下端的质量 $M$ 的木块（绳长 $L$）下端。求：木块上升的最大高度。
+<div class="sol"><div class="st">解</div>
+<p>碰撞瞬间（完全非弹性）→ 动量守恒：</p>
+<p>$mv_0=(m+M)v$，$v=\frac{mv_0}{m+M}$</p>
+<p>碰后机械能守恒（绳不做功）：</p>
+<p>$\frac{1}{2}(m+M)v^2=(m+M)gh$</p>
+$$h=\frac{v^2}{2g}=\frac{m^2v_0^2}{2g(m+M)^2}$$
+<p>这是典型的<strong>弹道摆</strong>问题——两阶段分别用不同守恒律。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（有心力+角动量守恒）</strong>：小球在光滑水平面上用细绳绕中心孔做圆周运动，初始半径 $r_1$，速度 $v_1$。从下方缓慢拉绳使半径减为 $r_2$，求拉力做的功。
+<div class="sol"><div class="st">解</div>
+<p>对中心孔的角动量守恒（绳张力过中心）：$mv_1r_1=mv_2r_2$</p>
+<p>$v_2=v_1r_1/r_2$</p>
+<p>拉力做功 = 动能增量：</p>
+$$W=\frac{1}{2}m(v_2^2-v_1^2)=\frac{1}{2}mv_1^2\left(\frac{r_1^2}{r_2^2}-1\right)$$
+</div></div>
+</div>
+
+<h2 id="s10">3.10 冲量计算与应用</h2>
+<div class="card">
+<div class="fb">
+<div class="t">冲量计算要点</div>
+<p><strong>恒力</strong>：$\vv{I}=\vv{F}\cdot\Delta t$</p>
+<p><strong>变力</strong>：$\vv{I}=\int_{t_1}^{t_2}\vv{F}\dd t$</p>
+<p><strong>间接法</strong>：$\vv{I}=\Delta\vv{p}=m\vv{v}_2-m\vv{v}_1$（不需要知道力的具体表达式！）</p>
+</div>
+
+<div class="ex">
+<strong>例（重力冲量 vs 绳张力冲量）</strong>：质量 $m$ 的球用绳系住做竖直面上的圆周运动，求从最低点到最高点过程中绳的冲量。
+<div class="sol"><div class="st">解</div>
+<p>向上为正。动量变化：$\Delta p_y=mv_{top}(-\hat{j})-mv_{bottom}(\hat{j})$... 实际上需要矢量分析。</p>
+<p>用间接法更简单：取向上为正</p>
+<p>$y$ 方向：从最低点（$v_y=v_B$向左/右切向）到最高点（$v_y=-v_T$向左/右切向）</p>
+<p>其实用分量形式：重力冲量 $I_g=-mg\cdot\Delta t$（向下），剩余由张力提供。</p>
+<p>更好的做法：利用 $\int T\dd t = \Delta p - \int(-mg)\dd t$，根据题目条件具体计算。</p>
+</div></div>
+
+<div class="warn"><strong>常见考法</strong>：求碰撞中的平均力——已知碰撞时间 $\Delta t$ 和动量变化 $\Delta p$，则 $\bar{F}=\Delta p/\Delta t$。</div>
+</div>
+
+<h2 id="s11">3.11 质心系与质心参考系</h2>
+<div class="card">
+<div class="fb">
+<div class="t">质心参考系（C系）的特点</div>
+<ol>
+<li>在C系中，系统总动量恒为零：$\sum m_i\vv{v}_i'=0$</li>
+<li>C系通常是非惯性系（若质心加速运动）</li>
+<li>碰撞问题在C系中分析特别简单</li>
+</ol>
+</div>
+
+<div class="fb">
+<div class="t">柯尼希定理</div>
+<p>系统总动能 = 质心动能 + 相对质心的动能：</p>
+$$E_k = \frac{1}{2}Mv_C^2 + \sum\frac{1}{2}m_iv_i'^2$$
+<p>其中 $v_i'$ 为第 $i$ 个质点相对质心的速度。</p>
+</div>
+
+<div class="tip"><strong>应用</strong>：完全非弹性碰撞损失的动能 = 碰前在质心系中的总动能 = $\frac{1}{2}\mu v_{rel}^2$，其中 $\mu=m_1m_2/(m_1+m_2)$ 为约化质量，$v_{rel}$ 为相对速度。</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 3-3, 3-4, 3-7, 3-10, 3-13, 3-19, 3-23, 3-27, 3-28</div>
 
 <script src="toc.js"></script>

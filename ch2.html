@@ -219,6 +219,57 @@ $$T(r)=\frac{m\omega^2}{2L}(L^2-r^2)$$
 </div>
 </div>
 
+<h2 id="s6">1.2.6 典型力学模型（PPT总结）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">模型1：斜面上的物体</div>
+<p>倾角 $\theta$，质量 $m$，动摩擦系数 $\mu$</p>
+<p>不滑动条件：$\tan\theta\leq\mu_s$</p>
+<p>匀速下滑：$\mu_k=\tan\theta$</p>
+<p>加速下滑：$a=g(\sin\theta-\mu_k\cos\theta)$</p>
+<p>匀速推上去的最小力：$F=mg(\sin\theta+\mu_k\cos\theta)$（沿斜面方向推）</p>
+</div>
+
+<div class="fb">
+<div class="t">模型2：圆锥摆</div>
+<p>质量 $m$ 的小球用长 $L$ 的绳在水平面上做圆周运动，绳与竖直方向夹角 $\theta$：</p>
+<p>$T\cos\theta=mg$，$T\sin\theta=m\omega^2 L\sin\theta$</p>
+<p>$\omega=\sqrt{g/(L\cos\theta)}$，$T=2\pi\sqrt{L\cos\theta/g}$</p>
+</div>
+
+<div class="fb">
+<div class="t">模型3：汽车过拱桥/凹桥</div>
+<p>拱桥顶端（向心力向下）：$mg-N=mv^2/R$ → $N=m(g-v^2/R)$</p>
+<p>$v=\sqrt{gR}$ 时 $N=0$（飞离地面）</p>
+<p>凹桥底部（向心力向上）：$N-mg=mv^2/R$ → $N=m(g+v^2/R)$</p>
+</div>
+
+<div class="ex">
+<strong>例8（弹簧秤+升降机组合）</strong>：升降机中弹簧秤挂质量 $m$ 的物体。求各种运动状态下弹簧秤示数。
+<div class="sol"><div class="st">解</div>
+<p>在非惯性系中：$T-mg-ma_0=0$（人为引入惯性力 $-ma_0$）</p>
+<ul>
+<li>匀速/$a_0=0$：$T=mg$</li>
+<li>加速上升/$a_0$ 向上：$T=m(g+a_0)$（超重）</li>
+<li>加速下降/$a_0$ 向下：$T=m(g-a_0)$（失重）</li>
+<li>自由下落/$a_0=g$：$T=0$（完全失重）</li>
+</ul>
+</div></div>
+</div>
+
+<h2 id="s7">1.2.7 牛顿定律解题陷阱清单</h2>
+<div class="card">
+<div class="warn"><strong>1. 受力图画错</strong>：只画外力，不画内力（选单个物体时）。不要画"运动的力"——力来自相互作用，不来自运动本身。</div>
+
+<div class="warn"><strong>2. 坐标轴选择不当</strong>：斜面问题通常沿斜面/垂直斜面建系最方便。圆周运动用切向/法向分解。</div>
+
+<div class="warn"><strong>3. 加速度方向搞反</strong>：先设加速度方向，若解出负值说明方向与假设相反，结果仍正确。</div>
+
+<div class="warn"><strong>4. 静摩擦力大小不确定</strong>：静摩擦力由运动方程决定，$f_s\leq\mu_s N$ 只是约束条件，不是等号。</div>
+
+<div class="warn"><strong>5. 圆周运动合力≠向心力</strong>：向心加速度 $a_n=v^2/R$ 是法向分量，切向还可能有 $a_t$。</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 1-36, 1-37, 1-44, 1-49, 1-50, 1-53, 1-54, 1-55</div>
 
 <script src="toc.js"></script>

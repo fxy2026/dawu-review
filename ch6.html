@@ -104,6 +104,112 @@ $$E^2 = (pc)^2 + (m_0c^2)^2$$
 </div></div>
 </div>
 
+<h2 id="s5">5.5 时空间隔不变量</h2>
+<div class="card">
+<div class="fb">
+<div class="t">时空间隔（Lorentz不变量）</div>
+$$(\Delta s)^2 = c^2(\Delta t)^2 - (\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2$$
+<p>在所有惯性系中 $(\Delta s)^2$ 相同。</p>
+<ul>
+<li>$(\Delta s)^2>0$：类时间隔 — 两事件可由低于光速的信号联系</li>
+<li>$(\Delta s)^2<0$：类空间隔 — 两事件无因果关系</li>
+<li>$(\Delta s)^2=0$：类光间隔 — 光信号恰好连接</li>
+</ul>
+</div>
+</div>
+
+<h2 id="s6">5.6 相对论解题要点（PPT总结）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">固有量判断口诀</div>
+<ul>
+<li><strong>固有时间</strong>：两事件发生在<strong>同一地点</strong>的参考系中测量 → 原时最短</li>
+<li><strong>固有长度</strong>：物体<strong>静止</strong>的参考系中测量 → 原长最长</li>
+</ul>
+<p>谁是固有量？关键看<strong>谁不动</strong>。</p>
+</div>
+
+<div class="fb">
+<div class="t">相对论计算常用技巧</div>
+<ol>
+<li>能量-动量关系 $E^2=(pc)^2+(m_0c^2)^2$ 是最万能的公式</li>
+<li>对光子：$m_0=0$，$E=pc=h\nu$</li>
+<li>低速极限：$\gamma\approx1+\beta^2/2$，$E_k\approx\frac{1}{2}m_0v^2$</li>
+<li>极端相对论（$v\to c$）：$E\approx pc$，$\gamma\gg1$</li>
+</ol>
+</div>
+
+<div class="ex">
+<strong>例（PPT课堂练习：光子动量）</strong>：一个光子的能量为 $E$，求其动量和等效质量。
+<div class="sol"><div class="st">解</div>
+<p>光子 $m_0=0$：$E=pc$ → $p=E/c$</p>
+<p>等效质量（相对论质量）：$m=E/c^2=h\nu/c^2$</p>
+<p>但光子没有静质量！$m_0=0$。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（PPT重点：粒子衰变/湮灭）</strong>：电子和正电子湮灭产生两个光子。电子静能 $0.511\,\text{MeV}$。若两粒子均静止，求每个光子能量。
+<div class="sol"><div class="st">解</div>
+<p>能量守恒：$2m_0c^2=2E_\gamma$ → $E_\gamma=m_0c^2=0.511\,\text{MeV}$</p>
+<p>动量守恒：两光子方向相反（初态总动量为零）</p>
+</div></div>
+
+<div class="ex">
+<strong>例（Lorentz变换应用：同时性）</strong>：在 $S$ 系中 $A$ 事件 $(x_A=0,t_A=0)$，$B$ 事件 $(x_B=L,t_B=0)$ 同时。在以 $v$ 运动的 $S'$ 系中 $B$ 发生在什么时刻？
+<div class="sol"><div class="st">解</div>
+<p>$t_B'=\gamma(t_B-vx_B/c^2)=\gamma(0-vL/c^2)=-\gamma vL/c^2<0$</p>
+<p>$t_A'=0$</p>
+<p>所以在 $S'$ 中 $B$ 先于 $A$ 发生！同时性是相对的。</p>
+</div></div>
+
+<div class="warn"><strong>高频考点</strong>：
+<ul>
+<li>同时性的相对性：$S$ 中同时 → $S'$ 中不同时</li>
+<li>时序不变性：类时间隔的两事件因果顺序在所有惯性系中相同</li>
+<li>两事件能否用光信号联系：看 $|\Delta x|\lessgtr c|\Delta t|$</li>
+</ul></div>
+</div>
+
+<h2 id="s7">5.7 相对论综合计算题模板</h2>
+<div class="card">
+<div class="ex">
+<strong>例（质子加速器）</strong>：质子静能 $E_0=938\,\text{MeV}$。若质子动能 $E_k=2000\,\text{MeV}$，求速度（用 $c$ 表示）和动量。
+<div class="sol"><div class="st">解</div>
+<p>$E=E_k+E_0=2938\,\text{MeV}$</p>
+<p>$\gamma=E/E_0=2938/938=3.13$</p>
+<p>$v=c\sqrt{1-1/\gamma^2}=c\sqrt{1-1/9.80}=c\sqrt{0.898}=0.948c$</p>
+<p>$p=\frac{1}{c}\sqrt{E^2-E_0^2}=\frac{1}{c}\sqrt{2938^2-938^2}\,\text{MeV}$</p>
+<p>$=\frac{1}{c}\sqrt{8631844-879844}=\frac{1}{c}\sqrt{7752000}=2784\,\text{MeV}/c$</p>
+</div></div>
+
+<div class="ex">
+<strong>例（光子反冲——Compton效应预备）</strong>：静止粒子（质量 $m_0$）吸收一个光子（能量 $E_\gamma$）后以速度 $v$ 运动，求 $v$。
+<div class="sol"><div class="st">解</div>
+<p>能量守恒：$E_\gamma+m_0c^2=\gamma m_0c^2$</p>
+<p>$\gamma=1+E_\gamma/(m_0c^2)$</p>
+<p>动量守恒：$E_\gamma/c=\gamma m_0 v$</p>
+<p>$v=\frac{E_\gamma}{\gamma m_0 c}=\frac{E_\gamma c}{E_\gamma+m_0c^2}$</p>
+</div></div>
+
+<div class="fb">
+<div class="t">相对论问题解题流程</div>
+<ol>
+<li>判断是否需要相对论（$v>0.1c$ 时必须用）</li>
+<li>写出能量-动量关系 $E^2=(pc)^2+(m_0c^2)^2$</li>
+<li>利用 $E=\gamma m_0c^2$、$p=\gamma m_0v$</li>
+<li>用 $E_k=(\gamma-1)m_0c^2$ 联系动能</li>
+<li>对光子：$m_0=0$，$E=pc$</li>
+</ol>
+</div>
+
+<div class="warn"><strong>常考变形</strong>：
+<ul>
+<li>"动能等于静能"→ $\gamma=2$，$v=\frac{\sqrt{3}}{2}c\approx0.866c$</li>
+<li>"动量为 $m_0c$"→ $p=m_0c$，$E=\sqrt{2}m_0c^2$，$E_k=(\sqrt{2}-1)m_0c^2$</li>
+<li>"总能为静能的3倍"→ $\gamma=3$，$v=\frac{2\sqrt{2}}{3}c\approx0.943c$</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 5-3, 5-4, 5-7, 5-10, 5-12, 5-13, 5-16, 5-19</div>
 
 <script src="toc.js"></script>

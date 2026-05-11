@@ -256,9 +256,99 @@ $$\nu' = \frac{u + v_o}{u - v_s}\nu_0$$
 <div class="warn"><strong>常考变形</strong>：反射问题——波打到运动反射面再回来，等效于两次多普勒效应。先将反射面视为"观察者"求接收频率，再将反射面视为"波源"求反射频率。</div>
 </div>
 
+<h2 id="s11">6.11 SHM初相判定详解（PPT重点）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">旋转矢量法确定初相</div>
+<p>$x=A\cos(\omega t+\varphi_0)$，$v=-A\omega\sin(\omega t+\varphi_0)$</p>
+<p>$t=0$ 时：$x_0=A\cos\varphi_0$，$v_0=-A\omega\sin\varphi_0$</p>
+<p>解法：</p>
+<ol>
+<li>$A=\sqrt{x_0^2+(v_0/\omega)^2}$</li>
+<li>$\cos\varphi_0=x_0/A$，$\sin\varphi_0=-v_0/(\omega A)$</li>
+<li>由 $\cos\varphi_0$ 和 $\sin\varphi_0$ 的正负确定 $\varphi_0$ 所在象限</li>
+</ol>
+</div>
+<div class="warn"><strong>最常见错误</strong>：用 $\tan\varphi_0=-v_0/(\omega x_0)$ 时忘记判断象限！$\tan$ 有两个解（差 $\pi$），必须结合 $\cos\varphi_0$ 或 $\sin\varphi_0$ 的符号来定。</div>
+
+<div class="ex">
+<strong>例（初相判定）</strong>：弹簧振子 $\omega=2\,\text{rad/s}$，$t=0$ 时 $x_0=-0.03\,\text{m}$，$v_0=0.06\,\text{m/s}$。
+<div class="sol"><div class="st">解</div>
+<p>$A=\sqrt{0.03^2+(0.06/2)^2}=\sqrt{0.0009+0.0009}=0.03\sqrt{2}\,\text{m}$</p>
+<p>$\cos\varphi_0=x_0/A=-0.03/(0.03\sqrt{2})=-1/\sqrt{2}$</p>
+<p>$\sin\varphi_0=-v_0/(\omega A)=-0.06/(2\times0.03\sqrt{2})=-1/\sqrt{2}$</p>
+<p>$\cos\varphi_0<0$，$\sin\varphi_0<0$ → 第三象限 → $\varphi_0=-3\pi/4$（或 $5\pi/4$）</p>
+$$x=0.03\sqrt{2}\cos(2t-\frac{3\pi}{4})\,\text{m}$$
+</div></div>
+</div>
+
+<h2 id="s12">6.12 复摆（物理摆）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">复摆周期公式</div>
+<p>刚体绕水平轴 $O$ 做小角度摆动，质心到轴距 $h$：</p>
+$$T=2\pi\sqrt{\frac{J_O}{mgh}}$$
+<p>其中 $J_O$ 为绕轴 $O$ 的转动惯量（用平行轴定理：$J_O=J_C+mh^2$）</p>
+<p>等效摆长：$l_{eq}=J_O/(mh)=J_C/(mh)+h$</p>
+</div>
+</div>
+
+<h2 id="s13">6.13 波动方程建立步骤（PPT详解）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">由原点振动写任意点波动方程</div>
+<p>已知原点振动 $y(0,t)=A\cos(\omega t+\varphi_0)$，波速 $u$，沿 $+x$ 传播：</p>
+<ol>
+<li>$x$ 处质点的振动比原点<strong>落后</strong> $\Delta t=x/u$</li>
+<li>用 $t-x/u$ 替换原点方程中的 $t$：</li>
+</ol>
+$$y(x,t)=A\cos[\omega(t-x/u)+\varphi_0]=A\cos(\omega t-kx+\varphi_0)$$
+<p>其中 $k=\omega/u=2\pi/\lambda$（波数）</p>
+<p>若沿 $-x$ 传播：$y=A\cos(\omega t+kx+\varphi_0)$</p>
+</div>
+
+<div class="fb">
+<div class="t">已知任意点振动写波动方程</div>
+<p>若已知 $x=x_1$ 处的振动 $y(x_1,t)=A\cos(\omega t+\varphi_1)$：</p>
+<p>先求原点初相：$\varphi_0=\varphi_1+kx_1$（$+x$ 方向传播）</p>
+<p>再写波动方程：$y=A\cos(\omega t-kx+\varphi_0)=A\cos(\omega t-kx+\varphi_1+kx_1)$</p>
+</div>
+<div class="warn"><strong>符号陷阱</strong>：向 $+x$ 传播时，$x>0$ 的点相位比原点<strong>落后</strong>（$-kx$），$x<0$ 的点相位<strong>超前</strong>。</div>
+</div>
+
+<h2 id="s14">6.14 驻波详解</h2>
+<div class="card">
+<div class="fb">
+<div class="t">驻波方程与特征</div>
+<p>两列同频率、同振幅、反向传播的波叠加：</p>
+$$y=y_1+y_2=2A\cos(kx)\cos(\omega t)$$
+<p>特征：</p>
+<ul>
+<li><strong>波节</strong>：$\cos(kx)=0$，即 $x=(2n+1)\lambda/4$，始终静止</li>
+<li><strong>波腹</strong>：$|\cos(kx)|=1$，即 $x=n\lambda/2$，振幅最大 $2A$</li>
+<li>相邻波节距 = 相邻波腹距 = $\lambda/2$</li>
+<li>波节两侧相位相反（$\pi$ 差）</li>
+<li>不传播能量（驻波不是行波！）</li>
+</ul>
+</div>
+
+<div class="fb">
+<div class="t">弦振动的本征频率</div>
+<p>两端固定的弦（长 $L$）：$L=n\cdot\lambda_n/2$ → $\lambda_n=2L/n$</p>
+$$\nu_n=\frac{u}{\lambda_n}=\frac{nu}{2L}=n\nu_1,\quad n=1,2,3,...$$
+<p>$n=1$：基频（基波），$n=2$：二次谐波……</p>
+</div>
+
+<div class="fb">
+<div class="t">半波损失</div>
+<p>波从波疏介质射向波密介质反射时，反射波有 $\pi$ 的相位跃变（半波损失）。</p>
+<p>等效于反射点是<strong>波节</strong>（固定端反射）。</p>
+<p>从波密到波疏：无半波损失，反射点是<strong>波腹</strong>（自由端反射）。</p>
+</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：<br>
-振动：6-2, 6-7, 6-11, 6-14, 6-16, 6-18, 6-22, 6-24<br>
-波动：第7章作业待补充</div>
+振动：6-2, 6-7, 6-11, 6-14, 6-16, 6-18, 6-22, 6-24</div>
 
 <script src="toc.js"></script>
 <script src="progress.js"></script>

@@ -320,6 +320,42 @@ $$t=\int_A^B\frac{\sqrt{1+y'^2}}{\sqrt{2gy}}\dd x$$
 </div>
 </div>
 
+<h2 id="s10">1.10 运动学综合题型（PPT高频）</h2>
+<div class="card">
+<div class="ex">
+<strong>例9（轨迹方程求法）</strong>：质点运动方程 $x=R\cos\omega t$，$y=R\sin\omega t$，求轨迹方程。
+<div class="sol"><div class="st">解</div>
+<p>$\cos\omega t=x/R$，$\sin\omega t=y/R$</p>
+<p>$\cos^2\omega t+\sin^2\omega t=1$ → $x^2+y^2=R^2$（圆，半径 $R$）</p>
+<p>速度大小：$v=\sqrt{\dot{x}^2+\dot{y}^2}=R\omega$（匀速圆周运动）</p>
+</div></div>
+
+<div class="ex">
+<strong>例10（加速度为速度函数）</strong>：质点沿直线运动，$a=kv$（$k<0$为常数），初速 $v_0$。求 $v(x)$。
+<div class="sol"><div class="st">解</div>
+<p>利用 $a=v\frac{\dd v}{\dd x}$：$v\frac{\dd v}{\dd x}=kv$ → $\frac{\dd v}{\dd x}=k$</p>
+<p>积分：$v-v_0=kx$ → $v=v_0+kx$</p>
+<p>停止位置（$v=0$）：$x=-v_0/k$</p>
+</div></div>
+
+<div class="fb">
+<div class="t">运动学常见换元技巧总结</div>
+<table>
+<tr><th>已知关系</th><th>换元方法</th></tr>
+<tr><td>$a=f(t)$</td><td>$v=v_0+\int_0^t a\dd t'$，$x=x_0+\int_0^t v\dd t'$</td></tr>
+<tr><td>$a=f(v)$</td><td>$\frac{\dd v}{f(v)}=\dd t$ 或 $v\frac{\dd v}{f(v)}=\dd x$</td></tr>
+<tr><td>$a=f(x)$</td><td>$v\dd v=f(x)\dd x$</td></tr>
+</table>
+</div>
+
+<div class="warn"><strong>期中/期末高频考法</strong>：
+<ul>
+<li>给运动方程求 $t$ 时刻的速度方向角、加速度方向角</li>
+<li>已知加速度分量（含 $v$ 或 $x$），列微分方程求解</li>
+<li>圆周运动求某时刻 $a_n$、$a_t$、$a$ 和 $\rho$</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 1-7, 1-17, 1-19, 1-21, 1-23, 1-24, 1-25, 1-31, 1-32</div>
 
 <script src="toc.js"></script>

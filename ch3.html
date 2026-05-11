@@ -164,6 +164,90 @@ $$v_1' = \frac{m_1-m_2}{m_1+m_2}v_1,\quad v_2' = \frac{2m_1}{m_1+m_2}v_1$$
 <div class="warn"><strong>解题策略</strong>：碰撞瞬间→动量守恒；碰前/碰后→可用能量方法。弹道摆必须分两阶段！</div>
 </div>
 
+<h2 id="s6">2.6 变力做功典型计算（PPT重点）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">变力做功的三种常见类型</div>
+<ol>
+<li><strong>力是位置的函数</strong> $\vv{F}=\vv{F}(x,y)$：直接线积分 $W=\int_A^B\vv{F}\cdot\dd\vv{r}$</li>
+<li><strong>力是速度的函数</strong> $F=F(v)$：先由牛二求 $v(t)$ 或 $v(x)$，再积分</li>
+<li><strong>力是时间的函数</strong> $F=F(t)$：先求 $v(t)$，再求 $x(t)$，最后积分</li>
+</ol>
+</div>
+
+<div class="ex">
+<strong>例（二维变力做功）</strong>：力 $\vv{F}=(3x^2+6xy)\ii+(3x^2+2y)\jj$（SI），质点从 $O(0,0)$ 沿抛物线 $y=x^2$ 移动到 $A(1,1)$，求做功。
+<div class="sol"><div class="st">解</div>
+<p>沿曲线 $y=x^2$，$\dd y=2x\dd x$：</p>
+$$W=\int_0^1[(3x^2+6x\cdot x^2)\dd x+(3x^2+2x^2)\cdot 2x\dd x]$$
+$$=\int_0^1(3x^2+6x^3+6x^3+4x^3)\dd x=\int_0^1(3x^2+16x^3)\dd x$$
+$$=\left[x^3+4x^4\right]_0^1=1+4=5\,\text{J}$$
+<p>可以验证 $\frac{\partial F_x}{\partial y}=6x=\frac{\partial F_y}{\partial x}$，该力是保守力，功与路径无关。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（功能原理综合：弹簧+滑块）</strong>：劲度系数 $k$ 的弹簧水平放置，一端固定。质量 $m$ 的滑块以 $v_0$ 冲向弹簧，动摩擦系数 $\mu$。求弹簧最大压缩量 $x_m$。
+<div class="sol"><div class="st">解</div>
+<p>从接触到最大压缩（$v=0$）：</p>
+<p>动能定理：$0-\frac{1}{2}mv_0^2=-\frac{1}{2}kx_m^2-\mu mg\cdot x_m$</p>
+$$\frac{1}{2}kx_m^2+\mu mg\cdot x_m-\frac{1}{2}mv_0^2=0$$
+<p>解二次方程：$x_m=\frac{-\mu mg+\sqrt{\mu^2m^2g^2+kmv_0^2}}{k}$（取正根）</p>
+</div></div>
+</div>
+
+<h2 id="s9">2.9 势能曲线分析专题（PPT重点）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">势能曲线读图要点</div>
+<p>给定 $E_p(x)$ 图和总能量 $E$ 水平线：</p>
+<ol>
+<li><strong>可达区域</strong>：$E\geq E_p(x)$ 的 $x$ 范围</li>
+<li><strong>动能</strong>：$E_k=E-E_p(x)$（竖直距离）</li>
+<li><strong>转折点</strong>：$E=E_p(x)$ 处，$v=0$</li>
+<li><strong>力的方向</strong>：$F=-\dd E_p/\dd x$，$E_p$ 下降方向为力的方向</li>
+<li><strong>稳定平衡</strong>：$E_p$ 极小点；<strong>不稳定平衡</strong>：$E_p$ 极大点</li>
+</ol>
+</div>
+
+<div class="ex">
+<strong>例（选择题常考）</strong>：Lennard-Jones势能 $E_p(r)=4\varepsilon[(\sigma/r)^{12}-(\sigma/r)^6]$ 描述分子间作用力。
+<div class="sol"><div class="st">分析</div>
+<p>$r\to\infty$：$E_p\to 0$（无作用力）</p>
+<p>$r=r_0=2^{1/6}\sigma$：$E_p$ 取极小 $-\varepsilon$（稳定平衡位置）</p>
+<p>$r<r_0$：$F=-\dd E_p/\dd r>0$（斥力）</p>
+<p>$r>r_0$：$F<0$（引力）</p>
+<p>分子在 $r_0$ 附近做小振动（近似简谐）</p>
+</div></div>
+
+<div class="warn"><strong>选择题陷阱</strong>：
+<ul>
+<li>$E_p$ 为负不代表粒子被"束缚"——关键看总能量 $E$ 是否大于势阱边界</li>
+<li>平衡点处力为零但加速度为零，不代表速度为零</li>
+<li>力最大的位置是 $E_p$ 曲线斜率最大处，不是 $E_p$ 极值处</li>
+</ul></div>
+</div>
+
+<h2 id="s10">2.10 功和能解题策略总结</h2>
+<div class="card">
+<div class="fb">
+<div class="t">何时用动能定理 vs 机械能守恒 vs 功能原理</div>
+<table>
+<tr><th>方法</th><th>适用条件</th><th>优势</th></tr>
+<tr><td>动能定理 $W_{合}=\Delta E_k$</td><td>任何情况</td><td>万能，但需算所有力的功</td></tr>
+<tr><td>机械能守恒 $E_{k1}+E_{p1}=E_{k2}+E_{p2}$</td><td>只有保守内力做功</td><td>不需要知道过程细节</td></tr>
+<tr><td>功能原理 $W_{外}+W_{非保}=\Delta E$</td><td>有非保守力做功</td><td>可以处理摩擦等问题</td></tr>
+</table>
+</div>
+
+<div class="tip"><strong>解题建议</strong>：
+<ul>
+<li>只涉及始末状态、不关心中间过程 → 优先用<strong>能量法</strong></li>
+<li>需要求力或加速度 → 用<strong>牛顿定律</strong></li>
+<li>涉及碰撞 → 碰撞瞬间用<strong>动量</strong>，碰前/碰后用<strong>能量</strong></li>
+<li>涉及弹簧/重力/万有引力 → 定义势能，用<strong>机械能守恒</strong></li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 2-4, 2-5, 2-6, 2-8, 2-10, 2-11, 2-13, 2-14</div>
 
 <script src="toc.js"></script>

@@ -159,6 +159,47 @@ $$\omega=\sqrt{\frac{3g\sin\theta}{L}}$$
 </ul></div>
 </div>
 
+<h2 id="s8">4.8 进动（定性了解）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">陀螺进动</div>
+<p>快速旋转的陀螺绕竖直轴缓慢转动的现象称为<strong>进动</strong>。</p>
+<p>进动角速度：$\Omega=\frac{Mgl}{J\omega}$</p>
+<p>其中 $M$ 为陀螺质量，$l$ 为质心到支点距离，$J$ 为绕自转轴转动惯量，$\omega$ 为自转角速度。</p>
+<p>自转越快 → 进动越慢。</p>
+</div>
+</div>
+
+<h2 id="s9">4.9 刚体综合问题解题模板</h2>
+<div class="card">
+<div class="ex">
+<strong>例（滑轮+斜面综合）</strong>：质量 $M$、半径 $R$ 的实心圆柱（转动惯量 $J=\frac{1}{2}MR^2$）绕定轴转动，用轻绳连接在斜面上的物体（质量 $m$，倾角 $\theta$，无摩擦）。求系统加速度。
+<div class="sol"><div class="st">解</div>
+<p>对斜面物体：$T-mg\sin\theta=ma$（沿斜面向上为正）</p>
+<p>等等——重新判断运动方向。若 $m$ 下滑（$mg\sin\theta>T$）：</p>
+<p>对 $m$：$mg\sin\theta-T=ma$</p>
+<p>对圆柱：$TR=J\alpha=\frac{1}{2}MR^2\cdot\frac{a}{R}$，$T=\frac{1}{2}Ma$</p>
+<p>代入：$mg\sin\theta-\frac{1}{2}Ma=ma$</p>
+$$a=\frac{mg\sin\theta}{m+M/2},\quad T=\frac{Mmg\sin\theta}{2m+M}$$
+</div></div>
+
+<div class="ex">
+<strong>例（角动量守恒：人跳上转台）</strong>：半径 $R$、转动惯量 $J_0$ 的转台静止。质量 $m$ 的人以 $v_0$ 沿切线方向跳上转台边缘。求转台角速度。
+<div class="sol"><div class="st">解</div>
+<p>跳上前系统总角动量（对转台轴）：$L=mv_0R$</p>
+<p>跳上后：$L=(J_0+mR^2)\omega$</p>
+<p>角动量守恒：$\omega=\frac{mv_0R}{J_0+mR^2}$</p>
+</div></div>
+
+<div class="warn"><strong>解题checklist</strong>：
+<ul>
+<li>每个物体/转动体单独列方程</li>
+<li>约束条件写全（$a=R\alpha$、绳不伸长等）</li>
+<li>有质量滑轮两侧 $T_1\neq T_2$</li>
+<li>能量法可以验证结果（或直接用能量法求解）</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 4-4, 4-6, 4-10, 4-11, 4-14, 4-16, 4-19, 4-23, 4-24</div>
 
 <script src="toc.js"></script>

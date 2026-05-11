@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>考前抢分：二级结论 & 易错清单 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--acc);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--acc);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--acc),#e74c3c);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--acc);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="formulas.html">公式总表</a><a href="guide.html">备考指南</a></div>
+
+<h1>考前抢分：二级结论 & 易错清单</h1>
+
+<h2 id="s1">一、力学速算二级结论</h2>
+<div class="card">
+<div class="fb">
+<div class="t">1. 匀变速运动的位移-速度公式</div>
+<p>$v^2 - v_0^2 = 2a\Delta x$（不含时间 $t$，快速求解）</p>
+<p>中间时刻速度 = 平均速度：$v_{t/2} = \bar{v} = \frac{v_0+v}{2}$</p>
+<p>中间位置速度：$v_{x/2} = \sqrt{\frac{v_0^2+v^2}{2}} > v_{t/2}$</p>
+</div>
+
+<div class="fb">
+<div class="t">2. 抛体运动速算</div>
+<p>斜抛最高点：$v_y=0$，$v=v_0\cos\theta$</p>
+<p>斜抛射程：$R = \frac{v_0^2\sin2\theta}{g}$，$\theta=45°$ 时最大</p>
+<p>任意点曲率半径：$\rho = \frac{v^2}{a_n}$，最高点 $\rho = \frac{v_0^2\cos^2\theta}{g}$</p>
+</div>
+
+<div class="fb">
+<div class="t">3. 圆周运动速算</div>
+<p>匀速圆周：$a_n = \frac{v^2}{R} = \omega^2 R$，$a_t=0$</p>
+<p>变速圆周：$a = \sqrt{a_t^2+a_n^2}$</p>
+<p>竖直圆周最高点不脱离条件：$v_{top}^2 \geq gR$</p>
+</div>
+
+<div class="fb">
+<div class="t">4. 弹性碰撞公式（直接用！）</div>
+$$v_1' = \frac{m_1-m_2}{m_1+m_2}v_1,\quad v_2' = \frac{2m_1}{m_1+m_2}v_1$$
+<p>特殊情况：</p>
+<ul>
+<li>$m_1=m_2$：交换速度（$v_1'=0,\,v_2'=v_1$）</li>
+<li>$m_1\gg m_2$：$v_1'\approx v_1,\,v_2'\approx 2v_1$</li>
+<li>$m_1\ll m_2$：$v_1'\approx -v_1$（原速弹回）</li>
+</ul>
+</div>
+
+<div class="fb">
+<div class="t">5. 完全非弹性碰撞能量损失</div>
+$$\Delta E_k = \frac{1}{2}\frac{m_1m_2}{m_1+m_2}(v_1-v_2)^2 = \frac{1}{2}\mu v_{rel}^2$$
+<p>$\mu = \frac{m_1m_2}{m_1+m_2}$ 为约化质量。</p>
+</div>
+
+<div class="fb">
+<div class="t">6. 万有引力与轨道速度</div>
+<p>第一宇宙速度：$v_1 = \sqrt{gR} \approx 7.9\,\text{km/s}$</p>
+<p>圆轨道：$\frac{1}{2}mv^2 = \frac{1}{2}\frac{GMm}{r}$（动能=势能绝对值的一半）</p>
+</div>
+</div>
+
+<h2 id="s2">二、刚体力学速算</h2>
+<div class="card">
+<div class="fb">
+<div class="t">7. 滚动速度比较（同一斜面同一高度）</div>
+<p>$v = \sqrt{\frac{2gh}{1+J/(MR^2)}}$</p>
+<p>速度排序（快→慢）：滑动 > 实心球($\frac{2}{5}$) > 圆盘($\frac{1}{2}$) > 球壳($\frac{2}{3}$) > 圆环(1)</p>
+<p>括号内为 $J/(MR^2)$，越大越慢。</p>
+</div>
+
+<div class="fb">
+<div class="t">8. 杆的释放问题</div>
+<p>水平均匀杆从水平释放（绕端点）转过 $\theta$ 时：</p>
+<p>$\omega = \sqrt{\frac{3g\sin\theta}{L}}$，初始角加速度 $\alpha_0 = \frac{3g}{2L}$</p>
+<p>端点加速度 $a_{端} = L\alpha_0 = \frac{3}{2}g > g$！（比自由落体快）</p>
+</div>
+</div>
+
+<h2 id="s3">三、相对论速算</h2>
+<div class="card">
+<div class="fb">
+<div class="t">9. 动能为静能 $n$ 倍时的公式</div>
+<p>$E_k = nm_0c^2$ → $\gamma = n+1$ → $v = c\sqrt{1-\frac{1}{(n+1)^2}}$</p>
+<p>$p = m_0c\sqrt{n^2+2n}$</p>
+</div>
+
+<div class="fb">
+<div class="t">10. 低速近似与极端相对论</div>
+<p>低速（$v\ll c$）：$\gamma\approx 1+\frac{\beta^2}{2}$，$E_k\approx\frac{1}{2}m_0v^2$</p>
+<p>极端相对论（$v\to c$）：$E\approx pc$，$\gamma\gg1$</p>
+</div>
+</div>
+
+<h2 id="s4">四、振动与波速算</h2>
+<div class="card">
+<div class="fb">
+<div class="t">11. 弹簧振子周期（不受重力/浮力影响）</div>
+<p>$T = 2\pi\sqrt{m/k}$，与 $g$、平衡位置无关</p>
+<p>弹簧串联：$1/k = 1/k_1 + 1/k_2$；并联：$k = k_1+k_2$</p>
+</div>
+
+<div class="fb">
+<div class="t">12. 各种摆的周期</div>
+<p>单摆：$T = 2\pi\sqrt{L/g}$</p>
+<p>复摆：$T = 2\pi\sqrt{J/(mgh)}$（$h$ 为悬点到质心距离）</p>
+</div>
+
+<div class="fb">
+<div class="t">13. 初相位快速判断（旋转矢量法）</div>
+<p>$x_0>0$ 且 $v_0>0$ → $\varphi_0$ 在第四象限（$-\pi/2<\varphi_0<0$）</p>
+<p>$x_0>0$ 且 $v_0<0$ → $\varphi_0$ 在第一象限（$0<\varphi_0<\pi/2$）</p>
+<p>$x_0<0$ 且 $v_0>0$ → $\varphi_0$ 在第三象限（$-\pi<\varphi_0<-\pi/2$）</p>
+<p>$x_0<0$ 且 $v_0<0$ → $\varphi_0$ 在第二象限（$\pi/2<\varphi_0<\pi$）</p>
+<p>口诀：$x$ 看 $\cos$ 正负定左右，$v$ 看 $\sin$ 正负定上下（$v=-A\omega\sin$，$v>0$ 时 $\sin<0$ → 下半）</p>
+</div>
+
+<div class="fb">
+<div class="t">14. 波动方程速写</div>
+<p>已知原点处 $y(0,t) = A\cos(\omega t+\varphi_0)$，波沿 $+x$ 传播：</p>
+$$y(x,t) = A\cos\left[\omega\left(t-\frac{x}{u}\right)+\varphi_0\right]$$
+<p>沿 $-x$ 传播：将 $-x/u$ 改为 $+x/u$</p>
+</div>
+
+<div class="fb">
+<div class="t">15. 驻波与半波损失</div>
+<p>固定端反射：半波损失（相位突变 $\pi$）→ 反射点为节点</p>
+<p>自由端反射：无半波损失 → 反射点为波腹</p>
+<p>驻波相邻节点间距 = $\lambda/2$，节点与相邻波腹间距 = $\lambda/4$</p>
+</div>
+</div>
+
+<h2 id="s5">五、热学速算</h2>
+<div class="card">
+<div class="fb">
+<div class="t">16. 三种速率的系数记忆</div>
+<p>$v_p:\bar{v}:v_{rms} = \sqrt{2}:\sqrt{8/\pi}:\sqrt{3} = 1.41:1.60:1.73$</p>
+<p>口诀："141、160、173"，依次增大。</p>
+</div>
+
+<div class="fb">
+<div class="t">17. 四种过程 $W$、$Q$、$\Delta E$ 速查</div>
+<table>
+<tr><th>过程</th><th>$W$</th><th>$Q$</th><th>$\Delta E=\nu C_V\Delta T$</th></tr>
+<tr><td>等容</td><td>0</td><td>$\nu C_V\Delta T$</td><td>$=Q$</td></tr>
+<tr><td>等压</td><td>$p\Delta V=\nu R\Delta T$</td><td>$\nu C_p\Delta T$</td><td>$Q-W$</td></tr>
+<tr><td>等温</td><td>$\nu RT\ln\frac{V_2}{V_1}$</td><td>$=W$</td><td>0</td></tr>
+<tr><td>绝热</td><td>$-\Delta E=\frac{p_1V_1-p_2V_2}{\gamma-1}$</td><td>0</td><td>$-W$</td></tr>
+</table>
+</div>
+
+<div class="fb">
+<div class="t">18. 熵变万能公式</div>
+$$\Delta S = \nu C_V\ln\frac{T_2}{T_1} + \nu R\ln\frac{V_2}{V_1}$$
+<p>或等价地：$\Delta S = \nu C_p\ln\frac{T_2}{T_1} - \nu R\ln\frac{p_2}{p_1}$</p>
+<p>只与初末状态有关，<strong>任何过程</strong>（包括不可逆过程）都适用！</p>
+</div>
+
+<div class="fb">
+<div class="t">19. 卡诺循环效率</div>
+<p>$\eta_{Carnot} = 1-T_2/T_1$（$T_1$ 高温，$T_2$ 低温，用<strong>绝对温度</strong>！）</p>
+<p>制冷系数：$w = T_2/(T_1-T_2)$</p>
+<p>卡诺定理：一切工作于 $T_1,T_2$ 间的热机 $\eta\leq\eta_{Carnot}$</p>
+</div>
+</div>
+
+<h2 id="s6">六、致命易错清单</h2>
+<div class="card">
+
+<div class="warn"><strong>1. 角量与线量混用</strong><br>
+$v=R\omega$、$a_t=R\alpha$、$a_n=R\omega^2$ 中的 $R$ 是<strong>到转轴的距离</strong>，不是物体半径！</div>
+
+<div class="warn"><strong>2. 有质量滑轮两侧张力不等</strong><br>
+无质量滑轮 $T_1=T_2$；有质量滑轮 $T_1\neq T_2$，差值提供转动力矩。</div>
+
+<div class="warn"><strong>3. 纯滚动的摩擦力是静摩擦</strong><br>
+纯滚动接触点无相对滑动，摩擦力为<strong>静摩擦力</strong>（大小由运动方程确定，不用 $\mu N$）。</div>
+
+<div class="warn"><strong>4. 平行轴定理只能从质心轴出发</strong><br>
+$J = J_C + Md^2$ 中 $J_C$ 必须是<strong>过质心</strong>的轴！不能从任意轴推另一个轴。</div>
+
+<div class="warn"><strong>5. 固有量的判断</strong><br>
+固有时间（原时）：两事件在<strong>同一地点</strong>发生的参考系。<br>
+固有长度（原长）：物体<strong>静止</strong>的参考系。<br>
+原时最短，原长最长！</div>
+
+<div class="warn"><strong>6. 相对论动量用 $\gamma m_0 v$，不是 $m_0v$</strong><br>
+动能 $E_k=(\gamma-1)m_0c^2$，不是 $\frac{1}{2}m_0v^2$！只有低速才近似。</div>
+
+<div class="warn"><strong>7. 等温过程 $\Delta E=0$（理想气体）</strong><br>
+理想气体内能只是温度的函数，等温→内能不变→$Q=W$。</div>
+
+<div class="warn"><strong>8. 绝热自由膨胀不是绝热过程！</strong><br>
+自由膨胀：$W=0$，$Q=0$→$\Delta E=0$→$\Delta T=0$。<br>
+不能用 $pV^\gamma=C$ 或绝热方程！因为这是<strong>不可逆过程</strong>。</div>
+
+<div class="warn"><strong>9. 熵变计算必须用可逆路径</strong><br>
+不可逆过程的熵变 = 设计一条<strong>连接相同初末态的可逆路径</strong>，沿可逆路径积分 $\int\dd Q/T$。</div>
+
+<div class="warn"><strong>10. $\bar{\varepsilon}_k=\frac{3}{2}kT$ 是平动动能，不是总动能</strong><br>
+温度只量度平动动能。分子总平均动能 $\bar{\varepsilon}=\frac{i}{2}kT$（$i$ 含转动自由度）。</div>
+
+<div class="warn"><strong>11. $f(v)$ 是概率密度，不是概率</strong><br>
+$f(v)$ 的量纲是 s/m。$f(v)\dd v$ 才是速率在 $v\sim v+\dd v$ 的分子比率。</div>
+
+<div class="warn"><strong>12. 角动量守恒条件：合力矩为零</strong><br>
+有外力不代表角动量不守恒——关键是外力对<strong>所选参考点</strong>的力矩是否为零。</div>
+
+<div class="warn"><strong>13. 功是标量，但有正负</strong><br>
+力与位移同向→正功；反向→负功。势能增加→保守力做负功。</div>
+
+<div class="warn"><strong>14. 多普勒效应公式中谁是分子谁是分母</strong><br>
+$$\nu' = \nu\frac{u\pm v_{obs}}{u\mp v_{src}}$$
+<p>口诀：接近频率升高。观察者接近→分子取 $+$；源接近→分母取 $-$。</p></div>
+</div>
+
+<div class="note"><strong>使用建议</strong>：考前30分钟快速过一遍易错清单，在心里对每个点说"我知道了"。考场上遇到相关题目先回忆易错点再下笔。</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>
