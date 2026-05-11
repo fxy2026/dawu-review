@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>核心公式总表 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1100px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.3em;margin:30px 0 12px;padding:8px 16px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92em;}th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;}th{background:var(--form);color:var(--pri);font-weight:bold;width:28%;}tr:nth-child(even){background:#f9f7f2;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a></div>
+<h1>大学物理 核心公式总表</h1>
+
+<h2 id="c1">第1章 质点运动学</h2>
+<table>
+<tr><th>速度</th><td>$\vv{v} = \dd\vv{r}/\dd t$，速率 $v = \dd s/\dd t$</td></tr>
+<tr><th>加速度</th><td>$\vv{a} = \dd\vv{v}/\dd t$</td></tr>
+<tr><th>切向/法向加速度</th><td>$a_\tau = \dd v/\dd t$，$a_n = v^2/\rho$</td></tr>
+<tr><th>角量关系</th><td>$v=R\omega$，$a_\tau=R\alpha$，$a_n=R\omega^2$</td></tr>
+<tr><th>抛体射程</th><td>$R = v_0^2\sin2\theta/g$，$H = v_0^2\sin^2\theta/(2g)$</td></tr>
+<tr><th>曲率半径</th><td>$\rho = v^2/a_n = [1+(y')^2]^{3/2}/|y''|$</td></tr>
+</table>
+
+<h2 id="c2">第1章§2 牛顿定律</h2>
+<table>
+<tr><th>牛顿第二定律</th><td>$\vv{F}=m\vv{a}$，自然坐标 $F_\tau=ma_\tau$, $F_n=mv^2/\rho$</td></tr>
+<tr><th>万有引力</th><td>$F=Gm_1m_2/r^2$</td></tr>
+<tr><th>惯性力</th><td>$\vv{F}^*=-m\vv{a}_0$，离心力 $F_{cf}=m\omega^2r$</td></tr>
+</table>
+
+<h2 id="c3">第2章 功和能</h2>
+<table>
+<tr><th>变力的功</th><td>$W=\int_A^B\vv{F}\cdot\dd\vv{r}$</td></tr>
+<tr><th>动能定理</th><td>$W_{合}=\Delta E_k=\frac{1}{2}mv_2^2-\frac{1}{2}mv_1^2$</td></tr>
+<tr><th>势能</th><td>重力 $mgh$，弹性 $\frac{1}{2}kx^2$，引力 $-GMm/r$</td></tr>
+<tr><th>功能原理</th><td>$W_{外}+W_{非保内}=\Delta E_k+\Delta E_p$</td></tr>
+<tr><th>机械能守恒</th><td>$E_k+E_p=\text{const}$（仅保守内力做功）</td></tr>
+<tr><th>弹性碰撞</th><td>$v_1'=\frac{m_1-m_2}{m_1+m_2}v_1$，$v_2'=\frac{2m_1}{m_1+m_2}v_1$</td></tr>
+</table>
+
+<h2 id="c4">第3章 动量与角动量</h2>
+<table>
+<tr><th>动量定理</th><td>$\vv{I}=\int\vv{F}\dd t=\Delta\vv{p}$</td></tr>
+<tr><th>动量守恒</th><td>$\vv{F}_{外合}=0 \Rightarrow \vv{p}_{总}=\text{const}$</td></tr>
+<tr><th>质心</th><td>$\vv{r}_C=\sum m_i\vv{r}_i/M$，$\vv{F}_{外合}=M\vv{a}_C$</td></tr>
+<tr><th>角动量</th><td>$\vv{L}=\vv{r}\times m\vv{v}$，$\vv{M}=\dd\vv{L}/\dd t$</td></tr>
+<tr><th>角动量守恒</th><td>$\vv{M}_{外}=0 \Rightarrow \vv{L}=\text{const}$</td></tr>
+</table>
+
+<h2 id="c5">第4章 刚体力学</h2>
+<table>
+<tr><th>转动惯量</th><td>$J=\int r^2\dd m$，平行轴 $J=J_C+Md^2$</td></tr>
+<tr><th>转动定律</th><td>$M=J\alpha$</td></tr>
+<tr><th>刚体角动量</th><td>$L=J\omega$，守恒 $J_1\omega_1=J_2\omega_2$</td></tr>
+<tr><th>转动动能</th><td>$E_k=\frac{1}{2}J\omega^2$</td></tr>
+<tr><th>纯滚动</th><td>$v_C=R\omega$，$E_k=\frac{1}{2}Mv_C^2+\frac{1}{2}J\omega^2$</td></tr>
+<tr><th>常用J</th><td>棒(中)$\frac{1}{12}ML^2$，盘$\frac{1}{2}MR^2$，球$\frac{2}{5}MR^2$，环$MR^2$</td></tr>
+</table>
+
+<h2 id="c6">第5章 狭义相对论</h2>
+<table>
+<tr><th>Lorentz变换</th><td>$x'=\gamma(x-vt)$，$t'=\gamma(t-vx/c^2)$，$\gamma=1/\sqrt{1-\beta^2}$</td></tr>
+<tr><th>时间膨胀</th><td>$\Delta t=\gamma\Delta\tau$（运动钟变慢）</td></tr>
+<tr><th>长度收缩</th><td>$L=L_0/\gamma$（运动方向缩短）</td></tr>
+<tr><th>速度叠加</th><td>$u_x=\frac{u_x'+v}{1+u_x'v/c^2}$</td></tr>
+<tr><th>质能关系</th><td>$E=\gamma m_0c^2$，$E_k=(\gamma-1)m_0c^2$，$E_0=m_0c^2$</td></tr>
+<tr><th>能量-动量</th><td>$E^2=(pc)^2+(m_0c^2)^2$</td></tr>
+</table>
+
+<h2 id="c7">第6&7章 振动与波</h2>
+<table>
+<tr><th>SHM方程</th><td>$x=A\cos(\omega t+\varphi_0)$，$\ddot{x}+\omega^2 x=0$</td></tr>
+<tr><th>弹簧振子</th><td>$\omega=\sqrt{k/m}$，$T=2\pi\sqrt{m/k}$</td></tr>
+<tr><th>单摆</th><td>$\omega=\sqrt{g/l}$，$T=2\pi\sqrt{l/g}$</td></tr>
+<tr><th>SHM能量</th><td>$E=\frac{1}{2}kA^2$，初始条件 $A=\sqrt{x_0^2+(v_0/\omega)^2}$</td></tr>
+<tr><th>同频合振动</th><td>$A=\sqrt{A_1^2+A_2^2+2A_1A_2\cos\Delta\varphi}$</td></tr>
+<tr><th>波动方程</th><td>$y=A\cos[\omega(t-x/u)+\varphi_0]=A\cos(\omega t-kx+\varphi_0)$</td></tr>
+<tr><th>波的强度</th><td>$I=\frac{1}{2}\rho u A^2\omega^2$</td></tr>
+<tr><th>干涉加强</th><td>$\Delta\phi=2n\pi$（$\Delta r=n\lambda$，同相源）</td></tr>
+<tr><th>驻波</th><td>$y=2A\cos(kx)\cos(\omega t)$，弦 $\nu_n=nu/(2L)$</td></tr>
+<tr><th>多普勒</th><td>$\nu'=\frac{u+v_o}{u-v_s}\nu_0$（接近取+）</td></tr>
+</table>
+
+<h2 id="c8">第8章 气体动理论</h2>
+<table>
+<tr><th>状态方程</th><td>$pV=\nu RT=NkT$，$p=nkT$</td></tr>
+<tr><th>压强公式</th><td>$p=\frac{2}{3}n\bar{\varepsilon}_k$，$\bar{\varepsilon}_k=\frac{3}{2}kT$</td></tr>
+<tr><th>内能</th><td>$E=\nu\frac{i}{2}RT$</td></tr>
+<tr><th>比热容</th><td>$C_V=\frac{i}{2}R$，$C_p=\frac{i+2}{2}R$，$\gamma=(i+2)/i$</td></tr>
+<tr><th>三种速率</th><td>$v_p=\sqrt{2RT/M}$，$\bar{v}=\sqrt{8RT/(\pi M)}$，$v_{rms}=\sqrt{3RT/M}$</td></tr>
+<tr><th>平均自由程</th><td>$\bar{\lambda}=kT/(\sqrt{2}\pi d^2 p)$</td></tr>
+</table>
+
+<h2 id="c9">第9章 热力学基础</h2>
+<table>
+<tr><th>热力学第一定律</th><td>$Q=\Delta E+W$，$\Delta E=\nu C_V\Delta T$（恒成立）</td></tr>
+<tr><th>等体</th><td>$W=0$，$Q=\nu C_V\Delta T$</td></tr>
+<tr><th>等压</th><td>$W=\nu R\Delta T$，$Q=\nu C_p\Delta T$</td></tr>
+<tr><th>等温</th><td>$\Delta E=0$，$W=Q=\nu RT\ln(V_2/V_1)$</td></tr>
+<tr><th>绝热</th><td>$Q=0$，$pV^\gamma=C$，$W=\nu R(T_1-T_2)/(\gamma-1)$</td></tr>
+<tr><th>热机效率</th><td>$\eta=W/Q_1=1-|Q_2|/Q_1$</td></tr>
+<tr><th>卡诺效率</th><td>$\eta_C=1-T_2/T_1$</td></tr>
+<tr><th>熵变</th><td>$\Delta S=\nu C_V\ln(T_2/T_1)+\nu R\ln(V_2/V_1)$</td></tr>
+<tr><th>熵增原理</th><td>$\Delta S_{孤立}\geq0$</td></tr>
+</table>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

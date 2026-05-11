@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第9章 热力学基础 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch8.html">← 气体动理论</a><a href="ch9-ex.html">第9章习题 →</a></div>
+
+<h1>第9章 热力学基础</h1>
+<p style="text-align:center;color:#c0392b;font-weight:bold;">大纲7学时——全课程学时最多的章节！期末重中之重！</p>
+
+<h2 id="s1">9.1 热力学第一定律</h2>
+<div class="card">
+<div class="fb">
+<div class="t">热力学第一定律</div>
+$$Q = \Delta E + W$$
+<p><strong>系统吸收的热量 = 内能增加 + 系统对外做的功</strong></p>
+<p>符号约定：吸热 $Q>0$，放热 $Q<0$；系统膨胀做功 $W>0$，被压缩 $W<0$</p>
+<p>微分形式：$\delta Q = \dd E + \delta W = \dd E + p\dd V$</p>
+</div>
+<div class="warn"><strong>核心区分</strong>：$E$（内能）是<strong>状态量</strong>（只与始末状态有关）；$Q$ 和 $W$ 是<strong>过程量</strong>（与过程路径有关）。</div>
+
+<div class="fb">
+<div class="t">理想气体内能</div>
+<p>$E = \nu\frac{i}{2}RT$，只是温度的函数。</p>
+<p>对任意过程：$\Delta E = \nu C_V\Delta T = \nu\frac{i}{2}R\Delta T$</p>
+</div>
+<div class="tip"><strong>$\Delta E$ 的万能公式</strong>：无论什么过程，理想气体内能变化只取决于温度变化：$\Delta E = \nu C_V(T_2-T_1)$。这是因为理想气体内能只是 $T$ 的函数。</div>
+</div>
+
+<h2 id="s2">9.2 四种等值过程（核心中的核心！）</h2>
+<div class="card">
+
+<h3>等体过程（$V=\text{const}$）</h3>
+<div class="fb">
+<div class="t">等体过程</div>
+<p>$W = \int p\dd V = 0$（不膨胀不做功）</p>
+<p>$Q = \Delta E = \nu C_V\Delta T$</p>
+<p>过程方程：$\frac{p_1}{T_1} = \frac{p_2}{T_2}$</p>
+</div>
+
+<h3>等压过程（$p=\text{const}$）</h3>
+<div class="fb">
+<div class="t">等压过程</div>
+<p>$W = p\Delta V = p(V_2-V_1) = \nu R\Delta T$</p>
+<p>$Q = \nu C_p\Delta T$</p>
+<p>$\Delta E = \nu C_V\Delta T$</p>
+<p>验证：$Q = \Delta E + W$ → $\nu C_p\Delta T = \nu C_V\Delta T + \nu R\Delta T$ → $C_p = C_V + R$ ✓</p>
+<p>过程方程：$\frac{V_1}{T_1} = \frac{V_2}{T_2}$</p>
+</div>
+
+<h3>等温过程（$T=\text{const}$）</h3>
+<div class="fb">
+<div class="t">等温过程</div>
+<p>$\Delta E = 0$（温度不变→内能不变）</p>
+<p>$W = Q = \int_{V_1}^{V_2}p\dd V = \int_{V_1}^{V_2}\frac{\nu RT}{V}\dd V = \nu RT\ln\frac{V_2}{V_1} = \nu RT\ln\frac{p_1}{p_2}$</p>
+<p>过程方程：$p_1V_1 = p_2V_2$（等温线是 $p$-$V$ 图上的双曲线）</p>
+</div>
+
+<h3>绝热过程（$Q=0$）</h3>
+<div class="fb">
+<div class="t">绝热过程</div>
+<p>$\Delta E = -W$（不吸热，做功靠消耗内能）</p>
+<p><strong>绝热方程</strong>（三种等价形式）：</p>
+$$pV^\gamma = \text{const},\quad TV^{\gamma-1} = \text{const},\quad T^\gamma p^{1-\gamma} = \text{const}$$
+<p>绝热功：$W = -\Delta E = \nu C_V(T_1-T_2) = \frac{p_1V_1-p_2V_2}{\gamma-1} = \frac{\nu R(T_1-T_2)}{\gamma-1}$</p>
+</div>
+<div class="warn"><strong>绝热线比等温线更陡</strong>！因为 $pV^\gamma = \text{const}$ 中 $\gamma > 1$，所以绝热线下降更快。</div>
+
+<h3>四种过程总结对比表（必背！）</h3>
+<table>
+<tr><th>过程</th><th>过程方程</th><th>$W$</th><th>$Q$</th><th>$\Delta E$</th></tr>
+<tr><td>等体</td><td>$p/T=C$</td><td>$0$</td><td>$\nu C_V\Delta T$</td><td>$\nu C_V\Delta T$</td></tr>
+<tr><td>等压</td><td>$V/T=C$</td><td>$\nu R\Delta T$</td><td>$\nu C_p\Delta T$</td><td>$\nu C_V\Delta T$</td></tr>
+<tr><td>等温</td><td>$pV=C$</td><td>$\nu RT\ln\frac{V_2}{V_1}$</td><td>$W$</td><td>$0$</td></tr>
+<tr><td>绝热</td><td>$pV^\gamma=C$</td><td>$\frac{\nu R(T_1-T_2)}{\gamma-1}$</td><td>$0$</td><td>$-W$</td></tr>
+</table>
+</div>
+
+<h2 id="s3">9.3 循环过程与热机效率</h2>
+<div class="card">
+<div class="fb">
+<div class="t">循环过程</div>
+<p>系统回到初态 → $\Delta E = 0$ → $W_{净} = Q_{吸} - |Q_{放}|$</p>
+<p>$p$-$V$ 图上：<strong>顺时针</strong>→正循环（热机），$W>0$；<strong>逆时针</strong>→逆循环（制冷机），$W<0$</p>
+<p>$W_{净}$ = $p$-$V$ 图上封闭曲线围成的面积</p>
+</div>
+
+<div class="fb">
+<div class="t">热机效率</div>
+$$\eta = \frac{W}{Q_1} = \frac{Q_1-|Q_2|}{Q_1} = 1 - \frac{|Q_2|}{Q_1}$$
+<p>$Q_1$=每循环吸收的总热量，$|Q_2|$=每循环放出的总热量</p>
+</div>
+
+<div class="fb">
+<div class="t">制冷系数</div>
+$$\varepsilon = \frac{|Q_2|}{W} = \frac{|Q_2|}{Q_1-|Q_2|}$$
+</div>
+</div>
+
+<h2 id="s4">9.4 卡诺循环与卡诺定理</h2>
+<div class="card">
+<div class="fb">
+<div class="t">卡诺循环</div>
+<p>两个等温过程 + 两个绝热过程组成的<strong>可逆循环</strong></p>
+<p>工作在高温热源 $T_1$ 和低温热源 $T_2$ 之间：</p>
+$$\eta_C = 1 - \frac{T_2}{T_1}$$
+<p>卡诺制冷机：$\varepsilon_C = \frac{T_2}{T_1-T_2}$</p>
+</div>
+
+<div class="fb">
+<div class="t">卡诺定理</div>
+<ol>
+<li>在相同高温源和低温源之间，可逆热机效率 > 不可逆热机效率</li>
+<li>所有可逆热机效率相同，只取决于两个热源温度</li>
+</ol>
+</div>
+
+<div class="ex">
+<strong>例1</strong>：热机工作在 $T_1=600\,\text{K}$ 和 $T_2=300\,\text{K}$ 之间，每循环吸热 $Q_1=2000\,\text{J}$，实际效率 $\eta=40\%$，求做功和放热。
+<div class="sol"><div class="st">解</div>
+<p>最大效率：$\eta_C = 1-300/600 = 50\%$，实际 $40\% < 50\%$ ✓（合理）</p>
+<p>做功：$W = \eta Q_1 = 0.4\times2000 = 800\,\text{J}$</p>
+<p>放热：$|Q_2| = Q_1 - W = 1200\,\text{J}$</p>
+</div></div>
+</div>
+
+<h2 id="s5">9.5 热力学第二定律</h2>
+<div class="card">
+<div class="fb">
+<div class="t">两种等价表述</div>
+<p><strong>克劳修斯表述</strong>：热量不能自发地从低温物体传到高温物体（不引起其他变化）</p>
+<p><strong>开尔文表述</strong>：不可能从单一热源吸热全部转化为功而不引起其他变化（第二类永动机不可能）</p>
+<p>两种表述<strong>等价</strong>——违反一个必违反另一个。</p>
+</div>
+</div>
+
+<h2 id="s6">9.6 熵</h2>
+<div class="card">
+<div class="fb">
+<div class="t">熵的定义</div>
+<p>$\dd S = \frac{\delta Q_{rev}}{T}$（可逆过程中，微小热量/温度）</p>
+<p>熵是<strong>状态量</strong>，与路径无关。</p>
+</div>
+
+<div class="fb">
+<div class="t">理想气体熵变公式（万能公式！）</div>
+$$\Delta S = \nu C_V\ln\frac{T_2}{T_1} + \nu R\ln\frac{V_2}{V_1}$$
+$$\Delta S = \nu C_p\ln\frac{T_2}{T_1} - \nu R\ln\frac{p_2}{p_1}$$
+<p>（对任意过程都可用，因为 $S$ 是状态量）</p>
+</div>
+
+<div class="fb">
+<div class="t">不可逆过程熵变计算方法</div>
+<p>三步走：</p>
+<ol>
+<li>确定始末状态（$T_1,V_1$ → $T_2,V_2$）</li>
+<li><strong>设计一个连接始末状态的可逆过程</strong></li>
+<li>沿可逆过程计算 $\Delta S = \int\frac{\delta Q_{rev}}{T}$</li>
+</ol>
+</div>
+
+<div class="fb">
+<div class="t">熵增原理</div>
+$$\Delta S_{孤立} \geq 0$$
+<p>孤立系统的熵永不减少。等号对应可逆过程，大于号对应不可逆过程。</p>
+<p>熵增原理是热力学第二定律的数学表达。</p>
+</div>
+
+<div class="ex">
+<strong>例2（真题高频：自由膨胀的熵变）</strong>：理想气体从 $V_1$ 自由膨胀到 $V_2$（$Q=0,W=0$），求熵变。
+<div class="sol"><div class="st">解</div>
+<p>自由膨胀：$Q=0,W=0$ → $\Delta E=0$ → $T_2=T_1$（理想气体）</p>
+<p>设计可逆过程（等温膨胀）：</p>
+$$\Delta S = \nu C_V\ln\frac{T_2}{T_1} + \nu R\ln\frac{V_2}{V_1} = 0 + \nu R\ln\frac{V_2}{V_1} = \nu R\ln\frac{V_2}{V_1} > 0$$
+<p>$\Delta S > 0$：不可逆过程→熵增。</p>
+</div></div>
+
+<div class="ex">
+<strong>例3（热传导的熵变）</strong>：温度 $T_1$ 的物体与 $T_2$（$T_1>T_2$）的物体接触，传递热量 $Q$，两物体温度不变（热容很大），求总熵变。
+<div class="sol"><div class="st">解</div>
+<p>高温物体：$\Delta S_1 = -Q/T_1$（放热）</p>
+<p>低温物体：$\Delta S_2 = +Q/T_2$（吸热）</p>
+$$\Delta S_{总} = \frac{Q}{T_2} - \frac{Q}{T_1} = Q\left(\frac{1}{T_2}-\frac{1}{T_1}\right) > 0$$
+</div></div>
+
+<h3>T-S图</h3>
+<div class="tip"><strong>T-S图</strong>中，曲线下面积 = $\int T\dd S = Q_{rev}$（可逆过程吸收的热量）。等温线为水平线，绝热可逆为竖直线，卡诺循环为矩形。</div>
+</div>
+
+<div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 9-4, 9-6, 9-7, 9-9, 9-13, 9-15, 9-17, 9-18</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

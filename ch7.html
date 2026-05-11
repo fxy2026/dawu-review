@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第6&7章 机械振动与机械波 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}h4{color:#555;margin:12px 0 6px;font-size:1.05em;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch6.html">← 相对论</a><a href="ch7-ex.html">振动波习题 →</a></div>
+
+<h1>第6&7章 机械振动与机械波</h1>
+<p style="text-align:center;color:#888;margin-bottom:20px;">大纲合计10学时——期末重点章节</p>
+
+<!-- ========== Part A: 振动 ========== -->
+<h2 id="vib1">6.1 简谐运动（SHM）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">简谐运动方程</div>
+$$x = A\cos(\omega t + \varphi_0)$$
+<p><strong>三要素</strong>：</p>
+<ul>
+<li><strong>振幅</strong> $A$：最大位移，$A>0$</li>
+<li><strong>角频率</strong> $\omega$：$\omega = 2\pi/T = 2\pi\nu$，由系统固有参数决定</li>
+<li><strong>初相</strong> $\varphi_0$：由初始条件 $(x_0, v_0)$ 决定</li>
+</ul>
+</div>
+
+<div class="fb">
+<div class="t">速度与加速度</div>
+$$v = \frac{\dd x}{\dd t} = -A\omega\sin(\omega t+\varphi_0)$$
+$$a = \frac{\dd v}{\dd t} = -A\omega^2\cos(\omega t+\varphi_0) = -\omega^2 x$$
+<p><strong>运动微分方程</strong>：$\ddot{x} + \omega^2 x = 0$（判断SHM的标志！）</p>
+</div>
+
+<h3>常见简谐运动系统</h3>
+<table>
+<tr><th>系统</th><th>角频率</th><th>周期</th></tr>
+<tr><td>弹簧振子</td><td>$\omega = \sqrt{k/m}$</td><td>$T = 2\pi\sqrt{m/k}$</td></tr>
+<tr><td>单摆（小角度）</td><td>$\omega = \sqrt{g/l}$</td><td>$T = 2\pi\sqrt{l/g}$</td></tr>
+<tr><td>复摆（物理摆）</td><td>$\omega = \sqrt{mgh/J}$</td><td>$T = 2\pi\sqrt{J/(mgh)}$</td></tr>
+</table>
+
+<h3>确定初相 $\varphi_0$ 的方法</h3>
+<div class="fb">
+<div class="t">由初始条件求 $A$ 和 $\varphi_0$</div>
+<p>设 $t=0$ 时 $x_0 = A\cos\varphi_0$，$v_0 = -A\omega\sin\varphi_0$</p>
+$$A = \sqrt{x_0^2 + (v_0/\omega)^2}$$
+$$\tan\varphi_0 = -\frac{v_0}{\omega x_0}$$
+<p>注意：$\tan$ 有两解（差 $\pi$），需结合 $x_0$ 和 $v_0$ 的符号确定象限。</p>
+</div>
+
+<div class="ex">
+<strong>例1</strong>：弹簧振子 $m=0.5\,\text{kg}$, $k=200\,\text{N/m}$，初始 $x_0=0.02\,\text{m}$, $v_0=-0.4\,\text{m/s}$，写出 $x(t)$。
+<div class="sol"><div class="st">解</div>
+<p>$\omega = \sqrt{k/m} = \sqrt{400} = 20\,\text{rad/s}$</p>
+<p>$A = \sqrt{0.02^2+(0.4/20)^2} = \sqrt{0.0004+0.0004} = 0.02\sqrt{2}\,\text{m}$</p>
+<p>$\tan\varphi_0 = -\frac{-0.4}{20\times0.02} = 1$，$\varphi_0 = \pi/4$（$x_0>0,v_0<0$，第一象限）</p>
+<p>$x = 0.02\sqrt{2}\cos(20t+\pi/4)\,\text{m}$</p>
+</div></div>
+
+<h3>旋转矢量法</h3>
+<p>将简谐运动视为匀速圆周运动在直径上的投影。矢量 $\vv{A}$（长度 $A$）以角速度 $\omega$ 逆时针旋转，其在 $x$ 轴投影即 $x(t)$。</p>
+<p>用途：直观判断初相、相位关系、合振动。</p>
+</div>
+
+<h2 id="vib2">6.2 简谐运动的能量</h2>
+<div class="card">
+<div class="fb">
+<div class="t">SHM能量</div>
+<p>动能：$E_k = \frac{1}{2}mv^2 = \frac{1}{2}kA^2\sin^2(\omega t+\varphi_0)$</p>
+<p>势能：$E_p = \frac{1}{2}kx^2 = \frac{1}{2}kA^2\cos^2(\omega t+\varphi_0)$</p>
+<p><strong>总能量</strong>：$E = E_k + E_p = \frac{1}{2}kA^2 = \text{const}$</p>
+<p>平均动能 = 平均势能 = $\frac{1}{2}E = \frac{1}{4}kA^2$</p>
+</div>
+<div class="tip">能量以 $2\omega$ 的频率在动能和势能之间交换（频率是位移频率的两倍）。</div>
+</div>
+
+<h2 id="vib3">6.3 阻尼振动与受迫振动</h2>
+<div class="card">
+<div class="fb">
+<div class="t">阻尼振动</div>
+<p>运动方程：$m\ddot{x} + b\dot{x} + kx = 0$（$b$ 为阻尼系数）</p>
+<p><strong>欠阻尼</strong>（$b < 2\sqrt{km}$）：$x = A_0 e^{-\beta t}\cos(\omega' t+\varphi_0)$</p>
+<p>其中 $\beta = b/(2m)$（衰减系数），$\omega' = \sqrt{\omega_0^2-\beta^2}$（阻尼频率，略低于固有频率）</p>
+</div>
+
+<div class="fb">
+<div class="t">受迫振动与共振</div>
+<p>驱动力 $F = F_0\cos\omega_d t$ 下的稳态解：</p>
+$$x = A(\omega_d)\cos(\omega_d t - \varphi)$$
+<p>稳态振幅 $A$ 在 $\omega_d \approx \omega_0$ 时最大 → <strong>共振</strong></p>
+<p>共振振幅与阻尼成反比：阻尼越小，共振峰越尖锐。</p>
+</div>
+</div>
+
+<h2 id="vib4">6.4 振动的叠加</h2>
+<div class="card">
+<div class="fb">
+<div class="t">同方向同频率振动的合成</div>
+<p>$x_1 = A_1\cos(\omega t+\varphi_1)$，$x_2 = A_2\cos(\omega t+\varphi_2)$</p>
+<p>合振动仍为简谐运动：$x = A\cos(\omega t+\varphi)$</p>
+$$A = \sqrt{A_1^2+A_2^2+2A_1A_2\cos(\varphi_2-\varphi_1)}$$
+$$\tan\varphi = \frac{A_1\sin\varphi_1+A_2\sin\varphi_2}{A_1\cos\varphi_1+A_2\cos\varphi_2}$$
+<p>特殊情况：</p>
+<ul>
+<li>$\Delta\varphi = 2n\pi$：$A = A_1+A_2$（相长/加强）</li>
+<li>$\Delta\varphi = (2n+1)\pi$：$A = |A_1-A_2|$（相消/减弱）</li>
+</ul>
+</div>
+
+<div class="fb">
+<div class="t">同方向不同频率：拍</div>
+<p>$\omega_1\approx\omega_2$ 时产生<strong>拍</strong>：$\nu_{拍} = |\nu_1-\nu_2|$</p>
+</div>
+
+<div class="ex">
+<strong>例2</strong>：$x_1 = 3\cos(2t+\pi/6)\,\text{cm}$，$x_2 = 4\cos(2t+2\pi/3)\,\text{cm}$，求合振动。
+<div class="sol"><div class="st">解</div>
+<p>$\Delta\varphi = 2\pi/3 - \pi/6 = \pi/2$，$\cos(\pi/2)=0$</p>
+<p>$A = \sqrt{9+16+0} = 5\,\text{cm}$</p>
+<p>$\tan\varphi = \frac{3\sin(\pi/6)+4\sin(2\pi/3)}{3\cos(\pi/6)+4\cos(2\pi/3)} = \frac{1.5+3.464}{2.598-2} = \frac{4.964}{0.598} = 8.3$</p>
+<p>$\varphi \approx 1.45\,\text{rad} \approx 83°$</p>
+<p>$x = 5\cos(2t+1.45)\,\text{cm}$</p>
+</div></div>
+</div>
+
+<!-- ========== Part B: 波动 ========== -->
+<h2 id="wave1">7.1 机械波的基本概念</h2>
+<div class="card">
+<div class="fb">
+<div class="t">波的基本量</div>
+<p>波速 $u$、波长 $\lambda$、频率 $\nu$、周期 $T$ 的关系：</p>
+$$u = \lambda\nu = \frac{\lambda}{T}$$
+<p><strong>波速由介质决定</strong>（绳波：$u=\sqrt{T/\mu}$，$T$ 为张力，$\mu$ 为线密度）</p>
+<p>横波：振动方向⊥传播方向（如绳波）</p>
+<p>纵波：振动方向∥传播方向（如声波）</p>
+</div>
+</div>
+
+<h2 id="wave2">7.2 简谐波的波动方程</h2>
+<div class="card">
+<div class="fb">
+<div class="t">平面简谐波方程（沿 $+x$ 方向传播）</div>
+$$y(x,t) = A\cos\left[\omega\left(t-\frac{x}{u}\right)+\varphi_0\right]$$
+<p>等价形式：</p>
+$$y = A\cos(\omega t - kx + \varphi_0) = A\cos\left[2\pi\left(\frac{t}{T}-\frac{x}{\lambda}\right)+\varphi_0\right]$$
+<p>其中<strong>波数</strong> $k = \frac{2\pi}{\lambda} = \frac{\omega}{u}$</p>
+<p>沿 $-x$ 方向传播：将 $-kx$ 改为 $+kx$（或 $-x/u$ 改为 $+x/u$）</p>
+</div>
+
+<h3>由已知点振动方程写波动方程</h3>
+<div class="tip"><strong>核心方法</strong>：
+<ol>
+<li>已知原点 $x=0$ 处振动 $y(0,t) = A\cos(\omega t+\varphi_0)$</li>
+<li>波沿 $+x$ 传播，$x$ 处的振动比原点<strong>延迟</strong> $x/u$</li>
+<li>将 $t$ 替换为 $t-x/u$：$y(x,t) = A\cos[\omega(t-x/u)+\varphi_0]$</li>
+</ol>
+<p>若已知的是 $x=x_0$ 处的振动，将 $t$ 替换为 $t-(x-x_0)/u$（沿 $+x$）或 $t+(x-x_0)/u$（沿 $-x$）。</p>
+</div>
+
+<div class="ex">
+<strong>例3</strong>：原点振动 $y_O = 0.03\cos(4\pi t)\,\text{m}$，波沿 $+x$ 方向传播，波速 $u=2\,\text{m/s}$，写出波动方程。
+<div class="sol"><div class="st">解</div>
+<p>$\omega = 4\pi\,\text{rad/s}$，$A = 0.03\,\text{m}$，$\varphi_0 = 0$</p>
+<p>$y(x,t) = 0.03\cos\left[4\pi\left(t-\frac{x}{2}\right)\right] = 0.03\cos(4\pi t - 2\pi x)\,\text{m}$</p>
+<p>波长：$\lambda = u/\nu = uT = 2\times(2\pi/4\pi\cdot2) = 2\times0.5 = 1\,\text{m}$</p>
+</div></div>
+
+<h3>波形图 vs 振动图</h3>
+<table>
+<tr><th></th><th>波形图</th><th>振动图</th></tr>
+<tr><td>横轴</td><td>$x$（固定 $t$）</td><td>$t$（固定 $x$）</td></tr>
+<tr><td>纵轴</td><td>$y$</td><td>$y$</td></tr>
+<tr><td>周期性</td><td>空间周期 $\lambda$</td><td>时间周期 $T$</td></tr>
+<tr><td>读取传播方向</td><td>波形平移方向</td><td>无法直接读取</td></tr>
+</table>
+<div class="warn"><strong>由波形图判传播方向→判各点速度方向</strong>：波形沿传播方向"平移"，前方的点将到达当前位置。即：$+x$ 传播时，某点的速度方向看"后方"的波形将要到达的状态。</div>
+</div>
+
+<h2 id="wave3">7.3 波的能量</h2>
+<div class="card">
+<div class="fb">
+<div class="t">波的能量密度与强度</div>
+<p><strong>瞬时能量密度</strong>：$w = \rho A^2\omega^2\sin^2(\omega t-kx+\varphi_0)$</p>
+<p>（动能密度和势能密度同相——这与驻波不同！）</p>
+<p><strong>平均能量密度</strong>：$\bar{w} = \frac{1}{2}\rho A^2\omega^2$</p>
+<p><strong>平均能流密度（波的强度）</strong>：$I = \bar{w}\cdot u = \frac{1}{2}\rho u A^2\omega^2$</p>
+</div>
+</div>
+
+<h2 id="wave4">7.4 波的干涉</h2>
+<div class="card">
+<div class="fb">
+<div class="t">两列同频波的干涉条件</div>
+<p>波程差 $\Delta r = r_2 - r_1$，初相差 $\Delta\varphi_0 = \varphi_{02}-\varphi_{01}$</p>
+<p>总相位差 $\Delta\phi = \frac{2\pi}{\lambda}\Delta r - \Delta\varphi_0$</p>
+<p><strong>干涉加强</strong>：$\Delta\phi = 2n\pi$　→　$A_{max} = A_1+A_2$</p>
+<p><strong>干涉减弱</strong>：$\Delta\phi = (2n+1)\pi$　→　$A_{min} = |A_1-A_2|$</p>
+<p>当 $\Delta\varphi_0=0$（同相波源）时简化为 $\Delta r = n\lambda$（加强）或 $\Delta r = (n+\frac{1}{2})\lambda$（减弱）</p>
+</div>
+</div>
+
+<h2 id="wave5">7.5 驻波</h2>
+<div class="card">
+<div class="fb">
+<div class="t">驻波方程</div>
+<p>两列等幅、同频、反向传播的波叠加：</p>
+$$y = 2A\cos(kx)\cos(\omega t)$$
+<p><strong>波腹</strong>（振幅最大 $2A$）：$\cos(kx) = \pm1$，即 $x = n\frac{\lambda}{2}$</p>
+<p><strong>波节</strong>（振幅为零）：$\cos(kx) = 0$，即 $x = (2n+1)\frac{\lambda}{4}$</p>
+<p>相邻波腹或波节间距 = $\lambda/2$</p>
+</div>
+
+<div class="fb">
+<div class="t">半波损失</div>
+<p>波从波疏介质射入波密介质（如绳波从轻绳到重绳），反射时有<strong>半波损失</strong>——相位突变 $\pi$（相当于 $\lambda/2$ 的额外路程差）。</p>
+<p>从波密到波疏反射：无半波损失。</p>
+</div>
+
+<div class="fb">
+<div class="t">两端固定弦的本征频率</div>
+<p>弦长 $L$，两端为波节：$L = n\frac{\lambda_n}{2}$，$n=1,2,3,...$</p>
+$$\nu_n = n\frac{u}{2L} = n\nu_1$$
+<p>$\nu_1$ 为基频（一次谐波），$\nu_n$ 为 $n$ 次谐波。</p>
+</div>
+</div>
+
+<h2 id="wave6">7.6 多普勒效应</h2>
+<div class="card">
+<div class="fb">
+<div class="t">多普勒效应公式</div>
+$$\nu' = \frac{u + v_o}{u - v_s}\nu_0$$
+<p><strong>符号约定</strong>：以"观察者向波源接近"为正方向。</p>
+<ul>
+<li>$v_o$：观察者速度，接近波源取 $+$</li>
+<li>$v_s$：波源速度，接近观察者取 $+$</li>
+</ul>
+</div>
+
+<div class="ex">
+<strong>例4</strong>：火车以 $30\,\text{m/s}$ 驶近观察者，鸣笛频率 $800\,\text{Hz}$，声速 $340\,\text{m/s}$。求观察者听到的频率。
+<div class="sol"><div class="st">解</div>
+<p>观察者静止 $v_o=0$，波源接近 $v_s=30\,\text{m/s}$</p>
+<p>$\nu' = \frac{340+0}{340-30}\times800 = \frac{340}{310}\times800 \approx 877\,\text{Hz}$</p>
+</div></div>
+
+<div class="warn"><strong>常考变形</strong>：反射问题——波打到运动反射面再回来，等效于两次多普勒效应。先将反射面视为"观察者"求接收频率，再将反射面视为"波源"求反射频率。</div>
+</div>
+
+<div class="note"><strong>本章课后作业</strong>（PPT指定）：<br>
+振动：6-2, 6-7, 6-11, 6-14, 6-16, 6-18, 6-22, 6-24<br>
+波动：第7章作业待补充</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

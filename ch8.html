@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第8章 气体动理论 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch7.html">← 振动与波</a><a href="ch8-ex.html">第8章习题 →</a></div>
+
+<h1>第8章 气体动理论</h1>
+
+<h2 id="s1">8.1 平衡态与理想气体状态方程</h2>
+<div class="card">
+<div class="fb">
+<div class="t">热力学第零定律</div>
+<p>若 $A$ 与 $C$ 热平衡，$B$ 与 $C$ 热平衡，则 $A$ 与 $B$ 热平衡。→ 温度概念的基础。</p>
+</div>
+
+<div class="fb">
+<div class="t">理想气体状态方程</div>
+$$pV = \nu RT = NkT$$
+<p>$R = 8.314\,\text{J/(mol·K)}$（普适气体常量）</p>
+<p>$k = R/N_A = 1.38\times10^{-23}\,\text{J/K}$（Boltzmann常量）</p>
+<p>$N_A = 6.022\times10^{23}\,\text{mol}^{-1}$（Avogadro常量）</p>
+<p>也可写为：$p = nkT$（$n = N/V$ 为分子数密度）</p>
+</div>
+
+<div class="fb">
+<div class="t">道尔顿分压定律</div>
+<p>混合气体总压 = 各组分分压之和：$p = p_1 + p_2 + \cdots$</p>
+<p>$p_i = n_i kT$（各组分分子数密度 × $kT$）</p>
+</div>
+</div>
+
+<h2 id="s2">8.2 压强公式与温度的微观本质</h2>
+<div class="card">
+<div class="fb">
+<div class="t">理想气体压强公式</div>
+$$p = \frac{1}{3}nm\overline{v^2} = \frac{2}{3}n\bar{\varepsilon}_k$$
+<p>$n$ = 分子数密度，$m$ = 单个分子质量，$\overline{v^2}$ = 方均根速率的平方</p>
+<p>$\bar{\varepsilon}_k = \frac{1}{2}m\overline{v^2}$ = 分子平均<strong>平动</strong>动能</p>
+</div>
+
+<div class="fb">
+<div class="t">温度的微观本质</div>
+$$\bar{\varepsilon}_k = \frac{3}{2}kT$$
+<p>温度是分子平均平动动能的量度。温度相同 → 不同气体分子的平均平动动能相同。</p>
+</div>
+</div>
+
+<h2 id="s3">8.3 能量均分定理与内能</h2>
+<div class="card">
+<div class="fb">
+<div class="t">自由度</div>
+<table>
+<tr><th>分子类型</th><th>平动 $t$</th><th>转动 $r$</th><th>总自由度 $i$</th><th>举例</th></tr>
+<tr><td>单原子</td><td>3</td><td>0</td><td>3</td><td>He, Ne, Ar</td></tr>
+<tr><td>刚性双原子</td><td>3</td><td>2</td><td>5</td><td>H₂, N₂, O₂</td></tr>
+<tr><td>刚性多原子</td><td>3</td><td>3</td><td>6</td><td>H₂O, CO₂</td></tr>
+</table>
+</div>
+
+<div class="fb">
+<div class="t">能量均分定理</div>
+<p>在温度 $T$ 的平衡态中，每个自由度的平均能量为 $\frac{1}{2}kT$</p>
+<p>分子平均总动能：$\bar{\varepsilon} = \frac{i}{2}kT$</p>
+<p><strong>理想气体内能</strong>：$E = \nu\frac{i}{2}RT = \frac{i}{2}NkT$（只是温度的函数！）</p>
+</div>
+
+<div class="fb">
+<div class="t">比热容</div>
+$$C_V = \frac{i}{2}R,\quad C_p = \frac{i+2}{2}R,\quad \gamma = \frac{C_p}{C_V} = \frac{i+2}{i}$$
+<p>迈耶关系：$C_p - C_V = R$（对理想气体恒成立）</p>
+<table>
+<tr><th></th><th>单原子 ($i=3$)</th><th>双原子 ($i=5$)</th><th>多原子 ($i=6$)</th></tr>
+<tr><td>$C_V$</td><td>$\frac{3}{2}R$</td><td>$\frac{5}{2}R$</td><td>$3R$</td></tr>
+<tr><td>$C_p$</td><td>$\frac{5}{2}R$</td><td>$\frac{7}{2}R$</td><td>$4R$</td></tr>
+<tr><td>$\gamma$</td><td>$5/3 \approx 1.67$</td><td>$7/5 = 1.4$</td><td>$4/3 \approx 1.33$</td></tr>
+</table>
+</div>
+</div>
+
+<h2 id="s4">8.4 Maxwell速率分布律</h2>
+<div class="card">
+<div class="fb">
+<div class="t">Maxwell速率分布函数</div>
+$$f(v) = 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2}v^2\exp\left(-\frac{mv^2}{2kT}\right)$$
+<p>含义：$f(v)\dd v$ = 速率在 $v \sim v+\dd v$ 范围内的分子占总数的<strong>比率</strong></p>
+<p>归一化：$\int_0^\infty f(v)\dd v = 1$</p>
+</div>
+
+<div class="fb">
+<div class="t">三种统计速率（必背！）</div>
+<table>
+<tr><th>名称</th><th>公式（用 $m$）</th><th>公式（用摩尔质量 $M$）</th><th>系数</th></tr>
+<tr><td>最概然速率 $v_p$</td><td>$\sqrt{\frac{2kT}{m}}$</td><td>$\sqrt{\frac{2RT}{M}}$</td><td>$\sqrt{2}$</td></tr>
+<tr><td>平均速率 $\bar{v}$</td><td>$\sqrt{\frac{8kT}{\pi m}}$</td><td>$\sqrt{\frac{8RT}{\pi M}}$</td><td>$\sqrt{8/\pi}\approx1.60$</td></tr>
+<tr><td>方均根速率 $v_{rms}$</td><td>$\sqrt{\frac{3kT}{m}}$</td><td>$\sqrt{\frac{3RT}{M}}$</td><td>$\sqrt{3}\approx1.73$</td></tr>
+</table>
+<p>大小关系：$v_p < \bar{v} < v_{rms}$（$\sqrt{2} < \sqrt{8/\pi} < \sqrt{3}$）</p>
+</div>
+
+<div class="tip"><strong>记忆口诀</strong>：最概然 $\sqrt{2}$、平均 $\sqrt{8/\pi}$、方均根 $\sqrt{3}$，系数分别为 1.41、1.60、1.73，依次增大。</div>
+
+<div class="ex">
+<strong>例</strong>：$T=300\,\text{K}$ 时 $N_2$（$M=0.028\,\text{kg/mol}$）的三种速率。
+<div class="sol"><div class="st">解</div>
+<p>$v_p = \sqrt{\frac{2\times8.314\times300}{0.028}} = \sqrt{178157} \approx 422\,\text{m/s}$</p>
+<p>$\bar{v} = \sqrt{\frac{8\times8.314\times300}{\pi\times0.028}} \approx 476\,\text{m/s}$</p>
+<p>$v_{rms} = \sqrt{\frac{3\times8.314\times300}{0.028}} \approx 517\,\text{m/s}$</p>
+</div></div>
+</div>
+
+<h2 id="s5">8.5 平均自由程</h2>
+<div class="card">
+<div class="fb">
+<div class="t">平均碰撞频率与平均自由程</div>
+<p>平均碰撞频率：$\bar{Z} = \sqrt{2}\pi d^2 n\bar{v}$</p>
+<p>平均自由程：$\bar{\lambda} = \frac{\bar{v}}{\bar{Z}} = \frac{1}{\sqrt{2}\pi d^2 n} = \frac{kT}{\sqrt{2}\pi d^2 p}$</p>
+<p>（$d$ 为分子有效直径）</p>
+</div>
+</div>
+
+<div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 8-4, 8-5, 8-8, 8-10, 8-11, 8-14, 8-18, 8-21</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

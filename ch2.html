@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1章§2 牛顿运动定律 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol','\\ii':'\\hat{\\boldsymbol{i}}','\\jj':'\\hat{\\boldsymbol{j}}','\\kk':'\\hat{\\boldsymbol{k}}'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}
+h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}
+h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}
+h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}
+h4{color:#555;margin:12px 0 6px;font-size:1.05em;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}
+.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}
+.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}
+.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}
+.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}
+.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}
+.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}
+.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}
+.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}
+table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}
+details{margin:8px 0;}details summary{cursor:pointer;font-weight:bold;color:var(--pri);padding:4px;}
+ul,ol{margin-left:20px;margin-bottom:8px;}
+.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}
+.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch1.html">← 运动学</a><a href="ch2-ex.html">牛顿定律习题 →</a></div>
+
+<h1>第1章§2 牛顿运动定律</h1>
+
+<h2 id="s1">1.2.1 牛顿三大定律</h2>
+<div class="card">
+<div class="fb">
+<div class="t">牛顿第一定律（惯性定律）</div>
+<p>任何物体在不受外力作用时（或合力为零），保持静止或匀速直线运动状态。</p>
+<p>意义：(1) 定义了<strong>惯性参考系</strong>——牛顿定律成立的参考系；(2) 定义了<strong>力</strong>——改变运动状态的原因。</p>
+</div>
+
+<div class="fb">
+<div class="t">牛顿第二定律（核心）</div>
+$$\vv{F}_{合} = m\vv{a} = m\frac{\dd\vv{v}}{\dd t} = \frac{\dd\vv{p}}{\dd t}$$
+<p>分量形式：$F_x = ma_x,\quad F_y = ma_y,\quad F_z = ma_z$</p>
+<p>自然坐标系形式：$F_\tau = ma_\tau = m\frac{\dd v}{\dd t},\quad F_n = ma_n = m\frac{v^2}{\rho}$</p>
+</div>
+
+<div class="fb">
+<div class="t">牛顿第三定律（作用-反作用）</div>
+$$\vv{F}_{12} = -\vv{F}_{21}$$
+<p>同时、等大、反向、共线、分别作用在两个不同物体上。</p>
+</div>
+<div class="warn"><strong>注意</strong>：牛顿第三定律在惯性系和非惯性系中都成立，但惯性力没有反作用力。</div>
+</div>
+
+<h2 id="s2">1.2.2 常见力</h2>
+<div class="card">
+<table>
+<tr><th>力</th><th>公式</th><th>说明</th></tr>
+<tr><td>万有引力</td><td>$F = G\frac{m_1m_2}{r^2}$</td><td>$G=6.67\times10^{-11}\,\text{N·m}^2/\text{kg}^2$</td></tr>
+<tr><td>重力</td><td>$\vv{P} = m\vv{g}$</td><td>$g\approx9.8\,\text{m/s}^2$（地球表面）</td></tr>
+<tr><td>弹力（胡克定律）</td><td>$F = -kx$</td><td>$k$ 为劲度系数，$x$ 为形变量</td></tr>
+<tr><td>静摩擦力</td><td>$f_s \leq \mu_s N$</td><td>$\mu_s$ 为静摩擦系数</td></tr>
+<tr><td>滑动摩擦力</td><td>$f_k = \mu_k N$</td><td>方向与相对滑动方向相反</td></tr>
+<tr><td>线性阻力</td><td>$f = -bv$</td><td>低速流体阻力</td></tr>
+<tr><td>二次阻力</td><td>$f = -cv^2$</td><td>高速空气阻力</td></tr>
+</table>
+</div>
+
+<h2 id="s3">1.2.3 牛顿定律的应用</h2>
+<div class="card">
+<h3>解题步骤</h3>
+<ol>
+<li><strong>选研究对象</strong>（隔离体）</li>
+<li><strong>受力分析</strong>（画力图，不遗漏不多画）</li>
+<li><strong>建坐标系</strong>（选取使分解最简单的方向）</li>
+<li><strong>列方程</strong>（$F_x=ma_x$, $F_y=ma_y$）</li>
+<li><strong>解方程</strong>（联立约束条件）</li>
+</ol>
+
+<div class="ex">
+<strong>例1（滑轮系统）</strong>：Atwood机——轻绳跨过不计质量的定滑轮连接 $m_1$ 和 $m_2$（$m_1>m_2$），求加速度和绳中张力。
+<div class="sol">
+<div class="st">解</div>
+<p>对 $m_1$（取向下为正）：$m_1 g - T = m_1 a$</p>
+<p>对 $m_2$（取向上为正）：$T - m_2 g = m_2 a$</p>
+<p>两式相加：$(m_1-m_2)g = (m_1+m_2)a$</p>
+$$a = \frac{m_1-m_2}{m_1+m_2}g,\quad T = \frac{2m_1 m_2}{m_1+m_2}g$$
+</div>
+</div>
+
+<div class="ex">
+<strong>例2（含阻力的运动方程）</strong>：物体从 $v_0$ 开始在水平面上受阻力 $f=-bv$ 运动，求 $v(t)$。
+<div class="sol">
+<div class="st">解</div>
+<p>$m\frac{\dd v}{\dd t} = -bv \implies \frac{\dd v}{v} = -\frac{b}{m}\dd t$</p>
+<p>积分：$\ln v - \ln v_0 = -\frac{b}{m}t$</p>
+$$v = v_0 e^{-bt/m}$$
+<p>终端速度为 $0$（指数衰减），$\tau = m/b$ 为时间常数。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例3（竖直圆周运动）</strong>：小球在竖直面内做圆周运动（半径 $R$），求最高点不脱离的最小速度。
+<div class="sol">
+<div class="st">解</div>
+<p>最高点：$mg + N = m\frac{v^2}{R}$</p>
+<p>临界条件 $N=0$：$mg = m\frac{v_{min}^2}{R}$</p>
+$$v_{min} = \sqrt{gR}$$
+</div>
+</div>
+</div>
+
+<h2 id="s4">1.2.4 非惯性系与惯性力</h2>
+<div class="card">
+<div class="fb">
+<div class="t">惯性力</div>
+<p>在加速度为 $\vv{a}_0$ 的非惯性系中，为使牛顿定律形式不变，引入<strong>惯性力</strong>：</p>
+$$\vv{F}^* = -m\vv{a}_0$$
+<p>修正后的运动方程：$\vv{F} + \vv{F}^* = m\vv{a}'$（$\vv{a}'$ 为相对非惯性系的加速度）</p>
+</div>
+
+<h3>常见惯性力</h3>
+<div class="fb">
+<div class="t">直线加速系统</div>
+<p>若非惯性系以 $\vv{a}_0$ 做平动加速，惯性力 $\vv{F}^* = -m\vv{a}_0$，方向与 $\vv{a}_0$ 相反。</p>
+</div>
+
+<div class="fb">
+<div class="t">旋转系统：惯性离心力</div>
+<p>在以角速度 $\omega$ 转动的参考系中：</p>
+$$\vv{F}_{cf} = m\omega^2 r\,\hat{\vv{r}}$$
+<p>方向沿径向向外（离心），大小 $F_{cf} = m\omega^2 r$。</p>
+</div>
+
+<div class="note"><strong>Coriolis力</strong>（科里奥利力）$\vv{F}_{Cor} = -2m\vv{\omega}\times\vv{v}'$：地球自转效应（台风旋转方向、傅科摆等），本课程仅定性了解。</div>
+
+<div class="ex">
+<strong>例4（电梯问题）</strong>：质量 $m$ 的人站在加速上升的电梯中（$a_0$ 向上），求地板对人的支撑力。
+<div class="sol">
+<div class="st">解法1（惯性系）</div>
+<p>以地面为参考系：$N - mg = ma_0$，故 $N = m(g+a_0)$</p>
+<div class="st">解法2（非惯性系）</div>
+<p>在电梯参考系中人静止，惯性力 $F^* = ma_0$（向下）：</p>
+<p>$N - mg - ma_0 = 0$，故 $N = m(g+a_0)$</p>
+</div>
+</div>
+</div>
+
+<div class="tip"><strong>2022期中真题考点</strong>：均匀绳子旋转的张力问题（习题1-44）——取微元，用牛顿第二定律建立关于张力的微分方程。</div>
+
+<div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 1-36, 1-37, 1-44, 1-49, 1-50, 1-53, 1-54, 1-55</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

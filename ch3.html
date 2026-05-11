@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2章 功和能 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}h4{color:#555;margin:12px 0 6px;font-size:1.05em;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch2.html">← 牛顿定律</a><a href="ch3-ex.html">第2章习题 →</a></div>
+
+<h1>第2章 功和能</h1>
+
+<h2 id="s1">2.1 功</h2>
+<div class="card">
+<div class="fb">
+<div class="t">功的定义</div>
+<p><strong>恒力的功</strong>：$W = \vv{F}\cdot\Delta\vv{r} = F\cos\theta\cdot s$</p>
+<p><strong>变力的功</strong>（第二类曲线积分）：</p>
+$$W = \int_A^B \vv{F}\cdot\dd\vv{r} = \int_A^B (F_x\dd x + F_y\dd y + F_z\dd z)$$
+<p><strong>功率</strong>：$P = \frac{\dd W}{\dd t} = \vv{F}\cdot\vv{v}$</p>
+</div>
+<div class="warn"><strong>注意</strong>：功是标量，有正负。$0°<\theta<90°$ 做正功；$90°<\theta<180°$ 做负功；$\theta=90°$ 不做功。功与参考系有关！</div>
+
+<div class="ex">
+<strong>例1</strong>：弹簧力 $F=-kx$ 从 $x_1$ 到 $x_2$ 做的功。
+<div class="sol"><div class="st">解</div>
+$W = \int_{x_1}^{x_2}(-kx)\dd x = -\frac{1}{2}k(x_2^2-x_1^2) = \frac{1}{2}kx_1^2 - \frac{1}{2}kx_2^2$
+</div></div>
+
+<div class="ex">
+<strong>例2</strong>：万有引力 $F = -G\frac{Mm}{r^2}$（引力方向沿 $r$ 减小方向），从 $r_1$ 到 $r_2$ 做的功。
+<div class="sol"><div class="st">解</div>
+$$W = \int_{r_1}^{r_2}\left(-\frac{GMm}{r^2}\right)\dd r = GMm\left(\frac{1}{r_2}-\frac{1}{r_1}\right)$$
+</div></div>
+</div>
+
+<h2 id="s2">2.2 动能定理</h2>
+<div class="card">
+<div class="fb">
+<div class="t">质点动能定理</div>
+<p>动能：$E_k = \frac{1}{2}mv^2$</p>
+$$W_{合} = \Delta E_k = \frac{1}{2}mv_2^2 - \frac{1}{2}mv_1^2$$
+<p>合外力做的功 = 动能的增量</p>
+</div>
+
+<div class="fb">
+<div class="t">质点系动能定理</div>
+$$W_{外} + W_{内} = \Delta E_k$$
+<p>所有外力做的功 + 所有内力做的功 = 系统总动能的增量</p>
+</div>
+<div class="warn"><strong>易错</strong>：质点系中内力可以做功（如弹簧弹开两物体），不能忽略！</div>
+</div>
+
+<h2 id="s3">2.3 保守力与势能</h2>
+<div class="card">
+<div class="fb">
+<div class="t">保守力</div>
+<p>力 $\vv{F}$ 是<strong>保守力</strong>，当且仅当做功只与始末位置有关，与路径无关。等价条件：$\oint\vv{F}\cdot\dd\vv{r}=0$</p>
+<p>常见保守力：重力、弹力、万有引力、库仑力</p>
+<p>非保守力：摩擦力、空气阻力</p>
+</div>
+
+<div class="fb">
+<div class="t">势能</div>
+<p>保守力做功 = 势能减少量：$W_{保} = -(E_{p2}-E_{p1}) = -\Delta E_p$</p>
+<p>常见势能：</p>
+<table>
+<tr><th>类型</th><th>势能</th><th>零点</th></tr>
+<tr><td>重力势能</td><td>$E_p = mgh$</td><td>自选参考面</td></tr>
+<tr><td>弹性势能</td><td>$E_p = \frac{1}{2}kx^2$</td><td>自然长度处</td></tr>
+<tr><td>万有引力势能</td><td>$E_p = -\frac{GMm}{r}$</td><td>$r\to\infty$ 处为零</td></tr>
+</table>
+</div>
+
+<div class="fb">
+<div class="t">势能与力的关系</div>
+$$F_x = -\frac{\partial E_p}{\partial x},\quad F_y = -\frac{\partial E_p}{\partial y},\quad F_z = -\frac{\partial E_p}{\partial z}$$
+<p>即 $\vv{F} = -\nabla E_p$（力指向势能减小最快的方向）</p>
+</div>
+
+<h3>势能曲线分析</h3>
+<p>在 $E_p(x)$ 图上：</p>
+<ul>
+<li>$E_p'(x_0)=0$ → 平衡点。$E_p''(x_0)>0$ 稳定平衡；$E_p''(x_0)<0$ 不稳定平衡</li>
+<li>动能 $E_k = E - E_p(x)$，粒子只能在 $E_p(x)\leq E$ 的区域运动</li>
+<li>$E_p(x)=E$ 的点为<strong>回转点</strong>（turning point）</li>
+</ul>
+</div>
+
+<h2 id="s4">2.4 功能原理与机械能守恒</h2>
+<div class="card">
+<div class="fb">
+<div class="t">功能原理</div>
+<p>系统机械能 $E = E_k + E_p$</p>
+$$W_{外} + W_{非保内} = \Delta E = \Delta E_k + \Delta E_p$$
+<p>外力做的功 + 非保守内力做的功 = 机械能的增量</p>
+</div>
+
+<div class="fb">
+<div class="t">机械能守恒定律</div>
+<p>条件：$W_{外}=0$ 且 $W_{非保内}=0$（只有保守内力做功）</p>
+$$E_k + E_p = \text{const}$$
+$$\frac{1}{2}mv_1^2 + E_{p1} = \frac{1}{2}mv_2^2 + E_{p2}$$
+</div>
+
+<div class="ex">
+<strong>例3（真题高频：圆弧物块+小球）</strong>：光滑水平面上质量 $M$ 的圆弧物块静止，质量 $m$ 的小球从顶端滑到底端（高度 $R$），求底端两者速度。
+<div class="sol"><div class="st">解</div>
+<p>动量守恒（水平方向无外力）：$0 = mv_1 - Mv_2$，即 $mv_1 = Mv_2$</p>
+<p>机械能守恒：$mgR = \frac{1}{2}mv_1^2 + \frac{1}{2}Mv_2^2$</p>
+<p>由 $v_2 = \frac{m}{M}v_1$ 代入：$mgR = \frac{1}{2}mv_1^2(1+\frac{m}{M})$</p>
+$$v_1 = \sqrt{\frac{2gRM}{m+M}},\quad v_2 = \frac{m}{M}\sqrt{\frac{2gRM}{m+M}}$$
+</div></div>
+</div>
+
+<h2 id="s5">2.5 碰撞</h2>
+<div class="card">
+<div class="fb">
+<div class="t">一维弹性碰撞公式</div>
+<p>$m_1$ 以 $v_1$ 碰静止的 $m_2$（动量+动能都守恒）：</p>
+$$v_1' = \frac{m_1-m_2}{m_1+m_2}v_1,\quad v_2' = \frac{2m_1}{m_1+m_2}v_1$$
+<p>特殊情况：$m_1=m_2$ → 速度交换；$m_1\gg m_2$ → $v_1'\approx v_1,\;v_2'\approx 2v_1$</p>
+</div>
+
+<div class="fb">
+<div class="t">完全非弹性碰撞</div>
+<p>碰后两者粘合（$v'$相同），动量守恒：$m_1v_1 = (m_1+m_2)v'$</p>
+<p>能量损失：$\Delta E_k = \frac{1}{2}\frac{m_1m_2}{m_1+m_2}v_1^2$（折合质量 $\mu = \frac{m_1m_2}{m_1+m_2}$）</p>
+</div>
+</div>
+
+<div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 2-4, 2-5, 2-6, 2-8, 2-10, 2-11, 2-13, 2-14</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

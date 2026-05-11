@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3章 动量与角动量 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch3.html">← 功和能</a><a href="ch4-ex.html">第3章习题 →</a></div>
+
+<h1>第3章 动量与角动量</h1>
+
+<h2 id="s1">3.1 冲量与动量定理</h2>
+<div class="card">
+<div class="fb">
+<div class="t">动量与冲量</div>
+<p><strong>动量</strong>：$\vv{p} = m\vv{v}$</p>
+<p><strong>冲量</strong>：$\vv{I} = \int_{t_1}^{t_2}\vv{F}\dd t$</p>
+<p><strong>质点动量定理</strong>：$\vv{I} = \Delta\vv{p} = m\vv{v}_2 - m\vv{v}_1$</p>
+<p>微分形式：$\vv{F} = \frac{\dd\vv{p}}{\dd t}$（牛顿第二定律的原始形式）</p>
+</div>
+</div>
+
+<h2 id="s2">3.2 动量守恒定律</h2>
+<div class="card">
+<div class="fb">
+<div class="t">质点系动量定理与动量守恒</div>
+<p><strong>质点系动量定理</strong>：$\vv{F}_{外合} = \frac{\dd\vv{p}_{总}}{\dd t}$（内力不影响总动量）</p>
+<p><strong>动量守恒条件</strong>：$\vv{F}_{外合} = 0 \implies \vv{p}_{总} = \text{const}$</p>
+<p><strong>分量形式</strong>：若某方向合外力为零，则该方向动量守恒。</p>
+</div>
+<div class="tip"><strong>常见动量守恒情形</strong>：碰撞、爆炸（内力远大于外力的短过程）、光滑面上的系统、反冲。</div>
+</div>
+
+<h2 id="s3">3.3 质心与质心运动定理</h2>
+<div class="card">
+<div class="fb">
+<div class="t">质心</div>
+<p>离散质点系：$\vv{r}_C = \frac{\sum m_i\vv{r}_i}{\sum m_i} = \frac{\sum m_i\vv{r}_i}{M}$</p>
+<p>连续体：$\vv{r}_C = \frac{\int\vv{r}\dd m}{M}$</p>
+<p><strong>质心速度</strong>：$\vv{v}_C = \frac{\sum m_i\vv{v}_i}{M} = \frac{\vv{p}_{总}}{M}$</p>
+<p><strong>质心运动定理</strong>：$\vv{F}_{外合} = M\vv{a}_C$</p>
+</div>
+
+<div class="ex">
+<strong>例1（真题高频：弹簧-墙-双木块）</strong>：两个质量 $m$ 的木块用弹簧（$k$）连接，$A$ 靠墙，推 $B$ 压缩弹簧 $x_0$ 后释放。求：(1) 系统质心最大速度和最大加速度；(2) 弹簧最大伸长量。
+<div class="sol"><div class="st">解</div>
+<p>(1) 释放瞬间弹簧弹力 $F=kx_0$，$A$ 受墙壁支撑不动，系统所受外力为墙壁支撑力 $N=kx_0$</p>
+<p>质心加速度最大值：$a_{C,max} = \frac{kx_0}{2m}$</p>
+<p>$A$ 与墙分离时（弹簧恢复自然长度），$B$ 速度最大为 $v_B$：$\frac{1}{2}kx_0^2 = \frac{1}{2}mv_B^2$，$v_B = x_0\sqrt{k/m}$</p>
+<p>此后系统无外力，质心速度恒定：$v_C = \frac{mv_B}{2m} = \frac{x_0}{2}\sqrt{\frac{k}{m}}$</p>
+<p>(2) 弹簧最大伸长时两物体共速 $v_C$，由能量守恒：$\frac{1}{2}(2m)v_C^2 = \frac{1}{2}kx_{max}^2 + \frac{1}{2}(2m)v_C^2$？不对——</p>
+<p>正确方法：在质心系中，弹簧最大伸长时两者相对静止。弹性势能在 $A$ 离墙后守恒：$\frac{1}{2}mv_B^2 = \frac{1}{2}(2m)v_C^2 + \frac{1}{2}kx_{max}^2$</p>
+<p>$\frac{1}{2}kx_0^2 = \frac{1}{2}(2m)\frac{v_B^2}{4} + \frac{1}{2}kx_{max}^2 = \frac{1}{4}kx_0^2 + \frac{1}{2}kx_{max}^2$</p>
+<p>$x_{max} = \frac{x_0}{\sqrt{2}}$</p>
+</div></div>
+</div>
+
+<h2 id="s4">3.4 角动量与角动量定理</h2>
+<div class="card">
+<div class="fb">
+<div class="t">角动量</div>
+<p><strong>质点角动量</strong>（对参考点 $O$）：$\vv{L} = \vv{r}\times\vv{p} = \vv{r}\times m\vv{v}$</p>
+<p>大小：$L = rmv\sin\theta = mv\cdot d$（$d$ 为速度到 $O$ 的距离）</p>
+</div>
+
+<div class="fb">
+<div class="t">力矩</div>
+<p>$\vv{M} = \vv{r}\times\vv{F}$，大小 $M = rF\sin\theta = F\cdot d$（$d$ 为力臂）</p>
+</div>
+
+<div class="fb">
+<div class="t">角动量定理</div>
+<p>$\vv{M} = \frac{\dd\vv{L}}{\dd t}$</p>
+<p><strong>角动量守恒</strong>：若合力矩 $\vv{M}=0$，则 $\vv{L}=\text{const}$</p>
+<p>常见情况：有心力（力过参考点）→ 对该点角动量守恒</p>
+</div>
+
+<div class="ex">
+<strong>例2（真题：质点系角动量定理推导）</strong>：由牛顿第二定律推导质点系角动量定理 $\vv{M}_{外} = \frac{\dd\vv{L}}{\dd t}$。
+<div class="sol"><div class="st">解</div>
+<p>对第 $i$ 个质点：$\vv{r}_i \times \vv{F}_i^{(外)} + \sum_{j\neq i}\vv{r}_i\times\vv{F}_{ji} = \vv{r}_i\times m_i\vv{a}_i$</p>
+<p>注意 $\frac{\dd}{\dd t}(\vv{r}_i\times m_i\vv{v}_i) = \vv{v}_i\times m_i\vv{v}_i + \vv{r}_i\times m_i\vv{a}_i = \vv{r}_i\times m_i\vv{a}_i$</p>
+<p>对所有质点求和：$\sum\vv{r}_i\times\vv{F}_i^{(外)} + \sum_{i}\sum_{j\neq i}\vv{r}_i\times\vv{F}_{ji} = \frac{\dd}{\dd t}\sum\vv{r}_i\times m_i\vv{v}_i$</p>
+<p>内力力矩之和为零（$\vv{F}_{ij}$ 和 $\vv{F}_{ji}$ 等大反向且共线）</p>
+<p>故：$\vv{M}_{外} = \frac{\dd\vv{L}}{\dd t}$</p>
+</div></div>
+</div>
+
+<h2 id="s5">3.5 变质量系统（真题高频！）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">变质量问题的处理方法</div>
+<p>核心：用<strong>动量定理</strong>处理 $\dd t$ 时间内的动量变化。</p>
+<p>设 $t$ 时刻系统质量 $m$，速度 $v$；在 $\dd t$ 内增加质量 $\dd m$（其速度为 $u$）：</p>
+$$m\frac{\dd v}{\dd t} = F_{外} + (u-v)\frac{\dd m}{\dd t}$$
+</div>
+
+<div class="ex">
+<strong>例3（真题：雨中卡车）</strong>：质量 $M$ 的卡车初速 $v_0$，雨水竖直均匀落入，每秒质量 $\mu$，忽略摩擦。车厢装满水量 $m_0$ 后溢出。求 $v(t)$。
+<div class="sol"><div class="st">解</div>
+<p><strong>水未满时</strong>（$t < m_0/\mu$）：系统质量增加，水平动量守恒（雨水竖直落下，水平方向无冲量）</p>
+<p>$Mv_0 = (M+\mu t)v$，故 $v = \frac{Mv_0}{M+\mu t}$</p>
+<p><strong>水满后</strong>（$t \geq m_0/\mu$）：流出的水在车运动方向相对车速度为零，即流出水速度等于车速。</p>
+<p>每秒进入的水（速度0水平分量）和流出的水（速度$v$）产生的动量变化：</p>
+<p>$(M+m_0)\frac{\dd v}{\dd t} = 0\cdot\mu - v\cdot\mu \cdot 0 = -\mu v$... 实际上流入和流出质量相等，系统质量恒定 $M+m_0$。</p>
+<p>分析：流入的雨水水平动量为 0，流出的水水平动量为 $v\dd m$。净效果：$(M+m_0)\dd v = -v\dd m_{流出} + 0\cdot\dd m_{流入}$，但流入和流出速率都是 $\mu$，所以 $(M+m_0)\dd v = 0\cdot\mu\dd t - v\cdot 0 = 0$？</p>
+<p>关键：溢出的水流出时相对车速度为零 → 绝对速度等于车速 → 不带走额外动量。新进入的水水平动量为零。所以 $(M+m_0)\frac{\dd v}{\dd t} = -\mu v$（类似于阻力）</p>
+$$v = v_1 e^{-\mu(t-t_1)/(M+m_0)}$$
+<p>其中 $t_1 = m_0/\mu$，$v_1 = \frac{Mv_0}{M+m_0}$</p>
+</div></div>
+</div>
+
+<div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 3-3, 3-4, 3-7, 3-10, 3-13, 3-19, 3-23, 3-27, 3-28</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

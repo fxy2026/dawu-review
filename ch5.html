@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第4章 刚体力学 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch4.html">← 动量与角动量</a><a href="ch5-ex.html">第4章习题 →</a></div>
+
+<h1>第4章 刚体力学</h1>
+
+<h2 id="s1">4.1 转动惯量</h2>
+<div class="card">
+<div class="fb">
+<div class="t">转动惯量的定义</div>
+<p>离散：$J = \sum m_i r_i^2$　　连续：$J = \int r^2\dd m$</p>
+<p>其中 $r$ 是质量元到转轴的距离。</p>
+</div>
+
+<h3>常见刚体转动惯量</h3>
+<table>
+<tr><th>刚体</th><th>转轴</th><th>转动惯量</th></tr>
+<tr><td>细棒（长$L$，质量$M$）</td><td>过中心，垂直</td><td>$\frac{1}{12}ML^2$</td></tr>
+<tr><td>细棒</td><td>过端点，垂直</td><td>$\frac{1}{3}ML^2$</td></tr>
+<tr><td>圆环/薄壁圆筒（$R$）</td><td>中心轴</td><td>$MR^2$</td></tr>
+<tr><td>圆盘/实心圆柱（$R$）</td><td>中心轴</td><td>$\frac{1}{2}MR^2$</td></tr>
+<tr><td>实心球（$R$）</td><td>直径</td><td>$\frac{2}{5}MR^2$</td></tr>
+<tr><td>球壳（$R$）</td><td>直径</td><td>$\frac{2}{3}MR^2$</td></tr>
+</table>
+
+<div class="fb">
+<div class="t">平行轴定理</div>
+$$J = J_C + Md^2$$
+<p>$J_C$ 为过质心的轴的转动惯量，$d$ 为两平行轴间距。</p>
+</div>
+
+<div class="ex">
+<strong>例</strong>：验证细棒过端点 = 过中心 + 平行轴定理。
+<div class="sol"><div class="st">解</div>
+$J_{端} = J_C + M(L/2)^2 = \frac{1}{12}ML^2 + \frac{1}{4}ML^2 = \frac{1}{3}ML^2$ ✓
+</div></div>
+</div>
+
+<h2 id="s2">4.2 转动定律</h2>
+<div class="card">
+<div class="fb">
+<div class="t">定轴转动的基本方程</div>
+$$M = J\alpha$$
+<p>合力矩 = 转动惯量 × 角加速度（类比 $F=ma$）</p>
+<p>力矩 $M = Fr\sin\theta = F\cdot d$（$d$ 为力臂）</p>
+</div>
+
+<div class="ex">
+<strong>例（Atwood机+有质量滑轮）</strong>：质量 $m_1,m_2$（$m_1>m_2$）用轻绳跨过半径 $R$、转动惯量 $J$ 的滑轮连接。求加速度。
+<div class="sol"><div class="st">解</div>
+<p>对 $m_1$：$m_1g - T_1 = m_1a$</p>
+<p>对 $m_2$：$T_2 - m_2g = m_2a$</p>
+<p>对滑轮：$(T_1-T_2)R = J\alpha = J\frac{a}{R}$</p>
+<p>联立：$a = \frac{(m_1-m_2)g}{m_1+m_2+J/R^2}$</p>
+</div></div>
+</div>
+
+<h2 id="s3">4.3 转动中的角动量与能量</h2>
+<div class="card">
+<div class="fb">
+<div class="t">刚体角动量守恒</div>
+<p>刚体角动量：$L = J\omega$</p>
+<p>角动量守恒（合力矩为零时）：$J_1\omega_1 = J_2\omega_2$</p>
+</div>
+
+<div class="fb">
+<div class="t">转动动能与功</div>
+<p>转动动能：$E_k = \frac{1}{2}J\omega^2$</p>
+<p>力矩做功：$W = \int M\dd\theta$</p>
+<p>功能定理：$W = \Delta(\frac{1}{2}J\omega^2)$</p>
+</div>
+
+<h3>滚动问题</h3>
+<div class="fb">
+<div class="t">纯滚动条件</div>
+<p>$v_C = R\omega$（质心平动速度=半径×角速度）</p>
+<p>总动能 = 平动 + 转动：$E_k = \frac{1}{2}Mv_C^2 + \frac{1}{2}J\omega^2$</p>
+</div>
+
+<div class="ex">
+<strong>例（斜面滚动）</strong>：实心球从高 $h$ 处无滑动滚下斜面，求底端速度。
+<div class="sol"><div class="st">解</div>
+<p>$Mgh = \frac{1}{2}Mv^2 + \frac{1}{2}\cdot\frac{2}{5}MR^2\cdot\frac{v^2}{R^2} = \frac{1}{2}Mv^2(1+\frac{2}{5}) = \frac{7}{10}Mv^2$</p>
+$$v = \sqrt{\frac{10gh}{7}}$$
+<p>（比纯滑动 $\sqrt{2gh}$ 小——部分能量转化为转动动能）</p>
+</div></div>
+
+<div class="tip"><strong>比较</strong>：同一斜面同一高度，纯滑动最快，圆环最慢（$J$最大），顺序：滑动 > 实心球 > 圆盘 > 球壳 > 圆环</div>
+</div>
+
+<div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 4-4, 4-6, 4-10, 4-11, 4-14, 4-16, 4-19, 4-23, 4-24</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

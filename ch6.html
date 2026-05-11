@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第5章 狭义相对论 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--pri);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch5.html">← 刚体力学</a><a href="ch6-ex.html">第5章习题 →</a></div>
+
+<h1>第5章 狭义相对论</h1>
+
+<h2 id="s1">5.1 基本假设与Lorentz变换</h2>
+<div class="card">
+<div class="fb">
+<div class="t">两个基本假设</div>
+<ol>
+<li><strong>相对性原理</strong>：物理规律在一切惯性系中形式相同</li>
+<li><strong>光速不变原理</strong>：真空中光速 $c$ 在一切惯性系中都相同，与光源运动无关</li>
+</ol>
+</div>
+
+<div class="fb">
+<div class="t">Lorentz变换（$S'$ 系沿 $x$ 方向以 $v$ 相对 $S$ 运动）</div>
+<p><strong>正变换</strong>（$S \to S'$）：</p>
+$$x' = \gamma(x-vt),\quad y'=y,\quad z'=z,\quad t' = \gamma\left(t-\frac{vx}{c^2}\right)$$
+<p><strong>逆变换</strong>（$S' \to S$）：将 $v$ 换成 $-v$</p>
+$$x = \gamma(x'+vt'),\quad t = \gamma\left(t'+\frac{vx'}{c^2}\right)$$
+<p>其中 $\gamma = \frac{1}{\sqrt{1-\beta^2}},\quad \beta = v/c$</p>
+</div>
+</div>
+
+<h2 id="s2">5.2 时间膨胀与长度收缩</h2>
+<div class="card">
+<div class="fb">
+<div class="t">时间膨胀（运动的钟变慢）</div>
+$$\Delta t = \gamma\Delta\tau$$
+<p>$\Delta\tau$ 为<strong>固有时间</strong>（原时，事件在"发生地"参考系测量的时间）。运动系测量的时间更长。</p>
+</div>
+
+<div class="fb">
+<div class="t">长度收缩（运动方向上缩短）</div>
+$$L = \frac{L_0}{\gamma} = L_0\sqrt{1-\beta^2}$$
+<p>$L_0$ 为<strong>固有长度</strong>（物体在静止系中的长度）。垂直运动方向不收缩。</p>
+</div>
+
+<div class="warn"><strong>关键</strong>：判断谁是"固有"量！固有时间 → 在同一地点发生的两个事件；固有长度 → 物体静止时的长度。</div>
+
+<div class="ex">
+<strong>例（μ子寿命）</strong>：μ子固有寿命 $\tau_0=2\times10^{-6}\,\text{s}$，以 $0.998c$ 运动，实验室中能观测到的寿命？能飞多远？
+<div class="sol"><div class="st">解</div>
+<p>$\gamma = 1/\sqrt{1-0.998^2} \approx 15.8$</p>
+<p>实验室寿命：$\Delta t = \gamma\tau_0 = 15.8\times2\times10^{-6} = 3.16\times10^{-5}\,\text{s}$</p>
+<p>飞行距离：$d = 0.998c\times\Delta t \approx 9.47\,\text{km}$（经典预期仅 $\sim 600\,\text{m}$）</p>
+</div></div>
+</div>
+
+<h2 id="s3">5.3 速度变换</h2>
+<div class="card">
+<div class="fb">
+<div class="t">相对论速度叠加</div>
+$$u_x = \frac{u_x'+v}{1+u_x'v/c^2},\quad u_y = \frac{u_y'}{\gamma(1+u_x'v/c^2)}$$
+<p>验证：当 $u_x'=c$ 时，$u_x = \frac{c+v}{1+v/c} = c$（光速不变）</p>
+</div>
+</div>
+
+<h2 id="s4">5.4 相对论动量与能量（重中之重！）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">相对论动量</div>
+$$\vv{p} = \gamma m_0\vv{v} = \frac{m_0\vv{v}}{\sqrt{1-v^2/c^2}}$$
+</div>
+
+<div class="fb">
+<div class="t">质能关系</div>
+<p><strong>静能</strong>：$E_0 = m_0c^2$</p>
+<p><strong>总能</strong>：$E = \gamma m_0 c^2 = E_k + E_0$</p>
+<p><strong>动能</strong>：$E_k = (\gamma-1)m_0c^2$</p>
+</div>
+
+<div class="fb">
+<div class="t">能量-动量关系（最重要的公式！）</div>
+$$E^2 = (pc)^2 + (m_0c^2)^2$$
+<p>光子（$m_0=0$）：$E = pc$</p>
+</div>
+
+<div class="ex">
+<strong>例（真题高频）</strong>：质子动能等于其静能的 $n$ 倍，求速度和动量。
+<div class="sol"><div class="st">解</div>
+<p>$E_k = nm_0c^2$，$E = E_k + E_0 = (n+1)m_0c^2$</p>
+<p>又 $E = \gamma m_0c^2$，故 $\gamma = n+1$</p>
+<p>$v = c\sqrt{1-1/\gamma^2} = c\sqrt{1-\frac{1}{(n+1)^2}}$</p>
+<p>由 $E^2 = (pc)^2 + (m_0c^2)^2$：</p>
+<p>$p = \frac{1}{c}\sqrt{E^2-(m_0c^2)^2} = m_0c\sqrt{(n+1)^2-1} = m_0c\sqrt{n^2+2n}$</p>
+</div></div>
+</div>
+
+<div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 5-3, 5-4, 5-7, 5-10, 5-12, 5-13, 5-16, 5-19</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

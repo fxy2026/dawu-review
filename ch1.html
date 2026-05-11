@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1章 质点运动学 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{
+    delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
+    macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol','\\ii':'\\hat{\\boldsymbol{i}}','\\jj':'\\hat{\\boldsymbol{j}}','\\kk':'\\hat{\\boldsymbol{k}}','\\ee':'\\boldsymbol{e}'},
+    throwOnError:false
+  });">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}
+h1{text-align:center;color:var(--pri);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--pri);padding-bottom:10px;}
+h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--pri),#2980b9);border-radius:6px;}
+h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}
+h4{color:#555;margin:12px 0 6px;font-size:1.05em;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}
+.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}
+.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}
+.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}
+.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}
+.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}
+.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}
+.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}
+.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}
+table{width:100%;border-collapse:collapse;margin:12px 0;}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}
+th{background:var(--pri);color:#fff;}
+tr:nth-child(even){background:#f9f7f2;}
+details{margin:8px 0;}details summary{cursor:pointer;font-weight:bold;color:var(--pri);padding:4px;}
+ul,ol{margin-left:20px;margin-bottom:8px;}
+.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}
+.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}
+.nav-bar a:hover{background:#1a5276;color:#fff;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="ch1-ex.html">第1章习题 →</a></div>
+
+<h1>第1章 质点运动学</h1>
+
+<!-- ===== 1.1 位矢与位移 ===== -->
+<h2 id="s1">1.1 位置矢量与位移</h2>
+<div class="card">
+<h3>参考系与坐标系</h3>
+<p>描述运动必须选定<strong>参考系</strong>（Reference Frame）。同一运动在不同参考系中描述不同。通常选地面为参考系。</p>
+<p>在参考系上建立<strong>坐标系</strong>来定量描述位置：直角坐标系 $(x,y,z)$、极坐标 $(r,\theta)$、自然坐标系（切向-法向）。</p>
+
+<h3>位置矢量（位矢）</h3>
+<div class="fb">
+<div class="t">位矢的定义</div>
+<p>质点在空间中的位置用<strong>位置矢量</strong>描述：</p>
+$$\vv{r} = x\ii + y\jj + z\kk$$
+<p>大小：$r = |\vv{r}| = \sqrt{x^2+y^2+z^2}$</p>
+<p>当坐标 $x=x(t),\,y=y(t),\,z=z(t)$ 为时间函数时，称为<strong>运动方程</strong>（参数方程形式）。消去 $t$ 得<strong>轨迹方程</strong>。</p>
+</div>
+
+<h3>位移与路程</h3>
+<div class="fb">
+<div class="t">位移 vs 路程</div>
+<p><strong>位移</strong>（矢量）：$\Delta\vv{r} = \vv{r}_2 - \vv{r}_1 = \Delta x\,\ii + \Delta y\,\jj + \Delta z\,\kk$</p>
+<p>位移大小：$|\Delta\vv{r}| = \sqrt{(\Delta x)^2+(\Delta y)^2+(\Delta z)^2}$</p>
+<p><strong>路程</strong>（标量）：$\Delta s = \int |\dd\vv{r}|$ —— 沿轨迹的弧长</p>
+</div>
+<div class="warn"><strong>易错</strong>：$|\Delta\vv{r}| \neq \Delta s$（除非直线运动且方向不变）。位移是"起点到终点的有向线段"，路程是"走过的总弧长"。</div>
+</div>
+
+<!-- ===== 1.2 速度与加速度 ===== -->
+<h2 id="s2">1.2 速度与加速度</h2>
+<div class="card">
+<h3>速度</h3>
+<div class="fb">
+<div class="t">速度的定义</div>
+<p><strong>平均速度</strong>：$\bar{\vv{v}} = \frac{\Delta\vv{r}}{\Delta t}$（矢量，方向沿位移方向）</p>
+<p><strong>瞬时速度</strong>：$\vv{v} = \frac{\dd\vv{r}}{\dd t} = \dot{x}\,\ii + \dot{y}\,\jj + \dot{z}\,\kk$（矢量，方向沿轨迹切线）</p>
+<p><strong>速率</strong>（标量）：$v = |\vv{v}| = \sqrt{\dot{x}^2+\dot{y}^2+\dot{z}^2} = \frac{\dd s}{\dd t}$</p>
+</div>
+
+<h3>加速度</h3>
+<div class="fb">
+<div class="t">加速度的定义</div>
+<p><strong>瞬时加速度</strong>：$\vv{a} = \frac{\dd\vv{v}}{\dd t} = \frac{\dd^2\vv{r}}{\dd t^2} = \ddot{x}\,\ii + \ddot{y}\,\jj + \ddot{z}\,\kk$</p>
+</div>
+
+<div class="ex">
+<strong>例1（运动方程→速度→加速度）</strong>：质点运动方程 $x=2t,\;y=4t-t^2$（SI），求 $t=1\,\text{s}$ 时速度和加速度。
+<div class="sol">
+<div class="st">解</div>
+<p>$v_x = \dot{x} = 2\,\text{m/s}$，$v_y = \dot{y} = 4-2t$</p>
+<p>$t=1$ 时：$v_x=2,\;v_y=2$，$v=\sqrt{4+4}=2\sqrt{2}\,\text{m/s}$</p>
+<p>$a_x = \ddot{x} = 0$，$a_y = \ddot{y} = -2\,\text{m/s}^2$</p>
+<p>加速度 $\vv{a} = -2\jj\,\text{m/s}^2$，方向沿 $y$ 轴负方向。</p>
+</div>
+</div>
+</div>
+
+<!-- ===== 1.3 两类基本问题 ===== -->
+<h2 id="s3">1.3 运动学两类基本问题</h2>
+<div class="card">
+<div class="fb">
+<div class="t">第一类：已知运动方程，求速度、加速度</div>
+<p>方法：<strong>求导</strong> $\vv{r}(t) \xrightarrow{\dd/\dd t} \vv{v}(t) \xrightarrow{\dd/\dd t} \vv{a}(t)$</p>
+</div>
+<div class="fb">
+<div class="t">第二类：已知加速度（力），求速度、运动方程</div>
+<p>方法：<strong>积分</strong>（需要初始条件）</p>
+$$\vv{v}(t) = \vv{v}_0 + \int_0^t \vv{a}(t')\dd t'$$
+$$\vv{r}(t) = \vv{r}_0 + \int_0^t \vv{v}(t')\dd t'$$
+</div>
+
+<div class="tip"><strong>技巧</strong>：当加速度是速度或位置的函数时，需要换元：
+<ul>
+<li>$a = a(v)$：分离变量 $\frac{\dd v}{a(v)} = \dd t$</li>
+<li>$a = a(x)$：利用 $a = v\frac{\dd v}{\dd x}$，则 $v\dd v = a(x)\dd x$</li>
+</ul></div>
+
+<div class="ex">
+<strong>例2（积分法）</strong>：质点沿 $x$ 轴运动，加速度 $a=2+6t$（SI），$t=0$ 时 $x_0=0,\;v_0=0$，求 $v(t)$ 和 $x(t)$。
+<div class="sol">
+<div class="st">解</div>
+<p>$v = \int_0^t(2+6t')\dd t' = 2t+3t^2$</p>
+<p>$x = \int_0^t(2t'+3t'^2)\dd t' = t^2+t^3$</p>
+</div>
+</div>
+</div>
+
+<!-- ===== 1.4 抛体运动 ===== -->
+<h2 id="s4">1.4 抛体运动</h2>
+<div class="card">
+<div class="fb">
+<div class="t">斜抛运动（初速 $v_0$，仰角 $\theta$）</div>
+<p>分量方程（取发射点为原点，向上为 $y$ 正方向）：</p>
+$$x = v_0\cos\theta\cdot t,\quad y = v_0\sin\theta\cdot t - \tfrac{1}{2}gt^2$$
+$$v_x = v_0\cos\theta = \text{const},\quad v_y = v_0\sin\theta - gt$$
+<p>消去 $t$ 得<strong>轨迹方程</strong>：</p>
+$$y = x\tan\theta - \frac{g}{2v_0^2\cos^2\theta}x^2$$
+<p><strong>最大高度</strong>（令 $v_y=0$）：$H = \frac{v_0^2\sin^2\theta}{2g}$</p>
+<p><strong>水平射程</strong>（令 $y=0$）：$R = \frac{v_0^2\sin 2\theta}{g}$</p>
+</div>
+<div class="tip"><strong>结论</strong>：$\theta=45°$ 时射程最大 $R_{max}=v_0^2/g$；互补角 $\theta$ 和 $90°-\theta$ 射程相同。</div>
+</div>
+
+<!-- ===== 1.5 圆周运动 ===== -->
+<h2 id="s5">1.5 圆周运动</h2>
+<div class="card">
+<h3>角量描述</h3>
+<div class="fb">
+<div class="t">角量的定义</div>
+<p><strong>角位移</strong>：$\theta$（rad）</p>
+<p><strong>角速度</strong>：$\omega = \frac{\dd\theta}{\dd t}$（rad/s）</p>
+<p><strong>角加速度</strong>：$\alpha = \frac{\dd\omega}{\dd t} = \frac{\dd^2\theta}{\dd t^2}$（rad/s²）</p>
+</div>
+
+<h3>线量与角量的关系</h3>
+<div class="fb">
+<div class="t">线量-角量关系（半径 $R$）</div>
+$$s = R\theta,\quad v = R\omega,\quad a_\tau = R\alpha,\quad a_n = R\omega^2 = \frac{v^2}{R}$$
+</div>
+
+<h3>匀变速圆周运动</h3>
+<p>当 $\alpha = \text{const}$ 时（类比匀变速直线运动）：</p>
+<table>
+<tr><th>直线运动</th><th>圆周运动</th></tr>
+<tr><td>$v = v_0 + at$</td><td>$\omega = \omega_0 + \alpha t$</td></tr>
+<tr><td>$x = v_0 t + \frac{1}{2}at^2$</td><td>$\theta = \omega_0 t + \frac{1}{2}\alpha t^2$</td></tr>
+<tr><td>$v^2 = v_0^2 + 2ax$</td><td>$\omega^2 = \omega_0^2 + 2\alpha\theta$</td></tr>
+</table>
+
+<div class="ex">
+<strong>例3（圆周运动）</strong>：飞轮从静止开始以 $\alpha=2\,\text{rad/s}^2$ 匀角加速转动，半径 $R=0.5\,\text{m}$，求 $t=3\,\text{s}$ 时轮缘上点的切向和法向加速度。
+<div class="sol">
+<div class="st">解</div>
+<p>$\omega = \alpha t = 2\times3=6\,\text{rad/s}$</p>
+<p>$a_\tau = R\alpha = 0.5\times2 = 1\,\text{m/s}^2$</p>
+<p>$a_n = R\omega^2 = 0.5\times36 = 18\,\text{m/s}^2$</p>
+<p>总加速度 $a = \sqrt{a_\tau^2+a_n^2} = \sqrt{1+324} \approx 18.03\,\text{m/s}^2$</p>
+</div>
+</div>
+</div>
+
+<!-- ===== 1.6 自然坐标系 ===== -->
+<h2 id="s6">1.6 自然坐标系（切向-法向分解）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">一般曲线运动的加速度分解</div>
+<p>在轨迹上每一点建立<strong>切向</strong> $\ee_\tau$ 和<strong>法向</strong> $\ee_n$ 单位矢量：</p>
+$$\vv{a} = a_\tau\ee_\tau + a_n\ee_n$$
+<p>其中：</p>
+<ul>
+<li><strong>切向加速度</strong>：$a_\tau = \frac{\dd v}{\dd t}$ —— 改变速度<strong>大小</strong></li>
+<li><strong>法向加速度</strong>：$a_n = \frac{v^2}{\rho}$ —— 改变速度<strong>方向</strong>，$\rho$ 为<strong>曲率半径</strong></li>
+</ul>
+<p>总加速度大小：$a = \sqrt{a_\tau^2 + a_n^2}$</p>
+</div>
+
+<div class="warn"><strong>高频考点</strong>：求曲率半径 $\rho$！
+<ul>
+<li>若已知 $v$ 和 $a_n$：$\rho = v^2/a_n$</li>
+<li>若已知轨迹 $y=f(x)$：$\rho = \frac{[1+(y')^2]^{3/2}}{|y''|}$</li>
+<li>若已知 $v$ 和 $a$：先求 $a_\tau = \dd v/\dd t$，再由 $a_n = \sqrt{a^2-a_\tau^2}$，最后 $\rho = v^2/a_n$</li>
+</ul></div>
+
+<div class="ex">
+<strong>例4（2022期中真题改编）</strong>：质量 $m$ 的飞机飞行曲线 $y=Ax^3$（$A$ 为常数），$x$ 方向速度 $v_x$ 恒定，求 $y$ 方向合外力。
+<div class="sol">
+<div class="st">解</div>
+<p>$y = Ax^3$，$\dot{y} = 3Ax^2\dot{x} = 3Ax^2 v_x$</p>
+<p>$\ddot{y} = 6Ax\dot{x}\cdot v_x = 6Axv_x^2$</p>
+<p>$F_y = m\ddot{y} = 6mAxv_x^2$</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例5（曲率半径）</strong>：抛体运动中，在最高点的曲率半径是多少？
+<div class="sol">
+<div class="st">解</div>
+<p>最高点 $v_y=0$，故 $v = v_x = v_0\cos\theta$，法向加速度 $a_n = g$（此时速度水平，重力提供全部法向加速度）。</p>
+$$\rho = \frac{v^2}{a_n} = \frac{v_0^2\cos^2\theta}{g}$$
+</div>
+</div>
+</div>
+
+<!-- ===== 1.7 相对运动 ===== -->
+<h2 id="s7">1.7 相对运动</h2>
+<div class="card">
+<div class="fb">
+<div class="t">经典（Galilei）速度叠加</div>
+<p>设 $S'$ 系相对 $S$ 系以 $\vv{u}$ 运动，质点相对 $S$ 系速度为 $\vv{v}$，相对 $S'$ 系速度为 $\vv{v}'$：</p>
+$$\vv{v} = \vv{v}' + \vv{u}$$
+<p>即：<strong>绝对速度 = 相对速度 + 牵连速度</strong></p>
+<p>当 $\vv{u}=\text{const}$ 时，$\vv{a} = \vv{a}'$（加速度在惯性系间相同）</p>
+</div>
+
+<div class="ex">
+<strong>例6</strong>：船以 $v_1=4\,\text{m/s}$ 正东方向过河，水流 $v_2=3\,\text{m/s}$ 向正南，求船对地速度。
+<div class="sol">
+<div class="st">解</div>
+<p>$v = \sqrt{v_1^2+v_2^2} = \sqrt{16+9} = 5\,\text{m/s}$，方向偏南 $\alpha = \arctan(3/4) \approx 36.9°$。</p>
+</div>
+</div>
+</div>
+
+<div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 1-7, 1-17, 1-19, 1-21, 1-23, 1-24, 1-25, 1-31, 1-32</div>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>
