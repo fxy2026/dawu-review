@@ -501,6 +501,171 @@ $$v = \frac{\Delta\nu \cdot u}{2\nu_0 - \Delta\nu} \approx \frac{\Delta\nu \cdot
 <div class="tip"><strong>电磁波的多普勒效应</strong>：电磁波无需介质传播，公式形式不同。当 $v \ll c$ 时：$\Delta\nu/\nu_0 \approx v/c$（非相对论近似）。雷达测速和天文红移均基于此原理。</div>
 </div>
 
+<h2 id="s18">7.18 振动能量与振幅关系（MOOC补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">SHM能量与振幅的关系</div>
+<p>总能量：$E = \frac{1}{2}kA^2 = \frac{1}{2}m\omega^2 A^2$</p>
+<p>动能与势能以 $2\omega$ 的频率振荡交替；平均动能 = 平均势能 = $E/2$</p>
+</div>
+
+<div class="fb">
+<div class="t">特殊位置的能量分配</div>
+<table>
+<tr><th>位置</th><th>势能 $E_p$</th><th>动能 $E_k$</th><th>说明</th></tr>
+<tr><td>$x = 0$</td><td>$0$</td><td>$E$</td><td>平衡位置，全部为动能</td></tr>
+<tr><td>$x = \pm A$</td><td>$E$</td><td>$0$</td><td>端点，全部为势能</td></tr>
+<tr><td>$x = A/2$</td><td>$E/4$</td><td>$3E/4$</td><td>$E_p = \frac{1}{2}k(A/2)^2 = E/4$</td></tr>
+<tr><td>$x = A/\sqrt{2}$</td><td>$E/2$</td><td>$E/2$</td><td><strong>能量等分点</strong></td></tr>
+</table>
+</div>
+
+<div class="fb">
+<div class="t">能量变化与振幅变化</div>
+<ul>
+<li>能量加倍 $E' = 2E$ → $A' = \sqrt{2}\,A$（振幅变为 $\sqrt{2}$ 倍）</li>
+<li>振幅减半 $A' = A/2$ → $E' = E/4$（能量变为原来的 $1/4$）</li>
+</ul>
+</div>
+
+<div class="warn"><strong>易错警告</strong>：能量等分位置是 $x = A/\sqrt{2} \approx 0.707A$，<strong>不是</strong> $A/2 = 0.5A$！在 $x = A/2$ 处动能占 $3/4$、势能占 $1/4$，并非各占一半。</div>
+</div>
+
+<h2 id="s19">7.19 波的反射规律（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">固定端与自由端反射</div>
+<ul>
+<li><strong>固定端反射</strong>：反射波相位突变 $\pi$（半波损失），反射点为<strong>波节</strong></li>
+<li><strong>自由端反射</strong>：反射波无相位突变，反射点为<strong>波腹</strong></li>
+</ul>
+<p>设入射波 $y_i = A\cos(\omega t - kx)$，在 $x = L$ 处固定端反射，反射波方程：</p>
+$$y_r = -A\cos(\omega t + kx - 2kL)$$
+<p>在 $x = L$ 处自由端反射，反射波方程：</p>
+$$y_r = A\cos(\omega t + kx - 2kL)$$
+</div>
+
+<div class="fb">
+<div class="t">驻波的形成与性质</div>
+<p>入射波与反射波叠加形成驻波：</p>
+$$y = y_i + y_r = 2A\cos(kx)\cos(\omega t)$$
+<p>驻波的关键性质：</p>
+<ul>
+<li><strong>驻波不传输能量</strong>——能量在波节与波腹之间往返交换</li>
+<li>相邻波节之间的所有质点<strong>同相</strong>振动</li>
+<li>波节两侧的质点<strong>反相</strong>振动（相位差 $\pi$）</li>
+<li>固定端反射 → 反射端为波节；自由端反射 → 反射端为波腹</li>
+</ul>
+</div>
+
+<div class="ex">
+<strong>例（固定端反射波方程）</strong>：入射波 $y_i = A\cos(\omega t - kx)$ 在 $x = L$ 处遇固定端反射，写出反射波方程。
+<div class="sol"><div class="st">解</div>
+<p>反射波沿 $-x$ 方向传播，一般形式为 $y_r = A'\cos(\omega t + kx + \varphi)$。</p>
+<p>固定端条件：$x = L$ 处合位移恒为零，即 $y_i(L,t) + y_r(L,t) = 0$ 对所有 $t$ 成立。</p>
+<p>$y_i(L,t) = A\cos(\omega t - kL)$</p>
+<p>要求 $y_r(L,t) = -A\cos(\omega t - kL) = A\cos(\omega t - kL + \pi)$</p>
+<p>而 $y_r(L,t) = A'\cos(\omega t + kL + \varphi)$，比较得 $A' = A$，$kL + \varphi = -kL + \pi$</p>
+<p>所以 $\varphi = -2kL + \pi$，代入：</p>
+$$y_r = A\cos(\omega t + kx - 2kL + \pi) = -A\cos(\omega t + kx - 2kL)$$
+</div></div>
+</div>
+
+<h2 id="s20">7.20 多普勒效应计算（真题高频）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">多普勒效应通用公式</div>
+$$\nu' = \nu_0 \frac{u \pm v_R}{u \mp v_S}$$
+<p><strong>口诀</strong>：上方符号取"接近"，下方符号取"远离"。</p>
+<ul>
+<li>$u$：波在介质中的传播速度</li>
+<li>$v_R$：观测者（Receiver）速度</li>
+<li>$v_S$：波源（Source）速度</li>
+</ul>
+</div>
+
+<div class="fb">
+<div class="t">特殊情况速查表</div>
+<table>
+<tr><th>情形</th><th>公式</th><th>频率变化</th></tr>
+<tr><td>波源静止，观测者接近</td><td>$\nu' = \nu_0\dfrac{u + v_R}{u}$</td><td>升高</td></tr>
+<tr><td>波源静止，观测者远离</td><td>$\nu' = \nu_0\dfrac{u - v_R}{u}$</td><td>降低</td></tr>
+<tr><td>观测者静止，波源接近</td><td>$\nu' = \nu_0\dfrac{u}{u - v_S}$</td><td>升高</td></tr>
+<tr><td>观测者静止，波源远离</td><td>$\nu' = \nu_0\dfrac{u}{u + v_S}$</td><td>降低</td></tr>
+<tr><td>波源与观测者同速同向</td><td>$\nu' = \nu_0$</td><td><strong>无变化</strong></td></tr>
+</table>
+</div>
+
+<div class="ex">
+<strong>例（火车接近）</strong>：火车以 $v = 60\,\text{m/s}$ 驶向静止观测者，鸣笛频率 $\nu_0 = 500\,\text{Hz}$，声速 $u = 340\,\text{m/s}$，求观测者听到的频率。
+<div class="sol"><div class="st">解</div>
+<p>观测者静止 $v_R = 0$，波源接近 $v_S = 60\,\text{m/s}$：</p>
+$$\nu' = \nu_0 \frac{u}{u - v_S} = 500 \times \frac{340}{340 - 60} = 500 \times \frac{340}{280} \approx 607\,\text{Hz}$$
+</div></div>
+
+<div class="fb">
+<div class="t">反射多普勒效应</div>
+<p>运动物体以速度 $v$ 接近静止波源，反射回的频率：</p>
+$$\nu'' = \nu_0 \frac{u + v}{u - v}$$
+<p>广泛应用于雷达测速、医学超声多普勒血流检测。</p>
+<p>当 $v \ll u$ 时频移近似：$\Delta\nu \approx \dfrac{2v}{u}\nu_0$</p>
+</div>
+
+<div class="warn"><strong>声波 vs 光波的区别</strong>：声波有介质，波源运动与观测者运动的效果<strong>不同</strong>（即使速度大小相同，频率变化不等）。而光波（电磁波）无介质，只取决于相对速度，两者等价（相对论多普勒效应）。</div>
+</div>
+
+<h2 id="s21">7.21 波动方程建立方法（PPT重点）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">波动方程建立步骤</div>
+<ol>
+<li><strong>确定基本参数</strong>：由题意求出波速 $u$、角频率 $\omega = 2\pi\nu$、波数 $k = \omega/u = 2\pi/\lambda$</li>
+<li><strong>选定参考点</strong>：通常选原点或已知振动信息的点</li>
+<li><strong>写参考点的振动方程</strong>：$y(x_0, t) = A\cos(\omega t + \varphi_1)$</li>
+<li><strong>考虑传播延迟</strong>，写出完整波动方程</li>
+</ol>
+<p>沿 $+x$ 方向传播：$y = A\cos(\omega t - kx + \varphi_0)$</p>
+<p>沿 $-x$ 方向传播：$y = A\cos(\omega t + kx + \varphi_0)$</p>
+</div>
+
+<div class="fb">
+<div class="t">初相的确定方法</div>
+<p>由 $y = A\cos(\omega t - kx + \varphi_0)$ 得速度：</p>
+$$v_y = \frac{\partial y}{\partial t} = -A\omega\sin(\omega t - kx + \varphi_0)$$
+<p>在参考点 $x = 0$，$t = 0$ 时：</p>
+$$y_0 = A\cos\varphi_0, \quad v_{y0} = -A\omega\sin\varphi_0$$
+<p>结合 $y_0$ 和 $v_{y0}$ 的正负号判断 $\varphi_0$ 所在象限：</p>
+<table>
+<tr><th>$y_0$</th><th>$v_{y0}$</th><th>$\cos\varphi_0$</th><th>$\sin\varphi_0$</th><th>$\varphi_0$ 象限</th></tr>
+<tr><td>$>0$</td><td>$<0$</td><td>$>0$</td><td>$>0$</td><td>第一象限 $(0, \pi/2)$</td></tr>
+<tr><td>$>0$</td><td>$>0$</td><td>$>0$</td><td>$<0$</td><td>第四象限 $(-\pi/2, 0)$</td></tr>
+<tr><td>$<0$</td><td>$>0$</td><td>$<0$</td><td>$<0$</td><td>第三象限 $(-\pi, -\pi/2)$</td></tr>
+<tr><td>$<0$</td><td>$<0$</td><td>$<0$</td><td>$>0$</td><td>第二象限 $(\pi/2, \pi)$</td></tr>
+</table>
+</div>
+
+<div class="ex">
+<strong>例1（波源处初相确定）</strong>：波源在 $x = 0$，$t = 0$ 时 $y = 0$ 且向 $+y$ 方向运动，波沿 $+x$ 传播，求波动方程。
+<div class="sol"><div class="st">解</div>
+<p>$t = 0$, $x = 0$: $y_0 = 0 = A\cos\varphi_0$, $v_{y0} > 0$</p>
+<p>$\cos\varphi_0 = 0$ → $\varphi_0 = \pm\pi/2$</p>
+<p>$v_{y0} = -A\omega\sin\varphi_0 > 0$ → $\sin\varphi_0 < 0$ → $\varphi_0 = -\pi/2$</p>
+$$y = A\cos(\omega t - kx - \pi/2) = A\sin(\omega t - kx)$$
+</div></div>
+
+<div class="ex">
+<strong>例2（非原点初相确定）</strong>：波沿 $+x$ 方向传播，已知 $x = x_0$ 处在 $t = 0$ 时 $y = A/2$ 且 $v_y > 0$，求完整波动方程。
+<div class="sol"><div class="st">解</div>
+<p>在 $x = x_0$, $t = 0$ 时的振动相位为 $\phi_0 = -kx_0 + \varphi_0$。</p>
+<p>$y(x_0, 0) = A\cos\phi_0 = A/2$ → $\cos\phi_0 = 1/2$ → $\phi_0 = \pm\pi/3$</p>
+<p>$v_y(x_0, 0) = -A\omega\sin\phi_0 > 0$ → $\sin\phi_0 < 0$ → $\phi_0 = -\pi/3$</p>
+<p>由 $\phi_0 = -kx_0 + \varphi_0 = -\pi/3$，得 $\varphi_0 = kx_0 - \pi/3$</p>
+$$y = A\cos\!\left(\omega t - kx + kx_0 - \frac{\pi}{3}\right) = A\cos\!\left[\omega t - k(x - x_0) - \frac{\pi}{3}\right]$$
+</div></div>
+
+<div class="tip"><strong>快速判断法</strong>：若 $t = 0$ 时某点 $y = 0$ 且 $v_y > 0$，该点处于向正方向穿越平衡位置的状态，对应 $\sin$ 函数的起点，初相为 $-\pi/2$。</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：<br>
 振动：7-2, 7-7, 7-11, 7-14, 7-16, 7-18, 7-22, 7-24</div>
 

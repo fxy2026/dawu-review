@@ -461,6 +461,256 @@ $$v_{esc} = \sqrt{\frac{2GM}{R}} = \sqrt{2gR} \approx 11.2\,\text{km/s}$$
 </ul></div>
 </div>
 
+<h2 id="s16">3.16 变力做功的高级技巧（MOOC/真题）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">非线性弹力做功</div>
+<p>当弹力不满足胡克定律，例如 $F = -kx^3$（非线性弹簧），做功必须通过积分计算：</p>
+$$W = \int_0^{x_m}(-kx^3)\dd x = -\frac{k x_m^4}{4}$$
+<p>若质量为 $m$ 的物体以初速 $v_0$ 压缩该弹簧，求最大压缩量 $x_m$：</p>
+<p>由动能定理 $0 - \frac{1}{2}mv_0^2 = -\frac{k x_m^4}{4}$，解得：</p>
+$$x_m = \left(\frac{2mv_0^2}{k}\right)^{1/4}$$
+<p>注意指数为 $1/4$，与线性弹簧的 $1/2$ 次方不同。</p>
+</div>
+
+<div class="fb">
+<div class="t">万有引力做功</div>
+<p>质量为 $m$ 的物体在万有引力场中从 $r_1$ 运动到 $r_2$，万有引力做的功：</p>
+$$W = \int_{r_1}^{r_2}\left(-\frac{GMm}{r^2}\right)\dd r = GMm\left(\frac{1}{r_2}-\frac{1}{r_1}\right)$$
+<p>这是保守力，功只与始末位置有关，与路径无关。</p>
+</div>
+
+<div class="ex">
+<strong>例（重物在液体中的运动——浮力+阻力变力问题，PPT）</strong>：一个底面积为 $S$、高度为 $h$、质量为 $m$ 的均匀长方体从水面上方高度 $y_0$（$y_0 > h$）处自由落入液体（密度 $\rho$）。忽略空气阻力，液体阻力与速度成正比。分析物体进入液体过程中的受力和速度变化。
+<div class="sol"><div class="st">解</div>
+<p><strong>阶段一：自由下落至接触液面</strong></p>
+<p>下落高度 $y_0$，到达液面时速度：$v_0 = \sqrt{2g y_0}$</p>
+
+<p><strong>阶段二：部分浸没（$0 < y < h$，$y$ 为浸入深度）</strong></p>
+<p>受力分析：重力 $mg$（向下）、浮力 $\rho g S y$（向上）、阻力 $-bv$（向上）</p>
+<p>运动方程：$m\frac{\dd v}{\dd t} = mg - \rho g S y - bv$</p>
+<p>浮力随浸入深度线性增加，需要分段处理。</p>
+
+<p><strong>阶段三：完全浸没（$y > h$）</strong></p>
+<p>浮力恒定为 $\rho g S h$，运动方程：$m\frac{\dd v}{\dd t} = mg - \rho g S h - bv$</p>
+<p>若忽略液体阻力（$b=0$），用能量方法从液面到完全浸没的过程：</p>
+$$\frac{1}{2}mv^2 - \frac{1}{2}mv_0^2 = mgh - \int_0^h \rho g S y\,\dd y = mgh - \frac{1}{2}\rho g S h^2$$
+<p>完全浸没时速度：$v = \sqrt{v_0^2 + 2gh - \rho g S h^2/m}$</p>
+<p>若 $v_0 = \sqrt{2g y_0}$ 且物体密度远大于液体密度，则 $v \approx \sqrt{2g(y_0 + h)}$。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（变密度弹簧做功）</strong>：一根弹簧的弹力为 $F = -k_1 x - k_2 x^2$（$k_1, k_2 > 0$），$x$ 为弹簧的形变量。求弹簧从自然长度压缩到 $x_0$ 所需外力做的功。
+<div class="sol"><div class="st">解</div>
+<p>外力 $F_{ext} = -F = k_1 x + k_2 x^2$（缓慢压缩，外力等于弹力大小）。</p>
+<p>外力做的功（$x$ 从 $0$ 到 $x_0$，压缩取正方向）：</p>
+$$W_{ext} = \int_0^{x_0}(k_1 x + k_2 x^2)\dd x = \frac{1}{2}k_1 x_0^2 + \frac{1}{3}k_2 x_0^3$$
+<p>弹簧储存的弹性势能：$E_p = \frac{1}{2}k_1 x_0^2 + \frac{1}{3}k_2 x_0^3$</p>
+<p>可以验证：$F = -\frac{\dd E_p}{\dd x} = -(k_1 x + k_2 x^2)$，与弹力一致。</p>
+</div></div>
+
+<div class="tip"><strong>解题技巧</strong>：当力是位置的复杂函数时，能量方法（动能定理或势能法）通常比直接用牛顿第二定律积分更简便。特别是只需要求始末状态的速度时，能量法可以绕过中间过程的复杂微分方程。</div>
+</div>
+
+<h2 id="s17">3.17 万有引力势能与轨道能量（MOOC/真题高频）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">万有引力势能与轨道能量公式</div>
+<p><strong>引力势能</strong>（以 $r\to\infty$ 为零点）：</p>
+$$E_p = -\frac{GMm}{r}$$
+<p><strong>圆轨道上的能量关系</strong>：</p>
+<p>由向心力条件 $\frac{GMm}{r^2} = \frac{mv^2}{r}$，得动能：</p>
+$$E_k = \frac{1}{2}mv^2 = \frac{GMm}{2r}$$
+<p>势能：$E_p = -\frac{GMm}{r}$</p>
+<p>总机械能：</p>
+$$E = E_k + E_p = \frac{GMm}{2r} - \frac{GMm}{r} = -\frac{GMm}{2r}$$
+</div>
+
+<div class="fb">
+<div class="t">Virial定理（圆轨道）</div>
+<p>圆轨道上的能量满足简洁的比例关系：</p>
+$$E_k = -\frac{E}{2} = -\frac{E_p}{2}$$
+<p>即动能等于总能量的相反数的一半，等于势能的相反数的一半。</p>
+<p>这一关系在天体力学和量子力学（氢原子）中都成立。</p>
+</div>
+
+<div class="fb">
+<div class="t">椭圆轨道能量</div>
+<p>椭圆轨道的总机械能仅由半长轴 $a$ 决定：</p>
+$$E = -\frac{GMm}{2a}$$
+<p>圆轨道是椭圆的特殊情况（$a = r$），公式一致。</p>
+</div>
+
+<div class="ex">
+<strong>例（2022期中真题：椭圆轨道的条件）</strong>：质量为 $m$ 的航天器在距地心 $r_1$ 处以速度 $u_1 = \sqrt{2\alpha GM/r_1}$ 沿垂直于径向的方向发射（$M$ 为地球质量）。求 $\alpha$ 的范围使轨道为椭圆。
+<div class="sol"><div class="st">解</div>
+<p><strong>Step 1：计算总能量</strong></p>
+<p>初始时速度垂直于径向，动能：</p>
+$$E_k = \frac{1}{2}mu_1^2 = \frac{1}{2}m\cdot\frac{2\alpha GM}{r_1} = \frac{\alpha GMm}{r_1}$$
+<p>势能：$E_p = -\frac{GMm}{r_1}$</p>
+<p>总能量：</p>
+$$E = E_k + E_p = \frac{\alpha GMm}{r_1} - \frac{GMm}{r_1} = \frac{(\alpha - 1)GMm}{r_1}$$
+
+<p><strong>Step 2：椭圆条件</strong></p>
+<p>椭圆轨道要求 $E < 0$（束缚态），即：</p>
+$$\alpha - 1 < 0 \implies \alpha < 1$$
+
+<p><strong>Step 3：不撞击地面的条件</strong></p>
+<p>发射点在近地点（速度垂直于径向），角动量 $L = mu_1 r_1$。</p>
+<p>远地点处同样 $L = mv_2 r_2$，且需要 $r_2 > R$（$R$ 为地球半径，此处假设 $r_1 > R$）。</p>
+<p>利用椭圆轨道公式，半长轴 $a = -GMm/(2E) = r_1/[2(1-\alpha)]$。</p>
+<p>近日点距离 $r_1 = a(1-e)$，由此解得偏心率和轨道参数。</p>
+<p>为使近日点不低于地表（假设 $r_1$ 即为近日点），需要轨道是合理的椭圆。</p>
+<p>另一方面，若 $\alpha$ 过小，速度不足以维持轨道，物体会落回地面。</p>
+<p>圆轨道条件：$\alpha = 1/2$（此时 $u_1 = \sqrt{GM/r_1}$，恰好是圆轨道速度）。</p>
+<p>$\alpha < 1/2$ 时，速度小于圆轨道速度，发射点变为远地点而非近地点，轨道会更低，可能撞击地面。</p>
+
+<p><strong>结论</strong>：</p>
+$$\boxed{\frac{1}{2} < \alpha < 1}$$
+<p>$\alpha = 1/2$：圆轨道；$\alpha = 1$：抛物线轨道（逃逸）。椭圆轨道要求 $1/2 < \alpha < 1$。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（从高 $h$ 处落到地面——考虑重力变化）</strong>：质量为 $m$ 的物体从距地面高度 $h$ 处自由下落（忽略空气阻力），考虑万有引力随高度的变化，求落地速度。
+<div class="sol"><div class="st">解</div>
+<p>用能量守恒（万有引力势能）：</p>
+$$\frac{1}{2}mv^2 + \left(-\frac{GMm}{R}\right) = 0 + \left(-\frac{GMm}{R+h}\right)$$
+$$\frac{1}{2}mv^2 = GMm\left(\frac{1}{R} - \frac{1}{R+h}\right) = \frac{GMmh}{R(R+h)}$$
+$$v = \sqrt{\frac{2GMh}{R(R+h)}}$$
+
+<p><strong>近地面近似</strong>（$h \ll R$）：</p>
+<p>$R + h \approx R$，且 $GM/R^2 = g$，故：</p>
+$$v \approx \sqrt{\frac{2GMh}{R^2}} = \sqrt{2gh}$$
+<p>退化为我们熟悉的自由落体公式。</p>
+
+<p><strong>数值感受</strong>：$h = 100\,\text{km}$ 时，精确值与近似值的相对误差约 $h/(2R) \approx 0.8\%$，近似非常好。但 $h \sim R$ 时误差不可忽略。</p>
+</div></div>
+
+<div class="warn"><strong>注意</strong>：近地轨道（$h \ll R$）才能用 $E_p = mgh$；远离地面时必须用 $E_p = -GMm/r$。判断标准：$h/R$ 是否远小于 1。对于航天问题，一般都需要用万有引力势能。</div>
+</div>
+
+<h2 id="s18">3.18 功能原理在流体中的应用（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">粗糙面+弧形轨道综合问题的一般思路</div>
+<ol>
+<li>识别各段轨道的性质（光滑/粗糙、直线/曲线）</li>
+<li>全程用功能原理：$W_{摩擦} = \Delta E_k + \Delta E_p$</li>
+<li>摩擦力做的功：$W_f = -\mu mg \cos\theta \cdot s$（$s$ 为接触面长度，$\theta$ 为接触面倾角）</li>
+<li>弧形轨道上若光滑，只需考虑首末高度差</li>
+</ol>
+</div>
+
+<div class="ex">
+<strong>例（环形轨道最低点所需最小速度）</strong>：质量为 $m$ 的小球沿光滑竖直圆形轨道内侧运动，轨道半径为 $R$。求小球在最低点的最小速度，使其能通过最高点而不脱离轨道。
+<div class="sol"><div class="st">解</div>
+<p><strong>Step 1：最高点的临界条件</strong></p>
+<p>在最高点，重力提供向心力（法向力 $N = 0$ 为临界）：</p>
+$$mg = \frac{mv_{top}^2}{R} \implies v_{top} = \sqrt{gR}$$
+
+<p><strong>Step 2：最低点到最高点的能量守恒</strong></p>
+<p>高度差 $= 2R$（最低点到最高点），轨道光滑：</p>
+$$\frac{1}{2}mv_{bottom}^2 = \frac{1}{2}mv_{top}^2 + mg(2R)$$
+$$\frac{1}{2}mv_{bottom}^2 = \frac{1}{2}m(gR) + 2mgR = \frac{5}{2}mgR$$
+$$\boxed{v_{bottom} = \sqrt{5gR}}$$
+
+<p><strong>物理理解</strong>：最低点速度不是 $\sqrt{4gR}$（那只是克服高度差所需），还需要额外的 $\sqrt{gR}$ 对应最高点维持圆周运动的最低速度。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（弹簧+竖直圆弧轨道）</strong>：弹簧（劲度系数 $k$）竖直放置，上端连接质量为 $m$ 的物体，弹簧被压缩 $x_0$ 后释放，物体沿光滑竖直圆弧轨道（半径 $R$）运动。求使物体到达轨道顶部刚好不脱离的 $x_0$。
+<div class="sol"><div class="st">解</div>
+<p>设弹簧底端为轨道最低点，最高点在轨道顶部（高度 $2R$）。</p>
+<p>最高点临界条件同上：$v_{top} = \sqrt{gR}$</p>
+<p>从弹簧释放到最高点，机械能守恒（弹性势能→动能+重力势能）：</p>
+$$\frac{1}{2}kx_0^2 = \frac{1}{2}mv_{top}^2 + mg(2R)$$
+$$\frac{1}{2}kx_0^2 = \frac{1}{2}m(gR) + 2mgR = \frac{5}{2}mgR$$
+$$x_0^2 = \frac{5mgR}{k}$$
+$$\boxed{x_0 = \sqrt{\frac{5mgR}{k}}}$$
+</div></div>
+
+<div class="ex">
+<strong>例（弹簧弹射器+重力场问题）</strong>：水平弹簧（劲度系数 $k$）被压缩 $d$，弹射质量 $m$ 的小球。小球离开弹簧后沿光滑斜面（倾角 $\theta$）上滑。求小球沿斜面上滑的最大距离 $s$。
+<div class="sol"><div class="st">解</div>
+<p>弹簧释放弹性势能，小球沿斜面上升高度 $h = s\sin\theta$。</p>
+<p>机械能守恒：</p>
+$$\frac{1}{2}kd^2 = mgs\sin\theta$$
+$$\boxed{s = \frac{kd^2}{2mg\sin\theta}}$$
+<p>若斜面有摩擦（动摩擦系数 $\mu$），则：</p>
+$$\frac{1}{2}kd^2 = mgs\sin\theta + \mu mg\cos\theta \cdot s$$
+$$s = \frac{kd^2}{2mg(\sin\theta + \mu\cos\theta)}$$
+</div></div>
+
+<div class="tip"><strong>解题建议</strong>：弧形轨道和弹簧问题中，关键是识别"临界条件"——通常是最高点法向力为零（$N=0$），这给出最高点最小速度，再用能量守恒反推初始条件。</div>
+</div>
+
+<h2 id="s19">3.19 碰撞中的能量损失详解（真题重点）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">完全非弹性碰撞的能量损失</div>
+<p>碰撞中损失的动能等于<strong>质心系中的全部动能</strong>：</p>
+$$\Delta E_k = \frac{1}{2}\mu v_{rel}^2$$
+<p>其中：</p>
+<ul>
+<li>$\mu = \frac{m_1 m_2}{m_1 + m_2}$ 为<strong>约化质量</strong>（reduced mass）</li>
+<li>$v_{rel} = v_1 - v_2$ 为碰前<strong>相对速度</strong></li>
+</ul>
+<p>这是完全非弹性碰撞（$e=0$）的情况，损失最大。</p>
+</div>
+
+<div class="fb">
+<div class="t">一般碰撞的能量损失（用恢复系数 $e$）</div>
+<p>对于恢复系数为 $e$ 的碰撞：</p>
+$$\boxed{\Delta E_k = \frac{1}{2}\mu v_{rel}^2(1-e^2)}$$
+<p>特殊情况：</p>
+<table>
+<tr><th>$e$ 值</th><th>$\Delta E_k$</th><th>碰撞类型</th></tr>
+<tr><td>$e = 1$</td><td>$0$</td><td>完全弹性——无能量损失</td></tr>
+<tr><td>$0 < e < 1$</td><td>$\frac{1}{2}\mu v_{rel}^2(1-e^2)$</td><td>非完全弹性——部分损失</td></tr>
+<tr><td>$e = 0$</td><td>$\frac{1}{2}\mu v_{rel}^2$</td><td>完全非弹性——最大损失</td></tr>
+</table>
+</div>
+
+<div class="ex">
+<strong>例（弹道摆详细分析——真题高频）</strong>：质量为 $m$ 的子弹以水平速度 $v_0$ 射入悬挂的质量为 $M$ 的木块中并嵌入其中（完全非弹性碰撞），木块摆起后上升最大高度 $h$。
+<div class="sol"><div class="st">解</div>
+<p><strong>Phase 1：碰撞瞬间——动量守恒</strong></p>
+<p>碰撞时间极短，重力冲量可忽略：</p>
+$$mv_0 = (m + M)v$$
+$$v = \frac{mv_0}{m + M}$$
+
+<p><strong>Phase 2：碰后上升——机械能守恒</strong></p>
+<p>碰后木块+子弹整体以速度 $v$ 上升，到最高点速度为零：</p>
+$$\frac{1}{2}(m + M)v^2 = (m + M)gh$$
+$$h = \frac{v^2}{2g} = \frac{m^2 v_0^2}{2g(m + M)^2}$$
+
+<p><strong>Phase 3：碰撞中的动能损失</strong></p>
+$$\Delta E_k = \frac{1}{2}mv_0^2 - \frac{1}{2}(m+M)v^2 = \frac{1}{2}mv_0^2\left(1 - \frac{m}{m+M}\right) = \frac{M}{m+M}\cdot\frac{1}{2}mv_0^2$$
+<p>即损失了初始动能的 $\frac{M}{m+M}$ 倍。由于 $M \gg m$（木块远重于子弹），几乎全部动能都在碰撞中损失了。</p>
+
+<p><strong>弹道摆的测量原理</strong>：通过测量 $h$ 反推子弹速度：</p>
+$$v_0 = \frac{m + M}{m}\sqrt{2gh}$$
+<p>这是 18 世纪测量子弹速度的经典方法。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（部分穿透问题）</strong>：若子弹穿过木块后以速度 $v_1$ 飞出，木块速度 $v_2$，则：
+<div class="sol"><div class="st">解</div>
+<p>动量守恒：$mv_0 = mv_1 + Mv_2$</p>
+<p>动能损失：$\Delta E_k = \frac{1}{2}mv_0^2 - \frac{1}{2}mv_1^2 - \frac{1}{2}Mv_2^2$</p>
+<p>这个动能损失转化为子弹和木块的形变能（热能）。注意此时 $\Delta E_k$ 小于完全非弹性碰撞的损失（因为穿透时两者仍有相对运动）。</p>
+</div></div>
+
+<div class="warn"><strong>碰撞中动能损失的能量去向</strong>：
+<ul>
+<li><strong>形变能</strong>：物体发生永久形变（塑性变形）所消耗的能量</li>
+<li><strong>热能</strong>：碰撞面摩擦生热、内部分子运动加剧</li>
+<li><strong>声能</strong>：碰撞产生声波</li>
+<li>在宏观碰撞中，形变能和热能占主要部分；声能通常很小</li>
+<li>完全弹性碰撞中，形变是可恢复的（弹性形变），无能量损失</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 2-4, 2-5, 2-6, 2-8, 2-10, 2-11, 2-13, 2-14</div>
 
 <script src="toc.js"></script>

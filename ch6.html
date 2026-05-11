@@ -380,6 +380,253 @@ $$\Delta E = 0.0189\times931.5\,\text{MeV} = \boxed{17.6\,\text{MeV}}$$
 </ul></div>
 </div>
 
+<h2 id="s13">6.13 时空图与因果关系（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">Minkowski时空图</div>
+<p>时空图是将事件表示在二维平面上的工具：横轴为空间坐标 $x$，纵轴为 $ct$（使得光的世界线为 $45°$ 直线）。</p>
+<ul>
+<li>每个<strong>事件</strong>是时空图上的一个点</li>
+<li>一个粒子的运动历史称为<strong>世界线</strong></li>
+<li>静止粒子的世界线是竖直线（只有时间在变化）</li>
+<li>匀速运动粒子的世界线是倾斜直线，斜率为 $ct/x = c/v > 1$</li>
+<li>光的世界线斜率为 $1$（即 $45°$ 线）</li>
+</ul>
+</div>
+
+<div class="fb">
+<div class="t">光锥与因果关系</div>
+<p>从任意事件 $O$ 出发，光沿 $\pm45°$ 方向传播，形成<strong>光锥</strong>：</p>
+<ul>
+<li><strong>未来光锥</strong>（上方）：$O$ 能够因果影响的所有事件</li>
+<li><strong>过去光锥</strong>（下方）：能够因果影响 $O$ 的所有事件</li>
+<li><strong>光锥外部</strong>（左右）：与 $O$ 无因果关系的事件（类空间隔）</li>
+</ul>
+</div>
+
+<div class="fb">
+<div class="t">时空间隔的分类</div>
+<p>两事件之间的时空间隔 $(\Delta s)^2 = c^2(\Delta t)^2 - (\Delta x)^2$ 是 Lorentz 不变量：</p>
+<table>
+<tr><th>类型</th><th>条件</th><th>物理意义</th><th>时间顺序</th></tr>
+<tr><td><strong>类时间隔</strong></td><td>$(\Delta s)^2 > 0$</td><td>两事件可由低于光速的信号联系，存在因果关系</td><td>所有惯性系中顺序相同</td></tr>
+<tr><td><strong>类光间隔</strong></td><td>$(\Delta s)^2 = 0$</td><td>两事件恰好可由光信号联系</td><td>所有惯性系中顺序相同</td></tr>
+<tr><td><strong>类空间隔</strong></td><td>$(\Delta s)^2 < 0$</td><td>两事件无法由任何信号联系，无因果关系</td><td>不同惯性系中顺序<strong>可以不同</strong></td></tr>
+</table>
+</div>
+
+<div class="ex">
+<strong>例（判断因果关系）</strong>：事件A发生在 $(x_A=0,\,t_A=0)$，事件B发生在 $(x_B=5\times10^8\,\text{m},\,t_B=1\,\text{s})$。判断两事件的因果关系。
+<div class="sol"><div class="st">解</div>
+<p>$c\Delta t = 3\times10^8\times1 = 3\times10^8\,\text{m}$</p>
+<p>$\Delta x = 5\times10^8\,\text{m}$</p>
+<p>$(\Delta s)^2 = (3\times10^8)^2 - (5\times10^8)^2 = (9-25)\times10^{16} = -16\times10^{16}\,\text{m}^2 < 0$</p>
+<p>类空间隔！两事件之间<strong>不存在因果关系</strong>（即使A"先发生"，A也无法影响B，因为信号传播速度不可能超过光速）。</p>
+<p>存在某个参考系使得两事件同时发生，也存在参考系使得B先于A发生。</p>
+</div></div>
+
+<div class="warn"><strong>重要</strong>：类空间隔的两个事件，时间顺序在不同参考系中可以不同——但这不违反因果律，因为这两个事件本就没有因果关系。只有类时间隔的事件才有确定的因果顺序。</div>
+</div>
+
+<h2 id="s14">6.14 相对论性碰撞与粒子物理（MOOC/真题）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">核心公式回顾</div>
+<p>能量-动量关系（Lorentz不变量）：</p>
+$$E^2 = (pc)^2 + (m_0c^2)^2$$
+<p>等价形式：$(E/c)^2 - p^2 = (m_0c)^2$，此量在所有惯性系中相同。</p>
+<p>对于光子（$m_0=0$）：$E = pc$</p>
+</div>
+
+<h3>光子的能量与动量</h3>
+<div class="fb">
+<div class="t">光子的完整描述</div>
+$$E = h\nu = \frac{hc}{\lambda}, \quad p = \frac{E}{c} = \frac{h\nu}{c} = \frac{h}{\lambda}$$
+<p>其中 $h = 6.626\times10^{-34}\,\text{J}\cdot\text{s}$ 为 Planck 常数。</p>
+<p>光子虽然没有静质量，但有动量和能量，可以参与碰撞和反应。</p>
+</div>
+
+<h3>粒子碰撞的阈能问题</h3>
+<div class="ex">
+<strong>例（质子-质子碰撞产生介子）</strong>：反应 $p + p \to p + p + \pi^0$，其中一个质子静止（靶），另一个以动能 $E_k$ 运动（弹）。求产生 $\pi^0$ 介子所需的最小动能（阈能）。已知 $m_p c^2 = 938.3\,\text{MeV}$，$m_\pi c^2 = 135.0\,\text{MeV}$。
+<div class="sol"><div class="st">解</div>
+<p><strong>思路</strong>：在阈值条件下，产物在质心系中全部静止（动能为零），总能量最小。</p>
+<p>利用四动量不变量：$(E_{total}/c)^2 - p_{total}^2$ 在任何参考系中相同。</p>
+
+<p><strong>实验室系</strong>（靶质子静止）：</p>
+<p>$E_{total} = E_{弹} + m_pc^2 = (E_k + m_pc^2) + m_pc^2 = E_k + 2m_pc^2$</p>
+<p>$p_{total} = p_{弹}$，由 $E_{弹}^2 = (p_{弹}c)^2 + (m_pc^2)^2$ 得</p>
+<p>$p_{弹}^2c^2 = E_{弹}^2 - (m_pc^2)^2 = (E_k+m_pc^2)^2 - (m_pc^2)^2 = E_k^2 + 2E_km_pc^2$</p>
+
+<p><strong>质心系</strong>（阈值时产物全部静止）：</p>
+<p>$E_{cm} = 2m_pc^2 + m_\pi c^2$，$p_{cm} = 0$</p>
+
+<p>不变量相等：</p>
+$$E_{total}^2 - p_{total}^2c^2 = E_{cm}^2$$
+$$(E_k + 2m_pc^2)^2 - (E_k^2 + 2E_km_pc^2) = (2m_pc^2 + m_\pi c^2)^2$$
+$$4(m_pc^2)^2 + 4E_km_pc^2 + E_k^2 - E_k^2 - 2E_km_pc^2 = (2m_pc^2+m_\pi c^2)^2$$
+$$4(m_pc^2)^2 + 2E_km_pc^2 = (2m_pc^2+m_\pi c^2)^2$$
+$$E_k = \frac{(2m_pc^2+m_\pi c^2)^2 - 4(m_pc^2)^2}{2m_pc^2}$$
+
+<p>代入数值：</p>
+$$E_k = \frac{(2\times938.3+135.0)^2 - 4\times938.3^2}{2\times938.3} = \frac{2011.6^2 - 4\times938.3^2}{1876.6}$$
+$$= \frac{4046533 - 3523433}{1876.6} = \frac{523100}{1876.6} \approx \boxed{278.6\,\text{MeV}}$$
+<p>阈值动能约为 $\pi^0$ 静能的 $2$ 倍多——因为需要同时满足能量和动量守恒。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（电子-正电子湮灭）</strong>：电子和正电子（均近似静止）湮灭。证明至少产生两个光子，并求每个光子的能量。
+<div class="sol"><div class="st">解</div>
+<p><strong>为什么不能只产生一个光子？</strong></p>
+<p>初态总动量为零（两粒子均静止），末态动量也必须为零。</p>
+<p>一个光子的动量 $p = E/c \neq 0$，因此单个光子无法满足动量守恒。</p>
+<p>至少需要两个方向相反的光子，使总动量为零。</p>
+
+<p><strong>两光子能量</strong>：</p>
+<p>能量守恒：$2m_ec^2 = 2E_\gamma$</p>
+$$E_\gamma = m_ec^2 = \boxed{0.511\,\text{MeV}}$$
+<p>两个光子方向相反，各自能量 $0.511\,\text{MeV}$，对应波长：</p>
+$$\lambda = \frac{hc}{E_\gamma} = \frac{1240\,\text{eV}\cdot\text{nm}}{0.511\times10^6\,\text{eV}} \approx 0.00243\,\text{nm}$$
+<p>这是硬 $\gamma$ 射线，正电子湮灭辐射在PET（正电子发射断层扫描）医学成像中有重要应用。</p>
+</div></div>
+
+<div class="warn"><strong>注意</strong>：相对论中动量守恒和能量守恒仍然成立，但必须使用相对论形式的动量 $\vv{p}=\gamma m_0\vv{v}$ 和能量 $E=\gamma m_0c^2$。经典公式 $p=m_0v$、$E_k=\frac{1}{2}m_0v^2$ 在高速下严重失效。</div>
+</div>
+
+<h2 id="s15">6.15 相对论动力学应用（真题计算题）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">相对论动能</div>
+$$E_k = (\gamma - 1)m_0c^2$$
+<p>低速极限（$v\ll c$，$\gamma\approx 1+\frac{1}{2}\beta^2$）：</p>
+$$E_k \approx \frac{1}{2}m_0v^2 \quad \text{（经典动能）}$$
+</div>
+
+<div class="fb">
+<div class="t">动能与速度的对应关系</div>
+<table>
+<tr><th>条件</th><th>$\gamma$</th><th>$v/c$</th></tr>
+<tr><td>$E_k = m_0c^2$（动能=静能）</td><td>$2$</td><td>$\frac{\sqrt{3}}{2} \approx 0.866$</td></tr>
+<tr><td>$E_k = 2m_0c^2$</td><td>$3$</td><td>$\frac{2\sqrt{2}}{3} \approx 0.943$</td></tr>
+<tr><td>$E_k = 3m_0c^2$</td><td>$4$</td><td>$\frac{\sqrt{15}}{4} \approx 0.968$</td></tr>
+<tr><td>$E_k = 9m_0c^2$</td><td>$10$</td><td>$\frac{\sqrt{99}}{10} \approx 0.995$</td></tr>
+</table>
+<p>可以看到，随着动能增加，速度越来越接近 $c$ 但永远达不到 $c$。</p>
+</div>
+
+<div class="ex">
+<strong>例（质子加速）</strong>：将质子从静止加速到 $0.9c$，需要多少能量？质子静能 $m_pc^2 = 938.3\,\text{MeV}$。
+<div class="sol"><div class="st">解</div>
+<p>$\beta = 0.9$，$\gamma = \frac{1}{\sqrt{1-0.81}} = \frac{1}{\sqrt{0.19}} \approx 2.294$</p>
+<p>所需动能：</p>
+$$E_k = (\gamma-1)m_pc^2 = (2.294-1)\times938.3\,\text{MeV} = 1.294\times938.3 \approx \boxed{1214\,\text{MeV}}$$
+<p>这已经是质子静能的 $1.29$ 倍。经典力学预测只需 $\frac{1}{2}m_pv^2 = \frac{1}{2}\times0.81\times938.3 = 380\,\text{MeV}$，严重低估！</p>
+</div></div>
+
+<div class="ex">
+<strong>例（核反应能量——质量亏损）</strong>：氘氚聚变反应 $^2\text{H} + ^3\text{H} \to ^4\text{He} + n + 17.6\,\text{MeV}$。
+<div class="sol"><div class="st">解</div>
+<p>释放的能量来自质量亏损：</p>
+$$\Delta E = \Delta m\cdot c^2 = 17.6\,\text{MeV}$$
+<p>对应质量亏损：$\Delta m = 17.6/931.5 \approx 0.0189\,\text{u}$</p>
+<p>反应前总质量：$2.0141 + 3.0161 = 5.0302\,\text{u}$</p>
+<p>反应后总质量：$4.0026 + 1.0087 = 5.0113\,\text{u}$</p>
+<p>差值：$5.0302 - 5.0113 = 0.0189\,\text{u}$ ✓</p>
+<p>质量亏损占总质量的 $0.0189/5.0302 \approx 0.38\%$，虽然比例很小，但释放的能量巨大。</p>
+</div></div>
+
+<div class="fb">
+<div class="t">$\gamma$ 与 $v/c$ 快速对照表</div>
+<table>
+<tr><th>$v/c$</th><th>$\gamma$</th><th>$E_k/m_0c^2$</th></tr>
+<tr><td>$0.1$</td><td>$1.005$</td><td>$0.005$</td></tr>
+<tr><td>$0.3$</td><td>$1.048$</td><td>$0.048$</td></tr>
+<tr><td>$0.5$</td><td>$1.155$</td><td>$0.155$</td></tr>
+<tr><td>$0.8$</td><td>$1.667$</td><td>$0.667$</td></tr>
+<tr><td>$0.9$</td><td>$2.294$</td><td>$1.294$</td></tr>
+<tr><td>$0.95$</td><td>$3.203$</td><td>$2.203$</td></tr>
+<tr><td>$0.99$</td><td>$7.089$</td><td>$6.089$</td></tr>
+<tr><td>$0.999$</td><td>$22.37$</td><td>$21.37$</td></tr>
+<tr><td>$0.9999$</td><td>$70.71$</td><td>$69.71$</td></tr>
+</table>
+</div>
+
+<div class="tip"><strong>记忆技巧</strong>：$v/c = 0.1$ 时 $\gamma$ 几乎为 $1$（经典力学足够好）；$v/c = 0.5$ 时 $\gamma \approx 1.15$（相对论效应约 $15\%$）；$v/c > 0.9$ 后 $\gamma$ 急剧增大。</div>
+</div>
+
+<h2 id="s16">6.16 Lorentz变换的应用技巧（真题总结）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">解题四步法</div>
+<ol>
+<li><strong>确定"事件"</strong>：明确问题中涉及哪些事件，每个事件发生在哪个参考系中</li>
+<li><strong>判断固有量</strong>：固有时间在事件发生地（同一地点）测量；固有长度在物体静止系中测量</li>
+<li><strong>选择公式</strong>：
+<ul>
+<li>时间膨胀：运动钟变慢 → $\Delta t = \gamma\Delta\tau$（固有时间 $\Delta\tau$ 最短）</li>
+<li>长度收缩：运动尺缩短 → $L = L_0/\gamma$（固有长度 $L_0$ 最长）</li>
+<li>涉及完整时空坐标 → 用 Lorentz 变换</li>
+</ul></li>
+<li><strong>代入求解</strong>：注意单位统一，$v$ 常以 $c$ 的倍数给出</li>
+</ol>
+</div>
+
+<div class="fb">
+<div class="t">常见错误汇总</div>
+<table>
+<tr><th>错误类型</th><th>具体表现</th><th>正确做法</th></tr>
+<tr><td>搞反运动关系</td><td>把静止系当成运动系</td><td>判断"谁看谁在动"，运动是相对的</td></tr>
+<tr><td>混淆固有量</td><td>把坐标时间当固有时间</td><td>固有时间：同一地点的两事件；坐标时间：不同地点的两事件</td></tr>
+<tr><td>忘记收缩方向</td><td>垂直方向也做收缩</td><td>长度收缩<strong>只</strong>在运动方向上发生，垂直方向不变</td></tr>
+<tr><td>公式用反</td><td>$\Delta t = \Delta\tau/\gamma$</td><td>运动钟变慢：$\Delta t = \gamma\Delta\tau$，即 $\Delta t > \Delta\tau$</td></tr>
+</table>
+</div>
+
+<div class="ex">
+<strong>例（介子寿命问题——两种视角）</strong>：$\mu$ 子固有寿命 $\tau_0 = 2.2\,\mu\text{s}$，以 $v = 0.998c$ 从高空向地面运动。
+<div class="sol"><div class="st">解</div>
+<p>$\gamma = \frac{1}{\sqrt{1-0.998^2}} = \frac{1}{\sqrt{1-0.996}} = \frac{1}{\sqrt{0.004}} = \frac{1}{0.0632} \approx 15.8$</p>
+
+<p><strong>视角一：地面观测者</strong></p>
+<p>$\mu$ 子在运动，其"生命时钟"变慢：</p>
+$$\tau = \gamma\tau_0 = 15.8\times2.2\,\mu\text{s} \approx 34.8\,\mu\text{s}$$
+<p>在地面系中 $\mu$ 子飞行距离：</p>
+$$d = v\tau = 0.998\times3\times10^8\times34.8\times10^{-6} \approx 10.4\,\text{km}$$
+<p>大气层厚度约 $10\sim15\,\text{km}$，$\mu$ 子可以到达地面。</p>
+
+<p><strong>视角二：$\mu$ 子自身参考系</strong></p>
+<p>$\mu$ 子认为自己是静止的，寿命就是固有寿命 $\tau_0 = 2.2\,\mu\text{s}$。</p>
+<p>但大气层（相对 $\mu$ 子运动）发生长度收缩：</p>
+$$d' = \frac{d}{\gamma} = \frac{10.4}{15.8} \approx 0.66\,\text{km}$$
+<p>$\mu$ 子在 $2.2\,\mu\text{s}$ 内飞行距离：$v\tau_0 = 0.998c\times2.2\,\mu\text{s} \approx 0.66\,\text{km}$</p>
+<p>两种视角给出相同结论：$\mu$ 子能穿越收缩后的大气层到达地面。</p>
+
+<p><strong>经典力学预测</strong>（对比）：$d_{经典} = v\tau_0 = 0.998c\times2.2\,\mu\text{s} \approx 660\,\text{m}$，远小于大气层厚度，$\mu$ 子不应到达地面——这与实验观测矛盾，证明相对论效应的真实存在。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（飞船测量问题）</strong>：一艘飞船以 $v = 0.8c$ 经过一个空间站。空间站固有长度 $L_0 = 500\,\text{m}$。飞船上的时钟记录从经过空间站前端到后端的时间。求该时间。
+<div class="sol"><div class="st">解</div>
+<p>$\gamma = 1/\sqrt{1-0.64} = 1/0.6 = 5/3$</p>
+<p><strong>方法一</strong>：在飞船系中，空间站在运动，长度收缩为 $L = L_0/\gamma = 500/(5/3) = 300\,\text{m}$。飞船经过空间站的时间为：</p>
+$$\Delta t_{飞船} = \frac{L}{v} = \frac{300}{0.8\times3\times10^8} = 1.25\times10^{-6}\,\text{s} = 1.25\,\mu\text{s}$$
+
+<p><strong>方法二</strong>：在空间站系中，飞船经过的时间为 $\Delta t_{站} = L_0/v = 500/(0.8c) = 2.083\,\mu\text{s}$。飞船上的时钟是"运动的钟"，走得慢，所以飞船上记录的时间（固有时间）为：</p>
+$$\Delta t_{飞船} = \frac{\Delta t_{站}}{\gamma} = \frac{2.083}{5/3} = 1.25\,\mu\text{s} \quad \text{✓}$$
+<p>两种方法结果一致。注意这里飞船上记录的是固有时间（"经过前端"和"经过后端"发生在飞船上的同一位置）。</p>
+</div></div>
+
+<div class="warn"><strong>高频考点速查</strong>：
+<ul>
+<li>$\gamma = 2$ → $v = \frac{\sqrt{3}}{2}c \approx 0.866c$</li>
+<li>$\gamma = 5/3$ → $v = 0.8c$</li>
+<li>$\gamma = 5/4$ → $v = 0.6c$</li>
+<li>固有时间总是最短的；固有长度总是最长的</li>
+<li>长度收缩只在运动方向，垂直方向无收缩</li>
+<li>时间膨胀和长度收缩是同一物理现象的两种描述</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 6-3, 6-4, 6-7, 6-10, 6-12, 6-13, 6-16, 6-19</div>
 
 <script src="toc.js"></script>

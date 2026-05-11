@@ -532,6 +532,253 @@ $$n(r) = n(0)\exp\left(\frac{m\omega^2 r^2}{2kT}\right)$$
 </div></div>
 </div>
 
+<h2 id="s17">8.17 理想气体微观模型的基本假设（PPT详解）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">理想气体模型的五个基本假设</div>
+<ol>
+<li><strong>大量分子组成</strong>：气体由大量分子组成（$N\sim10^{23}$），统计规律适用，个别分子的行为无意义，只有统计平均量有物理意义。</li>
+<li><strong>分子大小可忽略</strong>：分子本身的线度远小于分子间的平均距离，可视为<strong>质点</strong>（$d\sim10^{-10}\,\text{m}$，分子间距 $\sim10^{-9}\,\text{m}$）。</li>
+<li><strong>除碰撞外无相互作用</strong>：分子间除了碰撞瞬间外没有相互作用力，分子在两次碰撞之间做匀速直线运动。</li>
+<li><strong>碰撞是完全弹性的</strong>：碰撞过程中系统总动能守恒，没有能量损失（长时间看，系统总动能不变）。</li>
+<li><strong>分子运动完全无序</strong>：各方向运动概率相同（各向同性），没有哪个方向是特殊的。</li>
+</ol>
+</div>
+
+<div class="fb">
+<div class="t">各向同性的数学表达</div>
+<p>由于分子运动无序且各方向等概率，速度分量的统计平均满足：</p>
+$$\overline{v_x} = \overline{v_y} = \overline{v_z} = 0$$
+<p>（正负方向等概率，平均为零）</p>
+$$\overline{v_x^2} = \overline{v_y^2} = \overline{v_z^2} = \frac{1}{3}\overline{v^2}$$
+<p>其中 $\overline{v^2} = \overline{v_x^2} + \overline{v_y^2} + \overline{v_z^2}$。这是推导压强公式的关键等式。</p>
+</div>
+
+<div class="fb">
+<div class="t">压强公式的详细推导步骤（PPT重点）</div>
+<p><strong>Step 1：单分子撞壁的动量变化</strong></p>
+<p>考虑一个以速度分量 $v_x > 0$ 撞击容器壁（设壁面垂直于 $x$ 轴）的分子。弹性碰撞后 $v_x \to -v_x$，动量变化为：</p>
+$$\Delta p = mv_x - m(-v_x) = 2mv_x$$
+
+<p><strong>Step 2：$\dd t$ 时间内撞击 $\dd A$ 面积的分子数</strong></p>
+<p>在 $\dd t$ 时间内，能够到达面积 $\dd A$ 的分子必须满足：</p>
+<ul>
+<li>速度 $x$ 分量为 $v_x$（正方向，朝壁运动）</li>
+<li>距壁距离不超过 $v_x\dd t$</li>
+</ul>
+<p>这些分子位于一个底面积为 $\dd A$、长度为 $v_x\dd t$ 的柱体内。柱体体积 = $v_x\dd t\cdot\dd A$。</p>
+<p>该柱体中具有速度分量 $v_x$ 的分子数 = $\frac{1}{2}nv_x\cdot\dd A\cdot\dd t$</p>
+<p>（系数 $\frac{1}{2}$ 是因为只有向壁运动的分子，即 $v_x > 0$ 的一半分子才能撞壁）</p>
+
+<p><strong>Step 3：总冲量与压强</strong></p>
+<p>对所有速率的分子求和，$\dd t$ 时间内对 $\dd A$ 面积的总冲量：</p>
+$$\dd I = \frac{1}{2}n\dd A\dd t\cdot\overline{2mv_x\cdot v_x} = nm\overline{v_x^2}\cdot\dd A\cdot\dd t$$
+<p>压强 = 总冲量/(面积 $\times$ 时间)：</p>
+$$p = \frac{\dd I}{\dd A\cdot\dd t} = nm\overline{v_x^2} = \frac{1}{3}nm\overline{v^2}$$
+<p>利用 $\bar{\varepsilon}_k = \frac{1}{2}m\overline{v^2}$，得到：</p>
+$$\boxed{p = \frac{1}{3}nm\overline{v^2} = \frac{2}{3}n\bar{\varepsilon}_k}$$
+</div>
+
+<div class="warn"><strong>系数 $\frac{1}{2}$ 的来源</strong>：在求撞壁分子数时，分子数密度 $n$ 包含了向壁（$v_x > 0$）和背壁（$v_x < 0$）两个方向的分子。由于各向同性，只有一半的分子（$v_x > 0$）会撞击壁面，因此需要乘以系数 $\frac{1}{2}$。这是推导中最容易遗漏的细节！</div>
+
+<div class="tip"><strong>压强的物理本质</strong>：压强是大量分子撞击器壁产生的<strong>统计平均效果</strong>。单个分子撞壁的力是脉冲式的，但由于分子数极大（$\sim10^{23}$），宏观上表现为恒定的压强。</div>
+</div>
+
+<h2 id="s18">8.18 能量均分定理的深入理解（MOOC补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">能量均分定理的精确表述</div>
+<p>在温度为 $T$ 的热平衡态中，分子能量中每一个<strong>平方项</strong>（二次方项）的平均值都等于 $\frac{1}{2}kT$。</p>
+<p>所谓"平方项"是指能量表达式中含有广义坐标或广义速度的二次方的项。</p>
+</div>
+
+<div class="fb">
+<div class="t">三种自由度的能量贡献</div>
+<p><strong>平动自由度</strong>（每个方向各1个）：</p>
+$$\frac{1}{2}m\overline{v_x^2} = \frac{1}{2}kT,\quad \frac{1}{2}m\overline{v_y^2} = \frac{1}{2}kT,\quad \frac{1}{2}m\overline{v_z^2} = \frac{1}{2}kT$$
+<p>三个平动自由度共贡献平均动能 $\frac{3}{2}kT$。</p>
+
+<p><strong>转动自由度</strong>（每个轴各1个）：</p>
+$$\frac{1}{2}I_x\overline{\omega_x^2} = \frac{1}{2}kT,\quad \frac{1}{2}I_y\overline{\omega_y^2} = \frac{1}{2}kT$$
+<p>（双原子分子只有2个转动自由度，因为绕连线轴的转动惯量几乎为零）</p>
+
+<p><strong>振动自由度</strong>（每个振动模式贡献2个平方项）：</p>
+<p>一个振动模式同时包含动能项 $\frac{1}{2}\mu\dot{x}^2$ 和势能项 $\frac{1}{2}\kappa x^2$，因此：</p>
+$$\overline{E_{vib}} = \frac{1}{2}kT + \frac{1}{2}kT = kT\quad\text{（每个振动模式）}$$
+<p>振动自由度贡献的能量是平动或转动自由度的<strong>两倍</strong>！</p>
+</div>
+
+<div class="fb">
+<div class="t">为什么双原子分子在常温下不考虑振动自由度？</div>
+<p>这是一个经典力学无法解释的问题，需要用<strong>量子力学</strong>理解：</p>
+<ul>
+<li>振动能级间距远大于转动能级间距：$\Delta E_{vib} \gg \Delta E_{rot}$</li>
+<li>只有当 $kT \gtrsim \Delta E_{vib}$ 时，振动自由度才能被"激活"</li>
+<li>对于 H₂：转动激活温度 $\sim 85\,\text{K}$，振动激活温度 $\sim 6100\,\text{K}$</li>
+<li>对于 N₂：振动激活温度 $\sim 3340\,\text{K}$</li>
+<li>室温（$\sim 300\,\text{K}$）远低于振动激活温度 → <strong>振动自由度被"冻结"</strong></li>
+</ul>
+<p>随温度升高，自由度逐步解冻：平动(极低温就激活) → 转动(几十K) → 振动(几千K)</p>
+</div>
+
+<div class="fb">
+<div class="t">常见分子的自由度与热容（常温）</div>
+<table>
+<tr><th>分子</th><th>类型</th><th>平动 $t$</th><th>转动 $r$</th><th>总 $i$</th><th>$C_V$</th><th>$C_p$</th><th>$\gamma$</th></tr>
+<tr><td>He, Ne, Ar</td><td>单原子</td><td>3</td><td>0</td><td>3</td><td>$\frac{3}{2}R$</td><td>$\frac{5}{2}R$</td><td>$\frac{5}{3}\approx1.67$</td></tr>
+<tr><td>H₂, N₂, O₂</td><td>双原子</td><td>3</td><td>2</td><td>5</td><td>$\frac{5}{2}R$</td><td>$\frac{7}{2}R$</td><td>$\frac{7}{5}=1.4$</td></tr>
+<tr><td>H₂O</td><td>非线性三原子</td><td>3</td><td>3</td><td>6</td><td>$3R$</td><td>$4R$</td><td>$\frac{4}{3}\approx1.33$</td></tr>
+<tr><td>CO₂</td><td>线性三原子</td><td>3</td><td>2</td><td>5</td><td>$\frac{5}{2}R$</td><td>$\frac{7}{2}R$</td><td>$\frac{7}{5}=1.4$</td></tr>
+</table>
+</div>
+
+<div class="warn"><strong>CO₂ 的自由度辨析</strong>：CO₂ 虽然是三原子分子，但由于其结构为 O=C=O（线性分子），绕分子轴的转动惯量几乎为零，因此转动自由度只有 <strong>2个</strong>（不是3个）。常温下 $i = 3 + 2 = 5$，与双原子分子相同。高温下考虑振动时，CO₂ 有4个振动模式（对称伸缩、反对称伸缩、2个弯曲振动），$i$ 可增至 $5 + 2\times4 = 13$。</div>
+
+<div class="ex">
+<strong>例（高温下的热容）</strong>：若在高温下 N₂ 的振动自由度也被激活（1个振动模式），求此时的 $C_V$、$C_p$ 和 $\gamma$。
+<div class="sol"><div class="st">解</div>
+<p>高温下 N₂ 的自由度：平动3 + 转动2 + 振动 $2\times1 = 2$，总计 $i = 7$</p>
+<p>$C_V = \frac{i}{2}R = \frac{7}{2}R$</p>
+<p>$C_p = C_V + R = \frac{9}{2}R$</p>
+<p>$\gamma = \frac{C_p}{C_V} = \frac{9}{7} \approx 1.29$</p>
+<p>与常温值 $\gamma = 1.4$ 相比明显减小。实验上确实观察到高温下 $\gamma$ 值下降，这是能量均分定理的有力证据。</p>
+</div></div>
+
+<div class="tip"><strong>能量均分定理的适用条件</strong>：严格来说，能量均分定理只在经典极限下成立，即 $kT$ 远大于相应能级间距时。当温度很低时，量子效应显著，能量均分定理失效。这也是为什么经典理论无法解释固体低温比热趋于零的现象。</div>
+</div>
+
+<h2 id="s19">8.19 速率分布函数的典型应用题（真题汇总）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">题型一：求某速率区间的分子比率</div>
+<p><strong>窄区间</strong>（$\Delta v \ll v_p$）：直接用概率密度乘以区间宽度</p>
+$$\frac{\Delta N}{N} \approx f(v)\Delta v$$
+<p><strong>宽区间</strong>：必须积分</p>
+$$\frac{\Delta N}{N} = \int_{v_1}^{v_2}f(v)\dd v$$
+<p>（通常无法解析计算，需要查表或数值积分）</p>
+</div>
+
+<div class="fb">
+<div class="t">题型二：从分布曲线图中读取信息</div>
+<ul>
+<li>$f(v)$ 曲线下<strong>总面积 = 1</strong>（归一化条件）</li>
+<li>曲线的<strong>峰值位置</strong>对应最概然速率 $v_p$</li>
+<li>某区间 $[v_1, v_2]$ 下的面积 = 该区间内的分子比率</li>
+<li>$T$ 升高时：曲线变<strong>矮</strong>变<strong>宽</strong>，峰值<strong>右移</strong>，但总面积不变</li>
+<li>$T$ 降低时：曲线变<strong>高</strong>变<strong>窄</strong>，峰值<strong>左移</strong></li>
+</ul>
+</div>
+
+<div class="fb">
+<div class="t">题型三：验证归一化条件</div>
+$$\int_0^\infty f(v)\dd v = 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2}\int_0^\infty v^2 e^{-\frac{mv^2}{2kT}}\dd v = 1$$
+<p>利用 Gauss 积分 $\int_0^\infty v^2 e^{-\alpha v^2}\dd v = \frac{\sqrt{\pi}}{4\alpha^{3/2}}$（其中 $\alpha = \frac{m}{2kT}$）可验证。</p>
+</div>
+
+<div class="fb">
+<div class="t">题型四：计算 $\overline{v^n}$——常用Gauss积分公式</div>
+<p>$\overline{v^n} = \int_0^\infty v^n f(v)\dd v$，需要用到以下积分公式：</p>
+<table>
+<tr><th>积分</th><th>结果</th></tr>
+<tr><td>$\int_0^\infty v^{2n}e^{-\alpha v^2}\dd v$</td><td>$\dfrac{(2n-1)!!}{2^{n+1}}\sqrt{\dfrac{\pi}{\alpha^{2n+1}}}$</td></tr>
+<tr><td>$\int_0^\infty v^{2n+1}e^{-\alpha v^2}\dd v$</td><td>$\dfrac{n!}{2\alpha^{n+1}}$</td></tr>
+</table>
+<p>常用特例（$\alpha = m/(2kT)$）：</p>
+<ul>
+<li>$\int_0^\infty v^2 e^{-\alpha v^2}\dd v = \frac{\sqrt{\pi}}{4\alpha^{3/2}}$（用于归一化验证）</li>
+<li>$\int_0^\infty v^3 e^{-\alpha v^2}\dd v = \frac{1}{2\alpha^2}$（用于求 $\bar{v}$）</li>
+<li>$\int_0^\infty v^4 e^{-\alpha v^2}\dd v = \frac{3\sqrt{\pi}}{8\alpha^{5/2}}$（用于求 $\overline{v^2}$）</li>
+</ul>
+</div>
+
+<div class="ex">
+<strong>例1：速率大于 $v_p$ 的分子比率</strong>
+<div class="sol"><div class="st">解</div>
+<p>需要计算 $\int_{v_p}^\infty f(v)\dd v$。这个积分没有解析结果，需要数值计算。</p>
+<p>令 $u = v/v_p$，则 $f(v)\dd v = \frac{4}{\sqrt{\pi}}u^2 e^{-u^2}\dd u$，需求：</p>
+$$\int_1^\infty \frac{4}{\sqrt{\pi}}u^2 e^{-u^2}\dd u = 1 - \int_0^1 \frac{4}{\sqrt{\pi}}u^2 e^{-u^2}\dd u$$
+<p>数值计算得：$\int_0^1 \frac{4}{\sqrt{\pi}}u^2 e^{-u^2}\dd u \approx 0.4276$</p>
+<p>因此，速率大于 $v_p$ 的分子比率 $\approx 1 - 0.4276 = \mathbf{0.5724 \approx 57.3\%}$</p>
+<p>即大约有 <strong>57.3%</strong> 的分子速率超过最概然速率——超过一半！</p>
+</div></div>
+
+<div class="ex">
+<strong>例2：$v_p$ 到 $v_p + 0.01v_p$ 之间的分子比率</strong>
+<div class="sol"><div class="st">解</div>
+<p>区间很窄（$\Delta v = 0.01v_p \ll v_p$），用近似公式：</p>
+$$\frac{\Delta N}{N} \approx f(v_p)\cdot\Delta v = \frac{4}{\sqrt{\pi}\,e}\cdot\frac{1}{v_p}\times 0.01v_p = \frac{0.04}{\sqrt{\pi}\,e}$$
+$$= \frac{0.04}{1.7725\times2.7183} = \frac{0.04}{4.8178} = 8.30\times10^{-3} \approx 0.83\%$$
+</div></div>
+
+<div class="ex">
+<strong>例3：利用分布函数求平均动能</strong>
+<div class="sol"><div class="st">解</div>
+<p>$\bar{\varepsilon}_k = \overline{\frac{1}{2}mv^2} = \frac{1}{2}m\overline{v^2} = \frac{1}{2}m\int_0^\infty v^2 f(v)\dd v$</p>
+<p>$= \frac{1}{2}m\cdot4\pi\left(\frac{m}{2\pi kT}\right)^{3/2}\int_0^\infty v^4 e^{-\frac{mv^2}{2kT}}\dd v$</p>
+<p>$= \frac{1}{2}m\cdot4\pi\left(\frac{m}{2\pi kT}\right)^{3/2}\cdot\frac{3\sqrt{\pi}}{8}\left(\frac{2kT}{m}\right)^{5/2}$</p>
+<p>化简得 $\bar{\varepsilon}_k = \frac{3}{2}kT$，与能量均分定理完全一致。</p>
+</div></div>
+
+<div class="tip"><strong>记忆技巧</strong>：速率大于 $v_p$ 的分子约占 57%，速率在 $v_p$ 到 $1.5v_p$ 之间的分子约占 29%，速率大于 $2v_p$ 的分子约占 10%。这些数值在选择题中经常出现。</div>
+</div>
+
+<h2 id="s20">8.20 气体对器壁的作用（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">单位面积单位时间撞壁分子数</div>
+$$\boxed{\Gamma = \frac{1}{4}n\bar{v}}$$
+<p><strong>推导</strong>：考虑朝壁面运动的分子（$v_x > 0$ 的一半），其法向速度分量的平均值为：</p>
+$$\overline{|v_x|}_{v_x>0} = \int_0^\infty v_x g(v_x)\dd v_x \bigg/ \int_0^\infty g(v_x)\dd v_x$$
+<p>由对称性和 Maxwell 分布计算可得 $\overline{|v_x|} = \bar{v}/2$（三维情况下）。</p>
+<p>单位面积单位时间撞壁的分子数 = 朝壁运动的分子数密度 $\times$ 平均法向速度：</p>
+$$\Gamma = \frac{n}{2}\cdot\overline{|v_x|}_{v_x>0} = \frac{n}{2}\cdot\frac{\bar{v}}{2} = \frac{1}{4}n\bar{v}$$
+</div>
+
+<div class="fb">
+<div class="t">相关物理量</div>
+<p><strong>单位面积单位时间的动量传递</strong>（即压强）：</p>
+$$p = nm\overline{v_x^2} = \frac{1}{3}nm\overline{v^2}$$
+<p><strong>单位面积单位时间的质量通量</strong>：</p>
+$$\dot{m} = m\Gamma = \frac{1}{4}\rho\bar{v}$$
+<p>其中 $\rho = nm$ 为气体密度。</p>
+</div>
+
+<div class="ex">
+<strong>例1（小孔气体泄漏）</strong>：容积为 $V$ 的容器中有理想气体（温度 $T$ 恒定），容器壁上有一面积为 $A$ 的小孔。求容器内压强随时间的变化规律。
+<div class="sol"><div class="st">解</div>
+<p><strong>Step 1</strong>：单位时间通过小孔逸出的分子数：</p>
+$$\frac{\dd N}{\dd t} = -\Gamma\cdot A = -\frac{1}{4}n\bar{v}\cdot A$$
+<p>（负号表示分子数减少）</p>
+
+<p><strong>Step 2</strong>：由 $n = N/V$ 和 $p = nkT$，将上式改写为压强的变化：</p>
+$$\frac{\dd p}{\dd t} = \frac{kT}{V}\frac{\dd N}{\dd t} = -\frac{kT}{V}\cdot\frac{1}{4}\cdot\frac{p}{kT}\cdot\bar{v}\cdot A = -\frac{A\bar{v}}{4V}p$$
+
+<p><strong>Step 3</strong>：解微分方程（注意 $\bar{v}$ 与 $T$ 有关，$T$ 恒定故 $\bar{v}$ 为常数）：</p>
+$$\frac{\dd p}{p} = -\frac{A\bar{v}}{4V}\dd t$$
+$$\boxed{p(t) = p_0\exp\left(-\frac{A\bar{v}}{4V}t\right)}$$
+<p>压强呈<strong>指数衰减</strong>，特征时间 $\tau = 4V/(A\bar{v})$。</p>
+</div></div>
+
+<div class="ex">
+<strong>例2（数值计算）</strong>：$V = 1\,\text{L} = 10^{-3}\,\text{m}^3$，$A = 10^{-6}\,\text{m}^2$（1 mm²），$T = 300\,\text{K}$，气体为 N₂。求压强降为初始值一半所需的时间。
+<div class="sol"><div class="st">解</div>
+<p>$\bar{v} = \sqrt{8RT/(\pi M)} = \sqrt{8\times8.314\times300/(\pi\times0.028)} \approx 476\,\text{m/s}$</p>
+<p>特征时间：$\tau = \frac{4V}{A\bar{v}} = \frac{4\times10^{-3}}{10^{-6}\times476} = \frac{4\times10^{-3}}{4.76\times10^{-4}} = 8.4\,\text{s}$</p>
+<p>$p = p_0/2$ 时：$t = \tau\ln 2 = 8.4\times0.693 = 5.8\,\text{s}$</p>
+<p>小孔虽小（仅1 mm²），但气体泄漏速度相当快！</p>
+</div></div>
+
+<div class="tip"><strong>$\Gamma = \frac{1}{4}n\bar{v}$ 的应用场景</strong>：
+<ul>
+<li>计算气体泄漏速率（真空技术）</li>
+<li>计算蒸发速率（液面上方的分子逃逸）</li>
+<li>计算化学反应中分子碰撞壁面的频率（催化反应）</li>
+<li>估算真空系统的抽气时间</li>
+</ul></div>
+
+<div class="warn"><strong>小孔条件</strong>：上述公式要求小孔尺寸远小于分子的平均自由程 $\bar{\lambda}$，即 $\sqrt{A}\ll\bar{\lambda}$。否则气体通过小孔的流动不是分子流（自由分子流），而是黏滞流，需要用流体力学的方法处理。</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 8-4, 8-5, 8-8, 8-10, 8-11, 8-14, 8-18, 8-21</div>
 
 <script src="toc.js"></script>

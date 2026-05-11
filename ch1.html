@@ -577,6 +577,267 @@ $$x' = x - ut,\quad y' = y,\quad z' = z,\quad t' = t$$
 </ul></div>
 </div>
 
+<!-- ===== 1.14 曲率半径的计算方法 ===== -->
+<h2 id="s14">1.14 曲率半径的计算方法（MOOC/PPT补充）</h2>
+<div class="card">
+<h3>曲率半径的一般公式</h3>
+<div class="fb">
+<div class="t">显函数形式 $y = f(x)$</div>
+<p>若轨迹可以表示为 $y = f(x)$，则曲率半径为：</p>
+$$\rho = \frac{\left[1+\left(\dfrac{\dd y}{\dd x}\right)^2\right]^{3/2}}{\left|\dfrac{\dd^2 y}{\dd x^2}\right|}$$
+<p>其中 $y' = \dd y/\dd x$ 为一阶导数，$y'' = \dd^2 y/\dd x^2$ 为二阶导数。</p>
+</div>
+
+<div class="fb">
+<div class="t">参数方程形式 $x = x(t),\;y = y(t)$</div>
+<p>若轨迹以参数 $t$ 表示，则曲率半径为：</p>
+$$\rho = \frac{\left[\left(\dfrac{\dd x}{\dd t}\right)^2+\left(\dfrac{\dd y}{\dd t}\right)^2\right]^{3/2}}{\left|\dfrac{\dd x}{\dd t}\cdot\dfrac{\dd^2 y}{\dd t^2}-\dfrac{\dd^2 x}{\dd t^2}\cdot\dfrac{\dd y}{\dd t}\right|}$$
+<p>简记为：$\rho = \dfrac{(\dot{x}^2+\dot{y}^2)^{3/2}}{|\dot{x}\ddot{y}-\ddot{x}\dot{y}|}$</p>
+</div>
+
+<div class="fb">
+<div class="t">物理方法（利用法向加速度）</div>
+<p>在任意曲线运动中，若已知速率 $v$ 和法向加速度 $a_n$：</p>
+$$\rho = \frac{v^2}{a_n}$$
+<p>这是最常用的物理方法，尤其适合已知运动学量的情况。</p>
+</div>
+
+<div class="ex">
+<strong>例15（抛体运动最高点的曲率半径）</strong>：以初速度 $v_0$、仰角 $\alpha$ 抛出一个物体（忽略空气阻力），求最高点处的曲率半径。
+<div class="sol">
+<div class="st">解法1：物理方法</div>
+<p>在最高点，$v_y = 0$，速度完全沿水平方向：$v = v_0\cos\alpha$</p>
+<p>此时速度方向水平，而加速度 $g$ 竖直向下，完全充当法向加速度：$a_n = g$</p>
+$$\rho = \frac{v^2}{a_n} = \frac{v_0^2\cos^2\alpha}{g}$$
+<div class="st">解法2：公式法</div>
+<p>轨迹方程：$y = x\tan\alpha - \dfrac{g}{2v_0^2\cos^2\alpha}x^2$</p>
+<p>$y' = \tan\alpha - \dfrac{g}{v_0^2\cos^2\alpha}x$</p>
+<p>$y'' = -\dfrac{g}{v_0^2\cos^2\alpha}$</p>
+<p>最高点处 $y' = 0$（切线水平），代入公式：</p>
+$$\rho = \frac{[1+0^2]^{3/2}}{|y''|} = \frac{1}{g/(v_0^2\cos^2\alpha)} = \frac{v_0^2\cos^2\alpha}{g}$$
+<p>两种方法结果一致。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例16（抛物线顶点的曲率半径）</strong>：曲线 $y = Ax^2$（$A > 0$），求顶点 $x = 0$ 处的曲率半径。
+<div class="sol">
+<div class="st">解</div>
+<p>$y' = 2Ax$，$y'' = 2A$</p>
+<p>在 $x = 0$ 处：$y' = 0$，$y'' = 2A$</p>
+$$\rho = \frac{[1+0^2]^{3/2}}{|2A|} = \frac{1}{2A}$$
+<p>所以抛物线 $y = Ax^2$ 顶点处的曲率半径为 $\rho = 1/(2A)$。</p>
+<p>对于抛体运动轨迹 $y = x\tan\alpha - \frac{g}{2v_0^2\cos^2\alpha}x^2$，在最高点处等效系数 $A = \frac{g}{2v_0^2\cos^2\alpha}$，于是 $\rho = 1/(2A) = v_0^2\cos^2\alpha/g$，与前例一致。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例17（参数方程求曲率半径）</strong>：质点运动方程 $x = R\cos\omega t$，$y = R\sin\omega t$，求曲率半径。
+<div class="sol">
+<div class="st">解</div>
+<p>$\dot{x} = -R\omega\sin\omega t$，$\ddot{x} = -R\omega^2\cos\omega t$</p>
+<p>$\dot{y} = R\omega\cos\omega t$，$\ddot{y} = -R\omega^2\sin\omega t$</p>
+<p>$\dot{x}^2 + \dot{y}^2 = R^2\omega^2$</p>
+<p>$\dot{x}\ddot{y} - \ddot{x}\dot{y} = R^2\omega^3\sin^2\omega t + R^2\omega^3\cos^2\omega t = R^2\omega^3$</p>
+$$\rho = \frac{(R^2\omega^2)^{3/2}}{R^2\omega^3} = \frac{R^3\omega^3}{R^2\omega^3} = R$$
+<p>匀速圆周运动的曲率半径处处等于圆的半径，符合预期。</p>
+</div>
+</div>
+
+<div class="tip"><strong>理解与技巧</strong>：在抛体运动最高点，速度完全沿水平方向，重力加速度 $g$ 完全充当法向加速度（因为 $a_\tau = 0$）。此时 $g = v^2/\rho$，由此可以直接得到 $\rho = v^2/g$。这是"法向加速度法"的典型应用。</div>
+<div class="warn"><strong>易错</strong>：使用公式法时，$y'$ 和 $y''$ 是对 $x$ 的导数，不是对 $t$ 的导数。若给的是参数方程，必须用参数方程版公式。</div>
+</div>
+
+<!-- ===== 1.15 弧长的计算 ===== -->
+<h2 id="s15">1.15 弧长的计算（真题常考）</h2>
+<div class="card">
+<h3>弧长公式</h3>
+<div class="fb">
+<div class="t">弧长的积分公式</div>
+<p>质点从 $t_1$ 到 $t_2$ 时间内走过的<strong>路程</strong>（弧长）：</p>
+$$s = \int_{t_1}^{t_2}|\vv{v}|\,\dd t = \int_{t_1}^{t_2}\sqrt{v_x^2 + v_y^2 + v_z^2}\,\dd t$$
+<p>对于平面运动（二维）：</p>
+$$s = \int_{t_1}^{t_2}\sqrt{\dot{x}^2 + \dot{y}^2}\,\dd t$$
+<p>若轨迹为显函数 $y = f(x)$：</p>
+$$s = \int_{x_1}^{x_2}\sqrt{1 + \left(\frac{\dd y}{\dd x}\right)^2}\,\dd x$$
+</div>
+
+<div class="ex">
+<strong>例18（2022期中真题改编）</strong>：质点运动方程为 $\vv{r} = 2t\,\ii + t^2\,\jj$（SI），求从 $t = 1\,\text{s}$ 到 $t = 3\,\text{s}$ 经过的路程。
+<div class="sol">
+<div class="st">解</div>
+<p>速度分量：$v_x = \dot{x} = 2$，$v_y = \dot{y} = 2t$</p>
+<p>速率：$v = \sqrt{v_x^2 + v_y^2} = \sqrt{4 + 4t^2} = 2\sqrt{1 + t^2}$</p>
+$$s = \int_1^3 2\sqrt{1+t^2}\,\dd t$$
+<p>令 $t = \sinh u$，则 $\dd t = \cosh u\,\dd u$，$\sqrt{1+t^2} = \cosh u$：</p>
+$$s = 2\int \cosh^2 u\,\dd u = 2\int\frac{1+\cosh 2u}{2}\dd u = u + \frac{\sinh 2u}{2} + C$$
+<p>回代 $u = \text{arsinh}\,t = \ln(t+\sqrt{1+t^2})$，$\sinh 2u = 2t\sqrt{1+t^2}$：</p>
+$$s = \left[\ln(t+\sqrt{1+t^2}) + t\sqrt{1+t^2}\right]_1^3$$
+$$= \left[\ln(3+\sqrt{10}) + 3\sqrt{10}\right] - \left[\ln(1+\sqrt{2}) + \sqrt{2}\right]$$
+$$\approx (1.818 + 9.487) - (0.881 + 1.414) \approx 9.01\,\text{m}$$
+</div>
+</div>
+
+<div class="ex">
+<strong>例19（简单弧长计算）</strong>：质点做匀速圆周运动 $x = R\cos\omega t$，$y = R\sin\omega t$，求一个周期 $T = 2\pi/\omega$ 内的路程。
+<div class="sol">
+<div class="st">解</div>
+<p>$v = \sqrt{\dot{x}^2+\dot{y}^2} = R\omega$（常数）</p>
+$$s = \int_0^T R\omega\,\dd t = R\omega\cdot\frac{2\pi}{\omega} = 2\pi R$$
+<p>正好是圆的周长，验证了公式的正确性。</p>
+</div>
+</div>
+
+<div class="warn"><strong>路程 $\neq$ 位移大小</strong>：
+<ul>
+<li><strong>路程</strong>是标量，等于速率对时间的积分：$s = \int |\vv{v}|\,\dd t$，恒为正值</li>
+<li><strong>位移大小</strong>是矢量差的模：$|\Delta\vv{r}| = |\vv{r}(t_2) - \vv{r}(t_1)|$</li>
+<li>只有在直线运动且方向不变时两者才相等</li>
+<li>上例中：位移 $\Delta\vv{r} = (6-2)\ii + (9-1)\jj = 4\ii + 8\jj$，$|\Delta\vv{r}| = \sqrt{16+64} = \sqrt{80} \approx 8.94\,\text{m}$，而路程 $s \approx 9.01\,\text{m} > |\Delta\vv{r}|$</li>
+</ul></div>
+
+<div class="tip"><strong>考试技巧</strong>：如果弧长积分不好算（如含有 $\sqrt{1+t^2}$ 等），可以尝试查积分表或用双曲代换 $t = \sinh u$。有些题目会设计为弧长积分恰好可以简化（如速率为常数，或被积函数为完全平方）。</div>
+</div>
+
+<!-- ===== 1.16 运动学两类问题详解 ===== -->
+<h2 id="s16">1.16 运动学两类问题详解（PPT重点）</h2>
+<div class="card">
+<h3>第一类问题：已知运动方程，求速度和加速度</h3>
+<div class="fb">
+<div class="t">方法：逐次求导</div>
+$$\vv{r}(t) \xrightarrow{\dd/\dd t} \vv{v}(t) \xrightarrow{\dd/\dd t} \vv{a}(t)$$
+<p>这类问题较为直接，只要会求导即可。关键在于正确计算矢量各分量的导数。</p>
+</div>
+
+<h3>第二类问题：已知加速度或力，求速度和运动方程</h3>
+<div class="fb">
+<div class="t">方法：积分 + 初始条件</div>
+$$\vv{a}(t) \xrightarrow{\int\dd t} \vv{v}(t) = \vv{v}_0 + \int_0^t\vv{a}(t')\,\dd t' \xrightarrow{\int\dd t} \vv{r}(t) = \vv{r}_0 + \int_0^t\vv{v}(t')\,\dd t'$$
+<p>积分会产生常数，必须利用<strong>初始条件</strong>（$t = 0$ 时的 $\vv{v}_0$ 和 $\vv{r}_0$）来确定。</p>
+</div>
+
+<div class="ex">
+<strong>例20（经典第二类问题：空气阻力下的运动）</strong>：质点沿直线运动，受到与速度成正比的阻力 $a = -kv$（$k > 0$ 为常数），初始速度 $v_0$，初始位置 $x_0 = 0$。求 $v(t)$ 和 $x(t)$。
+<div class="sol">
+<div class="st">解</div>
+<p><strong>求 $v(t)$</strong>：$\dfrac{\dd v}{\dd t} = -kv$</p>
+<p>分离变量：$\dfrac{\dd v}{v} = -k\,\dd t$</p>
+<p>两边积分：$\ln v - \ln v_0 = -kt$</p>
+$$\boxed{v(t) = v_0\,e^{-kt}}$$
+<p>速度随时间指数衰减，永远不会精确为零，但实际上很快趋近于零。</p>
+
+<p><strong>求 $x(t)$</strong>：</p>
+$$x = \int_0^t v\,\dd t' = \int_0^t v_0\,e^{-kt'}\,\dd t' = v_0\left[-\frac{1}{k}e^{-kt'}\right]_0^t$$
+$$\boxed{x(t) = \frac{v_0}{k}\left(1 - e^{-kt}\right)}$$
+
+<p><strong>讨论</strong>：当 $t \to \infty$ 时：</p>
+$$x_{\max} = \frac{v_0}{k}$$
+<p>物体最终停在有限距离处！虽然速度永远不为零，但行程却是有限的（收敛的无穷级数）。这是指数衰减运动的重要特征。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例21（加速度为位置函数）</strong>：弹簧振子，$a = -\omega_0^2 x$（$\omega_0$ 为常数），初始条件 $x(0) = A$，$v(0) = 0$。利用运动学方法求 $v(x)$。
+<div class="sol">
+<div class="st">解</div>
+<p>利用换元 $a = v\dfrac{\dd v}{\dd x}$：</p>
+$$v\,\dd v = -\omega_0^2 x\,\dd x$$
+<p>积分（从 $x = A, v = 0$ 到 $x, v$）：</p>
+$$\frac{v^2}{2} - 0 = -\omega_0^2\left(\frac{x^2}{2} - \frac{A^2}{2}\right)$$
+$$v^2 = \omega_0^2(A^2 - x^2)$$
+$$v = \pm\omega_0\sqrt{A^2 - x^2}$$
+<p>这就是简谐运动中速度与位移的关系，当 $x = 0$ 时速度最大 $v_{max} = \omega_0 A$，当 $x = \pm A$ 时速度为零。</p>
+</div>
+</div>
+
+<div class="warn"><strong>积分时必须代入初始条件</strong>：
+<ul>
+<li>不定积分法：积出含任意常数 $C$ 的通解，再用初始条件定 $C$</li>
+<li>定积分法（推荐）：直接用初始条件作为积分下限，结果不含待定常数</li>
+<li>忘记代入初始条件是考试中最常见的扣分原因之一</li>
+</ul></div>
+
+<div class="tip"><strong>第二类问题的分类处理</strong>：
+<ul>
+<li>$a = f(t)$：直接对 $t$ 积分</li>
+<li>$a = f(v)$：分离变量 $\dd v/f(v) = \dd t$ 求 $v(t)$；或用 $v\,\dd v/f(v) = \dd x$ 求 $v(x)$</li>
+<li>$a = f(x)$：用 $v\,\dd v = f(x)\,\dd x$ 求 $v(x)$，再由 $\dd x/v = \dd t$ 求 $x(t)$</li>
+</ul></div>
+</div>
+
+<!-- ===== 1.17 极坐标系中的运动描述 ===== -->
+<h2 id="s17">1.17 极坐标系中的运动描述（PPT补充）</h2>
+<div class="card">
+<h3>极坐标基本量</h3>
+<div class="fb">
+<div class="t">极坐标中的位矢、速度、加速度</div>
+<p>在平面极坐标 $(r, \theta)$ 中，定义径向单位矢量 $\hat{e}_r$（指向远离原点方向）和横向单位矢量 $\hat{e}_\theta$（与 $\hat{e}_r$ 垂直，沿 $\theta$ 增大方向）。</p>
+
+<p><strong>位矢</strong>：</p>
+$$\vv{r} = r\hat{e}_r$$
+
+<p><strong>速度</strong>：</p>
+$$\vv{v} = \dot{r}\hat{e}_r + r\dot{\theta}\hat{e}_\theta$$
+<ul>
+<li>$v_r = \dot{r}$：<strong>径向速度</strong>——描述质点远离或靠近原点的快慢</li>
+<li>$v_\theta = r\dot{\theta} = r\omega$：<strong>横向速度</strong>——描述质点绕原点旋转的快慢</li>
+</ul>
+
+<p><strong>加速度</strong>：</p>
+$$\vv{a} = (\ddot{r} - r\dot{\theta}^2)\hat{e}_r + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\hat{e}_\theta$$
+<ul>
+<li>$a_r = \ddot{r} - r\omega^2$：<strong>径向加速度</strong>。第一项 $\ddot{r}$ 是径向距离的变化率，第二项 $-r\omega^2$ 是向心加速度（指向原点）</li>
+<li>$a_\theta = r\ddot{\theta} + 2\dot{r}\dot{\theta} = r\alpha + 2\dot{r}\omega$：<strong>横向加速度</strong>。第一项 $r\alpha$ 是角加速带来的切向加速度，第二项 $2\dot{r}\omega$ 是<strong>Coriolis项</strong></li>
+</ul>
+</div>
+
+<h3>圆周运动特例</h3>
+<div class="fb">
+<div class="t">$r = R = \text{const}$ 时的简化</div>
+<p>当质点做圆周运动时，$r = R$，$\dot{r} = 0$，$\ddot{r} = 0$：</p>
+$$a_r = -R\omega^2 \quad\text{（向心加速度，指向圆心）}$$
+$$a_\theta = R\alpha \quad\text{（切向加速度）}$$
+<p>这与自然坐标系中的结果完全一致：$a_n = R\omega^2 = v^2/R$（法向），$a_\tau = R\alpha$（切向）。</p>
+</div>
+
+<div class="ex">
+<strong>例22（极坐标运动分析）</strong>：质点在平面内运动，极坐标描述为 $r = a e^{b\theta}$（等角螺线），其中 $a, b$ 为正常数，$\dot{\theta} = \omega_0 = \text{const}$。求速度大小和加速度的径向分量。
+<div class="sol">
+<div class="st">解</div>
+<p>$r = ae^{b\theta}$，$\dot{r} = ab\dot{\theta}e^{b\theta} = b\omega_0 r$，$\ddot{r} = b\omega_0\dot{r} = b^2\omega_0^2 r$</p>
+<p><strong>速度</strong>：</p>
+<p>$v_r = \dot{r} = b\omega_0 r$，$v_\theta = r\omega_0$</p>
+$$v = \sqrt{v_r^2 + v_\theta^2} = r\omega_0\sqrt{1+b^2}$$
+
+<p><strong>径向加速度</strong>：</p>
+$$a_r = \ddot{r} - r\dot{\theta}^2 = b^2\omega_0^2 r - r\omega_0^2 = (b^2 - 1)\omega_0^2 r$$
+<p>当 $b = 1$ 时 $a_r = 0$（径向加速度为零），质点沿螺线向外运动。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例23（行星运动中的极坐标应用）</strong>：在中心力场中，质点受力方向沿径向（$F_\theta = 0$）。证明角动量守恒。
+<div class="sol">
+<div class="st">解</div>
+<p>由 $F_\theta = ma_\theta = 0$，得：</p>
+$$r\ddot{\theta} + 2\dot{r}\dot{\theta} = 0$$
+<p>注意到 $\dfrac{1}{r}\dfrac{\dd}{\dd t}(r^2\dot{\theta}) = r\ddot{\theta} + 2\dot{r}\dot{\theta}$，所以：</p>
+$$\frac{\dd}{\dd t}(r^2\dot{\theta}) = 0 \implies r^2\dot{\theta} = \text{const} = L/m$$
+<p>其中 $L = mr^2\omega$ 就是角动量。这说明在中心力场中角动量守恒（Kepler第二定律的本质）。</p>
+</div>
+</div>
+
+<div class="tip"><strong>应用场景</strong>：极坐标在以下问题中特别有用：
+<ul>
+<li>中心力问题（万有引力、库仑力）：力沿径向，$F_\theta = 0$</li>
+<li>螺线运动：$r = f(\theta)$ 形式简洁</li>
+<li>行星轨道、卫星运动：椭圆/双曲线的极坐标方程更自然</li>
+<li>旋转参考系问题：极坐标中的Coriolis项 $2\dot{r}\omega$ 自然出现</li>
+</ul></div>
+
+<div class="warn"><strong>注意</strong>：极坐标的 $\hat{e}_r$ 和 $\hat{e}_\theta$ 方向随质点位置而变化（不是固定方向），这是极坐标加速度表达式复杂的根本原因。求导时 $\dot{\hat{e}}_r = \dot{\theta}\hat{e}_\theta$，$\dot{\hat{e}}_\theta = -\dot{\theta}\hat{e}_r$。</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 1-7, 1-17, 1-19, 1-21, 1-23, 1-24, 1-25, 1-31, 1-32</div>
 
 <script src="toc.js"></script>

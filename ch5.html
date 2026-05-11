@@ -437,6 +437,268 @@ $$\frac{1}{3}Mg\sin\theta\leq\mu_s Mg\cos\theta \implies \boxed{\mu_s\geq\frac{1
 </div></div>
 </div>
 
+<h2 id="s16">5.16 物理摆（复摆）（MOOC/真题）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">复摆的周期公式</div>
+<p><strong>物理摆</strong>（复摆）是指刚体在重力作用下绕固定水平轴做微小角振动的系统。与简单摆不同，复摆的质量不集中在一个点上。</p>
+$$\boxed{T = 2\pi\sqrt{\frac{J}{mgl}}}$$
+<p>其中：</p>
+<ul>
+<li>$J$ — 刚体对悬挂轴的转动惯量</li>
+<li>$m$ — 刚体总质量</li>
+<li>$l$ — 悬挂轴到质心的距离</li>
+<li>$g$ — 重力加速度</li>
+</ul>
+<p><strong>推导</strong>：设刚体偏离平衡位置角度为 $\theta$（微小），重力力矩为 $M = -mgl\sin\theta \approx -mgl\theta$，由转动定律 $J\ddot{\theta} = -mgl\theta$，得到简谐运动方程 $\ddot{\theta} + \frac{mgl}{J}\theta = 0$，角频率 $\omega = \sqrt{mgl/J}$。</p>
+</div>
+
+<div class="fb">
+<div class="t">等效摆长</div>
+<p>复摆可以用一个简单摆来等效，其摆长为：</p>
+$$l_{eq} = \frac{J}{ml}$$
+<p>使得 $T = 2\pi\sqrt{l_{eq}/g}$，与简单摆公式形式相同。</p>
+</div>
+
+<div class="ex">
+<strong>例（均匀杆绕一端的复摆）</strong>：均匀细杆（质量 $M$，长度 $L$）绕一端的水平轴做微小摆动，求周期。
+<div class="sol"><div class="st">解</div>
+<p>杆绕端点的转动惯量：$J = \frac{1}{3}ML^2$</p>
+<p>质心到悬挂轴的距离：$l = L/2$</p>
+<p>代入复摆周期公式：</p>
+$$T = 2\pi\sqrt{\frac{J}{Mgl}} = 2\pi\sqrt{\frac{\frac{1}{3}ML^2}{Mg\cdot\frac{L}{2}}} = 2\pi\sqrt{\frac{2L}{3g}}$$
+<p>等效摆长：$l_{eq} = \frac{J}{Ml} = \frac{\frac{1}{3}ML^2}{M\cdot\frac{L}{2}} = \frac{2L}{3}$</p>
+<p>对比相同长度的简单摆：$T_{simple} = 2\pi\sqrt{L/g}$</p>
+<p>两者之比：$T_{复摆}/T_{简摆} = \sqrt{2/3} \approx 0.816$，复摆周期更短。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（均匀圆盘绕边缘点的复摆）</strong>：均匀圆盘（质量 $M$，半径 $R$）绕过边缘的水平轴做微小摆动，求周期。
+<div class="sol"><div class="st">解</div>
+<p>圆盘绕中心轴：$J_C = \frac{1}{2}MR^2$</p>
+<p>由平行轴定理，绕边缘轴：</p>
+$$J = J_C + MR^2 = \frac{1}{2}MR^2 + MR^2 = \frac{3}{2}MR^2$$
+<p>质心到悬挂轴的距离：$l = R$</p>
+$$T = 2\pi\sqrt{\frac{\frac{3}{2}MR^2}{MgR}} = 2\pi\sqrt{\frac{3R}{2g}}$$
+<p>等效摆长：$l_{eq} = \frac{3R}{2}$</p>
+</div></div>
+
+<div class="tip"><strong>实验应用</strong>：复摆是实验中测量重力加速度 $g$ 的重要方法。只需测量 $T$、$J$、$m$、$l$，即可由 $g = \frac{4\pi^2 J}{mT^2 l}$ 计算 $g$。实际中常利用"可逆摆"原理提高精度。</div>
+
+<div class="warn"><strong>注意</strong>：复摆周期公式仅适用于<strong>微小振动</strong>（$\theta \ll 1$），此时才能做 $\sin\theta\approx\theta$ 的近似。</div>
+</div>
+
+<h2 id="s17">5.17 子弹射入悬挂杆问题（PPT/真题经典）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">问题模型</div>
+<p>质量为 $m$ 的子弹以水平速度 $v_0$ 射入悬挂在铰链上的静止均匀杆（质量 $M$，长度 $L$）的末端并嵌入其中。杆可绕顶端的光滑水平轴自由转动。</p>
+<p>此类问题分为两个阶段：碰撞阶段（极短时间）和碰后转动阶段。</p>
+</div>
+
+<h3>第一阶段：碰撞瞬间 — 角动量守恒</h3>
+<div class="fb">
+<div class="t">为什么用角动量守恒而不是动量守恒？</div>
+<p>碰撞瞬间，轴对系统有反力（冲击力），该力的冲量不可忽略，因此<strong>线动量不守恒</strong>。</p>
+<p>但轴处的力对轴的力矩为零（力臂为零），因此对轴的<strong>角动量守恒</strong>。</p>
+</div>
+
+<p>碰前角动量（对轴）：$L_{初} = mv_0 L$（子弹的角动量，杆静止）</p>
+<p>碰后角动量：$L_{末} = J_{total}\omega$</p>
+<p>其中系统总转动惯量：</p>
+$$J_{total} = J_{杆} + mL^2 = \frac{1}{3}ML^2 + mL^2 = \frac{(M+3m)L^2}{3}$$
+<p>由角动量守恒 $mv_0L = J_{total}\omega$：</p>
+$$\boxed{\omega = \frac{mv_0L}{J_{total}} = \frac{3mv_0}{(M+3m)L}}$$
+
+<h3>第二阶段：碰后转动 — 能量守恒</h3>
+<p>碰后杆（含子弹）从水平位置开始转动，求能摆过的最大角度 $\theta_{max}$。</p>
+<p>系统质心上升高度（杆的质心上升 $\frac{L}{2}(1-\cos\theta)$，子弹上升 $L(1-\cos\theta)$）：</p>
+$$\frac{1}{2}J_{total}\omega^2 = \left(M\frac{L}{2}+mL\right)g(1-\cos\theta_{max})$$
+$$\frac{1}{2}\cdot\frac{(M+3m)L^2}{3}\cdot\omega^2 = \frac{(M+2m)Lg}{2}(1-\cos\theta_{max})$$
+
+<div class="ex">
+<strong>例（数值计算）</strong>：$m=10\,\text{g}$，$v_0=400\,\text{m/s}$，$M=1\,\text{kg}$，$L=1\,\text{m}$。求碰后角速度和最大偏转角。
+<div class="sol"><div class="st">解</div>
+<p><strong>碰后角速度</strong>：</p>
+$$\omega = \frac{3\times0.01\times400}{(1+3\times0.01)\times1} = \frac{12}{1.03} \approx 11.65\,\text{rad/s}$$
+
+<p><strong>最大偏转角</strong>：</p>
+$$\frac{1}{2}\times\frac{1.03}{3}\times1^2\times11.65^2 = \frac{(1+0.02)\times1\times9.8}{2}(1-\cos\theta_{max})$$
+$$\frac{1}{2}\times0.3433\times135.7 = 4.998(1-\cos\theta_{max})$$
+$$23.31 = 4.998(1-\cos\theta_{max})$$
+$$1-\cos\theta_{max} = 4.664$$
+<p>$1-\cos\theta_{max} > 2$，说明杆能转过最高点（$\theta_{max}>180°$），即杆做完整圆周转动！</p>
+<p>验证：在最高点的动能为 $\frac{1}{2}J\omega^2 - (M\frac{L}{2}+mL)g\times2 > 0$，杆可以持续转动。</p>
+</div></div>
+
+<div class="warn"><strong>重要提醒</strong>：
+<ul>
+<li>碰撞瞬间<strong>动量不守恒</strong>（轴有反力），但<strong>角动量对轴守恒</strong>（轴力矩为零）</li>
+<li>碰撞过程中<strong>能量不守恒</strong>（完全非弹性碰撞，有能量损失）</li>
+<li>碰后转动过程中<strong>机械能守恒</strong>（轴光滑，无摩擦力矩）</li>
+<li>不能把两个阶段合并处理！碰撞和碰后转动适用不同的守恒律</li>
+</ul></div>
+</div>
+
+<h2 id="s18">5.18 绕绳/卷绳问题（真题考频高）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">基本模型</div>
+<p>绳子缠绕在可绕定轴转动的圆柱（或圆筒）上，绳的另一端悬挂质量为 $m$ 的物体。释放后，物体下落同时圆柱转动。</p>
+<p>设圆柱转动惯量为 $J$，半径为 $R$。</p>
+</div>
+
+<h3>方程建立</h3>
+<p>对悬挂物体（取向下为正）：</p>
+$$mg - T = ma \quad \cdots(1)$$
+<p>对圆柱转动：</p>
+$$TR = J\alpha \quad \cdots(2)$$
+<p>绳不伸长约束：</p>
+$$a = R\alpha \quad \cdots(3)$$
+
+<h3>求解</h3>
+<p>由 (2) 和 (3)：$T = J\alpha/R = Ja/R^2$</p>
+<p>代入 (1)：$mg - Ja/R^2 = ma$</p>
+$$\boxed{a = \frac{mg}{m + J/R^2}}, \quad \boxed{T = \frac{Jmg/R^2}{m + J/R^2}} = \frac{mg}{1+mR^2/J}$$
+
+<div class="tip"><strong>"等效质量"概念</strong>：可以把系统看成质量为 $m_{eff} = m + J/R^2$ 的物体在重力 $mg$ 作用下做匀加速运动。$J/R^2$ 相当于圆柱的转动等效质量。</div>
+
+<div class="ex">
+<strong>例（实心圆柱）</strong>：质量 $M$ 的实心圆柱，$J = \frac{1}{2}MR^2$，悬挂质量 $m$。
+<div class="sol"><div class="st">解</div>
+$$a = \frac{mg}{m + \frac{1}{2}MR^2/R^2} = \frac{mg}{m + M/2} = \boxed{\frac{2mg}{2m+M}}$$
+$$T = \frac{\frac{1}{2}M\cdot mg}{m+M/2} = \frac{Mmg}{2m+M}$$
+<p>验证极端情况：</p>
+<ul>
+<li>$M\to 0$（无圆柱）：$a\to g$，$T\to 0$ ✓</li>
+<li>$M\to\infty$（极重圆柱）：$a\to 0$，$T\to mg$ ✓</li>
+</ul>
+</div></div>
+
+<div class="ex">
+<strong>例（薄壁圆筒）</strong>：质量 $M$ 的薄壁圆筒，$J = MR^2$，悬挂质量 $m$。
+<div class="sol"><div class="st">解</div>
+$$a = \frac{mg}{m + MR^2/R^2} = \frac{mg}{m+M} = \boxed{\frac{mg}{m+M}}$$
+$$T = \frac{Mmg}{m+M}$$
+<p>对比实心圆柱：圆筒的 $J$ 更大，加速度更小（更多能量转化为转动动能）。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（综合：求下落 $h$ 后的速度）</strong>：在上述实心圆柱问题中，物体从静止下落高度 $h$，求此时速度。
+<div class="sol"><div class="st">解</div>
+<p><strong>方法一（运动学）</strong>：$v = \sqrt{2ah} = \sqrt{\frac{4mgh}{2m+M}}$</p>
+<p><strong>方法二（能量法）</strong>：</p>
+$$mgh = \frac{1}{2}mv^2 + \frac{1}{2}J\omega^2 = \frac{1}{2}mv^2 + \frac{1}{2}\cdot\frac{1}{2}MR^2\cdot\frac{v^2}{R^2} = \frac{1}{2}v^2\left(m+\frac{M}{2}\right)$$
+$$v = \sqrt{\frac{4mgh}{2m+M}}$$
+<p>两种方法结果一致。能量法不需要求绳张力，更简洁。</p>
+</div></div>
+
+<div class="warn"><strong>易错点</strong>：
+<ul>
+<li>绳的张力 $T \neq mg$！由于物体有加速度，$T < mg$</li>
+<li>若圆柱不是绕中心轴转动，需用正确的转动惯量</li>
+<li>约束条件 $a = R\alpha$ 要求绳在圆柱表面不滑动</li>
+</ul></div>
+</div>
+
+<h2 id="s19">5.19 刚体运动的力学量类比总结（真题高频选择题）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">匀变速转动公式（与匀变速直线运动完全类比）</div>
+<table>
+<tr><th>匀变速直线运动</th><th>匀变速转动</th></tr>
+<tr><td>$v = v_0 + at$</td><td>$\omega = \omega_0 + \alpha t$</td></tr>
+<tr><td>$x = v_0 t + \frac{1}{2}at^2$</td><td>$\theta = \omega_0 t + \frac{1}{2}\alpha t^2$</td></tr>
+<tr><td>$v^2 = v_0^2 + 2ax$</td><td>$\omega^2 = \omega_0^2 + 2\alpha\theta$</td></tr>
+<tr><td>$x = \frac{v_0+v}{2}t$</td><td>$\theta = \frac{\omega_0+\omega}{2}t$</td></tr>
+</table>
+</div>
+
+<div class="ex">
+<strong>例（飞轮减速问题）</strong>：飞轮从 $600\,\text{rpm}$ 均匀减速到停止，共转了 $100$ 圈。求角加速度和减速时间。
+<div class="sol"><div class="st">解</div>
+<p><strong>单位换算</strong>：</p>
+<p>$\omega_0 = 600\,\text{rpm} = 600\times\frac{2\pi}{60}\,\text{rad/s} = 20\pi\,\text{rad/s}$</p>
+<p>$\omega = 0$（停止）</p>
+<p>$\theta = 100\,\text{圈} = 100\times2\pi = 200\pi\,\text{rad}$</p>
+
+<p><strong>求角加速度</strong>：由 $\omega^2 = \omega_0^2 + 2\alpha\theta$</p>
+$$0 = (20\pi)^2 + 2\alpha\cdot200\pi$$
+$$\alpha = -\frac{(20\pi)^2}{400\pi} = -\frac{400\pi^2}{400\pi} = -\pi\,\text{rad/s}^2$$
+<p>负号表示减速。$|\alpha| = \pi \approx 3.14\,\text{rad/s}^2$。</p>
+
+<p><strong>求时间</strong>：由 $\omega = \omega_0 + \alpha t$</p>
+$$0 = 20\pi + (-\pi)t \implies t = \frac{20\pi}{\pi} = \boxed{20\,\text{s}}$$
+
+<p><strong>验证</strong>：用 $\theta = \frac{\omega_0+\omega}{2}t = \frac{20\pi+0}{2}\times20 = 200\pi\,\text{rad}$ ✓</p>
+</div></div>
+
+<div class="ex">
+<strong>例（电机启动问题）</strong>：电机从静止开始匀加速，$5\,\text{s}$ 后达到 $300\,\text{rpm}$。求角加速度和 $5\,\text{s}$ 内转过的圈数。
+<div class="sol"><div class="st">解</div>
+<p>$\omega_0 = 0$，$\omega = 300\times\frac{2\pi}{60} = 10\pi\,\text{rad/s}$，$t = 5\,\text{s}$</p>
+<p>角加速度：$\alpha = \frac{\omega-\omega_0}{t} = \frac{10\pi}{5} = 2\pi\,\text{rad/s}^2$</p>
+<p>转过角度：$\theta = \frac{\omega_0+\omega}{2}t = \frac{0+10\pi}{2}\times5 = 25\pi\,\text{rad}$</p>
+<p>转过圈数：$N = \theta/(2\pi) = 25\pi/(2\pi) = \boxed{12.5\,\text{圈}}$</p>
+</div></div>
+
+<div class="tip"><strong>选择题常考点</strong>：
+<ul>
+<li>rpm 到 rad/s 的换算：$n\,\text{rpm} = n\times\frac{2\pi}{60}\,\text{rad/s}$</li>
+<li>转过的圈数 = $\theta/(2\pi)$</li>
+<li>匀减速到停止：$\omega_0^2 = 2|\alpha|\theta$，即 $\theta = \omega_0^2/(2|\alpha|)$</li>
+</ul></div>
+</div>
+
+<h2 id="s20">5.20 旋转绳索的张力分布（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">问题描述</div>
+<p>一根均匀绳索（质量 $M$，长度 $L$）的一端固定在竖直轴上，绕轴在水平面内以角速度 $\omega$ 匀速转动。求绳中距轴 $r$ 处的张力 $T(r)$。</p>
+</div>
+
+<h3>推导过程</h3>
+<p>取绳上从 $r$ 到 $r+\dd r$ 的微元，质量为 $\dd m = \frac{M}{L}\dd r$。</p>
+<p>该微元做圆周运动，需要向心力。微元两端的张力差提供向心力：</p>
+$$T(r) - T(r+\dd r) = \dd m\cdot\omega^2 r = \frac{M}{L}\omega^2 r\,\dd r$$
+<p>即 $-\dd T = \frac{M\omega^2}{L}r\,\dd r$</p>
+<p>边界条件：绳的自由端（$r=L$）处张力为零，$T(L)=0$。</p>
+<p>从 $r$ 积分到 $L$：</p>
+$$T(r) = \int_r^L \frac{M\omega^2}{L}r'\,\dd r' = \frac{M\omega^2}{L}\cdot\frac{r'^2}{2}\Big|_r^L = \frac{M\omega^2}{2L}(L^2-r^2)$$
+$$\boxed{T(r) = \frac{M\omega^2}{2L}(L^2-r^2)}$$
+
+<div class="fb">
+<div class="t">关键结论</div>
+<ul>
+<li>张力在轴处最大：$T(0) = \frac{1}{2}M\omega^2 L$</li>
+<li>张力在自由端为零：$T(L) = 0$</li>
+<li>张力沿绳呈抛物线分布（$T$ 与 $L^2-r^2$ 成正比）</li>
+</ul>
+</div>
+
+<div class="ex">
+<strong>例（末端附加质量）</strong>：若绳的自由端（$r=L$）连接一个质量为 $m$ 的小球，求张力分布。
+<div class="sol"><div class="st">解</div>
+<p>边界条件改变：$T(L) = m\omega^2 L$（小球的向心力由此处张力提供）。</p>
+<p>积分同上，但下限条件变为 $T(L) = m\omega^2 L$：</p>
+$$T(r) = \frac{M\omega^2}{2L}(L^2-r^2) + m\omega^2 L$$
+<p>轴处张力：$T(0) = \frac{1}{2}M\omega^2 L + m\omega^2 L = \left(\frac{M}{2}+m\right)\omega^2 L$</p>
+<p>物理意义：整根绳加小球的总质量为 $M+m$，它们质心到轴的平均距离对应的向心力之和。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（数值计算）</strong>：绳长 $L=2\,\text{m}$，质量 $M=0.5\,\text{kg}$，转速 $n=60\,\text{rpm}$。求轴处张力和中点张力。
+<div class="sol"><div class="st">解</div>
+<p>$\omega = 60\times\frac{2\pi}{60} = 2\pi\,\text{rad/s}$</p>
+<p>轴处：$T(0) = \frac{1}{2}\times0.5\times(2\pi)^2\times2 = 0.5\times4\pi^2 = 2\pi^2 \approx 19.7\,\text{N}$</p>
+<p>中点（$r=1\,\text{m}$）：</p>
+$$T(1) = \frac{0.5\times(2\pi)^2}{2\times2}(4-1) = \frac{0.5\times4\pi^2}{4}\times3 = \frac{3}{2}\pi^2 \approx 14.8\,\text{N}$$
+<p>中点张力是轴处的 $3/4$。</p>
+</div></div>
+
+<div class="tip"><strong>推广</strong>：此模型可推广到旋转飞轮轮辋的应力分析、离心机中液柱的压力分布等工程问题。</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 4-4, 4-6, 4-10, 4-11, 4-14, 4-16, 4-19, 4-23, 4-24</div>
 
 <script src="toc.js"></script>

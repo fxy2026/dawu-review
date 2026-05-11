@@ -565,6 +565,434 @@ $$T - mg - ma = 0 \implies T = m(g+a)$$
 </ul></div>
 </div>
 
+<!-- ===== 2.14 空气阻力问题 ===== -->
+<h2 id="s14">2.14 空气阻力问题（PPT/MOOC高频）</h2>
+<div class="card">
+<h3>线性阻力 $f = -bv$</h3>
+<div class="fb">
+<div class="t">线性阻力模型（低速情况）</div>
+<p>物体在流体中低速运动时，阻力与速度成正比：$f = -bv$（$b$ 为阻力系数）。</p>
+<p><strong>末速度（终端速度）</strong>：当合力为零时 $mg = bv_T$，故：</p>
+$$v_T = \frac{mg}{b}$$
+<p><strong>从静止下落的速度</strong>：运动方程 $m\dfrac{\dd v}{\dd t} = mg - bv$</p>
+<p>分离变量并积分：</p>
+$$v(t) = v_T\left(1 - e^{-bt/m}\right) = v_T\left(1 - e^{-t/\tau}\right)$$
+<p>其中 $\tau = m/b$ 为<strong>时间常数</strong>，物理意义：</p>
+<ul>
+<li>$t = \tau$ 时：$v = 0.632\,v_T$（达到63.2%的末速度）</li>
+<li>$t = 2\tau$ 时：$v = 0.865\,v_T$（达到86.5%）</li>
+<li>$t = 3\tau$ 时：$v = 0.950\,v_T$（达到95%，工程上近似认为已达末速度）</li>
+</ul>
+</div>
+
+<h3>二次阻力 $f = -cv^2$</h3>
+<div class="fb">
+<div class="t">二次阻力模型（高速情况）</div>
+<p>高速运动时阻力与速度平方成正比：$f = cv^2$（方向与运动方向相反）。</p>
+<p><strong>末速度</strong>：$mg = cv_T^2$，故：</p>
+$$v_T = \sqrt{\frac{mg}{c}}$$
+<p><strong>从静止下落的速度</strong>：$m\dfrac{\dd v}{\dd t} = mg - cv^2$</p>
+$$v(t) = v_T\tanh\left(\frac{gt}{v_T}\right)$$
+<p>当 $t \to 0$ 时 $v \approx gt$（自由落体）；当 $t \to \infty$ 时 $v \to v_T$。</p>
+</div>
+
+<div class="ex">
+<strong>例16（雨滴末速度）</strong>：球形雨滴半径 $r = 1\,\text{mm}$，密度 $\rho = 1000\,\text{kg/m}^3$，空气阻力系数 $c = 0.5\rho_{air}\cdot C_D\cdot\pi r^2$（$\rho_{air} = 1.2\,\text{kg/m}^3$，$C_D \approx 0.45$）。估算末速度。
+<div class="sol">
+<div class="st">解</div>
+<p>雨滴质量：$m = \frac{4}{3}\pi r^3\rho = \frac{4}{3}\pi(10^{-3})^3\times1000 \approx 4.19\times10^{-6}\,\text{kg}$</p>
+<p>阻力系数：$c = 0.5\times1.2\times0.45\times\pi\times(10^{-3})^2 \approx 8.48\times10^{-7}\,\text{kg/m}$</p>
+$$v_T = \sqrt{\frac{mg}{c}} = \sqrt{\frac{4.19\times10^{-6}\times9.8}{8.48\times10^{-7}}} \approx 6.9\,\text{m/s}$$
+<p>这解释了为什么雨滴不会以很高速度砸到地面——空气阻力限制了下落速度。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例17（线性阻力下的水平运动）</strong>：质量 $m$ 的物体以初速度 $v_0$ 在光滑水平面上运动，受线性阻力 $f = -bv$。求物体最终走过的总距离。
+<div class="sol">
+<div class="st">解</div>
+<p>$v(t) = v_0 e^{-bt/m}$</p>
+$$x = \int_0^\infty v_0 e^{-bt/m}\,\dd t = v_0\cdot\frac{m}{b} = \frac{mv_0}{b}$$
+<p>虽然速度永远不精确为零，但总路程是有限值 $x_{max} = mv_0/b$。</p>
+</div>
+</div>
+
+<div class="tip"><strong>求末速度的快速方法</strong>：末速度时合力为零，直接令 $mg = bv_T$（线性阻力）或 $mg = cv_T^2$（二次阻力），不必求解微分方程。</div>
+<div class="warn"><strong>易错</strong>：阻力公式中 $f = -bv$ 的负号表示方向与速度相反。列运动方程时若已取正方向，要注意阻力的符号。下落问题中取向下为正时，阻力向上为负：$ma = mg - bv$。</div>
+</div>
+
+<!-- ===== 2.15 约束条件与连接体问题 ===== -->
+<h2 id="s15">2.15 约束条件与连接体问题（真题重点）</h2>
+<div class="card">
+<h3>约束条件的分类</h3>
+<div class="fb">
+<div class="t">三种基本约束</div>
+<ol>
+<li><strong>绳长约束</strong>：不可伸长的绳子总长度不变 → 对位移关系求导得速度约束 → 再求导得加速度约束</li>
+<li><strong>接触面法线约束</strong>：两物体接触时，沿接触面法线方向的速度/加速度分量相同（不穿透也不分离）</li>
+<li><strong>刚性连接约束</strong>：刚性杆连接的两点之间距离不变，沿杆方向的速度分量相同</li>
+</ol>
+</div>
+
+<h3>经典模型：Atwood机</h3>
+<div class="fb">
+<div class="t">定滑轮两侧不等质量</div>
+<p>轻绳跨过无质量的光滑定滑轮，两端分别悬挂质量 $m_1 > m_2$ 的物体。</p>
+<p><strong>约束</strong>：绳长不变 → 两侧加速度大小相等、方向相反。</p>
+$$a = \frac{(m_1 - m_2)g}{m_1 + m_2}$$
+$$T = \frac{2m_1 m_2 g}{m_1 + m_2}$$
+<p><strong>重要性质</strong>：</p>
+<ul>
+<li>$T$ 总介于 $m_1 g$ 和 $m_2 g$ 之间：$m_2 g < T < m_1 g$</li>
+<li>当 $m_1 = m_2$ 时，$a = 0$，$T = m_1 g = m_2 g$（平衡）</li>
+<li>当 $m_1 \gg m_2$ 时，$a \to g$，$T \to 2m_2 g$</li>
+</ul>
+</div>
+
+<div class="ex">
+<strong>例18（斜面上的连接体）</strong>：光滑斜面（倾角 $\theta$），物体A（质量 $m_A$）在斜面上，通过轻绳经斜面顶端的光滑定滑轮连接悬挂物体B（质量 $m_B$）。$m_B > m_A\sin\theta$，求加速度和绳中张力。
+<div class="sol">
+<div class="st">解</div>
+<p>设加速度 $a$（B下降，A沿斜面上升），绳张力 $T$。</p>
+<p>对B（取向下为正）：$m_B g - T = m_B a \quad\cdots(1)$</p>
+<p>对A（取沿斜面向上为正）：$T - m_A g\sin\theta = m_A a \quad\cdots(2)$</p>
+<p>(1)+(2)：</p>
+$$a = \frac{m_B - m_A\sin\theta}{m_A + m_B}\,g$$
+$$T = \frac{m_A m_B(1+\sin\theta)}{m_A + m_B}\,g$$
+</div>
+</div>
+
+<div class="ex">
+<strong>例19（绳绕钉子的几何约束）</strong>：一根绳绕过固定在天花板的光滑小钉，一端悬挂物体（质量 $m$），另一端以恒定速度 $u$ 水平拉动。当绳与竖直方向成 $\theta$ 角时，求物体的速度。
+<div class="sol">
+<div class="st">解</div>
+<p>设绳从钉子到物体的长度为 $l$，拉出端的长度增加速率为 $u$。绳总长不变：</p>
+$$\frac{\dd l}{\dd t} = -u \quad\text{（物体端绳变短）}$$
+<p>物体的竖直位置 $y = l\cos\theta$，水平位置 $x = l\sin\theta$。</p>
+<p>对于钉子位置固定的情况，物体上升速度（沿绳方向）为 $v_{绳} = u$。</p>
+<p>物体竖直方向速度分量：$v_y = u\cos\theta$（当 $\theta$ 变化较慢时的近似）。</p>
+<p>精确分析需要考虑 $\theta$ 的变化，但对于绳绕过光滑钉子的简单情况：沿绳方向速度等于拉绳速度 $u$，物体竖直速度 $v = u/\cos\theta$。</p>
+</div>
+</div>
+
+<div class="warn"><strong>有质量滑轮两侧绳张力不等</strong>：
+<ul>
+<li>无质量滑轮：两侧张力相等（$T_1 = T_2$），因为滑轮无转动惯量</li>
+<li>有质量滑轮：两侧张力之差提供滑轮的角加速度，$(T_1 - T_2)R = I\alpha$</li>
+<li>考试中若题目说"轻滑轮"则两侧张力相等，否则需考虑滑轮的转动</li>
+</ul></div>
+
+<div class="tip"><strong>约束关系的建立技巧</strong>：
+<ul>
+<li>写出绳长表达式（用各物体坐标表示），对时间求导</li>
+<li>动滑轮约束：动滑轮两侧绳的速度之和等于动滑轮速度的2倍</li>
+<li>遇到复杂约束，先画运动学关系图，再列微分约束</li>
+</ul></div>
+</div>
+
+<!-- ===== 2.16 物体脱离曲面问题 ===== -->
+<h2 id="s16">2.16 物体脱离曲面问题（PPT经典）</h2>
+<div class="card">
+<h3>脱离条件</h3>
+<div class="fb">
+<div class="t">脱离曲面的判据</div>
+<p>物体沿曲面运动时，曲面对物体施加法向支持力 $N$。<strong>脱离的条件</strong>是：</p>
+$$N = 0$$
+<p>当计算得到 $N < 0$ 时，说明物体已经脱离曲面（曲面不能提供拉力）。</p>
+<p>脱离后物体做<strong>抛体运动</strong>，不再沿曲面运动。</p>
+</div>
+
+<div class="ex">
+<strong>例20（经典题：从光滑球面顶端滑下）</strong>：一个小物体从光滑球面（半径 $R$）的最高点由静止开始滑下。求物体脱离球面时的角度和速度。
+<div class="sol">
+<div class="st">解</div>
+<p>设物体滑到与竖直方向成 $\theta$ 角的位置。取沿径向（指向球心）为正方向。</p>
+<p><strong>法向方程</strong>（向心方向）：</p>
+$$mg\cos\theta - N = \frac{mv^2}{R}$$
+<p><strong>能量守恒</strong>（从顶端到角度 $\theta$，下降高度 $h = R - R\cos\theta = R(1-\cos\theta)$）：</p>
+$$\frac{1}{2}mv^2 = mgR(1-\cos\theta)$$
+$$v^2 = 2gR(1-\cos\theta)$$
+<p>代入法向方程：</p>
+$$mg\cos\theta - N = \frac{m\cdot 2gR(1-\cos\theta)}{R} = 2mg(1-\cos\theta)$$
+$$N = mg\cos\theta - 2mg(1-\cos\theta) = mg(3\cos\theta - 2)$$
+
+<p><strong>脱离条件</strong> $N = 0$：</p>
+$$3\cos\theta - 2 = 0 \implies \cos\theta = \frac{2}{3}$$
+$$\boxed{\theta = \arccos\frac{2}{3} \approx 48.2°}$$
+
+<p><strong>脱离速度</strong>：</p>
+$$v^2 = 2gR\left(1 - \frac{2}{3}\right) = \frac{2gR}{3}$$
+$$\boxed{v = \sqrt{\frac{2gR}{3}}}$$
+
+<p><strong>脱离高度</strong>：距球心高度 $h = R\cos\theta = 2R/3$，即在球顶以下 $R/3$ 处脱离。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例21（竖直圆弧内侧最低点的正压力）</strong>：质量 $m$ 的小球从光滑竖直圆弧轨道（半径 $R$）的最高点由静止释放，沿内侧滑到最低点。求最低点处轨道对小球的支持力。
+<div class="sol">
+<div class="st">解</div>
+<p>从最高点到最低点，下降高度 $h = 2R$（直径）。</p>
+<p><strong>能量守恒</strong>：</p>
+$$\frac{1}{2}mv^2 = mg\cdot 2R \implies v^2 = 4gR$$
+<p><strong>最低点法向方程</strong>（向心方向向上）：</p>
+$$N - mg = \frac{mv^2}{R} = \frac{m\cdot 4gR}{R} = 4mg$$
+$$\boxed{N = 5mg}$$
+<p>更一般地，若从高度 $h$ 处释放：$N = mg + 2mgh/R$</p>
+</div>
+</div>
+
+<div class="warn"><strong>脱离后的运动</strong>：
+<ul>
+<li>物体脱离曲面后做<strong>抛体运动</strong>（仅受重力），不再沿曲面运动</li>
+<li>脱离瞬间的速度方向沿曲面的切线方向（不是沿径向）</li>
+<li>判断物体是否脱离时，先假设未脱离列方程，若解出 $N < 0$ 则说明实际已脱离</li>
+</ul></div>
+
+<div class="tip"><strong>球面外侧 vs 内侧</strong>：
+<ul>
+<li>球面<strong>外侧</strong>运动：$mg\cos\theta - N = mv^2/R$，可能脱离（$N$ 减至0）</li>
+<li>球面<strong>内侧</strong>运动：$N - mg\cos\theta = mv^2/R$，$N$ 总为正，不会脱离</li>
+<li>竖直圆周运动内侧最高点：$N + mg = mv^2/R$，临界条件 $N = 0$ 时 $v_{min} = \sqrt{gR}$</li>
+</ul></div>
+</div>
+
+<!-- ===== 2.17 弹簧串并联与弹簧问题汇总 ===== -->
+<h2 id="s17">2.17 弹簧串并联与弹簧问题汇总（PPT补充）</h2>
+<div class="card">
+<h3>弹簧连接的等效系数回顾</h3>
+<div class="fb">
+<div class="t">串联与并联公式</div>
+<table>
+<tr><th>连接方式</th><th>等效劲度系数</th><th>特点</th></tr>
+<tr><td>串联</td><td>$\dfrac{1}{k_{eq}} = \dfrac{1}{k_1} + \dfrac{1}{k_2}$</td><td>变软，$k_{eq} < \min(k_1,k_2)$</td></tr>
+<tr><td>并联</td><td>$k_{eq} = k_1 + k_2$</td><td>变硬，$k_{eq} > \max(k_1,k_2)$</td></tr>
+</table>
+<p>记忆口诀：弹簧串联像电阻并联，弹簧并联像电阻串联——"反着来"。</p>
+</div>
+
+<h3>弹簧力 vs 绳张力的突变性</h3>
+<div class="fb">
+<div class="t">力的突变规则</div>
+<ul>
+<li><strong>弹簧力不能突变</strong>：弹簧的形变量是连续的（需要时间改变长度），因此弹簧力也是连续变化的</li>
+<li><strong>绳张力可以突变</strong>：绳没有弹性形变量，张力由运动状态决定，切断或松弛时可以瞬间变为零</li>
+<li><strong>核心判据</strong>：有弹性形变的元件（弹簧）→ 力不能突变；无弹性形变的元件（绳、刚性杆）→ 力可以突变</li>
+</ul>
+</div>
+
+<div class="ex">
+<strong>例22（竖直弹簧系统突然剪断）</strong>：天花板上用弹簧1（劲度系数 $k_1$）悬挂物体A（质量 $m$），A下方再用弹簧2（劲度系数 $k_2$）连接物体B（质量 $m$）。系统平衡后，剪断弹簧1。求剪断瞬间A和B的加速度。
+<div class="sol">
+<div class="st">解</div>
+<p><strong>剪断前平衡分析</strong>：</p>
+<p>对B：弹簧2拉力 $F_2 = mg$（向上），伸长量 $x_2 = mg/k_2$</p>
+<p>对A：弹簧1拉力 $F_1 = mg + F_2 = 2mg$（向上），伸长量 $x_1 = 2mg/k_1$</p>
+
+<p><strong>剪断弹簧1的瞬间</strong>：</p>
+<p>弹簧1被剪断 → 弹簧1的力<strong>立即消失</strong></p>
+<p>弹簧2未被剪断 → 弹簧2的形变量<strong>不能突变</strong>，弹簧2的力仍为 $mg$</p>
+
+<p><strong>对A</strong>：受力 = 重力 $mg$（向下）+ 弹簧2对A的拉力 $mg$（向下）= $2mg$（向下）</p>
+$$a_A = \frac{2mg}{m} = 2g \quad\text{（向下）}$$
+
+<p><strong>对B</strong>：受力 = 重力 $mg$（向下）+ 弹簧2对B的拉力 $mg$（向上）= $0$</p>
+$$a_B = 0$$
+<p>B在剪断瞬间加速度为零——弹簧2的拉力恰好平衡B的重力。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例23（弹簧+绳组合：剪绳）</strong>：天花板固定弹簧（劲度系数 $k$），弹簧下端连物体A（质量 $m$），A下方用<strong>绳</strong>悬挂物体B（质量 $m$），系统平衡。现剪断A与B之间的<strong>绳</strong>。求剪断瞬间A和B的加速度。
+<div class="sol">
+<div class="st">解</div>
+<p><strong>剪断前</strong>：弹簧伸长量 $x_0 = 2mg/k$，弹簧力 $= 2mg$（向上），绳张力 $T = mg$</p>
+<p><strong>剪断绳的瞬间</strong>：</p>
+<p>绳的张力<strong>立即消失</strong>（$T = 0$），但弹簧力<strong>不变</strong>（仍为 $2mg$，因形变量来不及变化）。</p>
+<p><strong>对A</strong>：弹簧力 $2mg$（向上）$-$ 重力 $mg$（向下）$= mg$（向上）</p>
+$$a_A = g \quad\text{（向上）}$$
+<p><strong>对B</strong>：只受重力</p>
+$$a_B = g \quad\text{（向下，自由落体）}$$
+</div>
+</div>
+
+<div class="fb">
+<div class="t">简谐运动中的等效弹性系数</div>
+<p>物体在弹簧系统中做微小振动时，振动周期 $T = 2\pi\sqrt{m/k_{eq}}$。</p>
+<p>确定 $k_{eq}$ 的方法：将物体偏离平衡位置 $x$，求回复力 $F = -k_{eq}x$。</p>
+<ul>
+<li>两弹簧串联夹物体：$k_{eq} = k_1 k_2/(k_1+k_2)$ → 周期较长（振动较慢）</li>
+<li>两弹簧并联夹物体：$k_{eq} = k_1 + k_2$ → 周期较短（振动较快）</li>
+<li>物体两侧各接一根弹簧（两端固定）：等效为并联 $k_{eq} = k_1 + k_2$</li>
+</ul>
+</div>
+
+<div class="warn"><strong>弹簧问题常见陷阱补充</strong>：
+<ul>
+<li>竖直弹簧悬挂物体：平衡位置不在弹簧原长处，但以平衡位置为原点时回复力仍为 $F = -kx$（重力被平衡位置的弹力抵消）</li>
+<li>弹簧可以被压缩也可以被拉伸：分析时注意判断弹簧处于压缩还是拉伸状态</li>
+<li>弹簧的弹性势能 $E_p = \frac{1}{2}kx^2$，其中 $x$ 是相对于<strong>原长</strong>的形变量</li>
+</ul></div>
+</div>
+
+<!-- ===== 2.18 摩擦力分析专题 ===== -->
+<h2 id="s18">2.18 摩擦力分析专题（真题易错）</h2>
+<div class="card">
+<h3>摩擦力基本规则</h3>
+<div class="fb">
+<div class="t">静摩擦力 vs 动摩擦力</div>
+<ul>
+<li><strong>静摩擦力</strong>：$f_s \leq \mu_s N$，大小和方向由<strong>平衡方程或运动方程</strong>确定，$\mu_s N$ 只是上限</li>
+<li><strong>动摩擦力</strong>：$f_k = \mu_k N$，方向与<strong>相对滑动方向</strong>相反，大小确定</li>
+<li>通常 $\mu_s > \mu_k$（静摩擦系数略大于动摩擦系数）</li>
+</ul>
+</div>
+
+<h3>传送带问题</h3>
+<div class="fb">
+<div class="t">传送带上物体的运动分析</div>
+<p>水平传送带以恒定速度 $v_b$ 运动，物体（质量 $m$）从静止放上传送带，动摩擦系数 $\mu_k$。</p>
+<p><strong>阶段1</strong>（$v_{物} < v_b$）：物体速度小于传送带速度</p>
+<ul>
+<li>物体相对传送带向后滑动 → 摩擦力向前（与传送带运动方向相同）</li>
+<li>加速度 $a = \mu_k g$（匀加速）</li>
+<li>持续到 $v_{物} = v_b$ 为止，历时 $t_1 = v_b/(\mu_k g)$</li>
+</ul>
+<p><strong>阶段2</strong>（$v_{物} = v_b$）：物体与传送带速度相同</p>
+<ul>
+<li>无相对滑动 → 摩擦力为静摩擦力 → 可以为零</li>
+<li>若无其他外力，物体以 $v_b$ 匀速运动</li>
+</ul>
+<p><strong>阶段3</strong>（若物体被额外加速至 $v_{物} > v_b$）：</p>
+<ul>
+<li>物体相对传送带向前滑动 → 摩擦力向后（减速）</li>
+<li>加速度 $a = -\mu_k g$（匀减速）</li>
+</ul>
+</div>
+
+<div class="ex">
+<strong>例24（传送带综合题）</strong>：水平传送带长 $L = 4\,\text{m}$，速度 $v_b = 2\,\text{m/s}$。物体从传送带左端以 $v_0 = 6\,\text{m/s}$ 的速度滑上传送带（与传送带运动方向相同），$\mu_k = 0.4$。物体到达右端时的速度是多少？
+<div class="sol">
+<div class="st">解</div>
+<p>物体初速 $v_0 = 6 > v_b = 2$，物体相对传送带向前滑动，摩擦力向后。</p>
+<p><strong>阶段1</strong>（$v > v_b = 2$）：$a = -\mu_k g = -0.4\times9.8 = -3.92\,\text{m/s}^2$</p>
+<p>减速到 $v_b$ 的时间：$t_1 = (v_0 - v_b)/|a| = (6-2)/3.92 \approx 1.02\,\text{s}$</p>
+<p>阶段1走过的距离：$x_1 = v_0 t_1 + \frac{1}{2}a t_1^2 = 6(1.02) + \frac{1}{2}(-3.92)(1.02)^2 \approx 4.08\,\text{m}$</p>
+<p>$x_1 \approx 4.08 > L = 4\,\text{m}$，说明物体在减速到 $v_b$ 之前就到达了右端。</p>
+<p>实际在右端时：$v^2 = v_0^2 + 2aL = 36 + 2(-3.92)(4) = 36 - 31.36 = 4.64$</p>
+$$v = \sqrt{4.64} \approx 2.15\,\text{m/s}$$
+</div>
+</div>
+
+<div class="ex">
+<strong>例25（叠块问题）</strong>：物体A（质量 $m_A$）放在物体B（质量 $m_B$）上面，B放在光滑水平面上。A与B之间的静摩擦系数为 $\mu_s$。对B施加水平力 $F$，求A和B刚好不发生相对滑动的最大力 $F_{crit}$。
+<div class="sol">
+<div class="st">解</div>
+<p><strong>假设A和B一起运动</strong>（无相对滑动），系统加速度：</p>
+$$a = \frac{F}{m_A + m_B}$$
+<p><strong>隔离A</strong>：A的加速度由B对A的静摩擦力提供：</p>
+$$f_s = m_A a = \frac{m_A F}{m_A + m_B}$$
+<p><strong>不滑动条件</strong>：$f_s \leq \mu_s m_A g$</p>
+$$\frac{m_A F}{m_A + m_B} \leq \mu_s m_A g$$
+$$\boxed{F_{crit} = \mu_s(m_A + m_B)g}$$
+<p>当 $F > F_{crit}$ 时，A和B发生相对滑动：B加速更快，A被甩在后面。此时需分别列方程：</p>
+<ul>
+<li>对A：$f_k = \mu_k m_A g = m_A a_A$ → $a_A = \mu_k g$</li>
+<li>对B：$F - \mu_k m_A g = m_B a_B$ → $a_B = (F - \mu_k m_A g)/m_B$</li>
+</ul>
+</div>
+</div>
+
+<div class="warn"><strong>摩擦力分析的正确流程</strong>：
+<ol>
+<li><strong>先假设不滑动</strong>：假设两接触面之间无相对滑动（整体法求加速度）</li>
+<li><strong>求出所需摩擦力</strong>：隔离一个物体，求维持同步运动所需的摩擦力大小</li>
+<li><strong>检验是否超限</strong>：比较所需摩擦力与最大静摩擦力 $\mu_s N$</li>
+<li>若未超限 → 假设成立，摩擦力就是计算值（可能远小于 $\mu_s N$）</li>
+<li>若超限 → 假设不成立，两物体相对滑动，摩擦力改用 $\mu_k N$，需重新列方程</li>
+</ol></div>
+
+<div class="tip"><strong>静摩擦力方向的判断</strong>：静摩擦力的方向阻止相对滑动趋势。若不确定方向，可以假设一个方向，列方程后由正负号判断。</div>
+</div>
+
+<!-- ===== 2.19 绳索张力分布 ===== -->
+<h2 id="s19">2.19 绳索张力分布（PPT补充）</h2>
+<div class="card">
+<h3>Capstan方程：绳绕过粗糙圆柱体</h3>
+<div class="fb">
+<div class="t">Capstan（绞盘）方程</div>
+<p>一根绳子绕过粗糙圆柱面（摩擦系数 $\mu$），一端张力 $T_0$（松端），另一端张力 $T$（紧端）。绳子绕过的角度为 $\theta$（弧度），则：</p>
+$$T(\theta) = T_0\,e^{\mu\theta}$$
+<p>张力随绕过角度<strong>指数增长</strong>。这就是绳子绕柱子几圈就能固定重物的原理。</p>
+</div>
+
+<div class="fb">
+<div class="t">Capstan方程的推导</div>
+<p>取绳上微元（角度 $\dd\theta$），分析微元受力：</p>
+<p>两端张力差提供微元沿切线方向的平衡，法向力由张力合力提供：</p>
+<ul>
+<li>法向：$\dd N = T\,\dd\theta$（绳段两端张力的法向分量之和）</li>
+<li>切向：$\dd T = \mu\,\dd N = \mu T\,\dd\theta$（摩擦力等于张力差）</li>
+</ul>
+$$\frac{\dd T}{T} = \mu\,\dd\theta \implies \ln\frac{T}{T_0} = \mu\theta \implies T = T_0 e^{\mu\theta}$$
+</div>
+
+<div class="ex">
+<strong>例26（绳绕柱的张力比）</strong>：摩擦系数 $\mu = 0.3$。
+<div class="sol">
+<div class="st">计算不同绕法的张力比</div>
+<table>
+<tr><th>绕法</th><th>角度 $\theta$</th><th>张力比 $T/T_0 = e^{\mu\theta}$</th></tr>
+<tr><td>绕半圈</td><td>$\pi \approx 3.14$</td><td>$e^{0.3\pi} \approx 2.57$</td></tr>
+<tr><td>绕1圈</td><td>$2\pi \approx 6.28$</td><td>$e^{0.6\pi} \approx 6.59$</td></tr>
+<tr><td>绕2圈</td><td>$4\pi \approx 12.57$</td><td>$e^{1.2\pi} \approx 43.4$</td></tr>
+<tr><td>绕3圈</td><td>$6\pi \approx 18.85$</td><td>$e^{1.8\pi} \approx 280$</td></tr>
+</table>
+<p>绕3圈时，只需 $T_0 = 1\,\text{N}$ 的力就能抵住 $T = 280\,\text{N}$ 的拉力！</p>
+<p><strong>应用</strong>：船只系泊时绳子在系船柱上绕几圈，水手只需很小的力就能固定大船。登山保护、钓鱼线绕轮也利用此原理。</p>
+</div>
+</div>
+
+<h3>均匀绳在重力下的张力分布</h3>
+<div class="fb">
+<div class="t">竖直悬挂的均匀绳</div>
+<p>总质量 $m$、总长 $L$ 的均匀绳竖直悬挂，线密度 $\lambda = m/L$。距下端 $y$ 处的张力：</p>
+$$T(y) = \lambda g y = \frac{mg}{L}\,y$$
+<p>张力从下端 $T(0) = 0$ 线性增加到上端 $T(L) = mg$。</p>
+<p>若下端悬挂质量 $M$ 的物体：$T(y) = Mg + \lambda g y$</p>
+</div>
+
+<h3>旋转绳的张力分布</h3>
+<div class="fb">
+<div class="t">绕一端匀速旋转的绳</div>
+<p>均匀绳（质量 $m$、长 $L$）绕一端以角速度 $\omega$ 在水平面内匀速转动。距轴心 $r$ 处的张力：</p>
+$$T(r) = \frac{m\omega^2}{2L}(L^2 - r^2) = \frac{\lambda\omega^2}{2}(L^2 - r^2)$$
+<p>其中 $\lambda = m/L$ 为线密度。</p>
+<p><strong>推导</strong>：取 $r$ 到 $r + \dd r$ 的微元，质量 $\dd m = \lambda\,\dd r$，需要向心力 $\dd m\cdot\omega^2 r$。此向心力由张力差提供：</p>
+$$T(r) - T(r+\dd r) = -\dd T = \lambda\omega^2 r\,\dd r$$
+<p>从 $r$ 积分到 $L$（边界条件 $T(L) = 0$）：</p>
+$$T(r) = \int_r^L \lambda\omega^2 r'\,\dd r' = \frac{\lambda\omega^2}{2}(L^2 - r^2)$$
+<p><strong>最大张力</strong>在轴端 $r = 0$：$T_{max} = \frac{1}{2}m\omega^2 L$</p>
+</div>
+
+<div class="ex">
+<strong>例27（旋转绳的应用）</strong>：质量 $m = 0.2\,\text{kg}$、长 $L = 1\,\text{m}$ 的均匀绳绕一端以 $n = 60\,\text{r/min}$ 旋转。求绳中点处的张力和最大张力。
+<div class="sol">
+<div class="st">解</div>
+<p>$\omega = 2\pi n/60 = 2\pi\,\text{rad/s}$</p>
+<p>$\lambda = m/L = 0.2\,\text{kg/m}$</p>
+<p><strong>中点张力</strong>（$r = L/2 = 0.5\,\text{m}$）：</p>
+$$T(L/2) = \frac{\lambda\omega^2}{2}\left(L^2 - \frac{L^2}{4}\right) = \frac{3\lambda\omega^2 L^2}{8}$$
+$$= \frac{3\times0.2\times(2\pi)^2\times1}{8} = \frac{3\times0.2\times39.48}{8} \approx 2.96\,\text{N}$$
+
+<p><strong>最大张力</strong>（$r = 0$）：</p>
+$$T_{max} = \frac{\lambda\omega^2 L^2}{2} = \frac{0.2\times39.48\times1}{2} \approx 3.95\,\text{N}$$
+</div>
+</div>
+
+<div class="tip"><strong>绳索问题的共同思路</strong>：取微元 $\dd r$（或 $\dd\theta$），对微元列Newton第二定律，得到张力的微分方程，结合边界条件（自由端 $T = 0$）积分求解。这是<strong>微元法</strong>的典型应用。</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 1-36, 1-37, 1-44, 1-49, 1-50, 1-53, 1-54, 1-55</div>
 
 <script src="toc.js"></script>

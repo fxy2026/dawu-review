@@ -578,6 +578,342 @@ $$\boxed{S = k\ln\Omega}$$
 <div class="tip"><strong>Mayer的故事（PPT特别提及）</strong>：Mayer作为医生在热带航行时，发现当地人的静脉血比温带更红。他推断这是因为热带环境温度高，身体不需要消耗那么多食物来维持体温，静脉血中含氧更多。由此他大胆推断——热是一种能量形式，与机械功可以相互转换。他首次计算出热功当量约为 $365\,\text{kg·m/kcal}$（实际值为 $427\,\text{kg·m/kcal}$），虽不够精确但思想极为超前。</div>
 </div>
 
+<h2 id="s18">9.18 多方过程（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">多方过程的一般形式</div>
+<p>多方过程：$pV^n = \text{const}$，其中 $n$ 称为<strong>多方指数</strong>。</p>
+<p>四种基本过程都是多方过程的特例：</p>
+<table>
+<tr><th>$n$ 值</th><th>对应过程</th><th>过程方程</th><th>说明</th></tr>
+<tr><td>$n=0$</td><td>等压过程</td><td>$p = \text{const}$</td><td>$pV^0 = p = C$</td></tr>
+<tr><td>$n=1$</td><td>等温过程</td><td>$pV = \text{const}$</td><td>Boyle定律</td></tr>
+<tr><td>$n=\gamma$</td><td>绝热过程</td><td>$pV^\gamma = \text{const}$</td><td>Poisson方程</td></tr>
+<tr><td>$n\to\infty$</td><td>等容过程</td><td>$V = \text{const}$</td><td>$p^{1/n}V = C \to V = C$</td></tr>
+</table>
+</div>
+
+<div class="fb">
+<div class="t">多方过程的基本公式</div>
+<p><strong>过程方程的等价形式</strong>：</p>
+$$pV^n = \text{const},\quad TV^{n-1} = \text{const},\quad T^n p^{1-n} = \text{const}$$
+<p><strong>功</strong>（$n\neq 1$ 时）：</p>
+$$W = \int_{V_1}^{V_2}p\dd V = \frac{p_1V_1 - p_2V_2}{n-1} = \frac{\nu R(T_1 - T_2)}{n-1}$$
+<p><strong>多方热容</strong>：</p>
+$$C_n = C_V\frac{n-\gamma}{n-1}$$
+<p><strong>热量</strong>：$Q = \nu C_n\Delta T = \nu C_V\frac{n-\gamma}{n-1}(T_2 - T_1)$</p>
+</div>
+
+<div class="fb">
+<div class="t">p-V图上多方过程曲线的陡峭程度</div>
+<p>在 $p$-$V$ 图上，过同一点的多方过程曲线斜率为 $\frac{\dd p}{\dd V} = -n\frac{p}{V}$，因此：</p>
+<ul>
+<li>$n=0$（等压）：水平线——最平</li>
+<li>$n=1$（等温）：双曲线</li>
+<li>$n=\gamma\approx1.4$（绝热）：比等温线更陡</li>
+<li>$n\to\infty$（等容）：竖直线——最陡</li>
+</ul>
+<p>结论：<strong>$n$ 越大，曲线越陡</strong>。</p>
+</div>
+
+<div class="ex">
+<strong>例：$n=2$ 过程中的功和热量</strong>：1 mol 双原子理想气体（$\gamma = 7/5$）经历 $pV^2 = C$ 的过程，从 $T_1 = 400\,\text{K}$ 变到 $T_2 = 300\,\text{K}$。求 $W$、$Q$、$\Delta E$。
+<div class="sol"><div class="st">解</div>
+<p><strong>功</strong>：$W = \frac{\nu R(T_1 - T_2)}{n-1} = \frac{1\times8.314\times(400-300)}{2-1} = 831.4\,\text{J}$</p>
+<p><strong>内能变化</strong>：$\Delta E = \nu C_V(T_2-T_1) = 1\times\frac{5}{2}\times8.314\times(-100) = -2078.5\,\text{J}$</p>
+<p><strong>热量</strong>：$Q = \Delta E + W = -2078.5 + 831.4 = -1247.1\,\text{J}$（放热）</p>
+<p><strong>验证</strong>：$C_n = C_V\frac{n-\gamma}{n-1} = \frac{5}{2}R\times\frac{2-7/5}{2-1} = \frac{5}{2}R\times\frac{3}{5} = \frac{3}{2}R$</p>
+<p>$Q = \nu C_n\Delta T = 1\times\frac{3}{2}\times8.314\times(-100) = -1247.1\,\text{J}$ ✓</p>
+</div></div>
+
+<div class="warn"><strong>$1 < n < \gamma$ 时 $C_n < 0$（负热容）</strong>：当 $n-\gamma < 0$ 且 $n-1 > 0$ 时，$C_n = C_V\frac{n-\gamma}{n-1} < 0$。物理含义：系统吸热但温度反而下降（或放热但温度升高）。这并不违反热力学定律——因为气体膨胀做的功大于吸收的热量，多出的能量来自内能的减少，导致温度下降。例如 $n=1.2$（在 $1$ 和 $\gamma=1.4$ 之间）：$C_{1.2} = \frac{5}{2}R\times\frac{1.2-1.4}{1.2-1} = \frac{5}{2}R\times(-1) = -\frac{5}{2}R < 0$。</div>
+</div>
+
+<h2 id="s19">9.19 熵变计算的系统方法（真题重点）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">核心原则</div>
+<p>熵是<strong>状态函数</strong> → 熵变只取决于始末状态，与过程路径无关。</p>
+<p>因此，计算任何过程（包括不可逆过程）的熵变时，都可以<strong>选择任意可逆路径</strong>来计算：</p>
+$$\Delta S = \int_{\text{可逆路径}}\frac{\dd Q}{T}$$
+</div>
+
+<div class="fb">
+<div class="t">理想气体熵变的通用公式</div>
+<p>由可逆过程 $\dd Q = \nu C_V\dd T + p\dd V = \nu C_V\dd T + \frac{\nu RT}{V}\dd V$ 积分得：</p>
+$$\boxed{\Delta S = \nu C_V\ln\frac{T_2}{T_1} + \nu R\ln\frac{V_2}{V_1}}$$
+<p>等价形式（消去 $V$ 或 $T$）：</p>
+$$\boxed{\Delta S = \nu C_p\ln\frac{T_2}{T_1} - \nu R\ln\frac{p_2}{p_1}}$$
+</div>
+
+<div class="fb">
+<div class="t">各特殊过程的熵变</div>
+<table>
+<tr><th>过程</th><th>条件</th><th>熵变公式</th></tr>
+<tr><td>等温过程</td><td>$T_1 = T_2$</td><td>$\Delta S = \nu R\ln\dfrac{V_2}{V_1} = \nu R\ln\dfrac{p_1}{p_2}$</td></tr>
+<tr><td>等压过程</td><td>$p_1 = p_2$</td><td>$\Delta S = \nu C_p\ln\dfrac{T_2}{T_1}$</td></tr>
+<tr><td>等容过程</td><td>$V_1 = V_2$</td><td>$\Delta S = \nu C_V\ln\dfrac{T_2}{T_1}$</td></tr>
+<tr><td>可逆绝热</td><td>$Q = 0$，可逆</td><td>$\Delta S = 0$（等熵过程）</td></tr>
+<tr><td>不可逆绝热（自由膨胀）</td><td>$Q=0$，$W=0$，$\Delta T=0$</td><td>$\Delta S = \nu R\ln\dfrac{V_2}{V_1} > 0$</td></tr>
+</table>
+</div>
+
+<div class="ex">
+<strong>例1：两物体接触达到热平衡的熵变</strong>
+<p>物体A（质量$m_A$，比热$c_A$，初温$T_A$）与物体B（质量$m_B$，比热$c_B$，初温$T_B$），$T_A > T_B$，接触后达到热平衡。</p>
+<div class="sol"><div class="st">解</div>
+<p><strong>Step 1：求平衡温度</strong></p>
+$$T_f = \frac{m_Ac_AT_A + m_Bc_BT_B}{m_Ac_A + m_Bc_B}$$
+
+<p><strong>Step 2：各物体的熵变</strong>（用可逆路径：无穷小温差逐步加热/冷却）</p>
+<p>热物体A（降温）：$\Delta S_A = m_Ac_A\ln\dfrac{T_f}{T_A} < 0$</p>
+<p>冷物体B（升温）：$\Delta S_B = m_Bc_B\ln\dfrac{T_f}{T_B} > 0$</p>
+
+<p><strong>Step 3：总熵变</strong></p>
+$$\Delta S_{total} = m_Ac_A\ln\frac{T_f}{T_A} + m_Bc_B\ln\frac{T_f}{T_B}$$
+<p>可以证明 $\Delta S_{total} > 0$（由 $\ln$ 函数的凹性/Jensen不等式）。</p>
+<p>物理含义：热量从高温传到低温是不可逆过程，总熵必增。</p>
+</div></div>
+
+<div class="ex">
+<strong>例2：不可逆等压膨胀的熵变</strong>
+<p>理想气体从 $(p, V)$ 不可逆地等压膨胀到 $(p, 2V)$，求熵变。</p>
+<div class="sol"><div class="st">解</div>
+<p>始态：$(p, V, T_1)$；末态：$(p, 2V, T_2)$</p>
+<p>由等压过程：$T_2/T_1 = V_2/V_1 = 2$，故 $T_2 = 2T_1$</p>
+<p>因为熵是状态函数，不可逆等压过程的熵变 = 可逆等压过程的熵变：</p>
+$$\Delta S = \nu C_p\ln\frac{T_2}{T_1} = \nu C_p\ln 2$$
+<p><strong>关键理解</strong>：无论过程是否可逆，只要始末状态相同，$\Delta S$ 就相同！</p>
+</div></div>
+
+<div class="warn"><strong>计算不可逆过程的熵变，绝不能直接用 $\int\dd Q/T$</strong>：
+<ul>
+<li>$\dd S = \delta Q/T$ 只对<strong>可逆过程</strong>成立</li>
+<li>对不可逆过程：$\dd S > \delta Q/T$（Clausius不等式）</li>
+<li>正确方法：找一条连接相同始末态的可逆路径，沿可逆路径算 $\Delta S$</li>
+<li>典型错误：自由膨胀 $Q=0$，误算 $\Delta S = Q/T = 0$。实际上 $\Delta S = \nu R\ln(V_2/V_1) > 0$</li>
+</ul></div>
+
+<div class="tip"><strong>熵变计算的万能策略</strong>：
+<br>1. 确定始态 $(T_1, V_1, p_1)$ 和末态 $(T_2, V_2, p_2)$
+<br>2. 直接代入万能公式 $\Delta S = \nu C_V\ln(T_2/T_1) + \nu R\ln(V_2/V_1)$
+<br>3. 不需要关心中间过程是否可逆——因为公式本身就是沿可逆路径推导的，而结果只依赖始末状态</div>
+</div>
+
+<h2 id="s20">9.20 循环过程解题方法（真题高频大题）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">循环过程解题的标准步骤</div>
+<ol>
+<li><strong>识别循环中每个过程的类型</strong>：等温、等压、等容、绝热或多方过程</li>
+<li><strong>确定各状态点参数</strong>：用状态方程 $pV=\nu RT$ 求出每个状态点的 $(p, V, T)$</li>
+<li><strong>逐段计算 $Q$、$W$、$\Delta E$</strong>：利用各过程的公式</li>
+<li><strong>利用循环条件验证</strong>：$\sum\Delta E = 0$，$W_{net} = Q_{吸} - |Q_{放}|$</li>
+<li><strong>计算效率</strong>：$\eta = \dfrac{W_{net}}{Q_{吸}} = 1 - \dfrac{|Q_{放}|}{Q_{吸}}$</li>
+</ol>
+</div>
+
+<div class="ex">
+<strong>例1：矩形p-V循环（两个等压 + 两个等容）</strong>
+<p>1 mol 单原子理想气体（$C_V = \frac{3}{2}R$，$C_p = \frac{5}{2}R$）经历循环：</p>
+<p>$A(p_1,V_1) \xrightarrow{\text{等压}} B(p_1,V_2) \xrightarrow{\text{等容}} C(p_2,V_2) \xrightarrow{\text{等压}} D(p_2,V_1) \xrightarrow{\text{等容}} A$</p>
+<p>其中 $p_1 > p_2$，$V_2 > V_1$。求循环效率。</p>
+<div class="sol"><div class="st">解</div>
+<p><strong>各状态温度</strong>：$T_A = p_1V_1/R$，$T_B = p_1V_2/R$，$T_C = p_2V_2/R$，$T_D = p_2V_1/R$</p>
+
+<p><strong>AB（等压膨胀，$p_1$）</strong>：</p>
+<p>$W_{AB} = p_1(V_2 - V_1)$，$Q_{AB} = C_p(T_B - T_A) = \frac{5}{2}(p_1V_2 - p_1V_1) = \frac{5}{2}p_1(V_2-V_1) > 0$（吸热）</p>
+
+<p><strong>BC（等容冷却，$V_2$）</strong>：</p>
+<p>$W_{BC} = 0$，$Q_{BC} = C_V(T_C - T_B) = \frac{3}{2}(p_2 - p_1)V_2 < 0$（放热）</p>
+
+<p><strong>CD（等压压缩，$p_2$）</strong>：</p>
+<p>$W_{CD} = p_2(V_1 - V_2) < 0$，$Q_{CD} = C_p(T_D - T_C) = \frac{5}{2}p_2(V_1-V_2) < 0$（放热）</p>
+
+<p><strong>DA（等容加热，$V_1$）</strong>：</p>
+<p>$W_{DA} = 0$，$Q_{DA} = C_V(T_A - T_D) = \frac{3}{2}(p_1 - p_2)V_1 > 0$（吸热）</p>
+
+<p><strong>净功</strong>：$W_{net} = p_1(V_2-V_1) + p_2(V_1-V_2) = (p_1-p_2)(V_2-V_1)$（矩形面积 ✓）</p>
+<p><strong>吸热</strong>：$Q_{吸} = Q_{AB} + Q_{DA} = \frac{5}{2}p_1(V_2-V_1) + \frac{3}{2}(p_1-p_2)V_1$</p>
+$$\eta = \frac{(p_1-p_2)(V_2-V_1)}{\frac{5}{2}p_1(V_2-V_1) + \frac{3}{2}(p_1-p_2)V_1}$$
+</div></div>
+
+<div class="ex">
+<strong>例2：等温 + 等容 + 绝热组成的循环</strong>
+<p>1 mol 双原子理想气体（$\gamma = 7/5$）经历：$A(p_0, V_0) \xrightarrow{\text{等温}} B(p_0/2, 2V_0) \xrightarrow{\text{等容}} C(p_C, 2V_0) \xrightarrow{\text{绝热}} A$。求 $p_C$ 和效率。</p>
+<div class="sol"><div class="st">解</div>
+<p><strong>温度</strong>：$T_A = p_0V_0/R$，$T_B = T_A$（等温），$T_C = p_C\cdot2V_0/R$</p>
+<p><strong>求 $p_C$</strong>：CA 为绝热过程，$p_CV_C^\gamma = p_AV_A^\gamma$</p>
+$$p_C(2V_0)^{7/5} = p_0 V_0^{7/5} \quad\Rightarrow\quad p_C = p_0\left(\frac{1}{2}\right)^{7/5} = \frac{p_0}{2^{7/5}} = \frac{p_0}{2.639} \approx 0.379p_0$$
+
+<p><strong>AB（等温膨胀）</strong>：$\Delta E_{AB} = 0$，$W_{AB} = Q_{AB} = RT_A\ln 2 = p_0V_0\ln 2$（吸热）</p>
+
+<p><strong>BC（等容冷却）</strong>：$W_{BC} = 0$</p>
+<p>$T_C = p_C\cdot2V_0/R = 0.379p_0\cdot2V_0/R = 0.758T_A$</p>
+<p>$Q_{BC} = C_V(T_C - T_B) = \frac{5}{2}R(0.758T_A - T_A) = -0.605RT_A = -0.605p_0V_0$（放热）</p>
+
+<p><strong>CA（绝热压缩）</strong>：$Q_{CA} = 0$，$W_{CA} = -\Delta E_{CA} = -C_V(T_A-T_C) = -\frac{5}{2}R\cdot0.242T_A = -0.605p_0V_0$</p>
+
+<p><strong>效率</strong>：$W_{net} = W_{AB} + 0 + W_{CA} = 0.693p_0V_0 - 0.605p_0V_0 = 0.088p_0V_0$</p>
+<p>$Q_{吸} = Q_{AB} = 0.693p_0V_0$</p>
+$$\eta = \frac{0.088}{0.693} \approx 12.7\%$$
+</div></div>
+
+<div class="fb">
+<div class="t">Carnot循环在p-V图和T-S图上的表现</div>
+<p><strong>p-V图</strong>：两条等温线 + 两条绝热线，形成一个"鼓形"封闭曲线。</p>
+<ul>
+<li>$A\to B$：等温膨胀（$T_1$），沿双曲线向右</li>
+<li>$B\to C$：绝热膨胀，沿更陡的曲线向右下</li>
+<li>$C\to D$：等温压缩（$T_2$），沿双曲线向左</li>
+<li>$D\to A$：绝热压缩，沿陡曲线向左上</li>
+</ul>
+<p><strong>T-S图</strong>：<strong>矩形！</strong>这是Carnot循环最简洁的表示。</p>
+<ul>
+<li>$A\to B$：等温（$T=T_1$，水平线向右，$S$ 增大）</li>
+<li>$B\to C$：绝热可逆（$S=S_B$，竖直线向下，$T$ 降低）</li>
+<li>$C\to D$：等温（$T=T_2$，水平线向左，$S$ 减小）</li>
+<li>$D\to A$：绝热可逆（$S=S_A$，竖直线向上，$T$ 升高）</li>
+</ul>
+<p>矩形面积 $= (T_1 - T_2)(S_B - S_A) = W_{net} = Q_{net}$</p>
+</div>
+
+<div class="tip"><strong>T-S图的妙用</strong>：T-S图上封闭曲线的面积 = 循环做的净功 = 吸收的净热量。卡诺循环是矩形，面积最容易计算。任何工作在 $T_1$ 和 $T_2$ 之间的循环，在T-S图上都被卡诺矩形"包围"，因此卡诺循环效率最高。</div>
+</div>
+
+<h2 id="s21">9.21 制冷机与热泵（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">逆循环的两种应用</div>
+<p>逆循环（逆时针）：外界对系统做功 $W$，从低温热源（$T_2$）吸热 $Q_2$，向高温热源（$T_1$）放热 $Q_1 = Q_2 + W$。</p>
+</div>
+
+<div class="fb">
+<div class="t">制冷机</div>
+<p>目的：从低温热源<strong>吸热</strong>（制冷）</p>
+<p><strong>制冷系数</strong>：</p>
+$$\omega = \frac{Q_2}{W} = \frac{Q_2}{Q_1 - Q_2}$$
+<p>Carnot制冷机（最大制冷系数）：</p>
+$$\omega_{Carnot} = \frac{T_2}{T_1 - T_2}$$
+</div>
+
+<div class="fb">
+<div class="t">热泵</div>
+<p>目的：向高温热源<strong>放热</strong>（供暖）</p>
+<p><strong>供暖系数 (COP)</strong>：</p>
+$$\text{COP} = \frac{Q_1}{W} = \frac{Q_1}{Q_1 - Q_2}$$
+<p>Carnot热泵：</p>
+$$\text{COP}_{Carnot} = \frac{T_1}{T_1 - T_2}$$
+</div>
+
+<div class="fb">
+<div class="t">制冷系数与COP的关系</div>
+$$\boxed{\text{COP} = \omega + 1}$$
+<p>证明：$\text{COP} = Q_1/W = (Q_2 + W)/W = Q_2/W + 1 = \omega + 1$</p>
+</div>
+
+<div class="ex">
+<strong>例：冬季供暖问题</strong>
+<p>室外温度 $T_2 = -10°\text{C} = 263\,\text{K}$，室内温度 $T_1 = 20°\text{C} = 293\,\text{K}$。求 Carnot 制冷系数和热泵 COP。</p>
+<div class="sol"><div class="st">解</div>
+<p><strong>制冷系数</strong>：$\omega = \frac{T_2}{T_1 - T_2} = \frac{263}{293-263} = \frac{263}{30} = 8.77$</p>
+<p><strong>热泵COP</strong>：$\text{COP} = \frac{T_1}{T_1 - T_2} = \frac{293}{30} = 9.77$</p>
+<p><strong>验证</strong>：$\text{COP} = \omega + 1 = 8.77 + 1 = 9.77$ ✓</p>
+<p><strong>物理意义</strong>：COP = 9.77 意味着消耗 1 J 的电功，可以向室内输送 9.77 J 的热量。这比直接用电加热（1 J 电 → 1 J 热）高效得多！这就是热泵供暖比电暖器节能的原因。</p>
+</div></div>
+
+<div class="warn"><strong>制冷系数可以大于1</strong>：制冷系数 $\omega$ 不是效率（效率 $\leq 1$），而是"性能系数"，完全可以大于1，甚至远大于1。这不违反热力学定律，因为制冷机并不是把功"转化"为热——而是利用功把热量从低温搬运到高温。上例中 $\omega = 8.77$，意味着消耗 1 J 功就能从室外"搬运" 8.77 J 热量到室内。</div>
+
+<div class="tip"><strong>温差越小，制冷/供暖越容易</strong>：
+<ul>
+<li>$T_1 - T_2 \to 0$ 时，$\omega \to \infty$，$\text{COP} \to \infty$（温差小，很容易搬运热量）</li>
+<li>$T_1 - T_2$ 很大时，$\omega$ 和 COP 都很小（温差大，搬运热量代价高）</li>
+<li>$T_2 \to 0$ 时，$\omega \to 0$（无法从绝对零度吸热——热力学第三定律的影子）</li>
+</ul></div>
+</div>
+
+<h2 id="s22">9.22 Clausius不等式与可逆性判据（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">Clausius不等式</div>
+<p>对任意循环过程：</p>
+$$\boxed{\oint\frac{\dd Q}{T} \leq 0}$$
+<ul>
+<li>等号成立 ↔ 循环<strong>可逆</strong></li>
+<li>严格小于零 ↔ 循环<strong>不可逆</strong></li>
+</ul>
+<p>这是热力学第二定律最一般的数学表达。</p>
+</div>
+
+<div class="fb">
+<div class="t">任意过程的熵变与热量的关系</div>
+<p>对于从状态 A 到状态 B 的任意过程：</p>
+$$\Delta S = S_B - S_A \geq \int_A^B\frac{\dd Q}{T}$$
+<ul>
+<li>等号：可逆过程（$\Delta S = \int\dd Q/T$）</li>
+<li>大于号：不可逆过程（$\Delta S > \int\dd Q/T$，熵的增加量大于热量传递带来的熵流）</li>
+</ul>
+</div>
+
+<div class="fb">
+<div class="t">熵增原理（孤立系统）</div>
+<p>孤立系统中 $\dd Q = 0$，因此：</p>
+$$\Delta S_{isolated} \geq 0$$
+<ul>
+<li>$= 0$：过程可逆（平衡态之间的准静态过程）</li>
+<li>$> 0$：过程不可逆（一切自发过程）</li>
+<li>$< 0$：<strong>不可能发生</strong></li>
+</ul>
+</div>
+
+<div class="fb">
+<div class="t">判断过程方向的方法</div>
+<p>计算 $\Delta S_{universe}$（宇宙 = 系统 + 环境的总熵变）：</p>
+<ul>
+<li>$\Delta S_{universe} > 0$：过程不可逆，可以自发进行</li>
+<li>$\Delta S_{universe} = 0$：过程可逆（理想极限）</li>
+<li>$\Delta S_{universe} < 0$：过程不可能自发发生</li>
+</ul>
+</div>
+
+<div class="ex">
+<strong>例1：热量自发传导的方向</strong>
+<p>温度 $T_{hot}$ 的物体与温度 $T_{cold}$（$T_{hot} > T_{cold}$）的物体接触，传递热量 $Q$（两物体热容足够大，温度不变）。</p>
+<div class="sol"><div class="st">解</div>
+<p><strong>正向传热</strong>（热 → 冷）：</p>
+<p>$\Delta S = -\frac{Q}{T_{hot}} + \frac{Q}{T_{cold}} = Q\left(\frac{1}{T_{cold}} - \frac{1}{T_{hot}}\right) > 0$</p>
+<p>$\Delta S > 0$ → 过程自发发生 ✓</p>
+
+<p><strong>反向传热</strong>（冷 → 热）：</p>
+<p>$\Delta S = \frac{Q}{T_{hot}} - \frac{Q}{T_{cold}} = Q\left(\frac{1}{T_{hot}} - \frac{1}{T_{cold}}\right) < 0$</p>
+<p>$\Delta S < 0$ → 过程不能自发发生 ✓（符合Clausius表述）</p>
+</div></div>
+
+<div class="ex">
+<strong>例2：判断一个热机是否可能</strong>
+<p>某热机工作在 $T_1 = 600\,\text{K}$ 和 $T_2 = 300\,\text{K}$ 之间，每循环吸热 $Q_1 = 1000\,\text{J}$，做功 $W = 600\,\text{J}$。判断是否可能。</p>
+<div class="sol"><div class="st">解</div>
+<p>放热：$Q_2 = Q_1 - W = 400\,\text{J}$</p>
+<p>宇宙总熵变（一个循环）：</p>
+$$\Delta S = -\frac{Q_1}{T_1} + \frac{Q_2}{T_2} = -\frac{1000}{600} + \frac{400}{300} = -1.667 + 1.333 = -0.333\,\text{J/K}$$
+<p>$\Delta S < 0$ → <strong>不可能！</strong></p>
+<p>验证：该热机效率 $\eta = 600/1000 = 60\%$，而 Carnot 效率 $= 1 - 300/600 = 50\%$。效率超过 Carnot 极限，违反热力学第二定律。</p>
+</div></div>
+
+<div class="tip"><strong>Clausius不等式的应用总结</strong>：
+<br>1. 判断循环可逆性：算 $\oint\dd Q/T$，等于零则可逆，小于零则不可逆
+<br>2. 判断过程方向：算 $\Delta S_{universe}$，大于零则自发，小于零则不可能
+<br>3. 判断热机可行性：效率不得超过 Carnot 效率，即 $\eta \leq 1 - T_2/T_1$
+<br>4. 计算不可逆过程熵变：不能用 $\int\dd Q/T$（会偏小），必须用可逆路径</div>
+
+<div class="warn"><strong>常见误区</strong>：
+<ul>
+<li>"熵总是增加的" → 错！只有<strong>孤立系统</strong>的熵才不减少。非孤立系统（如被冷却的物体）的熵可以减少</li>
+<li>"不可逆过程的 $\Delta S$ 一定大于零" → 错！非孤立系统的不可逆过程中，系统的 $\Delta S$ 可以小于零，但系统 + 环境的总 $\Delta S > 0$</li>
+<li>"$Q = 0$ 则 $\Delta S = 0$" → 错！绝热自由膨胀 $Q = 0$ 但 $\Delta S > 0$（不可逆过程）</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 9-4, 9-6, 9-7, 9-9, 9-13, 9-15, 9-17, 9-18</div>
 
 <script src="toc.js"></script>

@@ -421,6 +421,321 @@ $$F=\dot{m}\cdot v=5\times10=50\,\text{N}$$
 <div class="tip"><strong>连续流体的动量定理</strong>：对于持续的质量流（水流、气流、传送带上的沙等），用 $F=\dot{m}\cdot\Delta v$（$\dot{m}=\dd m/\dd t$ 为质量流率）比逐个分析方便得多。</div>
 </div>
 
+<h2 id="s17">4.17 锥摆的冲量分析（真题2023/2024考原题）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">锥摆一个周期内各力的冲量</div>
+<p>锥摆：质量 $m$ 的小球用长 $l$ 的绳悬挂，在水平面内做匀速圆周运动，半锥角 $\theta$，周期 $T = 2\pi/\omega$。</p>
+<p><strong>受力分析</strong>：重力 $mg$（竖直向下）、绳张力 $T_s$（沿绳指向悬挂点）。</p>
+<p>平衡条件：$T_s\cos\theta = mg$，$T_s\sin\theta = m\omega^2 l\sin\theta$。</p>
+</div>
+
+<div class="fb">
+<div class="t">一个周期内各力的冲量计算</div>
+<p><strong>重力冲量</strong>：重力恒定，方向不变</p>
+$$\vv{I}_g = mg\cdot T\;(\text{竖直向下}) = \frac{2\pi mg}{\omega}\;(\text{向下})$$
+
+<p><strong>绳张力冲量</strong>：</p>
+<ul>
+<li>竖直分量：$T_s\cos\theta = mg$（恒定向上），一周期冲量 $= mgT$（向上）</li>
+<li>水平分量：大小恒为 $T_s\sin\theta$，方向始终指向圆心，一周绕转 $360°$，矢量和为零</li>
+</ul>
+$$\vv{I}_T = mgT\;(\text{竖直向上}) = \frac{2\pi mg}{\omega}\;(\text{向上})$$
+
+<p><strong>合冲量</strong>：</p>
+$$\boxed{\vv{I}_{net} = \vv{I}_g + \vv{I}_T = 0}$$
+</div>
+
+<div class="tip"><strong>物理理解</strong>：匀速圆周运动一个完整周期后，小球回到原位置，速度方向也回到初始方向，因此 $\Delta\vv{p} = 0$，由动量定理 $\vv{I}_{net} = \Delta\vv{p} = 0$。这是验证结果的最快方法。</div>
+
+<div class="warn"><strong>真题原题提醒</strong>：
+<ul>
+<li>2023和2024年期中/期末都考过此题，是高频考点</li>
+<li>虽然绳张力方向在不断变化，但其竖直分量始终等于 $mg$，水平分量一周内矢量和为零</li>
+<li>合冲量为零是因为匀速圆周运动一周后动量不变，不要误以为"各力冲量分别为零"</li>
+<li>若问半个周期的冲量，则合冲量不为零！水平方向绳张力冲量 $= 2m\omega l\sin\theta$（方向需具体分析）</li>
+</ul></div>
+</div>
+
+<h2 id="s18">4.18 人船问题（经典模型）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">人船问题基本模型</div>
+<p><strong>系统</strong>：人（质量 $m$）+ 船（质量 $M$），水面无摩擦，初始均静止。</p>
+<p><strong>过程</strong>：人从船的一端走到另一端，船长为 $L$。</p>
+<p><strong>动量守恒</strong>：初始总动量为零，故任意时刻总动量为零。</p>
+$$m\cdot v_人 + M\cdot v_船 = 0$$
+<p>对位移积分：</p>
+$$m\cdot\Delta x_人 + M\cdot\Delta x_船 = 0$$
+</div>
+
+<div class="fb">
+<div class="t">人船位移关系</div>
+<p>人相对船移动了 $L$：$\Delta x_人 - \Delta x_船 = L$（设人向右走，船向左退）</p>
+<p>联立动量守恒的位移形式：</p>
+$$\Delta x_船 = -\frac{mL}{m+M}\quad(\text{负号表示船后退})$$
+$$\Delta x_人 = \frac{ML}{m+M}\quad(\text{人相对地面的位移})$$
+</div>
+
+<div class="tip"><strong>质心不动</strong>：由于系统无外力（水平方向），质心始终不动：
+$$x_C = \frac{m x_人 + M x_船}{m+M} = \text{const}$$
+这是人船问题最本质的物理图像。无论人如何走动，质心位置不变。</div>
+
+<div class="ex">
+<strong>例（人船问题变形：抛物）</strong>：人（$m$）站在船（$M$）一端，将质量为 $m_0$ 的物体从船的一端水平抛向另一端。物体落入水中，未落回船上。求船的位移。
+<div class="sol"><div class="st">解</div>
+<p>系统（人+船+物体）初始静止，水平方向无外力。</p>
+<p>抛出物体后：人和船获得反冲速度。物体落水后不再与系统相互作用。</p>
+<p>全过程动量守恒：$0 = (m+M)v_{船} + m_0 v_{物}$</p>
+<p>但物体落水后系统（人+船）停下（因为无外力且物体不再作用）。</p>
+<p>用质心法：初始质心位置不变。物体向右移动了某个距离，船向左移动来补偿。</p>
+<p>最终船的位移取决于物体的最终位置（落水点），需要更多信息才能确定。</p>
+</div></div>
+
+<div class="warn"><strong>易错点</strong>：
+<ul>
+<li>人船问题中"人相对船移动 $L$"和"人相对地面移动"是不同的！</li>
+<li>若水面有阻力，动量不守恒，不能直接用上述公式</li>
+<li>多人/多物体的情况，始终用质心不动来分析最简单</li>
+</ul></div>
+</div>
+
+<h2 id="s19">4.19 二维碰撞专题（PPT/真题重点）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">等质量弹性斜碰：碰后速度垂直的严格证明</div>
+<p>$m_1 = m_2 = m$，$m_2$ 初始静止，$m_1$ 以速度 $\vv{v}_0$ 碰撞。</p>
+<p><strong>动量守恒</strong>（矢量）：$\vv{v}_0 = \vv{v}_1' + \vv{v}_2'$ ...(1)</p>
+<p><strong>动能守恒</strong>（标量）：$v_0^2 = v_1'^2 + v_2'^2$ ...(2)</p>
+<p>将 (1) 两边取模的平方：</p>
+$$v_0^2 = |\vv{v}_1' + \vv{v}_2'|^2 = v_1'^2 + v_2'^2 + 2\vv{v}_1'\cdot\vv{v}_2' \quad\cdots(3)$$
+<p>比较 (2) 和 (3)：</p>
+$$\vv{v}_1'\cdot\vv{v}_2' = 0$$
+<p>即碰后两者速度<strong>互相垂直</strong>！这就是台球碰撞中的经典结论。</p>
+</div>
+
+<div class="ex">
+<strong>例（质量不等的斜碰散射角）</strong>：质量 $m_1$ 的粒子以速度 $v_0$ 碰撞静止的质量 $m_2$ 的粒子（弹性碰撞）。求 $m_1$ 的最大散射角。
+<div class="sol"><div class="st">解</div>
+<p>在质心系中分析更方便。质心速度 $v_C = m_1 v_0/(m_1+m_2)$。</p>
+<p>在质心系中，弹性碰撞后 $m_1$ 的速率不变（大小为 $v_1^* = m_2 v_0/(m_1+m_2)$），方向可以任意旋转角 $\chi$（质心系散射角）。</p>
+<p>变换回实验室系后，$m_1$ 的速度是 $\vv{v}_1^*$（质心系中）加上质心速度 $\vv{v}_C$。</p>
+<p>实验室系中的散射角 $\theta$ 满足：</p>
+$$\tan\theta = \frac{v_1^*\sin\chi}{v_C + v_1^*\cos\chi} = \frac{\sin\chi}{m_1/m_2 + \cos\chi}$$
+
+<p><strong>情况一：$m_1 < m_2$</strong></p>
+<p>$v_C < v_1^*$（即 $m_1/m_2 < 1$），所有散射角都可能。最大散射角：</p>
+$$\sin\theta_{max} = \frac{m_2}{m_1}$$
+<p>当 $m_1 \ll m_2$ 时，$\theta_{max} \to 90°$（可以后向散射）。</p>
+
+<p><strong>情况二：$m_1 > m_2$</strong></p>
+<p>$v_C > v_1^*$，散射角有上限：</p>
+$$\sin\theta_{max} = \frac{m_2}{m_1} < 1$$
+<p>例如：$m_1 = 2m_2$ 时，$\theta_{max} = 30°$。重粒子碰轻粒子不会大角度偏转。</p>
+
+<p><strong>情况三：$m_1 = m_2$</strong></p>
+<p>$\theta_{max} = 90°$，且碰后两者垂直（退化为上面的等质量结论）。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（楔形碰撞——球与倾斜面的弹性碰撞）</strong>：一个球以速度 $v_0$ 水平撞击倾角为 $\alpha$ 的固定光滑斜面（弹性碰撞）。求碰后球的速度。
+<div class="sol"><div class="st">解</div>
+<p>弹性碰撞中，球与固定墙面碰撞时：</p>
+<ul>
+<li><strong>垂直于墙面</strong>的速度分量反向（大小不变）</li>
+<li><strong>平行于墙面</strong>的速度分量不变（光滑面无摩擦）</li>
+</ul>
+<p>将 $v_0$（水平）分解为垂直于斜面和平行于斜面的分量：</p>
+<p>垂直分量：$v_\perp = v_0\sin\alpha$（碰后变为 $-v_0\sin\alpha$，即反向）</p>
+<p>平行分量：$v_\parallel = v_0\cos\alpha$（不变）</p>
+<p>碰后速度大小：$v' = \sqrt{v_\perp^2 + v_\parallel^2} = v_0$（弹性碰撞，速率不变）</p>
+<p>碰后速度方向：与入射方向关于斜面法线对称，即反射角等于入射角（类比光的反射）。</p>
+<p>碰后速度的水平分量：$v_x' = v_0\cos 2\alpha$</p>
+<p>碰后速度的竖直分量：$v_y' = v_0\sin 2\alpha$（向上）</p>
+</div></div>
+
+<div class="warn"><strong>考试要点</strong>：
+<ul>
+<li>等质量弹性碰撞"碰后垂直"可直接引用，无需每次推导</li>
+<li>斜碰的分解：沿碰撞接触面法线和切线方向分解，法线方向用碰撞定律，切线方向速度不变（光滑面）</li>
+<li>固定墙面的碰撞：墙面质量视为无穷大，球的法向速度反向，切向速度不变</li>
+</ul></div>
+</div>
+
+<h2 id="s20">4.20 质心系中的碰撞分析（MOOC补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">质心系（C系）中碰撞的简化</div>
+<p>在质心参考系中，碰撞问题大大简化：</p>
+<ul>
+<li><strong>C系总动量恒为零</strong>：$m_1\vv{v}_1^* + m_2\vv{v}_2^* = 0$，即两粒子始终等量反向运动</li>
+<li><strong>弹性碰撞</strong>：C系中速度大小不变，方向反转（一维）或旋转某角度（二维）</li>
+<li><strong>完全非弹性碰撞</strong>：C系中碰后两者均静止（$\vv{v}_1^* = \vv{v}_2^* = 0$）</li>
+</ul>
+</div>
+
+<div class="fb">
+<div class="t">C系中的动能</div>
+<p>质心系中的动能可以用约化质量和相对速度表示：</p>
+$$E_k^* = \frac{1}{2}m_1 v_1^{*2} + \frac{1}{2}m_2 v_2^{*2} = \frac{1}{2}\mu v_{rel}^2$$
+<p>其中 $\mu = m_1 m_2/(m_1+m_2)$，$v_{rel} = v_1 - v_2$。</p>
+<p>由柯尼希定理：$E_k = \frac{1}{2}(m_1+m_2)v_C^2 + E_k^*$</p>
+<p>碰撞中质心动能 $\frac{1}{2}(m_1+m_2)v_C^2$ 不变（质心速度不变），只有 $E_k^*$ 可能损失。</p>
+<p>因此完全非弹性碰撞损失的就是全部的 $E_k^* = \frac{1}{2}\mu v_{rel}^2$。</p>
+</div>
+
+<div class="ex">
+<strong>例（用质心系重新推导弹性碰撞公式）</strong>：$m_1$ 以 $v_1$ 碰静止 $m_2$，弹性碰撞，用C系推导碰后速度。
+<div class="sol"><div class="st">解</div>
+<p><strong>Step 1：质心速度</strong></p>
+$$v_C = \frac{m_1 v_1}{m_1 + m_2}$$
+
+<p><strong>Step 2：C系中碰前速度</strong></p>
+$$v_1^* = v_1 - v_C = \frac{m_2 v_1}{m_1+m_2} = \frac{\mu v_{rel}}{m_2}\cdot\frac{m_2}{m_1+m_2}\cdot\frac{m_1+m_2}{1}...$$
+<p>简化：$v_1^* = v_1 - v_C = \frac{m_2 v_1}{m_1+m_2}$</p>
+<p>$v_2^* = 0 - v_C = -\frac{m_1 v_1}{m_1+m_2}$</p>
+
+<p><strong>Step 3：弹性碰撞在C系中——速度反向</strong></p>
+<p>碰后：$v_1^{*\prime} = -v_1^* = -\frac{m_2 v_1}{m_1+m_2}$</p>
+<p>$v_2^{*\prime} = -v_2^* = \frac{m_1 v_1}{m_1+m_2}$</p>
+
+<p><strong>Step 4：变换回实验室系</strong></p>
+$$v_1' = v_1^{*\prime} + v_C = -\frac{m_2 v_1}{m_1+m_2} + \frac{m_1 v_1}{m_1+m_2} = \frac{(m_1-m_2)v_1}{m_1+m_2}$$
+$$v_2' = v_2^{*\prime} + v_C = \frac{m_1 v_1}{m_1+m_2} + \frac{m_1 v_1}{m_1+m_2} = \frac{2m_1 v_1}{m_1+m_2}$$
+<p>与直接联立动量和动能守恒得到的标准公式完全一致！</p>
+</div></div>
+
+<div class="tip"><strong>质心系的优势</strong>：
+<ul>
+<li>弹性碰撞在C系中只是"速度反向"，无需解方程</li>
+<li>能量损失在C系中一目了然：$\Delta E_k = E_k^*(1-e^2)$</li>
+<li>二维碰撞中，C系分析更为直观——碰后速度只是C系速度矢量的旋转</li>
+<li>但变换回实验室系需要加上 $v_C$，这一步不能忘</li>
+</ul></div>
+</div>
+
+<h2 id="s21">4.21 传送带与连续流体的动量问题（PPT/真题）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">沙漏/传送带问题——能量的"消失"</div>
+<p>沙以质量流率 $\dot{m}$（kg/s）竖直落到以速度 $v$ 匀速运动的传送带上。</p>
+<p><strong>维持传送带速度所需的力</strong>：</p>
+<p>沙从静止（水平方向）加速到 $v$，动量变化率：</p>
+$$F = \dot{m}\cdot v$$
+<p><strong>传送带的功率</strong>：</p>
+$$P = Fv = \dot{m}v^2$$
+<p><strong>沙获得的动能增加率</strong>：</p>
+$$\dot{E}_k = \frac{1}{2}\dot{m}v^2$$
+</div>
+
+<div class="fb">
+<div class="t">能量去哪了？</div>
+<p>功率 $P = \dot{m}v^2$，但动能增加率只有 $\frac{1}{2}\dot{m}v^2$，差了一半！</p>
+$$P - \dot{E}_k = \dot{m}v^2 - \frac{1}{2}\dot{m}v^2 = \frac{1}{2}\dot{m}v^2$$
+<p>这 $\frac{1}{2}\dot{m}v^2$ 是<strong>沙与传送带之间的摩擦热</strong>。沙落到传送带上时有相对滑动（从0加速到 $v$），摩擦力做功的一半变成动能，另一半变成热量。</p>
+<p>这与完全非弹性碰撞的能量损失完全类似——沙"粘"到传送带上。</p>
+</div>
+
+<div class="ex">
+<strong>例（链条落到桌面上）</strong>：一根均匀链条（线密度 $\lambda$，总长 $L$）从静止开始自由下落到桌面上。当已有长度 $x$ 的链条落到桌面上时，求桌面受到的力。
+<div class="sol"><div class="st">解</div>
+<p>已落下 $x$ 时，正在落下的链条微元速度为 $v = \sqrt{2gx}$（自由下落高度 $x$）。</p>
+<p>桌面受到两部分力：</p>
+
+<p><strong>(1) 已落到桌面上的链条重力</strong>：$F_1 = \lambda x g$</p>
+
+<p><strong>(2) 链条微元撞击桌面产生的冲击力</strong>：</p>
+<p>单位时间内撞到桌面的质量：$\dot{m} = \lambda v$</p>
+<p>这些质量从速度 $v$ 变为 $0$，动量变化率：</p>
+$$F_2 = \dot{m}\cdot v = \lambda v^2 = \lambda\cdot 2gx = 2\lambda gx$$
+
+<p><strong>桌面总受力</strong>：</p>
+$$\boxed{F = F_1 + F_2 = \lambda gx + 2\lambda gx = 3\lambda gx}$$
+<p>桌面受力是已落下链条重力的<strong>3倍</strong>！额外的 $2\lambda gx$ 来自链条撞击产生的冲击力。</p>
+</div></div>
+
+<div class="warn"><strong>连续流体/变质量问题要点</strong>：
+<ul>
+<li>传送带问题中，输入功率 = 动能增加率 + 摩擦热，功总是"损失"一半</li>
+<li>链条撞击问题中，冲击力 $= \lambda v^2$，与链条速度的平方成正比</li>
+<li>这类问题的关键是对微元取动量定理：$F\dd t = \dd m \cdot \Delta v$</li>
+<li>不要忘记已在桌面上的链条（或已在传送带上的沙）的重力贡献</li>
+</ul></div>
+</div>
+
+<h2 id="s22">4.22 椭圆轨道中的角动量与能量（真题2022/2024考）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">有心力场中的角动量守恒</div>
+<p>行星在椭圆轨道上运动，受到太阳的万有引力（有心力，过力心）。</p>
+<p>万有引力对太阳（力心）的力矩为零 → <strong>角动量守恒</strong>：</p>
+$$L = mvr\sin\phi = \text{const}$$
+<p>其中 $\phi$ 是速度与径矢的夹角。在近日点和远日点处 $\phi = 90°$，因此：</p>
+$$mv_1 r_1 = mv_2 r_2$$
+$$v_1 r_1 = v_2 r_2$$
+<p>近日点距离 $r_1 < r_2$（远日点），故 $v_1 > v_2$：<strong>近日点速度最大</strong>。</p>
+</div>
+
+<div class="fb">
+<div class="t">Kepler第二定律与面积速度</div>
+<p>角动量守恒的几何表述就是Kepler第二定律：</p>
+$$\frac{\dd A}{\dd t} = \frac{L}{2m} = \frac{1}{2}rv\sin\phi = \text{const}$$
+<p><strong>面积速度</strong>（单位时间内径矢扫过的面积）恒定。</p>
+<p>一个周期内扫过的面积 = 椭圆面积：$A = \pi ab$，周期 $T = \pi ab/(L/2m) = 2\pi mab/L$。</p>
+</div>
+
+<div class="ex">
+<strong>例（已知近地距和速度，求远地距——真题2022/2024）</strong>：人造卫星在椭圆轨道上运动，近地点距地心 $r_1$，速度 $v_1$。求远地点距地心 $r_2$ 和速度 $v_2$。
+<div class="sol"><div class="st">解</div>
+<p><strong>方程一：角动量守恒</strong>（近地点和远地点速度都垂直于径矢）</p>
+$$mv_1 r_1 = mv_2 r_2 \implies v_2 = \frac{v_1 r_1}{r_2} \quad\cdots(1)$$
+
+<p><strong>方程二：能量守恒</strong></p>
+$$\frac{1}{2}mv_1^2 - \frac{GMm}{r_1} = \frac{1}{2}mv_2^2 - \frac{GMm}{r_2} \quad\cdots(2)$$
+
+<p><strong>联立求解</strong>：将 (1) 代入 (2)：</p>
+$$\frac{1}{2}v_1^2 - \frac{GM}{r_1} = \frac{1}{2}\frac{v_1^2 r_1^2}{r_2^2} - \frac{GM}{r_2}$$
+$$\frac{1}{2}v_1^2\left(1 - \frac{r_1^2}{r_2^2}\right) = GM\left(\frac{1}{r_1} - \frac{1}{r_2}\right)$$
+$$\frac{1}{2}v_1^2\cdot\frac{(r_2-r_1)(r_2+r_1)}{r_2^2} = GM\cdot\frac{r_2-r_1}{r_1 r_2}$$
+<p>若 $r_2 \neq r_1$（非圆轨道），两边消去 $(r_2-r_1)$：</p>
+$$\frac{1}{2}v_1^2\cdot\frac{r_2+r_1}{r_2^2} = \frac{GM}{r_1 r_2}$$
+$$\frac{v_1^2 r_1(r_1+r_2)}{2} = \frac{GM\cdot r_2}{1}$$
+<p>这是关于 $r_2$ 的一元二次方程，可以解出 $r_2$。</p>
+
+<p><strong>整理为标准形式</strong>：</p>
+$$v_1^2 r_1 r_2 + v_1^2 r_1^2 = 2GM r_2$$
+$$v_1^2 r_1 r_2 - 2GM r_2 = -v_1^2 r_1^2$$
+$$r_2(v_1^2 r_1 - 2GM) = -v_1^2 r_1^2$$
+$$r_2 = \frac{v_1^2 r_1^2}{2GM - v_1^2 r_1}$$
+<p>（要求 $2GM > v_1^2 r_1$，即 $v_1 < \sqrt{2GM/r_1}$，否则为抛物线或双曲线轨道。）</p>
+</div></div>
+
+<div class="ex">
+<strong>例（变轨问题）</strong>：卫星在半径 $r_1$ 的圆轨道上，要转移到半径 $r_2 > r_1$ 的圆轨道。采用霍曼转移轨道（椭圆，近地点在 $r_1$，远地点在 $r_2$）。求两次变速的 $\Delta v$。
+<div class="sol"><div class="st">解</div>
+<p>圆轨道速度：$v_{圆} = \sqrt{GM/r}$</p>
+<p>转移椭圆半长轴：$a = (r_1+r_2)/2$</p>
+<p>转移椭圆总能量：$E = -GMm/(2a) = -GMm/(r_1+r_2)$</p>
+
+<p><strong>第一次加速（在 $r_1$ 处进入椭圆）</strong>：</p>
+<p>在 $r_1$ 处椭圆轨道速度：由 $\frac{1}{2}mv_A^2 - \frac{GMm}{r_1} = -\frac{GMm}{r_1+r_2}$</p>
+$$v_A = \sqrt{GM\left(\frac{2}{r_1} - \frac{2}{r_1+r_2}\right)} = \sqrt{\frac{2GMr_2}{r_1(r_1+r_2)}}$$
+<p>$\Delta v_1 = v_A - v_{圆1} = \sqrt{\frac{2GMr_2}{r_1(r_1+r_2)}} - \sqrt{\frac{GM}{r_1}}$</p>
+
+<p><strong>第二次加速（在 $r_2$ 处进入圆轨道）</strong>：</p>
+$$v_B = \sqrt{\frac{2GMr_1}{r_2(r_1+r_2)}},\quad \Delta v_2 = v_{圆2} - v_B = \sqrt{\frac{GM}{r_2}} - \sqrt{\frac{2GMr_1}{r_2(r_1+r_2)}}$$
+</div></div>
+
+<div class="warn"><strong>椭圆轨道问题解题要点</strong>：
+<ul>
+<li>角动量守恒和能量守恒是两个基本方程，联立可解近/远地点问题</li>
+<li>椭圆轨道总能量 $E = -GMm/(2a)$ 仅由半长轴决定</li>
+<li>判断轨道类型：$E<0$ 椭圆（或圆）；$E=0$ 抛物线；$E>0$ 双曲线</li>
+<li>Kepler第二定律（面积速度恒定）是角动量守恒的直接推论</li>
+<li>近地点速度大于圆轨道速度，远地点速度小于圆轨道速度</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 3-3, 3-4, 3-7, 3-10, 3-13, 3-19, 3-23, 3-27, 3-28</div>
 
 <script src="toc.js"></script>
