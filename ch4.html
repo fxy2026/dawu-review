@@ -526,9 +526,8 @@ $$\vv{v}_1'\cdot\vv{v}_2' = 0$$
 $$\tan\theta = \frac{v_1^*\sin\chi}{v_C + v_1^*\cos\chi} = \frac{\sin\chi}{m_1/m_2 + \cos\chi}$$
 
 <p><strong>情况一：$m_1 < m_2$</strong></p>
-<p>$v_C < v_1^*$（即 $m_1/m_2 < 1$），所有散射角都可能。最大散射角：</p>
-$$\sin\theta_{max} = \frac{m_2}{m_1}$$
-<p>当 $m_1 \ll m_2$ 时，$\theta_{max} \to 90°$（可以后向散射）。</p>
+<p>$v_C < v_1^*$（即 $m_1/m_2 < 1$），所有散射角 $0°\sim180°$ 都可能，包括后向散射。没有最大散射角限制。</p>
+<p>当 $m_1 \ll m_2$ 时，$m_1$ 几乎原速弹回（$\theta \approx 180°$）。</p>
 
 <p><strong>情况二：$m_1 > m_2$</strong></p>
 <p>$v_C > v_1^*$，散射角有上限：</p>
@@ -536,7 +535,7 @@ $$\sin\theta_{max} = \frac{m_2}{m_1} < 1$$
 <p>例如：$m_1 = 2m_2$ 时，$\theta_{max} = 30°$。重粒子碰轻粒子不会大角度偏转。</p>
 
 <p><strong>情况三：$m_1 = m_2$</strong></p>
-<p>$\theta_{max} = 90°$，且碰后两者垂直（退化为上面的等质量结论）。</p>
+<p>$\sin\theta_{max} = 1$，即 $\theta_{max} = 90°$，碰后两者垂直（退化为等质量结论）。</p>
 </div></div>
 
 <div class="ex">
@@ -751,14 +750,14 @@ $$v_B = \sqrt{\frac{2GMr_1}{r_2(r_1+r_2)}},\quad \Delta v_2 = v_{圆2} - v_B = \
 <p><strong>(1) 同时跳离</strong>：设车速为 $v$，人相对地面速度 $(v-u)$：</p>
 $$0 = Mv + nm(v-u) \implies v = \frac{nmu}{M+nm}$$
 
-<p><strong>(2) 逐个跳离</strong>：第 $i$ 个人跳离时，车（连同剩余 $n-i$ 人）从 $v_{i-1}$ 变为 $v_i$：</p>
-$$[M+(n-i)m]v_{i-1} = m(v_i - u) + [M+(n-i)m]v_i$$
-$$v_i - v_{i-1} = \frac{mu}{M+(n-i)m}$$
-<p>将 $n$ 个等式相加：</p>
-$$v_n = \sum_{i=1}^{n}\frac{mu}{M+(n-i)m} = mu\sum_{k=0}^{n-1}\frac{1}{M+km}$$
+<p><strong>(2) 逐个跳离</strong>：第 $i$ 个人跳离前，系统为车 + 剩余 $(n-i+1)$ 人（含即将跳离者），总质量 $M+(n-i+1)m$，速度 $v_{i-1}$。跳离后车 + 剩余 $(n-i)$ 人速度变为 $v_i$：</p>
+$$[M+(n-i+1)m]v_{i-1} = m(v_i - u) + [M+(n-i)m]v_i$$
+$$v_i - v_{i-1} = \frac{mu}{M+(n-i+1)m}$$
+<p>将 $n$ 个等式相加（令 $j=n-i+1$，$j$ 从 $n$ 到 $1$）：</p>
+$$v_n = \sum_{j=1}^{n}\frac{mu}{M+jm} = mu\sum_{j=1}^{n}\frac{1}{M+jm}$$
 
-<p><strong>比较</strong>：因为 $\frac{1}{M+km} \geq \frac{1}{M+nm}$（对 $k<n$），所以</p>
-$$v_n = mu\sum_{k=0}^{n-1}\frac{1}{M+km} > \frac{nmu}{M+nm} = v_{同时}$$
+<p><strong>比较</strong>：因为 $\frac{1}{M+jm} \geq \frac{1}{M+nm}$（对 $j\leq n$），所以</p>
+$$v_n = mu\sum_{j=1}^{n}\frac{1}{M+jm} > \frac{nmu}{M+nm} = v_{同时}$$
 <p>即<strong>逐个跳离后车速更大</strong>！这正是<strong>多级火箭</strong>比单级火箭更高效的物理本质——逐级抛弃质量比一次性抛弃更有利。</p>
 </div></div>
 
