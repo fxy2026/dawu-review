@@ -841,6 +841,349 @@ $$\frac{\dd}{\dd t}(r^2\dot{\theta}) = 0 \implies r^2\dot{\theta} = \text{const}
 <div style="text-align:center;margin:16px 0;"><img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Polar_coordinate_components.svg&width=500" alt="极坐标速度与加速度分量" style="max-width:100%;height:auto;"></div>
 </div>
 
+<!-- ===== 1.18 PPT补充例题：铁锤敲钉问题 ===== -->
+<h2 id="s18">1.18 铁锤敲钉问题（PPT经典 — $a = f(x)$ 综合）</h2>
+<div class="card">
+<div class="ex">
+<strong>例24（铁锤敲钉子）</strong>：用铁锤把钉子敲入木板，木板对钉子的阻力与钉子进入木板的深度成正比（$f = kx$）。铁锤第一次敲打时把钉子敲入 $h_1$。若第二次敲打速度与第一次完全相同，求第二次敲入的深度 $h_2$。
+<div class="sol">
+<div class="st">解</div>
+<p>设敲打瞬间钉子获得初速 $v_0$，阻力 $f = kx$（$x$ 为从钉尖算起的深度）。</p>
+<p><strong>第一次敲打</strong>：从 $x = 0$ 到 $x = h_1$，$v$ 从 $v_0$ 降为 $0$。</p>
+<p>利用 $v\dd v = -\frac{k}{m}x\dd x$，积分：</p>
+$$\int_{v_0}^{0}v\dd v = -\frac{k}{m}\int_0^{h_1}x\dd x$$
+$$-\frac{v_0^2}{2} = -\frac{k}{2m}h_1^2 \implies v_0^2 = \frac{k}{m}h_1^2$$
+<p><strong>第二次敲打</strong>：钉子已在 $x = h_1$ 处，从 $h_1$ 到 $h_1 + h_2$，$v$ 从 $v_0$ 降为 $0$。</p>
+$$\int_{v_0}^{0}v\dd v = -\frac{k}{m}\int_{h_1}^{h_1+h_2}x\dd x$$
+$$-\frac{v_0^2}{2} = -\frac{k}{2m}\left[(h_1+h_2)^2 - h_1^2\right]$$
+<p>利用第一次的结果 $v_0^2 = kh_1^2/m$：</p>
+$$h_1^2 = (h_1+h_2)^2 - h_1^2 = 2h_1 h_2 + h_2^2$$
+$$h_2^2 + 2h_1 h_2 - h_1^2 = 0$$
+$$h_2 = h_1(\sqrt{2}-1) \approx 0.414\,h_1$$
+<p><strong>物理意义</strong>：第二次敲入深度明显比第一次少，因为钉子已进入较深处，阻力更大。</p>
+</div>
+</div>
+
+<div class="tip"><strong>方法总结</strong>：当阻力 $f = f(x)$ 且题目涉及速度-位移关系时，直接用 $v\dd v = a(x)\dd x$ 换元法，不必求 $v(t)$ 再求 $x(t)$。</div>
+</div>
+
+<!-- ===== 1.19 绳拉物体几何约束问题 ===== -->
+<h2 id="s19">1.19 绳拉物体的几何约束与加速度分析（PPT重点）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">通过定滑轮匀速收绳的问题</div>
+<p>这类问题的核心是：收绳速率 $v_0 = \text{const}$，但物体的实际速度和加速度并非常数。需通过几何约束关系求导得出。</p>
+</div>
+
+<div class="ex">
+<strong>例25（两人拉物体）</strong>：两人通过定滑轮对称地将质量 $m$ 的物体向上拉起。已知 $BO = OC = b$（两滑轮间距的一半），拉绳速率均为常数 $v_0$。当两绳夹角为 $2\theta$ 时，绳中张力为多少？
+<div class="sol">
+<div class="st">解</div>
+<p>设物体在 $O$ 正下方高度 $y$ 处，绳长 $l = \sqrt{y^2 + b^2}$。</p>
+<p>由 $l^2 = y^2 + b^2$，对时间求导：$l\dot{l} = y\dot{y}$</p>
+<p>物体上升速度：$v = \dot{y} = \frac{l}{y}\dot{l} = \frac{v_0}{\cos\theta}$（因为 $\cos\theta = y/l$，$\dot{l} = -v_0$）</p>
+<p>再求导得加速度：</p>
+$$a = \frac{\dd v}{\dd t} = \frac{v_0^2 b^2}{l^2 y} \cdot \frac{l}{y} = \frac{v_0^2 \tan^2\theta}{y}$$
+<p>更简洁地写为 $a = \dfrac{v_0^2 b^2}{y^3}$。</p>
+<p>由牛顿第二定律（向上）：$2T\cos\theta - mg = ma$</p>
+$$T = \frac{m(g + a)}{2\cos\theta} = \frac{mg + mv_0^2\tan^2\theta/y}{2\cos\theta}$$
+</div>
+</div>
+
+<div class="ex">
+<strong>例26（绳拉船问题）</strong>：湖中小船质量 $m$，有人在岸上高 $h$ 处以匀速率 $v_0$ 收绳（绕过定滑轮）。求船在水平位置 $x$ 时的水平加速度及绳中张力。
+<div class="sol">
+<div class="st">解</div>
+<p>绳长 $l = \sqrt{x^2 + h^2}$，$l\dot{l} = x\dot{x}$。收绳速率 $\dot{l} = -v_0$。</p>
+<p>船的水平速度：$\dot{x} = -\frac{l}{x}v_0 = -v_0\sqrt{1 + h^2/x^2}$</p>
+<p>对水平速度再求导，经过计算得水平加速度（大小）：</p>
+$$a_x = \frac{v_0^2 h^2}{x^3}\cdot\frac{x}{\sqrt{x^2+h^2}} = \frac{v_0^2 h^2}{x^2(x^2+h^2)^{1/2}} \cdot x$$
+<p>简化：$a_x = \dfrac{v_0^2 h^2}{x^3}$（当仅取水平分量时）。</p>
+<p>水平方向：$T\dfrac{x}{\sqrt{x^2+h^2}} = ma_x$</p>
+<p>竖直方向：$N + T\dfrac{h}{\sqrt{x^2+h^2}} = mg$</p>
+$$T = \frac{mv_0^2 h^2}{x^4}\cdot\sqrt{x^2+h^2}$$
+</div>
+</div>
+
+<div class="warn"><strong>易错点</strong>：收绳速度 $v_0$ 不等于物体的运动速度！物体的速度是绳速度在运动方向上的分量。即使收绳速率恒定，物体也在做变加速运动（加速度随位置变化）。</div>
+</div>
+
+<!-- ===== 1.20 旋转曲面形状 ===== -->
+<h2 id="s20">1.20 旋转容器中液面和曲面形状（PPT补充）</h2>
+<div class="card">
+<div class="ex">
+<strong>例27（旋转碗内表面形状）</strong>：一光滑瓷碗绕竖直轴以角速度 $\omega$ 匀速转动。若碗内表面上任意位置放置的小球都能保持平衡，求碗的内表面形状。
+<div class="sol">
+<div class="st">解</div>
+<p>在碗的参考系中（或用惯性系分析），小球在距轴 $x$ 处平衡：</p>
+<p>竖直方向：$N\cos\alpha = mg$</p>
+<p>水平方向（提供向心力）：$N\sin\alpha = m\omega^2 x$</p>
+<p>两式相除：$\tan\alpha = \dfrac{\omega^2 x}{g}$</p>
+<p>而曲面切线斜率 $\tan\alpha = \dfrac{\dd y}{\dd x}$，所以：</p>
+$$\frac{\dd y}{\dd x} = \frac{\omega^2}{g}x$$
+<p>积分：$y = \dfrac{\omega^2}{2g}x^2 + C$</p>
+<p>取底部为原点，$C = 0$：</p>
+$$\boxed{y = \frac{\omega^2}{2g}x^2}$$
+<p>碗的内表面为<strong>旋转抛物面</strong>。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例28（加速容器中液面形状）</strong>：装有不可压缩液体的容器沿水平方向做匀加速直线运动，加速度为 $a$。求液面形状。
+<div class="sol">
+<div class="st">解</div>
+<p>在容器参考系中，液面上每个质点受重力 $mg$（向下）和惯性力 $ma$（水平，与加速度方向相反）。</p>
+<p>液面与这两个力的合力垂直，因此液面斜率为：</p>
+$$\frac{\dd y}{\dd x} = -\frac{a}{g}$$
+<p>液面为一倾斜的平面，倾斜角 $\theta = \arctan(a/g)$。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例29（U型管加速度计）</strong>：U型管加速度计装在匀加速运动的物体上，两管相距 $L$，测得两管液面差 $h$。求加速度。
+<div class="sol">
+<div class="st">解</div>
+<p>液面斜率 $= a/g$，而两管间液面差 $h$ 对应水平距离 $L$：</p>
+$$\frac{h}{L} = \frac{a}{g} \implies \boxed{a = \frac{gh}{L}}$$
+</div>
+</div>
+</div>
+
+<!-- ===== 1.21 PPT补充例题精选 ===== -->
+<h2 id="s21">1.21 PPT补充例题精选（力学综合）</h2>
+
+<!-- 等时降线问题 -->
+<div class="card">
+<h3>最速降线问题（Brachistochrone）——变分法的起源</h3>
+<div class="ex">
+<strong>例30（PPT：等时降线 / 最速降线）</strong>：1696年 Johann Bernoulli 在《教师学报》上提出公开挑战：设两定点 A、B 高度不同且不在同一铅垂线上，无摩擦和空气阻力，在所有连接 A、B 的曲线中，求使初速度为零的质点在重力作用下从 A 沿曲线下滑到 B 的时间最短的那条曲线。
+<div class="sol">
+<div class="st">推导</div>
+<p>取 A 为原点，$y$ 轴竖直向下。质点从 A 静止出发，下滑到高度 $y$ 处时速率由能量守恒得：</p>
+$$v = \sqrt{2gy}$$
+<p>沿曲线微元 $\dd s = \sqrt{1+y'^2}\,\dd x$，所需时间微元：</p>
+$$\dd t = \frac{\dd s}{v} = \frac{\sqrt{1+y'^2}}{\sqrt{2gy}}\,\dd x$$
+<p>总时间为泛函：</p>
+$$t[y] = \int_0^a \frac{\sqrt{1+y'^2}}{\sqrt{2gy}}\,\dd x$$
+<p>使此泛函取极值的曲线满足 Euler-Lagrange 方程，解为<strong>摆线</strong>（旋轮线）：</p>
+$$x = \frac{R}{2}(\theta - \sin\theta),\quad y = \frac{R}{2}(1 - \cos\theta)$$
+<p>其中 $R$ 由 B 点坐标确定。</p>
+</div>
+</div>
+<div class="tip"><strong>历史趣闻</strong>：1697年《教师学报》同时发表了 Leibniz、Newton 以及 Bernoulli 兄弟的答案。Newton 当时已是皇家造币厂厂长，据说仅用一个晚上就给出正确答案并匿名发表。Johann Bernoulli 看到后惊呼："我从这锋利的爪痕上认出了这头雄狮！"</div>
+<div class="warn"><strong>核心结论</strong>："最短"（直线）和"最快"（摆线）不是一回事！摆线虽然路径更长，但质点先快速下降获得较大速度，总时间反而最短。</div>
+</div>
+
+<!-- 长方体浸入液体（完整系列） -->
+<div class="card">
+<h3>长方体浸入液体的运动分析（PPT完整系列）</h3>
+<div class="fb">
+<div class="t">模型设定</div>
+<p>密度 $\rho$ 等于水的长方体（高 $h$、底面积 $S$），平衡时全部浸入水中。取 $y$ 轴竖直向上，原点为长方体刚好全部浸入的位置。设顶面距水面为 $y$（$0 < y < h$）时，露出水面部分的重力即为合力：</p>
+$$\rho S y g = \rho S h \cdot a \implies a = \frac{g}{h}y$$
+<p>利用 $v\dd v = \dfrac{g}{h}y\dd y$ 进行积分。</p>
+</div>
+
+<div class="ex">
+<strong>例31（$y_0 > h$：顶面提出水面后再自由下落）</strong>：将顶面提到 $y_0 > h$（即长方体完全出水）后静止释放，求刚好全部浸入时的速度。
+<div class="sol">
+<div class="st">解</div>
+<p><strong>阶段一</strong>（$y_0 \to h$）：长方体完全在水面上方，只受重力（浮力为零），做自由落体。</p>
+$$v_1^2 = 2g(y_0 - h) \implies v_1 = \sqrt{2g(y_0 - h)}$$
+<p><strong>阶段二</strong>（$h \to 0$）：长方体逐渐浸入水中，$v\dd v = \dfrac{g}{h}y\dd y$：</p>
+$$\int_{v_1}^{v} v\dd v = \int_h^0 \frac{g}{h}y\dd y \implies \frac{v^2 - v_1^2}{2} = -\frac{g}{2h}h^2$$
+$$v = \sqrt{v_1^2 + gh} = \sqrt{2g(y_0 - h) + gh} = \sqrt{g(2y_0 - h)}$$
+</div>
+</div>
+
+<div class="ex">
+<strong>例32（给初速度向上：求底面刚好能离开水面的条件）</strong>：初始时长方体刚好全部浸入水中（$y = 0$），给予向上初速度 $v_0$。若底面刚好能离开水面（即 $y = h$ 时 $v = 0$），求 $v_0$。
+<div class="sol">
+<div class="st">解</div>
+<p>在 $0 \leq y \leq h$ 范围内（向上运动），合力向下为 $\rho Syg$，加速度 $a = -gy/h$（取向上为正）。</p>
+$$v\dd v = -\frac{g}{h}y\dd y$$
+$$\int_{v_0}^{0} v\dd v = -\frac{g}{h}\int_0^h y\dd y$$
+$$-\frac{v_0^2}{2} = -\frac{gh}{2} \implies \boxed{v_0 = \sqrt{gh}}$$
+</div>
+</div>
+
+<div class="ex">
+<strong>例33（初速度过大：底面离开水面后继续上升）</strong>：若初速度 $v_0 > \sqrt{gh}$，求底面离开水面后还能上升的高度。
+<div class="sol">
+<div class="st">解</div>
+<p>在 $y = h$ 时速度 $v_h = \sqrt{v_0^2 - gh}$。此后长方体完全脱离水面，做竖直上抛：</p>
+$$\Delta h = \frac{v_h^2}{2g} = \frac{v_0^2 - gh}{2g}$$
+<p>底面离开水面后还能上升 $\dfrac{v_0^2 - gh}{2g}$。</p>
+</div>
+</div>
+<div class="tip"><strong>方法要点</strong>：当力是位置的函数时，用 $v\dd v = a(y)\dd y$ 换元法最方便。分段运动问题要注意各阶段的初速度衔接。</div>
+</div>
+
+<!-- 绳绕圆柱张力分布（Capstan方程） -->
+<div class="card">
+<h3>绳绕圆柱的张力分布——Capstan 方程</h3>
+<div class="ex">
+<strong>例34（PPT 例1-15：缆绑方程）</strong>：轻质绳索绕在固定圆柱上，绳绕圆柱的张角为 $\theta_0$，绳与圆柱间静摩擦系数为 $\mu$。求绳处于滑动临界点时两端张力 $F_A$ 和 $F_B$ 的关系。
+<div class="sol">
+<div class="st">解</div>
+<p>取绕在圆柱上的一段微元 $\dd s$，其张角为 $\dd\theta$，两端张力分别为 $F$ 和 $F + \dd F$。</p>
+<p><strong>法向方向</strong>（指向圆心，平衡）：</p>
+$$\dd N = F\sin\frac{\dd\theta}{2} + (F+\dd F)\sin\frac{\dd\theta}{2} \approx F\dd\theta$$
+<p>（小角近似 $\sin(\dd\theta/2) \approx \dd\theta/2$，忽略高阶无穷小）</p>
+<p><strong>切向方向</strong>（沿绳，平衡）：</p>
+$$\dd F = \dd f = \mu\dd N = \mu F\dd\theta$$
+<p>分离变量并积分：</p>
+$$\int_{F_B}^{F_A}\frac{\dd F}{F} = \mu\int_0^{\theta_0}\dd\theta$$
+$$\boxed{F_A = F_B\,e^{\mu\theta_0}}$$
+</div>
+</div>
+<div class="tip"><strong>物理意义</strong>：张力随绕角<strong>指数增长</strong>！以 $\mu = 0.25$ 为例：
+<table>
+<tr><th>$\theta_0$</th><th>$F_A/F_B$</th></tr>
+<tr><td>$\pi$（半圈）</td><td>$\approx 2.2$</td></tr>
+<tr><td>$2\pi$（一圈）</td><td>$\approx 4.8$</td></tr>
+<tr><td>$10\pi$（五圈）</td><td>$\approx 2\,500$</td></tr>
+</table>
+<p>这解释了船员只需将缆绳在缆桩上缠绕数圈，就能以一人之力拉住巨大船舶。</p></div>
+<div class="warn"><strong>关键思想</strong>：广延物体 → 取微元 → 对微元用牛顿第二定律 → 得到微分方程 → 积分求解。这是处理连续体力学问题的标准方法。</div>
+</div>
+
+<!-- 球在光滑球面上滑下 -->
+<div class="card">
+<h3>球在光滑球面上滑下——脱离点分析</h3>
+<div class="ex">
+<strong>例35（PPT补充例：球面脱离问题）</strong>：质量为 $m$ 的小球置于固定光滑圆柱体（半径 $R$）顶端，从静止开始下滑。求：(1) 小球滑到角度 $\theta$ 处时的速度和法向支持力；(2) 小球飞离圆柱体的位置。
+<div class="sol">
+<div class="st">解</div>
+<p>在角度 $\theta$ 处，用自然坐标系：</p>
+<p><strong>切向</strong>：$mg\sin\theta = m\dfrac{\dd v}{\dd t}$</p>
+<p>利用 $\dfrac{\dd v}{\dd t} = \dfrac{\dd v}{\dd\theta}\cdot\dfrac{\dd\theta}{\dd t} = \dfrac{v}{R}\dfrac{\dd v}{\dd\theta}$，得 $v\dd v = gR\sin\theta\,\dd\theta$。</p>
+<p>积分（从 $\theta = 0,\, v = 0$）：</p>
+$$\frac{v^2}{2} = gR(1 - \cos\theta) \implies v^2 = 2gR(1 - \cos\theta)$$
+<p><strong>法向</strong>（指向圆心）：$mg\cos\theta - N = \dfrac{mv^2}{R}$</p>
+$$N = mg\cos\theta - \frac{mv^2}{R} = mg(3\cos\theta - 2)$$
+<p><strong>脱离条件</strong>：$N = 0$</p>
+$$3\cos\theta - 2 = 0 \implies \boxed{\cos\theta_0 = \frac{2}{3},\quad \theta_0 = \arccos\frac{2}{3} \approx 48.2°}$$
+<p>脱离时速度：$v_0 = \sqrt{\dfrac{2gR}{3}}$</p>
+</div>
+</div>
+<div class="warn"><strong>考试要点</strong>：
+<ul>
+<li>脱离条件是 $N = 0$（不是 $N < 0$），因为曲面只能施加推力不能拉</li>
+<li>脱离角 $\theta_0 = \arccos(2/3) \approx 48.2°$ 与质量 $m$ 和半径 $R$ 无关！</li>
+<li>脱离后做斜抛运动，初速 $v_0 = \sqrt{2gR/3}$，方向沿 $\theta_0$ 处的切线</li>
+</ul></div>
+</div>
+
+<!-- 锥面上小球的转速临界条件 -->
+<div class="card">
+<h3>锥面/漏斗壁上的匀速圆周运动——转速临界条件</h3>
+<div class="ex">
+<strong>例36（PPT补充例：漏斗壁上小球的临界转速）</strong>：一小物体放在绕竖直轴匀速转动的漏斗内壁上，漏斗壁与水平面成角 $\beta$，物体与壁间静摩擦系数为 $\mu_s$，物体中心距轴 $r$，每秒转 $n$ 圈。求物体不滑动的条件。
+<div class="sol">
+<div class="st">解</div>
+<p>物体受重力 $mg$、法向支持力 $N$、静摩擦力 $f$。合力提供向心力 $m\omega^2 r$，其中 $\omega = 2\pi n$。</p>
+<p><strong>情况一：转速较低，物体有下滑趋势</strong>（摩擦力沿壁面向上）</p>
+<p>水平方向：$N\sin\beta - f\cos\beta = m\omega^2 r$</p>
+<p>竖直方向：$N\cos\beta + f\sin\beta = mg$</p>
+<p>临界条件 $f = \mu_s N$，联立解得：</p>
+$$n_{\min} = \frac{1}{2\pi}\sqrt{\frac{g(\sin\beta - \mu_s\cos\beta)}{r(\cos\beta + \mu_s\sin\beta)}}$$
+<p><strong>情况二：转速较高，物体有上滑趋势</strong>（摩擦力沿壁面向下）</p>
+<p>水平方向：$N\sin\beta + f\cos\beta = m\omega^2 r$</p>
+<p>竖直方向：$N\cos\beta - f\sin\beta = mg$</p>
+<p>临界条件 $f = \mu_s N$，解得：</p>
+$$n_{\max} = \frac{1}{2\pi}\sqrt{\frac{g(\sin\beta + \mu_s\cos\beta)}{r(\cos\beta - \mu_s\sin\beta)}}$$
+<p><strong>物体不滑动的条件</strong>：$n_{\min} \leq n \leq n_{\max}$</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例37（PPT练习：锥面内壁匀速圆周运动）</strong>：半角为 $\alpha$ 的光滑锥面内壁，距顶点高 $h$ 处有一小球，以水平初速 $v_0$ 沿内壁射出并做匀速圆周运动。求 $v_0$。
+<div class="sol">
+<div class="st">解</div>
+<p>小球做半径 $r = h\tan\alpha$ 的水平匀速圆周运动，受重力 $mg$ 和锥面法向力 $N$。</p>
+<p>竖直方向：$N\cos\alpha = mg$</p>
+<p>水平方向（向心）：$N\sin\alpha = \dfrac{mv_0^2}{r} = \dfrac{mv_0^2}{h\tan\alpha}$</p>
+<p>两式相除：$\tan\alpha = \dfrac{v_0^2}{gh\tan\alpha}$</p>
+$$\boxed{v_0 = \sqrt{gh}\,\tan\alpha = \sqrt{gh\tan^2\alpha}}$$
+</div>
+</div>
+<div class="tip"><strong>拓展</strong>：若初速 $v_1 = 2v_0$（大于匀速圆周所需），小球将做螺旋上升运动。由机械能守恒与角动量分量守恒（合力矩沿轴线方向为零），可求得最大高度 $x = 3h$。这是角动量守恒的典型应用。</div>
+</div>
+
+<!-- 旋转碗的摩擦版本 -->
+<div class="card">
+<h3>旋转碗内表面形状——含摩擦的推广</h3>
+<div class="ex">
+<strong>例38（PPT练习：有摩擦的旋转碗）</strong>：碗绕竖直轴以角速度 $\omega$ 匀速转动，小球在碗内任意位置平衡且处于<strong>下滑临界</strong>状态（$f = \mu_s N$，摩擦力向上）。求碗的内表面形状。
+<div class="sol">
+<div class="st">解</div>
+<p>设曲面上距轴 $x$ 处的切线与水平面成角 $\alpha$，小球受重力、法向力 $N$、摩擦力 $f$。</p>
+<p>竖直方向：$N\cos\alpha + f\sin\alpha = mg$</p>
+<p>水平方向：$N\sin\alpha - f\cos\alpha = m\omega^2 x$</p>
+<p>令 $f = \mu_s N$，两式相除：</p>
+$$\frac{\sin\alpha - \mu_s\cos\alpha}{\cos\alpha + \mu_s\sin\alpha} = \frac{\omega^2 x}{g}$$
+<p>而 $\tan\alpha = \dfrac{\dd y}{\dd x}$，记 $y' = \tan\alpha$，则 $\sin\alpha = \dfrac{y'}{\sqrt{1+y'^2}}$，$\cos\alpha = \dfrac{1}{\sqrt{1+y'^2}}$，代入化简得：</p>
+$$\frac{y' - \mu_s}{1 + \mu_s y'} = \frac{\omega^2 x}{g}$$
+<p>这是一个一阶 ODE，一般不能初等积分。当 $\mu_s = 0$ 时退化为 $y' = \omega^2 x/g$，积分得 $y = \dfrac{\omega^2}{2g}x^2$（旋转抛物面），与无摩擦情况一致。</p>
+</div>
+</div>
+<div class="warn"><strong>对比</strong>：无摩擦时碗面为抛物面；有摩擦时碗面形状由含 $\mu_s$ 的微分方程决定，不再是简单抛物面。考试一般只考无摩擦版本，但需要知道摩擦如何改变平衡条件。</div>
+</div>
+
+<!-- 连接体约束条件的系统方法 -->
+<div class="card">
+<h3>连接体约束条件的系统方法</h3>
+<div class="fb">
+<div class="t">解题步骤</div>
+<ol>
+<li><strong>隔离对象</strong>：对每个物体分别进行受力分析</li>
+<li><strong>列方程</strong>：对每个物体用牛顿第二定律写出分量方程</li>
+<li><strong>约束条件</strong>：由绳不可伸长、接触不脱离等条件建立加速度之间的关系</li>
+<li><strong>补充条件</strong>：摩擦力 $f = \mu N$、轻绳张力处处相等等</li>
+<li><strong>联立求解</strong></li>
+</ol>
+</div>
+
+<div class="ex">
+<strong>例39（PPT：斜面上的连接体）</strong>：如图，质量为 $m_1$ 的楔形块 A 放在光滑水平面上，斜面倾角 $\alpha$，上面放质量为 $m_2$ 的滑块 B。所有面光滑，求 $a_1$。
+<div class="sol">
+<div class="st">解</div>
+<p><strong>A 的受力</strong>：重力 $m_1 g$、地面支持力 $N_1$、B 对 A 的法向力 $N_2$（沿斜面法线方向）。</p>
+<p>取水平 $x$ 和竖直 $y$，设 A 的加速度 $a_1$（水平向左）：</p>
+$$x:\; N_2\sin\alpha = m_1 a_1 \tag{1}$$
+$$y:\; N_1 - m_1 g - N_2\cos\alpha = 0 \tag{2}$$
+<p><strong>B 的受力</strong>：重力 $m_2 g$、A 对 B 的法向力 $N_2$（沿斜面法线方向）。B 的加速度 $a_2$（竖直向下）。</p>
+$$m_2 g - N_2 = m_2 a_2 \tag{3}$$
+<p><strong>约束条件</strong>：B 沿斜面下滑，A 沿水平移动。B 在竖直方向的下降量等于 A 水平移动量乘以 $\sin\alpha$（几何关系）：</p>
+$$a_2 = a_1\sin\alpha \tag{4}$$
+<p>由 (1)：$N_2 = m_1 a_1 / \sin\alpha$。代入 (3)：</p>
+$$m_2 g - \frac{m_1 a_1}{\sin\alpha} = m_2 a_1\sin\alpha$$
+$$a_1 = \frac{m_2 g\sin\alpha}{m_1 + m_2\sin^2\alpha}$$
+</div>
+</div>
+
+<div class="ex">
+<strong>例40（PPT：竖直弹簧振子）</strong>：竖直弹簧振子（劲度系数 $k$、质量 $m$），自然平衡后用恒力 $F$ 向下拉 $S$ 后撤去力，以撤力瞬间为 $t = 0$。已知 $k = 200\,\text{N/m}$，$m = 4.0\,\text{kg}$，$F = 100\,\text{N}$，$S = 0.5\,\text{m}$。求振动方程。
+<div class="sol">
+<div class="st">解</div>
+<p>以平衡位置为原点，向下为正。圆频率：</p>
+$$\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{200}{4}} = 7.07\,\text{rad/s}$$
+<p>$t = 0$ 时刻：$x_0 = S - F/k = 0.5 - 0.5 = 0\,\text{m}$（恰好在平衡位置）。</p>
+<p>向下拉的过程中，由功能原理求振动振幅：</p>
+$$FS = \frac{1}{2}kA^2 \implies A = \sqrt{\frac{2FS}{k}} = \sqrt{\frac{2\times100\times0.5}{200}} = \frac{\sqrt{2}}{2} \approx 0.707\,\text{m}$$
+<p>$t = 0$ 时 $x_0 = 0$ 且速度向上（$v_0 < 0$），对应相位 $\varphi_0 = \pi/4$（因为 $x = A\cos(\omega t + \varphi_0)$，$x_0 = A\cos\varphi_0 = 0$ 给出 $\varphi_0 = \pm\pi/2$；$v_0 = -A\omega\sin\varphi_0 < 0$ 要求 $\sin\varphi_0 > 0$，故 $\varphi_0 = \pi/2$）。</p>
+$$\boxed{x = 0.707\cos\!\left(7.07t + \frac{\pi}{2}\right)\;\text{m}}$$
+</div>
+</div>
+<div class="tip"><strong>竖直弹簧振子要点</strong>：
+<ul>
+<li>以<strong>平衡位置</strong>为原点，不是弹簧原长位置。这样重力与弹簧弹力的静态部分抵消，运动方程与水平弹簧振子形式完全相同</li>
+<li>恒力作用下静态位移 $\Delta = F/k$，撤力后从新的位置开始谐振动</li>
+<li>$t = 0$ 的位移和速度共同确定振幅 $A$ 和初相 $\varphi_0$</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 1-7, 1-17, 1-19, 1-21, 1-23, 1-24, 1-25, 1-31, 1-32</div>
 
 <script src="toc.js"></script>

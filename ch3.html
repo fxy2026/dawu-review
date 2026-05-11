@@ -713,6 +713,124 @@ $$v_0 = \frac{m + M}{m}\sqrt{2gh}$$
 </ul></div>
 </div>
 
+<h2 id="s20">3.20 PPT补充例题精选（功和能综合）</h2>
+<div class="card">
+
+<div class="ex">
+<strong>例1（球从圆柱顶端滑下——飞离角）</strong>：质量为 $m$ 的小球从固定光滑圆柱体顶端由静止开始下滑，求小球飞离圆柱体表面时的角度 $\theta$（与竖直方向的夹角）。
+<div class="sol"><div class="st">解</div>
+<p><strong>Step 1：飞离条件</strong>——法向力 $N=0$：</p>
+$$mg\cos\theta - N = \frac{mv^2}{R}\implies mg\cos\theta = \frac{mv^2}{R}\quad(N=0)$$
+<p><strong>Step 2：机械能守恒</strong>（从顶端到 $\theta$ 处，下降高度 $R-R\cos\theta$）：</p>
+$$\frac{1}{2}mv^2 = mgR(1-\cos\theta)$$
+<p><strong>Step 3：联立</strong>，将 $v^2=2gR(1-\cos\theta)$ 代入法向方程：</p>
+$$mg\cos\theta = \frac{m\cdot 2gR(1-\cos\theta)}{R} = 2mg(1-\cos\theta)$$
+$$\cos\theta = 2-2\cos\theta \implies 3\cos\theta=2$$
+$$\boxed{\theta = \arccos\frac{2}{3} \approx 48.2°}$$
+<p>此结论与质量、半径均无关，是经典结论。</p>
+</div></div>
+
+<div class="ex">
+<strong>例2（锤击钉子——阻力正比于深度）</strong>：铁锤把钉子敲入木板，木板对钉子的阻力与钉入深度成正比 $F=-kx$。第一次敲击使钉子敲入 $h_1$。若第二次敲击速度与第一次相同，求第二次敲入深度 $h_2$。
+<div class="sol"><div class="st">解</div>
+<p>设每次敲击初速为 $v$，由动能定理：</p>
+<p><strong>第一次</strong>（$x$ 从 $0$ 到 $h_1$）：</p>
+$$0 - \frac{1}{2}mv^2 = -\int_0^{h_1}kx\,\dd x = -\frac{1}{2}kh_1^2$$
+<p><strong>第二次</strong>（$x$ 从 $h_1$ 到 $h_1+h_2$）：</p>
+$$0 - \frac{1}{2}mv^2 = -\int_{h_1}^{h_1+h_2}kx\,\dd x = -\frac{k}{2}\left[(h_1+h_2)^2-h_1^2\right]$$
+<p>由两式相等：$h_1^2 = (h_1+h_2)^2 - h_1^2$，即</p>
+$$(h_1+h_2)^2 = 2h_1^2 \implies h_1+h_2 = \sqrt{2}\,h_1$$
+$$\boxed{h_2 = (\sqrt{2}-1)h_1 \approx 0.414\,h_1}$$
+<p>每次敲入深度递减——阻力越来越大。</p>
+</div></div>
+
+<div class="ex">
+<strong>例3（密度与水相同的长方体——从水中取出做功）</strong>：密度为 $\rho$、高 $H$、底面积 $S$ 的均匀长方体悬浮于水中（浮力=重力）。将其缓慢从水中完全取出，至少需做多少功？
+<div class="sol"><div class="st">解</div>
+<p>长方体密度等于水，完全浸没时浮力=重力，缓慢提升时力平衡。</p>
+<p>当顶面露出水面高度为 $h$（$0\leq h\leq H$）时，水面以上部分重力不再被浮力平衡，需外力：</p>
+$$F = \rho S g h$$
+<p>（水面以上体积 $Sh$ 的重力）</p>
+<p>从 $h=0$ 到 $h=H$ 积分：</p>
+$$W = \int_0^H \rho Sg h\,\dd h = \frac{1}{2}\rho Sg H^2$$
+<p>注意到总质量 $m=\rho SH$，故：</p>
+$$\boxed{W = \frac{1}{2}mgH}$$
+</div></div>
+
+<div class="ex">
+<strong>例4（卫星在尘埃阻力下陨落时间）</strong>：质量为 $m$ 的卫星在近似圆轨道上运行，受尘埃阻力 $f=-kv$。求卫星从 $r_0=4R$（$R$ 为地球半径）陨落到地面所需时间。
+<div class="sol"><div class="st">解</div>
+<p>圆轨道上万有引力提供向心力：$\frac{GMm}{r^2}=\frac{mv^2}{r}$，得 $v=\sqrt{GM/r}$。</p>
+<p>卫星总机械能 $E = -\frac{GMm}{2r}$，$\dd E = \frac{GMm}{2r^2}\dd r$。</p>
+<p>由功能原理，阻力做功 $\dd W_f = -kv^2\dd t$（$\dd t$ 内）等于 $\dd E$：</p>
+$$\frac{GMm}{2r^2}\dd r = -k\cdot\frac{GM}{r}\dd t$$
+$$\dd t = -\frac{m}{2k}\cdot\frac{\dd r}{r}$$
+<p>从 $r_0=4R$ 到 $r=R$ 积分：</p>
+$$t = \frac{m}{2k}\int_R^{4R}\frac{\dd r}{r} = \frac{m}{2k}\ln 4 = \boxed{\frac{m\ln 4}{2k}}$$
+</div></div>
+
+<div class="ex">
+<strong>例5（弹簧连两木板——跳起条件）</strong>：弹簧（劲度系数 $k$）连接上板（质量 $m$）和下板（质量 $M$），一起放在地面上。对上板施加正压力 $F$ 使弹簧压缩，然后突然撤去 $F$。求使撤力后上板跳起时恰好能将下板提离地面的最小 $F$。
+<div class="sol"><div class="st">解</div>
+<p><strong>Step 1</strong>：施力 $F$ 时弹簧压缩量 $L=(F+mg)/k$。</p>
+<p><strong>Step 2</strong>：撤去 $F$ 后，上板从静止开始向上运动，经过平衡位置后继续上升。设弹簧最大伸长量为 $x_m$，此时上板速度为零。</p>
+<p>下板恰好被提起的条件：弹簧拉力 $=Mg$，即 $kx_m = Mg$，故 $x_m=Mg/k$。</p>
+<p><strong>Step 3</strong>：取上板+弹簧+地球为系统，以初位置为重力势能和弹性势能零点，机械能守恒：</p>
+$$\frac{1}{2}kL^2 = \frac{1}{2}kx_m^2 + mg(L+x_m)$$
+<p>代入 $L=(F+mg)/k$，$x_m=Mg/k$：</p>
+$$\frac{(F+mg)^2}{2k} = \frac{M^2g^2}{2k} + mg\cdot\frac{F+mg+Mg}{k}$$
+<p>化简得：</p>
+$$\boxed{F = (m+M)g}\quad\text{（即需要的最小正压力）}$$
+<p>注意：$m$ 和 $M$ 交换位置，结果不变。</p>
+</div></div>
+
+<div class="ex">
+<strong>例6（弹簧释放后A、B分离——最大距离）</strong>：弹簧一端固定在墙上，另一端系物体 $A$（质量 $m_A$）。弹簧被压缩 $x_1$ 后，在 $A$ 右侧紧贴物体 $B$（质量 $m_B$），光滑水平面。释放后：(1) $B$ 分离时速度；(2) $A$ 的最大位移。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1) 分离位置</strong>：$A$、$B$ 共同运动，到达弹簧自然长度处（平衡位置）时弹簧推力为零，$B$ 不再受力而分离。此时速度最大，设为 $v_m$。</p>
+<p>机械能守恒（$A+B+$弹簧）：</p>
+$$\frac{1}{2}kx_1^2 = \frac{1}{2}(m_A+m_B)v_m^2$$
+$$\boxed{v_m = x_1\sqrt{\frac{k}{m_A+m_B}}}$$
+<p><strong>(2) $A$ 的最大位移</strong>：分离后 $B$ 以 $v_m$ 匀速离去，$A$ 继续向右运动但受弹簧向左拉力，减速至零。设 $A$ 在分离后又移动 $x_2$（弹簧伸长 $x_2$）。</p>
+<p>对 $A+$弹簧，机械能守恒：</p>
+$$\frac{1}{2}m_A v_m^2 = \frac{1}{2}kx_2^2 \implies x_2 = v_m\sqrt{\frac{m_A}{k}} = x_1\sqrt{\frac{m_A}{m_A+m_B}}$$
+<p>$A$ 的总最大位移（从压缩位置算起）：</p>
+$$\boxed{d_{max} = x_1 + x_2 = x_1\left(1+\sqrt{\frac{m_A}{m_A+m_B}}\right)}$$
+</div></div>
+
+<div class="ex">
+<strong>例7（细棒浸入液体——最大速度与最大深度）</strong>：密度 $\rho_2$ 的均匀细棒（截面积 $S$、长 $l$）从液面上方自由释放，竖直落入密度 $\rho_1$ 的液体（$\rho_1/2 < \rho_2 < \rho_1$）。忽略阻力，求：(1) 棒的最大速度；(2) 棒能进入液体的最大深度 $H$。
+<div class="sol"><div class="st">解</div>
+<p>棒质量 $m=\rho_2 Sl$。设棒下端浸入深度为 $x$（$x<l$ 时部分浸没）。</p>
+<p><strong>(1) 最大速度</strong>：合力为零时速度最大，即重力=浮力：</p>
+$$\rho_2 Slg = \rho_1 Sxg \implies x_0 = \frac{\rho_2}{\rho_1}l$$
+<p>由 $\rho_2<\rho_1$ 知 $x_0<l$，棒部分浸没时即达最大速度。由动能定理（重力做功 $mgx_0$，浮力做功 $-\frac{1}{2}\rho_1 Sgx_0^2$）：</p>
+$$\frac{1}{2}mv_m^2 = \rho_2 Slgx_0 - \frac{1}{2}\rho_1 Sgx_0^2 = \frac{\rho_2^2 Slg^2l}{2\rho_1}\left(2-\frac{\rho_2}{\rho_1}\right)\cdot\frac{1}{2g}\cdot\ldots$$
+<p>简化计算：代入 $x_0=\rho_2 l/\rho_1$</p>
+$$v_m^2 = 2gx_0 - \frac{\rho_1 gx_0^2}{\rho_2 l} = \frac{\rho_2}{\rho_1}gl$$
+$$\boxed{v_m = \sqrt{\frac{\rho_2}{\rho_1}gl}}$$
+
+<p><strong>(2) 最大深度</strong>：假设 $H>l$（棒完全浸没后浮力恒定）。从开始到最大深度 $H$（$v=0$），由动能定理：</p>
+<p>重力做功 $mgH = \rho_2 SlgH$；浮力做功分两段：</p>
+$$W_{浮} = -\frac{1}{2}\rho_1 Sgl^2 - \rho_1 Slg(H-l)$$
+<p>令 $v=0$，$W_{重}+W_{浮}=0$：</p>
+$$\rho_2 SlgH = \frac{1}{2}\rho_1 Sgl^2 + \rho_1 Slg(H-l)$$
+$$\rho_2 H = \frac{\rho_1 l}{2} + \rho_1(H-l) = \rho_1 H - \frac{\rho_1 l}{2}$$
+$$H(\rho_1-\rho_2) = \frac{\rho_1 l}{2}$$
+$$\boxed{H = \frac{\rho_1 l}{2(\rho_1-\rho_2)}}$$
+<p>验证：由 $\rho_2>\rho_1/2$，得 $\rho_1-\rho_2<\rho_1/2$，故 $H>l$，假设成立。</p>
+</div></div>
+
+<div class="tip"><strong>PPT例题总结——常见考法</strong>：
+<ul>
+<li><strong>飞离/脱离问题</strong>：法向力 $N=0$ 为临界条件 + 能量守恒联立</li>
+<li><strong>变阻力做功</strong>（阻力 $\propto x$ 或 $\propto v$）：必须积分，不能用 $W=Fs$</li>
+<li><strong>浮力问题</strong>：浮力随浸入深度变化，是变力做功</li>
+<li><strong>弹簧+分离</strong>：分离点在弹簧恢复自然长度处（推力→零的瞬间）</li>
+<li><strong>两阶段法</strong>：机械能守恒求速度 → $v\frac{\dd v}{\dd h}$ 求加速度</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 2-4, 2-5, 2-6, 2-8, 2-10, 2-11, 2-13, 2-14</div>
 
 <script src="toc.js"></script>

@@ -670,6 +670,250 @@ $$y = A\cos\!\left(\omega t - kx + kx_0 - \frac{\pi}{3}\right) = A\cos\!\left[\o
 <div class="tip"><strong>快速判断法</strong>：若 $t = 0$ 时某点 $y = 0$ 且 $v_y > 0$，该点处于向正方向穿越平衡位置的状态，对应 $\sin$ 函数的起点，初相为 $-\pi/2$。</div>
 </div>
 
+<h2 id="s22">7.22 PPT补充：特殊SHM系统（建模专题）</h2>
+<div class="card">
+
+<h3>板在圆柱上的振动</h3>
+<div class="ex">
+<strong>例（PPT例6-1）</strong>：质量为 $m$ 的均匀板水平置于两个相同的转动圆柱上，圆柱转速相同、方向相向，板与圆柱间摩擦系数为 $\mu$，两转轴间距为 $2l$。证明板沿水平方向做简谐振动，并求周期。
+<div class="sol"><div class="st">解</div>
+<p>设板质心在两转轴中点 $O$ 右方 $x_c$ 处。板受两个圆柱的支持力 $N_1$、$N_2$ 和摩擦力 $f_1$、$f_2$。</p>
+<p>板不转动，对两端取力矩参考点列力矩平衡方程：</p>
+$$N_1 = \frac{mg(l+x_c)}{2l},\quad N_2 = \frac{mg(l-x_c)}{2l}$$
+<p>两圆柱对板的摩擦力方向相同（都向中间推），合力：</p>
+$$F = f_1 - f_2 = \mu N_1 - \mu N_2 = \mu\frac{mg\cdot 2x_c}{2l} = -\frac{\mu mg}{l}x_c$$
+<p>（取偏离中心为正方向时，合力指向中心）</p>
+<p>这是 $F = -kx_c$ 的形式，$k = \mu mg/l$，因此为简谐运动。</p>
+$$\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{\mu g}{l}},\quad T = 2\pi\sqrt{\frac{l}{\mu g}}$$
+</div></div>
+
+<h3>比重计的振动</h3>
+<div class="ex">
+<strong>例（PPT补充例）</strong>：质量为 $m$ 的比重计，放在密度为 $\rho$ 的液体中，圆管直径为 $d$。证明比重计在竖直方向的运动为简谐振动，求周期。
+<div class="sol"><div class="st">解</div>
+<p>平衡时浮力等于重力：$\rho g V_0 = mg$（$V_0$ 为排水体积）。</p>
+<p>偏离平衡位置 $x$（向下为正）后，排水体积增加 $\Delta V = \frac{\pi d^2}{4}x$，</p>
+<p>合力 $F = mg - \rho g(V_0 + \frac{\pi d^2}{4}x) = -\rho g\frac{\pi d^2}{4}x$</p>
+<p>这是线性回复力，系统做简谐运动：</p>
+$$\omega = \sqrt{\frac{\rho g\pi d^2}{4m}},\quad T = 2\pi\sqrt{\frac{4m}{\rho g\pi d^2}}$$
+</div></div>
+
+<h3>U形管振荡</h3>
+<div class="ex">
+<strong>例（PPT补充例：经典题型）</strong>：竖直等截面光滑U形管内装水，密度为 $\rho$，截面积为 $S$，水柱总质量为 $m$。使水偏离平衡位置后自由振动，求周期。
+<div class="sol"><div class="st">解</div>
+<p>设某时刻右管液面高出平衡位置 $H$（左管低 $H$），则两管液面差为 $2H$。</p>
+<p>回复力为高出部分液体的重力：$F = -\rho g S\cdot 2H$</p>
+<p>水不可压缩，各处速度大小相同，整体动能：$E_k = \frac{1}{2}mv^2 = \frac{1}{2}m\dot{H}^2$</p>
+<p>由动能定理（或牛顿第二定律 $m\ddot{H} = -2\rho g S\cdot H$）：</p>
+$$\omega = \sqrt{\frac{2\rho g S}{m}} = \sqrt{\frac{2g}{L}},\quad T = 2\pi\sqrt{\frac{L}{2g}}$$
+<p>其中 $L = m/(\rho S)$ 为水柱总长度。</p>
+<p><strong>记忆技巧</strong>：U形管振荡周期 $T = 2\pi\sqrt{L/(2g)}$，类似单摆公式但分母多了个 $2$（因为两侧液柱都提供回复力）。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（PPT：弯管振荡）</strong>：等截面细弯管中水柱长度为 $L$，弯管两臂与竖直方向分别成角 $\alpha$ 和 $\beta$，求水的振荡圆频率。
+<div class="sol"><div class="st">解</div>
+<p>设右臂液面偏离平衡位置 $H_1$（沿管方向），左臂 $H_2$。不可压缩条件：$H_1 = H_2$。</p>
+<p>右侧液面竖直升高 $H_1\sin\beta$，左侧竖直降低 $H_2\sin\alpha$。</p>
+<p>回复力（沿管方向合力）为高出部分液体在两臂的重力分量之和：</p>
+$$F = -\rho g S(\sin\alpha + \sin\beta)H$$
+<p>总质量 $m = \rho S L$：</p>
+$$\omega = \sqrt{\frac{g(\sin\alpha + \sin\beta)}{L}}$$
+<p>当 $\alpha = \beta = 90°$（标准竖直U管），$\omega = \sqrt{2g/L}$，与上面结果一致。</p>
+</div></div>
+
+<h3>弹簧-滑轮系统</h3>
+<div class="ex">
+<strong>例（PPT练习）</strong>：轻弹簧（劲度系数 $k$）一端固定在墙上，另一端连接质量为 $m$ 的物体，绳绕过转动惯量为 $J$、半径为 $R$ 的定滑轮。求系统振动频率。
+<div class="sol"><div class="st">解</div>
+<p>设物体下移 $x$（从平衡位置算起），弹簧伸长 $x$，滑轮转角 $\theta = x/R$。</p>
+<p>物体：$m\ddot{x} = mg - T_1$</p>
+<p>滑轮：$(T_1 - T_2)R = J\beta = J\ddot{x}/R$</p>
+<p>弹簧：$T_2 = k(l+x)$</p>
+<p>平衡条件：$mg = k\cdot l$</p>
+<p>消去各力得：</p>
+$$(m + J/R^2)\ddot{x} = -kx$$
+$$\omega = \sqrt{\frac{k}{m+J/R^2}}$$
+<p><strong>物理意义</strong>：滑轮的转动惯量等效地增加了系统的惯性，等效质量为 $m_{eff} = m + J/R^2$。</p>
+</div></div>
+
+<h3>弹簧串联与并联</h3>
+<div class="fb">
+<div class="t">弹簧组合的等效劲度系数</div>
+<table>
+<tr><th>连接方式</th><th>等效劲度系数</th><th>角频率</th></tr>
+<tr><td><strong>并联</strong>（两弹簧同时受力，伸长量相同）</td><td>$k_{eq} = k_1 + k_2$</td><td>$\omega = \sqrt{(k_1+k_2)/m}$</td></tr>
+<tr><td><strong>串联</strong>（两弹簧首尾相连，受力相同）</td><td>$\dfrac{1}{k_{eq}} = \dfrac{1}{k_1}+\dfrac{1}{k_2}$</td><td>$\omega = \sqrt{k_1k_2/[m(k_1+k_2)]}$</td></tr>
+</table>
+<p><strong>判断方法</strong>：如果两弹簧<strong>伸长量相同</strong>（都等于物体位移），就是并联；如果两弹簧<strong>受力相同</strong>（力依次传递），就是串联。</p>
+<p>物体两侧各有一弹簧（如 $k_1$-$m$-$k_2$）：两弹簧变形方向相反但力方向相同，等效为<strong>并联</strong>：$k_{eq} = k_1+k_2$。</p>
+</div>
+
+<h3>有质量弹簧的振动</h3>
+<div class="ex">
+<strong>例（PPT补充例）</strong>：劲度系数为 $k$、原长为 $l$、质量为 $m$ 的均匀弹簧，一端固定，另一端连接质量为 $M$ 的物体，在光滑水平面上振动。求角频率。
+<div class="sol"><div class="st">解</div>
+<p>弹簧均匀变形，距固定端 $s$ 处的位移为 $sx/l$（$x$ 为自由端位移），速度为 $s\dot{x}/l$。</p>
+<p>弹簧的动能：</p>
+$$E_{k,弹} = \int_0^l \frac{1}{2}\frac{m}{l}\!\left(\frac{s\dot{x}}{l}\right)^2 ds = \frac{1}{2}\frac{m}{3}\dot{x}^2$$
+<p>总动能：$E_k = \frac{1}{2}(M+m/3)\dot{x}^2$，势能：$E_p = \frac{1}{2}kx^2$</p>
+<p>由机械能守恒，对时间求导令其为零：</p>
+$$\boxed{\omega = \sqrt{\frac{k}{M+m/3}}}$$
+<p><strong>结论</strong>：有质量弹簧等效于在物体质量上加上弹簧质量的 $\frac{1}{3}$。</p>
+</div></div>
+</div>
+
+<h2 id="s23">7.23 PPT补充：非惯性系中的单摆</h2>
+<div class="card">
+<div class="fb">
+<div class="t">等效重力场方法（PPT重点）</div>
+<p>在非惯性系中，引入惯性力 $\vv{F}_i = -m\vv{a}_0$（$\vv{a}_0$ 为参照系加速度），将重力与惯性力的合力视为<strong>等效重力</strong>：</p>
+$$\vv{g}_{eff} = \vv{g} - \vv{a}_0$$
+<p>单摆周期变为：</p>
+$$T = 2\pi\sqrt{\frac{l}{|\vv{g}_{eff}|}} = 2\pi\sqrt{\frac{l}{|\vv{g}-\vv{a}_0|}}$$
+</div>
+
+<div class="ex">
+<strong>例1（加速上升的电梯）</strong>：单摆悬于以 $a_0$ 匀加速上升的电梯内。
+<div class="sol"><div class="st">解</div>
+<p>$\vv{g}_{eff} = g + a_0$（向下），$T = 2\pi\sqrt{l/(g+a_0)}$，周期<strong>变短</strong>（摆得更快）。</p>
+</div></div>
+
+<div class="ex">
+<strong>例2（减速下降的电梯，$a_0 < g$）</strong>：单摆悬于以 $a_0$ 匀加速下降的电梯内。
+<div class="sol"><div class="st">解</div>
+<p>$g_{eff} = g - a_0$，$T = 2\pi\sqrt{l/(g-a_0)}$，周期<strong>变长</strong>。</p>
+<p>特别地，当 $a_0 = g$（自由下落/失重）时，$g_{eff} = 0$，$T \to \infty$——单摆<strong>不振动</strong>。</p>
+</div></div>
+
+<div class="ex">
+<strong>例3（水平加速的车厢）</strong>：单摆悬于以 $a_0$ 水平加速的车厢内。
+<div class="sol"><div class="st">解</div>
+<p>$\vv{g}_{eff} = \vv{g} - \vv{a}_0$，竖直分量 $g$，水平分量 $a_0$：</p>
+$$g_{eff} = \sqrt{g^2 + a_0^2},\quad T = 2\pi\sqrt{\frac{l}{\sqrt{g^2+a_0^2}}}$$
+<p>单摆平衡位置不再是竖直的，而是向后偏离一个角度 $\alpha = \arctan(a_0/g)$。</p>
+</div></div>
+
+<div class="ex">
+<strong>例4（PPT练习：沿倾角 $\alpha$ 斜面加速）</strong>：单摆悬于以 $a_0$ 沿倾角为 $\alpha$ 的斜面向上运动的车厢内。
+<div class="sol"><div class="st">解</div>
+<p>$\vv{a}_0$ 沿斜面向上，分解为水平和竖直分量：</p>
+<p>$a_{0,水平} = a_0\cos\alpha$，$a_{0,竖直} = a_0\sin\alpha$</p>
+<p>等效重力分量：水平 $a_0\cos\alpha$（惯性力向后），竖直 $g + a_0\sin\alpha$（向下）</p>
+$$g_{eff} = \sqrt{(a_0\cos\alpha)^2 + (g+a_0\sin\alpha)^2} = \sqrt{a_0^2 + g^2 + 2ga_0\sin\alpha}$$
+$$T = 2\pi\sqrt{\frac{l}{\sqrt{a_0^2+g^2+2ga_0\sin\alpha}}}$$
+</div></div>
+
+<div class="tip"><strong>解题口诀</strong>：不管参照系怎么加速，都用 $\vv{g}_{eff} = \vv{g} - \vv{a}_0$ 求等效重力，然后代入 $T = 2\pi\sqrt{l/g_{eff}}$ 即可。先画矢量图确定 $\vv{g}_{eff}$ 的方向和大小。</div>
+</div>
+
+<h2 id="s24">7.24 PPT补充：复摆进阶与轻杆摆</h2>
+<div class="card">
+
+<div class="ex">
+<strong>例（PPT：凹球面上的小振动）</strong>：小球在半径为 $R$ 的光滑凹球面底部做小幅振动，求周期。
+<div class="sol"><div class="st">解</div>
+<p>设偏角 $\theta$ 很小，切向运动方程：$mR\ddot{\theta} = -mg\sin\theta \approx -mg\theta$</p>
+$$\ddot{\theta} + \frac{g}{R}\theta = 0 \quad \Rightarrow \quad \omega = \sqrt{g/R},\quad T = 2\pi\sqrt{R/g}$$
+<p>形式上与单摆相同，$R$ 取代了摆长 $l$。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（PPT：轻杆摆+弹簧）</strong>：轻杆长 $L$，下端挂质量 $m$ 的小球，杆竖直时弹簧（劲度系数 $k$）无伸长。当摆角很小时，求周期。
+<div class="sol"><div class="st">解</div>
+<p>摆角 $\theta$ 很小时，弹簧伸长 $\approx L\theta$，弹力 $f = kL\theta$，方向近似为切向。</p>
+<p>切向方程：$mL\ddot{\theta} = -(mg + kL)\theta$</p>
+$$\omega = \sqrt{\frac{mg+kL}{mL}} = \sqrt{\frac{g}{L}+\frac{k}{m}},\quad T = 2\pi\sqrt{\frac{mL}{mg+kL}}$$
+<p><strong>讨论</strong>：当 $k=0$ 时退化为单摆 $T=2\pi\sqrt{L/g}$。弹簧提供额外的回复力矩，使频率增大、周期减小。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（PPT练习：均质杆+弹簧+小球复摆）</strong>：均质杆长 $L$、质量 $M$，上端可绕水平轴转动。弹簧（$k$）连接在某处，小球质量 $m$ 在下端。求微振动周期。
+<div class="sol"><div class="st">解思路</div>
+<p>用刚体转动定律 $J\ddot{\theta} = M_{合}$：</p>
+<ol>
+<li>转动惯量 $J = \frac{1}{3}ML^2 + mL^2$</li>
+<li>重力矩 $M_g = -(Mg\frac{L}{2} + mgL)\sin\theta \approx -(Mg\frac{L}{2}+mgL)\theta$</li>
+<li>弹力矩 $M_e = -kl^2\theta$（$l$ 为弹簧连接点到轴的距离）</li>
+<li>合力矩 $M_{合} = -\left(\frac{MgL}{2}+mgL+kl^2\right)\theta$</li>
+</ol>
+$$\omega = \sqrt{\frac{MgL/2+mgL+kl^2}{\frac{1}{3}ML^2+mL^2}}$$
+</div></div>
+
+<div class="ex">
+<strong>例（PPT练习：挖孔圆盘复摆）</strong>：半径为 $R$ 的均质圆盘上挖出一个半径 $R/2$ 的圆孔（孔的边缘与盘的边缘相切），剩余部分质量为 $m$，以过盘心 $O$ 并与盘面垂直的轴做微振动。求角频率。
+<div class="sol"><div class="st">解思路</div>
+<p>利用"整体 = 剩余 + 挖去"的方法：</p>
+<ul>
+<li>剩余部分质心到轴的距离 $r_c$：由质心公式求出</li>
+<li>剩余部分对轴 $O$ 的转动惯量 $J = J_{总} - J_{孔}$（平行轴定理）</li>
+<li>$\omega = \sqrt{mgr_c/J}$</li>
+</ul>
+<p>PPT给出结果：$\omega = \sqrt{g/R}$（具体数值取决于挖孔位置和大小）。</p>
+</div></div>
+
+<div class="fb">
+<div class="t">碰撞引起的振动（PPT典型题型）</div>
+<p>物体碰撞后粘合在振动系统上，或子弹嵌入摆中：</p>
+<ol>
+<li><strong>碰撞阶段</strong>：用动量守恒（或角动量守恒）求碰后速度 $v_0$</li>
+<li><strong>振动阶段</strong>：以新的平衡位置为原点，碰后状态作为初始条件
+<ul>
+<li>初位置 $x_0$：碰撞位置相对于<strong>新平衡位置</strong>的偏移</li>
+<li>初速度 $v_0$：碰后瞬间的速度</li>
+</ul></li>
+<li>求振幅 $A = \sqrt{x_0^2+(v_0/\omega)^2}$ 和初相</li>
+</ol>
+</div>
+
+<div class="ex">
+<strong>例（PPT例6-3）</strong>：质量 $m$ 的木板在弹簧（$k$）上，弹簧压缩 $l_0$（$kl_0 = mg$）。相同质量的泥块从高 $h = l_0$ 处自由下落，完全非弹性碰撞后振动方程？
+<div class="sol"><div class="st">解</div>
+<p>泥块落到板上时速度：$v = \sqrt{2gl_0}$</p>
+<p>碰后（动量守恒）：$v_0 = v/2 = \frac{1}{2}\sqrt{2gl_0}$</p>
+<p>新平衡位置：弹簧压缩 $2l_0$（$k\cdot 2l_0 = 2mg$），在原平衡位置下方 $l_0$ 处。</p>
+<p>新角频率：$\omega = \sqrt{k/(2m)} = \sqrt{g/(2l_0)}$</p>
+<p>以新平衡位置为原点，碰撞点在其上方 $l_0$ 处：$x_0 = -l_0$</p>
+<p>初速度向下（正方向）：$v_0 = \frac{1}{2}\sqrt{2gl_0}$</p>
+$$A = \sqrt{l_0^2 + v_0^2/\omega^2} = \sqrt{l_0^2 + l_0^2} = l_0\sqrt{2}$$
+<p>由旋转矢量图：$\varphi_0 = \frac{3\pi}{4}$</p>
+$$x = l_0\sqrt{2}\cos\!\left(\sqrt{\frac{g}{2l_0}}\,t + \frac{3\pi}{4}\right)$$
+</div></div>
+
+<div class="warn"><strong>碰撞+振动问题的常见陷阱</strong>：
+<ul>
+<li>碰后的平衡位置与碰前不同！——必须重新求新的平衡位置</li>
+<li>$\omega$ 要用碰后的总质量计算</li>
+<li>初位置 $x_0$ 是相对于<strong>新平衡位置</strong>的偏移，不是原点</li>
+<li>碰撞引起的初速度 $v_0$ 通过动量守恒（或角动量守恒）求得</li>
+</ul></div>
+
+</div>
+
+<h2 id="s25">7.25 PPT补充：能量法求角频率</h2>
+<div class="card">
+<div class="fb">
+<div class="t">能量法（与牛顿定律法等价的另一种方法）</div>
+<p>对于保守系统，机械能守恒：$E = E_k + E_p = \text{const}$</p>
+<p>对时间求导：$\frac{dE}{dt} = 0$</p>
+<p>将动能和势能分别用广义坐标 $x$ 及其导数 $\dot{x}$ 表示，求导后消去 $\dot{x}$（不为零），即得到 $\ddot{x} + \omega^2 x = 0$ 的形式。</p>
+<p><strong>优点</strong>：避免分析约束力（如绳子张力、滑轮支持力等），特别适合有滑轮和绳子的复杂系统。</p>
+</div>
+
+<div class="ex">
+<strong>例（PPT能量法：弹簧-滑轮系统）</strong>：弹簧（$k$）连物体（$m$），绕过均质圆柱滑轮（质量 $M$，半径 $R$），$J = \frac{1}{2}MR^2$。求角频率。
+<div class="sol"><div class="st">解</div>
+<p>物体位移 $x$，速度 $v = \dot{x}$，滑轮角速度 $\Omega = v/R$。</p>
+<p>总动能：$E_k = \frac{1}{2}mv^2 + \frac{1}{2}J\Omega^2 = \frac{1}{2}mv^2 + \frac{1}{4}Mv^2 = \frac{1}{2}(m+M/2)v^2$</p>
+<p>势能（弹簧，以平衡位置为零）：$E_p = \frac{1}{2}kx^2$</p>
+<p>机械能守恒对 $t$ 求导：</p>
+$$(m+M/2)v\dot{v} + kxv = 0$$
+<p>$v\neq 0$ 消去，得 $(m+M/2)\ddot{x} + kx = 0$：</p>
+$$\omega = \sqrt{\frac{k}{m+M/2}}$$
+</div></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：<br>
 振动：7-2, 7-7, 7-11, 7-14, 7-16, 7-18, 7-22, 7-24</div>
 

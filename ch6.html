@@ -631,6 +631,124 @@ $$\Delta t_{飞船} = \frac{\Delta t_{站}}{\gamma} = \frac{2.083}{5/3} = 1.25\,
 </ul></div>
 </div>
 
+<h2 id="s17">6.17 PPT补充例题精选</h2>
+<div class="card">
+
+<h3>Lorentz变换综合应用</h3>
+
+<div class="ex">
+<strong>例（PPT："谁先动手"——因果关系与时序）</strong>：在一节长为 $100\,\text{m}$ 的车厢里，A在车厢尾，B在车厢头。火车以 $0.6c$ 驶过站台时，站台上的人先看到A向B开枪，过了 $0.125\,\mu\text{s}$ 后B向A开枪。问：在车上的乘客看来，是谁先开枪？两人开枪的时间差为多少？
+<div class="sol"><div class="st">解</div>
+<p>地面系 $S$：$\Delta x = x_2 - x_1 = 100\,\text{m}$，$\Delta t = t_2 - t_1 = 0.125\times10^{-6}\,\text{s}$（B比A晚 $0.125\,\mu\text{s}$）</p>
+<p>火车系 $S'$：用Lorentz变换</p>
+$$\Delta t' = \gamma\!\left(\Delta t - \frac{u\,\Delta x}{c^2}\right)$$
+<p>$\gamma = 1/\sqrt{1-0.36} = 1.25$</p>
+$$\Delta t' = 1.25\times\!\left(0.125\times10^{-6} - \frac{0.6c\times100}{c^2}\right) = 1.25\times\!\left(0.125\times10^{-6} - \frac{0.6\times100}{3\times10^8}\right)$$
+$$= 1.25\times(0.125\times10^{-6} - 0.2\times10^{-6}) = 1.25\times(-0.075\times10^{-6}) \approx -0.1\,\mu\text{s}$$
+<p>$\Delta t' < 0$，说明在车上看来 <strong>B先开枪</strong>，比A早约 $0.1\,\mu\text{s}$。</p>
+<p><strong>物理讨论</strong>：这两个事件（A开枪、B开枪）之间的时空间隔为类空的（$|\Delta x| > c|\Delta t|$），因此它们之间<strong>没有因果关系</strong>，不同参考系中时间顺序可以不同，这并不矛盾。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（PPT：匀速圆周运动的Lorentz变换）</strong>：一个质点在 $S'$ 系中做匀速圆周运动，轨道方程为 $x'^2 + y'^2 = a^2$, $z'=0$。证明：在 $S$ 系中观测者测得该质点做椭圆运动，椭圆中心以速度 $u$ 移动。
+<div class="sol"><div class="st">解</div>
+<p>设 $S'$ 相对 $S$ 以速度 $u$ 沿 $x$ 轴正向运动。由Lorentz逆变换：</p>
+$$x' = \gamma(x - ut), \quad y' = y, \quad z' = z$$
+<p>代入 $x'^2 + y'^2 = a^2$：</p>
+$$\gamma^2(x - ut)^2 + y^2 = a^2$$
+$$\frac{(x - ut)^2}{a^2/\gamma^2} + \frac{y^2}{a^2} = 1$$
+<p>这是一个以 $(ut, 0)$ 为中心的<strong>椭圆</strong>，半长轴 $a$（沿 $y$），半短轴 $a/\gamma = a\sqrt{1-u^2/c^2}$（沿 $x$）。</p>
+<p>椭圆中心以速度 $u$ 沿 $x$ 方向移动。这就是长度收缩的几何表现：运动方向上的尺寸缩短了 $\gamma$ 倍。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（PPT：不能乱用动长收缩和动钟变慢公式！）</strong>：地面上跑道长 $l_0=100\,\text{m}$，运动员用 $t_0=10\,\text{s}$ 跑完。从以 $u=0.98c$ 沿跑道飞行的飞船上看，运动员跑过的距离和所用时间各为多少？
+<div class="sol"><div class="st">解</div>
+<p><strong>错误解法</strong>（直接用长度收缩和时间膨胀）：</p>
+<p>跑道收缩：$l = l_0\sqrt{1-u^2/c^2}$，时间膨胀：$t = t_0/\sqrt{1-u^2/c^2}$？ <strong>不对！</strong></p>
+<p>运动员起跑和到终点是<strong>不同时不同地</strong>的两个事件，既不满足长度收缩的条件（需要同时测量两端），也不满足时间膨胀的条件（需要同地点发生）。</p>
+
+<p><strong>正确解法</strong>（必须用完整的Lorentz变换）：</p>
+<p>地面系 $S$：$\Delta x = l_0 = 100\,\text{m}$，$\Delta t = t_0 = 10\,\text{s}$</p>
+<p>飞船系 $S'$（$\gamma \approx 5.025$）：</p>
+$$\Delta x' = \gamma(\Delta x - u\,\Delta t) = 5.025\times(100 - 0.98\times3\times10^8\times10) \approx -1.47\times10^{10}\,\text{m}$$
+$$\Delta t' = \gamma\!\left(\Delta t - \frac{u\,\Delta x}{c^2}\right) = 5.025\times\!\left(10 - \frac{0.98c\times100}{c^2}\right) \approx 50.25\,\text{s}$$
+<p>跑过的距离巨大（因为在飞船看来，运动员随地面一起高速运动），时间也不是简单的膨胀关系。</p>
+</div></div>
+
+<div class="warn"><strong>PPT重要警告</strong>：
+<ul>
+<li><strong>洛伦兹变换是普遍公式</strong>，对任意两个惯性系测量相同事件的时空坐标和时空间隔都适用</li>
+<li>时间膨胀和长度收缩公式是特殊情形，有严格的前提条件：
+<ul>
+<li>固有时间：必须是<strong>同一地点</strong>先后发生的两事件的时间间隔</li>
+<li>运动长度：必须是运动参照系中<strong>同一时刻</strong>测得的两端点坐标之差</li>
+</ul></li>
+<li>对于<strong>不同时不同地</strong>的两个事件，只能用完整的Lorentz变换</li>
+</ul></div>
+
+<div class="ex">
+<strong>例（PPT：星体闪光周期）</strong>：远方一星体以 $0.8c$ 远离地球运动，地球上接收到它辐射出的两次闪光之间的时间间隔为5昼夜。在该星体上测得的闪光周期为多少？
+<div class="sol"><div class="st">解</div>
+<p>注意：地球上接收到的时间间隔 $T_{接收}$ 不等于地球系中测得的发射间隔 $\Delta t$！因为星体在远离，后一个光脉冲要比前一个多走一段距离。</p>
+<p>星体系中两次闪光发生在同一地点，时间间隔为固有时间 $\tau_0$。</p>
+<p>地球系中闪光间隔 $\Delta t = \gamma\tau_0$。在此期间星体远离了 $u\,\Delta t$，第二个光脉冲还要多走 $u\,\Delta t$ 的距离。</p>
+$$T_{接收} = \Delta t + \frac{u\,\Delta t}{c} = \Delta t\!\left(1+\frac{u}{c}\right) = \gamma\tau_0\!\left(1+\frac{u}{c}\right)$$
+$$\tau_0 = \frac{T_{接收}}{\gamma(1+u/c)} = T_{接收}\sqrt{\frac{1-u/c}{1+u/c}} = 5\times\sqrt{\frac{0.2}{1.8}} = 5\times\frac{1}{3} = \frac{5}{3}\,\text{昼夜}$$
+<p>这就是<strong>相对论多普勒效应</strong>（红移）的体现。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（PPT：火箭测速）</strong>：原长 $600\,\text{m}$ 的火箭垂直飞离地球达到匀速。从地面发射一光脉冲，在火箭尾部和头部的镜上反射，地面收到尾部反射光为 $200\,\text{s}$，收到头部反射光比尾部迟了 $\Delta T = 17.4\times10^{-6}\,\text{s}$。求火箭速度。
+<div class="sol"><div class="st">解</div>
+<p>在地面系中，火箭长度收缩为 $l = l_0\sqrt{1-u^2/c^2}$。</p>
+<p>光先到达尾部反射镜，剩余的光继续前进到达头部反射镜。在两次反射之间，光需要走过火箭长度加上火箭在此时间内运动的距离。</p>
+<p>设两次反射的时间差为 $\delta$，则 $c\delta = l + u\delta$，解得 $\delta = l/(c-u)$。</p>
+<p>地面收到两束反射光的时间差：</p>
+$$\Delta T = \frac{2l_0}{c}\cdot\frac{\sqrt{1-u^2/c^2}}{1-u/c} \cdot \frac{1}{1+u/c} \cdot ...$$
+<p>经过详细计算（PPT用固有长度 $l_0 = 600\,\text{m}$ 和 $\Delta T$ 的关系），解得 $u = 0.9c$。</p>
+<p>验证：固有时间 $\delta_0 = l_0/c = 600/(3\times10^8) = 2\times10^{-6}\,\text{s}$。</p>
+</div></div>
+
+<h3>速度变换典型问题</h3>
+
+<div class="ex">
+<strong>例（PPT：火箭A和B的相对速度——含y方向分量）</strong>：火箭A以 $0.8c$ 沿 $y$ 轴正方向飞行，火箭B以 $0.6c$ 沿 $x$ 轴负方向飞行（均相对地球）。求A相对B的速度大小和方向。
+<div class="sol"><div class="st">解</div>
+<p>取地球为 $S$ 系，B为 $S'$ 系。$S'$ 相对 $S$ 的速度 $u = -0.6c$（沿 $x$ 轴负向）。</p>
+<p>A在 $S$ 系中：$v_x = 0$，$v_y = 0.8c$。</p>
+<p>A相对 $S'$（即相对B）的速度：</p>
+$$v_x' = \frac{v_x - u}{1 - uv_x/c^2} = \frac{0-(-0.6c)}{1-0} = 0.6c$$
+$$v_y' = \frac{v_y\sqrt{1-u^2/c^2}}{1-uv_x/c^2} = \frac{0.8c\times\sqrt{1-0.36}}{1} = 0.8c\times0.8 = 0.64c$$
+<p>A相对B的速度大小：</p>
+$$v' = \sqrt{v_x'^2+v_y'^2} = \sqrt{(0.6c)^2+(0.64c)^2} = c\sqrt{0.36+0.4096} = 0.88c$$
+<p>方向与 $x'$ 轴夹角：$\tan\theta' = v_y'/v_x' = 0.64/0.6 = 1.07$，$\theta' \approx 46.8°$。</p>
+<p><strong>注意</strong>：$v_y$ 分量在变换后也发生了变化（从 $0.8c$ 变为 $0.64c$），这是相对论速度变换的特点——<strong>垂直方向的速度分量也受影响</strong>（与经典力学不同）。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（PPT：两根相对运动的米尺）</strong>：A、B两根米尺相互平行，各以 $v=0.6c$ 的速度相背运动（方向平行于尺的长度方向）。求从任一尺上测得的另一尺的长度。
+<div class="sol"><div class="st">解</div>
+<p>取A尺为 $S$ 系，地面为 $S'$ 系（$S'$ 以 $u=0.6c$ 相对 $S$ 向右运动）。B尺在 $S'$ 中以 $v'_{Bx}=0.6c$ 向右运动。</p>
+<p>用速度变换求B相对A的速度：</p>
+$$v_{Bx} = \frac{v'_{Bx}+u}{1+uv'_{Bx}/c^2} = \frac{0.6c+0.6c}{1+0.36} = \frac{1.2c}{1.36} = 0.88c$$
+<p>然后用长度收缩公式：</p>
+$$l = l_0\sqrt{1-v_{Bx}^2/c^2} = 1\times\sqrt{1-0.88^2} = \sqrt{1-0.7744} = \sqrt{0.2256} \approx 0.47\,\text{m}$$
+<p><strong>关键</strong>：不能简单地认为速度是 $0.6c + 0.6c = 1.2c$！必须用相对论速度合成。</p>
+</div></div>
+
+<div class="fb">
+<div class="t">相对论解题步骤（PPT总结）</div>
+<ol>
+<li>建立两个惯性参考系 $S$ 和 $S'$（通常地面为 $S$）</li>
+<li>写下两个事件的时空坐标 $(x_1,t_1)$、$(x_2,t_2)$ 和 $(x_1',t_1')$、$(x_2',t_2')$</li>
+<li>写下补充条件（如同地点、同时刻等）</li>
+<li>利用Lorentz变换联系两个参考系的物理量</li>
+</ol>
+</div>
+
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 6-3, 6-4, 6-7, 6-10, 6-12, 6-13, 6-16, 6-19</div>
 
 <script src="toc.js"></script>

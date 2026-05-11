@@ -738,6 +738,203 @@ $$v_B = \sqrt{\frac{2GMr_1}{r_2(r_1+r_2)}},\quad \Delta v_2 = v_{圆2} - v_B = \
 </ul></div>
 </div>
 
+<h2 id="s23">4.23 多人依次跳车问题（PPT重点：多级火箭原理）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">问题模型</div>
+<p>质量为 $M$ 的平板车上站着 $n$ 个质量均为 $m$ 的人，车在光滑轨道上初始静止。每人相对于车以速度 $u$ 向后跳离。比较：(1) 所有人同时跳；(2) 逐个跳离后，车的最终速度。</p>
+</div>
+
+<div class="ex">
+<strong>例（同时跳 vs 依次跳）</strong>
+<div class="sol"><div class="st">解</div>
+<p><strong>(1) 同时跳离</strong>：设车速为 $v$，人相对地面速度 $(v-u)$：</p>
+$$0 = Mv + nm(v-u) \implies v = \frac{nmu}{M+nm}$$
+
+<p><strong>(2) 逐个跳离</strong>：第 $i$ 个人跳离时，车（连同剩余 $n-i$ 人）从 $v_{i-1}$ 变为 $v_i$：</p>
+$$[M+(n-i)m]v_{i-1} = m(v_i - u) + [M+(n-i)m]v_i$$
+$$v_i - v_{i-1} = \frac{mu}{M+(n-i)m}$$
+<p>将 $n$ 个等式相加：</p>
+$$v_n = \sum_{i=1}^{n}\frac{mu}{M+(n-i)m} = mu\sum_{k=0}^{n-1}\frac{1}{M+km}$$
+
+<p><strong>比较</strong>：因为 $\frac{1}{M+km} \geq \frac{1}{M+nm}$（对 $k<n$），所以</p>
+$$v_n = mu\sum_{k=0}^{n-1}\frac{1}{M+km} > \frac{nmu}{M+nm} = v_{同时}$$
+<p>即<strong>逐个跳离后车速更大</strong>！这正是<strong>多级火箭</strong>比单级火箭更高效的物理本质——逐级抛弃质量比一次性抛弃更有利。</p>
+</div></div>
+
+<div class="tip"><strong>物理理解</strong>：同时跳时，所有人都以 $(v-u)$ 的速度离开，他们"浪费"了彼此的动量。而依次跳时，后跳的人站在已经有速度的车上，相当于在更高的速度基础上加速，效率更高。</div>
+</div>
+
+<h2 id="s24">4.24 带摩擦的炮车反冲（PPT详解）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（有摩擦炮车）</strong>：炮车质量 $M$，炮弹质量 $m$，以仰角 $\theta$ 发射，炮弹相对于炮车的出口速度为 $u$。炮车与地面摩擦系数为 $\mu$，出膛时间为 $\tau$。求炮车反冲速度 $v$。
+<div class="sol"><div class="st">解</div>
+<p>以炮车和炮弹为系统，用动量定理（地面参考系）。</p>
+<p>水平方向：$Mv + m(v + u\cos\theta) = 0 + \bar{f}\tau$，但 $\bar{f} = \mu\bar{N}$。</p>
+<p>竖直方向分析得法向力：$\bar{N} = (M+m)g + mu\sin\theta/\tau$（考虑炮弹竖直方向的反冲）。</p>
+<p><strong>关键简化</strong>：由于出膛时间 $\tau$ 极短，含 $\tau$ 的项可以忽略：</p>
+$$v \approx \frac{mu(\cos\theta - \mu\sin\theta)}{M+m}$$
+<p>当 $\mu = 0$ 时退化为 $v = mu\cos\theta/(M+m)$（无摩擦情形的水平分量）。</p>
+</div></div>
+
+<div class="warn"><strong>要点</strong>：碰撞/发射类短时间过程中，普通力（重力、摩擦力）的冲量因 $\tau$ 极短通常可忽略，但若题目明确给出了 $\tau$ 或要求考虑，则需保留。</div>
+</div>
+
+<h2 id="s25">4.25 光滑半球上的滑块+半球运动（PPT经典综合题）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（可移动半球上的滑块——PPT例3-19）</strong>：光滑水平面上有质量 $m_0$、半径 $R$ 的光滑半球。质量 $m$ 的物块从半球顶端受微扰下滑。
+<p>(1) 求物块滑至角位置 $\theta$ 时相对半球的速率 $v'$；</p>
+<p>(2) 若脱离半球时 $\theta = 45°$，求 $m_0/m$。</p>
+<div class="sol"><div class="st">解</div>
+<p><strong>三个方程</strong>：设地面系中物块速度 $v$、半球速度 $v_0$。</p>
+<p>(a) 水平方向动量守恒：$m v_x + m_0 v_0 = 0$</p>
+<p>即 $m(v_0 + v'\cos\theta) + m_0 v_0 = 0$（相对半球的水平分量）</p>
+<p>(b) 机械能守恒：$\frac{1}{2}mv^2 + \frac{1}{2}m_0 v_0^2 = mgR(1-\cos\theta)$</p>
+<p>(c) 相对速度关系（余弦定理）：$v'^2 = v^2 + v_0^2 - 2vv_0\cos\alpha$</p>
+
+<p>联立求解得<strong>相对速率</strong>：</p>
+$$v'^2 = \frac{2(m+m_0)gR(1-\cos\theta)}{m_0 + m\sin^2\theta}$$
+
+<p><strong>(2) 脱离条件</strong>：在半球参考系中（非惯性系），脱离时法向支持力 $N=0$。</p>
+<p>脱离瞬间半球水平加速度为零（$N=0$ 意味着水平方向无接触力），故在半球系中物块做瞬时圆周运动：</p>
+$$mg\cos\theta = \frac{mv'^2}{R}$$
+<p>代入 $\theta=45°$ 并联立，解得 $m_0/m \approx 1.914$。</p>
+</div></div>
+
+<div class="tip"><strong>解题策略</strong>：此类"基座可动"问题的标准方法：水平动量守恒 + 机械能守恒 + 运动学约束（相对运动关系），是PPT和考试中的高频综合题型。</div>
+</div>
+
+<h2 id="s26">4.26 恢复系数测定与小球反弹总时间（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">恢复系数的实验测定</div>
+<p>将小球从高度 $H$ 自由落下，测得反弹高度 $h$，则：</p>
+$$e = \sqrt{\frac{h}{H}}$$
+<p>证明：碰前速度 $v_0 = \sqrt{2gH}$，碰后速度 $v_1 = \sqrt{2gh}$。地面视为质量无穷大（静止），则 $e = v_1/v_0 = \sqrt{h/H}$。</p>
+</div>
+
+<div class="ex">
+<strong>例（小球反弹至停止的总时间）</strong>：小球从高度 $H$ 自由下落，与地面恢复系数为 $e$。求从开始下落到小球停止弹跳的总时间。
+<div class="sol"><div class="st">解</div>
+<p>第一次下落时间：$t_0 = \sqrt{2H/g}$</p>
+<p>第一次反弹高度：$h_1 = e^2 H$，反弹到落地时间：$2\sqrt{2h_1/g} = 2e\sqrt{2H/g} = 2et_0$</p>
+<p>第 $n$ 次反弹高度：$h_n = e^{2n}H$，对应时间 $2e^n t_0$</p>
+<p>总时间：</p>
+$$t = t_0 + \sum_{n=1}^{\infty}2e^n t_0 = t_0\left(1 + \frac{2e}{1-e}\right) = t_0\cdot\frac{1+e}{1-e} = \sqrt{\frac{2H}{g}}\cdot\frac{1+e}{1-e}$$
+<p>虽然反弹无穷多次，但总时间是<strong>有限的</strong>——这是等比级数收敛的结果。</p>
+</div></div>
+</div>
+
+<h2 id="s27">4.27 箱内反复碰撞问题（PPT例3-20）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（物块在箱内反复碰撞）</strong>：光滑地面上质量为 $m$ 的箱子静止，箱内质量也为 $m$ 的物块以初速 $v$ 开始运动，与箱壁反复碰撞，恢复系数 $e=0.95$。求至少碰多少次后总动能损失超过 $40\%$？
+<div class="sol"><div class="st">解</div>
+<p>等质量正碰（恢复系数 $e$），每次碰撞后的相对速度变为碰前的 $e$ 倍。</p>
+<p>第 $i$ 次碰撞的相对速度：$v_{rel}^{(i)} = e^i \cdot v$</p>
+<p>第 $i$ 次碰撞的动能损失：$\Delta E_k^{(i)} = \frac{1}{4}m(1-e^2)(v_{rel}^{(i-1)})^2 = \frac{1}{4}mv^2(1-e^2)e^{2(i-1)}$</p>
+<p>$n$ 次碰撞的总动能损失：</p>
+$$\sum_{i=1}^n \Delta E_k^{(i)} = \frac{1}{4}mv^2(1-e^2)\sum_{i=0}^{n-1}e^{2i} = \frac{1}{4}mv^2(1-e^{2n})$$
+<p>初始动能 $E_0 = \frac{1}{2}mv^2$，要求损失超过 $40\%$：</p>
+$$\frac{1}{4}(1-e^{2n}) > 0.4 \times \frac{1}{2} \implies 1-e^{2n} > 0.8 \implies e^{2n} < 0.2$$
+$$2n\ln e < \ln 0.2 \implies n > \frac{\ln 0.2}{2\ln 0.95} \approx 15.7$$
+<p>故至少需要 $\boxed{16}$ 次碰撞。</p>
+</div></div>
+
+<div class="tip"><strong>方法总结</strong>：反复碰撞问题的关键是找到每次碰撞后相对速度的递推关系 $v_{rel}^{(i)} = e \cdot v_{rel}^{(i-1)}$，然后利用等比数列求和。</div>
+</div>
+
+<h2 id="s28">4.28 斜碰中恢复系数的方向分解（PPT重点）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">斜碰中恢复系数的正确使用</div>
+<p>恢复系数只作用于<strong>接触面法线方向</strong>的相对速度分量：</p>
+$$e = -\frac{v_{An}' - v_{Bn}'}{v_{An} - v_{Bn}}$$
+<p>其中下标 $n$ 表示沿法线方向的分量。<strong>切线方向</strong>速度分量（光滑面）保持不变。</p>
+</div>
+
+<div class="ex">
+<strong>例（小球斜碰光滑固定面）</strong>：小球以速率 $v$ 碰固定面，速度方向与法线成 $\alpha$ 角，恢复系数 $e$。求碰后速度方向与法线成 $\beta$ 角的关系。
+<div class="sol"><div class="st">解</div>
+<p>法线方向：$v_n = v\cos\alpha$，碰后 $v_n' = ev\cos\alpha$（反向）</p>
+<p>切线方向（光滑面不受力）：$v_t = v\sin\alpha$，碰后 $v_t' = v\sin\alpha$（不变）</p>
+$$\tan\beta = \frac{v_t'}{v_n'} = \frac{v\sin\alpha}{ev\cos\alpha} = \frac{\tan\alpha}{e}$$
+<p>当 $e=1$ 时 $\beta=\alpha$（弹性碰撞，入射角=反射角）；当 $e<1$ 时 $\beta>\alpha$（更偏离法线方向）。</p>
+</div></div>
+</div>
+
+<h2 id="s29">4.29 飞船穿越宇宙尘埃（PPT变质量综合题）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（宇宙飞船穿越尘埃）</strong>：宇宙中均匀分布着密度为 $\rho$ 的静止尘埃。质量为 $m_0$、截面积为 $S$ 的飞船以初速 $v_0$ 穿行（尘埃粘附在飞船上，完全非弹性碰撞）。求 $v(t)$。
+<div class="sol"><div class="st">解</div>
+<p>$\dd t$ 内飞船扫过的尘埃质量：$\dd m = \rho S v\,\dd t$</p>
+<p>动量守恒（尘埃初速为零）：$mv = (m+\dd m)(v+\dd v) + 0$</p>
+<p>简化：$m\,\dd v = -v\,\dd m$，即 $\frac{\dd v}{v} = -\frac{\dd m}{m}$</p>
+<p>飞船质量：$m = m_0 + \rho S \int_0^t v\,\dd t'$</p>
+<p>另一方法：由 $mv = m_0 v_0 = \text{const}$（因为水平无外力），得 $v = m_0 v_0/m$。</p>
+<p>又 $\dd m = \rho S v\,\dd t = \rho S \frac{m_0 v_0}{m}\dd t$，分离变量：$m\,\dd m = \rho S m_0 v_0\,\dd t$</p>
+$$m^2 = m_0^2 + 2\rho S m_0 v_0 t$$
+$$\boxed{v(t) = \frac{m_0 v_0}{\sqrt{m_0^2 + 2\rho S m_0 v_0 t}} = \frac{v_0}{\sqrt{1 + 2\rho S v_0 t/m_0}}}$$
+</div></div>
+
+<div class="tip"><strong>注意</strong>：此问题中 $mv = \text{const}$，因为尘埃初速为零，系统无外力。但若尘埃有初速，则不能直接用此简化。</div>
+</div>
+
+<h2 id="s30">4.30 锥面内小球的螺旋运动（PPT角动量守恒经典题）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（圆锥面内螺旋运动——PPT补充例）</strong>：半角为 $\alpha$ 的光滑圆锥面，小球在距顶角高 $h$ 处以初速 $v_0$ 水平射出做匀速圆周运动。(1) 求 $v_0$；(2) 若初速为 $v_1 = 2v_0$，求运动中的最大高度。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1)</strong> 匀速圆周运动：$N\sin\alpha = mg$，$N\cos\alpha = mv_0^2/(h\tan\alpha)$</p>
+<p>两式相除：$\tan\alpha = \frac{gh\tan\alpha}{v_0^2}$，解得 $v_0 = \sqrt{gh\tan^2\alpha}$。</p>
+
+<p><strong>(2)</strong> 当 $v_1 = 2v_0$ 时，小球做螺旋上升运动。</p>
+<p><strong>关键守恒律</strong>：</p>
+<ul>
+<li>合力矩方向始终在水平面内（法向力过轴，重力竖直）→ 角动量沿锥轴分量 $L_z$ 守恒</li>
+<li>法向力不做功 → 机械能守恒</li>
+</ul>
+<p>设最大高度 $x$ 处速度为 $v_2$（水平方向，因为竖直分量为零）。</p>
+<p>$L_z$ 守恒：$mv_1(h\tan\alpha) = mv_2(x\tan\alpha)$，得 $v_2 = v_1 h/x$</p>
+<p>机械能守恒：$\frac{1}{2}mv_1^2 + mgh = \frac{1}{2}mv_2^2 + mgx$</p>
+<p>代入 $v_1 = 2v_0$，$v_0^2 = gh\tan^2\alpha$，联立解得 $x = 3h$（取物理上有意义的解）。</p>
+</div></div>
+
+<div class="warn"><strong>解题关键</strong>：在圆锥面/碗面等约束面上运动的问题中，找到角动量沿对称轴方向的分量守恒（因为力矩在水平面内）是核心步骤。这与椭圆轨道问题中角动量守恒的应用本质相同。</div>
+</div>
+
+<h2 id="s31">4.31 绳绷紧过程中的角动量守恒（PPT高频题型）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">为什么绳绷紧用角动量而非动量守恒？</div>
+<p>当绳经过定滑轮连接两个物体时，绳绷紧瞬间，<strong>定滑轮对绳有巨大的力</strong>（与碰撞力同量级），这是系统的外力，所以<strong>线动量不守恒</strong>。</p>
+<p>但该力通过滑轮轴，对轴的力矩为零，因此<strong>对滑轮轴的角动量守恒</strong>。</p>
+</div>
+
+<div class="ex">
+<strong>例（经典绳绷紧问题）</strong>：轻绳绕过轻定滑轮（半径 $R$），连接 $m$ 和 $M$（在平台上），$m$ 自由下落 $h$ 后绳绷紧。求绳子绷紧后瞬间的共同速度。
+<div class="sol"><div class="st">解</div>
+<p>$m$ 自由下落 $h$ 后速度：$v_0 = \sqrt{2gh}$</p>
+<p>绳绷紧过程对滑轮轴角动量守恒：</p>
+$$mv_0 R = (m+M)vR$$
+$$v = \frac{mv_0}{m+M} = \frac{m\sqrt{2gh}}{m+M}$$
+</div></div>
+
+<div class="ex">
+<strong>例（三物体系统——PPT重点）</strong>：A、B、C三个质量均为 $M$ 的物体，B、C靠在一起在光滑桌面上，用长 $l$ 的松弛细绳连接。B用绳经桌边定滑轮与A连接。求：(1) A、B起动后C开始运动的时间；(2) C开始运动时的速度。
+<div class="sol"><div class="st">解</div>
+<p><strong>(1)</strong> 隔离A和B：$Mg - T = Ma$，$T = Ma$，解得 $a = g/2$。</p>
+<p>B移动 $l$（绳刚拉紧C）的时间：$l = \frac{1}{2}at^2$，$t = \sqrt{4l/g} = 2\sqrt{l/g}$</p>
+<p><strong>(2)</strong> 绳拉紧瞬间A和B的速度：$v_1 = at = g\sqrt{l/g} = \sqrt{gl}$</p>
+<p>绳拉紧过程中，A、B、C系统对滑轮轴的角动量守恒（A的重力冲量可忽略）：</p>
+$$(M_A + M_B)v_1 R = (M_A + M_B + M_C)v_2 R$$
+$$v_2 = \frac{2v_1}{3} = \frac{2}{3}\sqrt{gl}$$
+</div></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 3-3, 3-4, 3-7, 3-10, 3-13, 3-19, 3-23, 3-27, 3-28</div>
 
 <script src="toc.js"></script>

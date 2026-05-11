@@ -918,6 +918,106 @@ $$\Delta S = -\frac{Q_1}{T_1} + \frac{Q_2}{T_2} = -\frac{1000}{600} + \frac{400}
 </ul></div>
 </div>
 
+<h2 id="s23">9.23 PPT补充例题精选（热力学综合）</h2>
+<div class="card">
+
+<div class="ex">
+<strong>例1：绝热容器突然停止——机械能转内能</strong>
+<p>绝热容器内贮有质量为 $m$、摩尔质量为 $M$ 的理想气体（自由度 $i$），容器以速度 $u$ 作定向运动。使容器突然停止，求分子速度平方平均值的增量 $\Delta\overline{v^2}$。</p>
+<div class="sol"><div class="st">解</div>
+<p>定向运动动能全部转化为气体内能：</p>
+$$\Delta E = \frac{1}{2}mu^2$$
+<p>由内能与温度关系 $E = \frac{i}{2}\frac{m}{M}RT$，内能增量对应温度升高 $\Delta T$：</p>
+$$\frac{1}{2}mu^2 = \frac{i}{2}\frac{m}{M}R\Delta T$$
+<p>又 $\frac{1}{2}m_0\overline{v^2} = \frac{i}{2}k_BT$（能量均分，$i$ 个平方项中 3 个平动），注意对单原子分子 $\frac{1}{2}m_0\overline{v^2} = \frac{3}{2}k_BT$，所以：</p>
+$$\frac{1}{2}m_0\Delta\overline{v^2} = \frac{3}{2}k_B\Delta T \implies \Delta\overline{v^2} = \frac{3k_B\Delta T}{m_0} = \frac{3R\Delta T}{M}$$
+<p>代入 $\Delta T = \frac{Mu^2}{iR}$：</p>
+$$\boxed{\Delta\overline{v^2} = \frac{3u^2}{i}}$$
+<p>单原子分子 $i=3$：$\Delta\overline{v^2}=u^2$；双原子分子 $i=5$：$\Delta\overline{v^2}=\frac{3}{5}u^2$。</p>
+</div></div>
+
+<div class="ex">
+<strong>例2：两种气体绝热混合</strong>
+<p>绝热容器体积为 $2V_0$，由绝热板分为相等两半。A 半有 1 mol 单原子分子气体，B 半有 2 mol 双原子分子气体，两半压强均为 $p_0$。抽去隔板后，求混合平衡温度 $T$ 和压强 $p$。</p>
+<div class="sol"><div class="st">解</div>
+<p>混合前各自初温（由 $pV=\nu RT$）：$T_A = p_0V_0/R$，$T_B = p_0V_0/(2R)$。</p>
+<p>混合前总内能：</p>
+$$E_A = \frac{3}{2}RT_A = \frac{3}{2}p_0V_0,\quad E_B = 2\times\frac{5}{2}RT_B = \frac{5}{2}p_0V_0$$
+$$E_{total} = 4p_0V_0$$
+<p>混合后内能不变（绝热、刚性容器无功）：</p>
+$$E_{total} = \left(1\times\frac{3}{2} + 2\times\frac{5}{2}\right)RT = \frac{13}{2}RT$$
+$$T = \frac{8p_0V_0}{13R}$$
+<p>混合后压强：$p = \frac{(\nu_A+\nu_B)RT}{2V_0} = \frac{3RT}{2V_0} = \frac{12p_0}{13}$。</p>
+</div></div>
+
+<div class="ex">
+<strong>例3：导热活塞分隔两种气体的平衡温度</strong>
+<p>刚性绝热容器中有无摩擦的导热活塞，左边 1 mol 氖气（$i=3$）温度 $T_1$，右边 1 mol 氧气（$i=5$）温度 $T_2$。求平衡温度 $T$。</p>
+<div class="sol"><div class="st">解</div>
+<p>导热活塞→力学平衡（两边压强相等）+ 热平衡（温度相同）。整体绝热且活塞无摩擦 → 系统对外不做功。</p>
+<p>由 $\Delta E_{total}=0$：</p>
+$$\frac{3}{2}R(T-T_1) + \frac{5}{2}R(T-T_2) = 0$$
+$$\boxed{T = \frac{3T_1 + 5T_2}{8}}$$
+</div></div>
+
+<div class="ex">
+<strong>例4：证明 p-V 图上两绝热线不相交</strong>
+<p>试证明在 $p$-$V$ 图上，两条绝热线不可能相交。</p>
+<div class="sol"><div class="st">证明（反证法）</div>
+<p>假设两条绝热线交于点 A。过 A 作一条等温线，与两绝热线分别交于 B、C。</p>
+<p>沿循环 A→B（绝热）→B→C（等温）→C→A（绝热）构成一个循环。其中：</p>
+<ul>
+<li>两段绝热过程 $Q=0$</li>
+<li>等温过程从单一热源吸热 $Q$</li>
+</ul>
+<p>整个循环的净效果：从单一热源吸热，全部转化为功（循环回到原态，$\Delta E=0$），无其他变化。</p>
+<p>这违反热力学第二定律（开尔文表述），故假设不成立。<strong>两条绝热线不相交。</strong></p>
+</div></div>
+
+<div class="ex">
+<strong>例5：核电厂效率计算</strong>
+<p>核电厂热功率 1590 MW，输电功率 540 MW。水蒸气温度 556 K，冷凝器温度 313 K。求理想效率和实际效率。</p>
+<div class="sol"><div class="st">解</div>
+<p><strong>理想（Carnot）效率</strong>：</p>
+$$\eta_C = 1 - \frac{T_2}{T_1} = 1 - \frac{313}{556} = 43.7\%$$
+<p><strong>实际效率</strong>：</p>
+$$\eta = \frac{W}{Q_1} = \frac{540}{1590} = 34.0\%$$
+<p>实际效率小于 Carnot 效率，符合卡诺定理。冷凝器需要带走的热量：</p>
+$$Q_2 = Q_1 - W = 1590 - 540 = 1050\;\text{MW}$$
+</div></div>
+
+<div class="ex">
+<strong>例6：有限热源的最大输出功</strong>
+<p>物体热容量 $C$（常数），初温 $T_0$，环境恒温 $T'$（$T' < T_0$）。可逆热机工作于物体与环境之间，直到物体降温至 $T'$，求最大输出功。</p>
+<div class="sol"><div class="st">解</div>
+<p>设某时刻物体温度为 $T$，热机从物体吸热 $\delta Q_1 = -C\dd T$（物体降温，$\dd T < 0$），Carnot 效率 $\eta = 1 - T'/T$。</p>
+<p>微元做功：</p>
+$$\dd W = \eta\,\delta Q_1 = \left(1 - \frac{T'}{T}\right)(-C\dd T)$$
+<p>从 $T_0$ 积分到 $T'$：</p>
+$$W = \int_{T_0}^{T'}\left(1 - \frac{T'}{T}\right)(-C)\dd T = C\int_{T'}^{T_0}\left(1 - \frac{T'}{T}\right)\dd T$$
+$$= C\left[(T_0 - T') - T'\ln\frac{T_0}{T'}\right]$$
+$$\boxed{W_{max} = C\left(T_0 - T' - T'\ln\frac{T_0}{T'}\right)}$$
+</div></div>
+
+<div class="ex">
+<strong>例7：用熵增原理证明热机不可能实现</strong>
+<p>某热机从 $T_1=440\;\text{K}$ 吸热 1000 kJ，向 $T_2=280\;\text{K}$ 放热 568 kJ，输出功 432 kJ。证明此热机不可能制成。</p>
+<div class="sol"><div class="st">证明</div>
+<p>取热机 + 热源 + 冷源为孤立系统，一个循环中热机熵不变。</p>
+$$\Delta S_{热源} = -\frac{1000}{440} = -2.273\;\text{kJ/K}$$
+$$\Delta S_{冷源} = +\frac{568}{280} = +2.029\;\text{kJ/K}$$
+$$\Delta S_{iso} = -2.273 + 2.029 = -0.244\;\text{kJ/K} < 0$$
+<p>总熵减少，违反熵增原理，故该热机<strong>不可能</strong>实现。</p>
+<p>验证：设计效率 $\eta = 432/1000 = 43.2\%$，而 Carnot 效率 $= 1 - 280/440 = 36.4\%$。效率超过 Carnot 极限。</p>
+</div></div>
+
+<div class="tip"><strong>本节要点</strong>：
+<br>1. 绝热容器中的非准静态过程（突然停止、自由混合）：用 $\Delta E_{total}=0$（无功无热）
+<br>2. 两绝热线不相交：经典反证法题，用热二定律
+<br>3. 有限热源做功：Carnot 效率随温度变化，需要积分
+<br>4. 判断热机可行性：用 $\Delta S_{iso}\geq 0$ 或 $\eta\leq\eta_C$ 均可</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 9-4, 9-6, 9-7, 9-9, 9-13, 9-15, 9-17, 9-18</div>
 
 <script src="toc.js"></script>

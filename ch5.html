@@ -702,6 +702,231 @@ $$T(1) = \frac{0.5\times(2\pi)^2}{2\times2}(4-1) = \frac{0.5\times4\pi^2}{4}\tim
 <div class="tip"><strong>推广</strong>：此模型可推广到旋转飞轮轮辋的应力分析、离心机中液柱的压力分布等工程问题。</div>
 </div>
 
+<h2 id="s21">5.21 打击中心问题（PPT例4-2，考试高频）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">什么是打击中心？</div>
+<p>均匀细棒（质量 $m$，长 $l$）可绕一端水平轴 $O$ 转动，$J=\frac{1}{3}ml^2$。在距 $O$ 为 $\lambda$ 处施加水平力 $F$。问：$O$ 处轴的水平反力 $N_x$ 何时为零？</p>
+</div>
+
+<div class="ex">
+<strong>例（打击中心推导）</strong>
+<div class="sol"><div class="st">解</div>
+<p><strong>转动定律</strong>：$F\lambda = J\beta = \frac{1}{3}ml^2\beta$，得 $\beta = \frac{3F\lambda}{ml^2}$</p>
+<p><strong>质心运动定理</strong>（水平方向）：$F + N_x = ma_C = m\cdot\frac{l}{2}\beta$</p>
+<p>代入 $\beta$：</p>
+$$N_x = m\cdot\frac{l}{2}\cdot\frac{3F\lambda}{ml^2} - F = F\left(\frac{3\lambda}{2l} - 1\right)$$
+<p>令 $N_x = 0$：$\lambda = \frac{2l}{3}$</p>
+<p>即打击点在距轴 $\frac{2}{3}l$ 处时，轴的水平反力为零——此点称为<strong>打击中心</strong>。</p>
+</div></div>
+
+<div class="tip"><strong>实际应用</strong>：
+<ul>
+<li>用棒击打岩石时，打在 $2l/3$ 处可避免手受到冲击</li>
+<li>门上制动器应安装在距铰链 $2l/3$ 处，减小对铰链的冲击力</li>
+<li>棒球、网球击球的"甜点"（sweet spot）就是打击中心</li>
+</ul></div>
+
+<div class="warn"><strong>推广</strong>：对于一般形状的刚体（转动惯量 $J$，质心距轴 $d$），打击中心距轴为 $\lambda = J/(md)$。</div>
+</div>
+
+<h2 id="s22">5.22 圆盘在粗糙面上转动的摩擦力矩（PPT例4-3）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（均匀圆盘绕中心在粗糙面上转动）</strong>：质量 $M$、半径 $R$ 的均匀圆盘平放在摩擦系数 $\mu$ 的粗糙水平面上，以初角速度 $\omega_0$ 绕中心 $O$ 转动。求停止时间和转过的角度。
+<div class="sol"><div class="st">解</div>
+<p><strong>计算摩擦力矩</strong>：取距中心 $r$、宽 $\dd r$ 的圆环微元。</p>
+<p>质量：$\dd m = \frac{M}{\pi R^2}\cdot 2\pi r\,\dd r = \frac{2M}{R^2}r\,\dd r$</p>
+<p>摩擦力：$\dd f = \mu g\,\dd m = \frac{2\mu Mg}{R^2}r\,\dd r$</p>
+<p>摩擦力矩：$\dd M_f = r\,\dd f = \frac{2\mu Mg}{R^2}r^2\,\dd r$</p>
+$$M_f = \int_0^R \frac{2\mu Mg}{R^2}r^2\,\dd r = \frac{2\mu MgR}{3}$$
+
+<p><strong>转动定律</strong>：$J\frac{\dd\omega}{\dd t} = -M_f$，其中 $J=\frac{1}{2}MR^2$</p>
+$$\frac{1}{2}MR^2\frac{\dd\omega}{\dd t} = -\frac{2\mu MgR}{3}$$
+$$\frac{\dd\omega}{\dd t} = -\frac{4\mu g}{3R}$$
+
+<p><strong>停止时间</strong>：$\omega_0 = \frac{4\mu g}{3R}t$，$\boxed{t = \frac{3R\omega_0}{4\mu g}}$</p>
+
+<p><strong>转过角度</strong>：用 $\omega\dd\omega = \beta\dd\theta$：</p>
+$$\theta = \frac{\omega_0^2}{2|\beta|} = \frac{\omega_0^2}{2\cdot\frac{4\mu g}{3R}} = \boxed{\frac{3R\omega_0^2}{8\mu g}}$$
+</div></div>
+
+<div class="tip"><strong>对比</strong>：均匀细棒（长 $l$）绕中心在粗糙面上转动，摩擦力矩为 $\frac{1}{2}\mu mgl$（PPT也有此题），方法完全类似。</div>
+</div>
+
+<h2 id="s23">5.23 电风扇启动与稳定转速问题（PPT例4-1）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（恒功率电机 + 线性阻力矩）</strong>：电风扇恒定功率 $P$，风叶受空气阻力矩 $M_f = -k\omega$，转动惯量 $J$。求通电后 $\omega(t)$ 和稳定角速度。
+<div class="sol"><div class="st">解</div>
+<p>电机力矩：$M = P/\omega$（恒功率）</p>
+<p>转动定律：$J\frac{\dd\omega}{\dd t} = \frac{P}{\omega} - k\omega$</p>
+<p>分离变量并积分：</p>
+$$\int_0^\omega \frac{k\,\dd\omega}{P - k\omega^2} = \frac{1}{J}\int_0^t\dd t$$
+$$\boxed{\omega(t) = \sqrt{\frac{P}{k}}\left(1 - e^{-2kt/J}\right)^{1/2}}$$
+
+<p><strong>更常考的简化版本</strong>：恒力矩 $M$，阻力矩 $M_f = -k\omega$：</p>
+$$J\frac{\dd\omega}{\dd t} = M - k\omega \implies \omega(t) = \frac{M}{k}\left(1-e^{-kt/J}\right)$$
+<p>稳定角速度：$\omega_\infty = M/k$（当 $t\to\infty$）</p>
+<p>稳定转速后断电，风叶减速：$J\frac{\dd\omega}{\dd t} = -k\omega$，$\omega = \omega_\infty e^{-kt/J}$</p>
+<p>断电后转过的角度：$\theta = \int_0^\infty \omega\,\dd t = \frac{J\omega_\infty}{k} = \frac{JM}{k^2}$</p>
+</div></div>
+
+<div class="warn"><strong>变形考法</strong>：
+<ul>
+<li>阻力矩 $\propto \omega^2$ 时，稳定角速度为 $\omega_\infty = \sqrt{M/k}$</li>
+<li>恒功率 + 阻力矩 $\propto \omega^3$ 时，$\omega_\infty = (P/k)^{1/4}$</li>
+<li>断电后停止的时间和角度是高频考点</li>
+</ul></div>
+</div>
+
+<h2 id="s24">5.24 跷板弹射问题（PPT补充例）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（杂技跷板）</strong>：跷板长 $l$、质量 $M$，支点 $C$ 在中点。质量 $m$ 的演员 W 从高 $h$ 处落到 A 端（完全非弹性碰撞），弹起另一端质量 $m$ 的演员 N。求 N 能弹起的高度。
+<div class="sol"><div class="st">解</div>
+<p><strong>第一阶段</strong>：W 自由落体到达 A 端的速度 $v_0 = \sqrt{2gh}$</p>
+
+<p><strong>第二阶段</strong>：碰撞瞬间（W 与板完全非弹性碰撞），以 W、N、板为系统，对支点 $C$ 角动量守恒。</p>
+<p>碰前：$L = mv_0\cdot\frac{l}{2}$（W 的角动量，其余静止）</p>
+<p>碰后：W 粘在 A 端，N 在 B 端，板转动。设共同角速度 $\omega$：</p>
+$$mv_0\frac{l}{2} = \left(\frac{1}{12}Ml^2 + m\frac{l^2}{4} + m\frac{l^2}{4}\right)\omega = \left(\frac{M}{12}+\frac{m}{2}\right)l^2\omega$$
+<p>N 在 B 端的线速度：$u = \omega\cdot\frac{l}{2}$</p>
+
+<p><strong>第三阶段</strong>：N 以速度 $u$ 竖直弹起：$h' = \frac{u^2}{2g}$</p>
+$$h' = \frac{m^2}{(M/6+m)^2}\cdot\frac{v_0^2}{8g} = \frac{m^2 h}{(M/6+m)^2\cdot 4} = h\cdot\frac{36m^2}{(M+6m)^2}$$
+<p>当 $M=0$ 时，$h'=h$（无跷板质量，能量全部传递）。</p>
+</div></div>
+
+<div class="warn"><strong>易错点</strong>：碰撞阶段不能用机械能守恒（完全非弹性碰撞有能量损失），但可以用角动量守恒（支点处外力矩为零或极短时间可忽略）。</div>
+</div>
+
+<h2 id="s25">5.25 两平行圆柱接触转动（PPT补充例）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（两圆柱摩擦接触）</strong>：两平行圆柱可绕各自轴转动，半径 $R_1, R_2$，转动惯量 $J_1, J_2$。初始时圆柱1以 $\omega_{10}$ 转动，圆柱2静止。两圆柱接触后由摩擦力带动，直到相对滑动停止。求最终角速度。
+<div class="sol"><div class="st">解</div>
+<p><strong>无滑动条件</strong>：$\omega_1 R_1 = \omega_2 R_2$（接触点线速度相等）</p>
+<p><strong>分别对各自轴用角动量定理</strong>：</p>
+<p>设接触点摩擦力为 $f$，对圆柱1：$J_1(\omega_1 - \omega_{10}) = -fR_1 \cdot t$</p>
+<p>对圆柱2：$J_2\omega_2 = fR_2 \cdot t$</p>
+<p>消去 $ft$：$J_1(\omega_{10}-\omega_1)R_2 = J_2\omega_2 R_1$</p>
+<p>联立无滑动条件 $\omega_2 = \omega_1 R_1/R_2$：</p>
+$$\boxed{\omega_1 = \frac{J_1 R_2^2\,\omega_{10}}{J_1 R_2^2 + J_2 R_1^2}}, \quad \omega_2 = \frac{J_1 R_1 R_2\,\omega_{10}}{J_1 R_2^2 + J_2 R_1^2}$$
+</div></div>
+
+<div class="warn"><strong>注意</strong>：此问题中系统<strong>角动量不守恒</strong>！因为两个轴对各自的力矩方向相反（对不同轴），不能合并为一个角动量守恒方程。必须对每个轴分别列角动量定理，再联立无滑动条件。这是与同轴转盘对接问题的本质区别。</div>
+</div>
+
+<h2 id="s26">5.26 角冲量与碰撞中的转动（PPT高频题型汇总）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">角冲量定理</div>
+<p>转动定律的积分形式：</p>
+$$\int_{t_1}^{t_2} M\,\dd t = J\omega_2 - J\omega_1$$
+<p>左端称为<strong>角冲量</strong>（冲量矩），右端为角动量变化。对于碰撞等短过程中外力矩可忽略的情况，角动量守恒。</p>
+</div>
+
+<div class="ex">
+<strong>例（水平冲量打击静止竖直杆）</strong>：均匀杆（$m, l$, $J=ml^2/3$）可绕一端 $O$ 轴转动，静止于竖直位置。水平冲量 $I$ 作用于距 $O$ 为 $\frac{2l}{3}$ 处。求冲量作用后杆的角速度。
+<div class="sol"><div class="st">解</div>
+<p>对 $O$ 轴用角冲量定理：</p>
+$$I\cdot\frac{2l}{3} = J\omega - 0 = \frac{1}{3}ml^2\omega$$
+$$\omega = \frac{2I}{ml}$$
+<p>注意此处打击在打击中心（$2l/3$），轴反力冲量为零。</p>
+</div></div>
+
+<div class="ex">
+<strong>例（子弹射入棒端——PPT例4-10）</strong>：长 $l$ 的轻杆两端固定 $m$ 和 $2m$ 的小球，可绕 $O$ 转动（$O$ 距 $m$ 为 $l/3$，距 $2m$ 为 $2l/3$）。杆竖直静止时，质量 $m$ 的子弹以 $v_0$ 水平射入下端 $m$ 球并嵌入，碰后以 $v_0/2$ 返回。求碰后角速度。
+<div class="sol"><div class="st">解</div>
+<p>对 $O$ 轴角动量守恒（轴力矩为零）：</p>
+<p>碰前：$L_0 = mv_0\cdot\frac{2l}{3}$（子弹对 $O$ 的角动量，选方向为正）</p>
+<p>碰后：子弹以 $v_0/2$ 反向返回，$L_子 = -m\frac{v_0}{2}\cdot\frac{2l}{3}$</p>
+<p>杆的角动量：$L_杆 = \left[m\left(\frac{2l}{3}\right)^2 + 2m\left(\frac{l}{3}\right)^2\right]\omega = \frac{2}{3}ml^2\omega$</p>
+$$mv_0\cdot\frac{2l}{3} = -m\frac{v_0}{2}\cdot\frac{2l}{3} + \frac{2}{3}ml^2\omega$$
+$$\omega = \frac{3v_0}{2l}$$
+</div></div>
+
+<div class="tip"><strong>碰撞+转动问题的固定模式</strong>：
+<ol>
+<li>判断碰撞瞬间用什么守恒律——有固定轴时通常用角动量守恒（对轴），因为轴力的力矩为零</li>
+<li>碰后若需求最大偏角等，再用机械能守恒</li>
+<li>不要把碰撞过程和碰后运动过程混在一起！</li>
+</ol></div>
+</div>
+
+<h2 id="s27">5.27 虫爬杆问题——变J转动（PPT补充例）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（虫落在转动杆上）</strong>：质量 $m$、长 $l$ 的均匀杆绕中心 $O$ 轴可转动（$J=\frac{1}{12}ml^2$），水平静止。质量 $m$ 的小虫以速率 $v_0$ 竖直落在距 $O$ 为 $l/4$ 处并附着。要使杆以恒定角速度 $\omega$ 转动，虫应以什么速率爬向端点？
+<div class="sol"><div class="st">解</div>
+<p><strong>碰撞瞬间</strong>（角动量守恒）：</p>
+$$mv_0\cdot\frac{l}{4} = \left[\frac{1}{12}ml^2 + m\left(\frac{l}{4}\right)^2\right]\omega = \frac{7}{48}ml^2\omega$$
+$$\omega = \frac{12v_0}{7l}$$
+
+<p><strong>碰后恒定角速度转动</strong>：虫在距轴 $r$ 处时，系统转动惯量 $J(r) = \frac{1}{12}ml^2 + mr^2$。</p>
+<p>角动量定理：$M_{ext} = \frac{\dd}{\dd t}[J(r)\omega]$</p>
+<p>因为 $\omega = \text{const}$：$M_{ext} = \omega\frac{\dd J}{\dd t} = \omega\cdot 2mr\frac{\dd r}{\dd t}$</p>
+<p>外力矩来源是重力矩（设杆转过角 $\theta = \omega t$）：$M_{ext} = mgr\cos\theta$</p>
+$$mgr\cos(\omega t) = 2m\omega r\frac{\dd r}{\dd t}$$
+$$\frac{\dd r}{\dd t} = \frac{g\cos(\omega t)}{2\omega}$$
+<p>这就是虫相对杆的爬行速率（沿杆方向的分量）。</p>
+</div></div>
+
+<div class="tip"><strong>此类变 $J$ 问题的关键</strong>：当系统转动惯量随时间变化时，角动量定理写成 $M = \frac{\dd(J\omega)}{\dd t}$，不能简单地用 $M = J\beta$（$\beta$ 不定义在同一个 $J$ 上）。</div>
+</div>
+
+<h2 id="s28">5.28 齿轮啮合问题（PPT例4-9）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（两齿轮正交啮合）</strong>：齿轮1（半径 $r_1$，转动惯量 $J_1$）初始以 $\omega_0$ 转动，齿轮2（半径 $r_2$，$J_2$）初始静止。两轮啮合后求稳定角速度。
+<div class="sol"><div class="st">解</div>
+<p>两轮绕不同轴转动，分别对各轴用角动量定理。设啮合力为 $F$：</p>
+<p>对轮1：$J_1(\omega_1 - \omega_0) = -Fr_1\cdot t$</p>
+<p>对轮2：$J_2\omega_2 = Fr_2\cdot t$</p>
+<p>啮合条件（无滑动）：$\omega_1 r_1 = \omega_2 r_2$</p>
+<p>消去 $Ft$：</p>
+$$\omega_1 = \frac{J_1 r_2^2\,\omega_0}{J_1 r_2^2 + J_2 r_1^2}, \quad \omega_2 = \frac{J_1 r_1 r_2\,\omega_0}{J_1 r_2^2 + J_2 r_1^2}$$
+<p>结构与上面两圆柱接触问题完全相同。</p>
+</div></div>
+
+<div class="warn"><strong>区分三种"接合"问题</strong>：
+<table>
+<tr><th>类型</th><th>守恒律</th><th>约束</th></tr>
+<tr><td>同轴对接（离合器）</td><td>角动量守恒 $J_1\omega_1+J_2\omega_2=(J_1+J_2)\omega$</td><td>$\omega$相同</td></tr>
+<tr><td>齿轮啮合/圆柱接触</td><td>分别对各轴列角动量定理</td><td>$\omega_1 r_1=\omega_2 r_2$</td></tr>
+<tr><td>皮带传动</td><td>分别列角动量定理</td><td>$\omega_1 r_1=\omega_2 r_2$（无滑动时）</td></tr>
+</table></div>
+</div>
+
+<h2 id="s29">5.29 双轮轴（不等半径）系统（PPT高频）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（同轴双轮系统）</strong>：半径 $R_1, R_2$ 的两轮同轴固结（总转动惯量 $J$），绳端分别挂 $m_1, m_2$。求角加速度。
+<div class="sol"><div class="st">解</div>
+<p>对 $m_1$（设 $m_1$ 下降）：$m_1g - T_1 = m_1 a_1 = m_1 R_1\beta$</p>
+<p>对 $m_2$（上升）：$T_2 - m_2g = m_2 a_2 = m_2 R_2\beta$</p>
+<p>对轮轴：$T_1 R_1 - T_2 R_2 = J\beta$</p>
+<p>联立解得：</p>
+$$\boxed{\beta = \frac{(m_1 R_1 - m_2 R_2)g}{J + m_1 R_1^2 + m_2 R_2^2}}$$
+<p>注意此处两个物体的线加速度不同：$a_1 = R_1\beta$，$a_2 = R_2\beta$。</p>
+</div></div>
+</div>
+
+<h2 id="s30">5.30 恒星坍缩为中子星（PPT补充例）</h2>
+<div class="card">
+<div class="ex">
+<strong>例（中子星角速度）</strong>：恒星内核（均匀球体）半径 $R_0 = 2\times10^7\,\text{m}$，自转周期 $T_0 = 45$ 天，坍缩为半径 $R = 6\times10^3\,\text{m}$ 的中子星。求中子星角速度。
+<div class="sol"><div class="st">解</div>
+<p>角动量守恒：$J_0\omega_0 = J\omega$</p>
+<p>均匀球 $J = \frac{2}{5}mR^2$，故 $R_0^2\omega_0 = R^2\omega$：</p>
+$$\omega = \omega_0\left(\frac{R_0}{R}\right)^2 = \frac{2\pi}{45\times86400}\times\left(\frac{2\times10^7}{6\times10^3}\right)^2 \approx 18\,\text{rad/s}$$
+<p>相当于每秒转约 $3$ 圈！这就是脉冲星快速旋转的物理原因。</p>
+</div></div>
+
+<div class="tip"><strong>物理启示</strong>：角动量守恒 $J\omega = \text{const}$ 中，$R$ 减小 $\sim 3000$ 倍，$\omega$ 增大 $\sim 10^7$ 倍。从每 $45$ 天转一圈到每秒转 $3$ 圈的巨大变化，完全来自于角动量守恒这一基本定律。</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 4-4, 4-6, 4-10, 4-11, 4-14, 4-16, 4-19, 4-23, 4-24</div>
 
 <script src="toc.js"></script>

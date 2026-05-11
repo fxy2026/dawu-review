@@ -781,6 +781,377 @@ $$\boxed{p(t) = p_0\exp\left(-\frac{A\bar{v}}{4V}t\right)}$$
 <div class="warn"><strong>小孔条件</strong>：上述公式要求小孔尺寸远小于分子的平均自由程 $\bar{\lambda}$，即 $\sqrt{A}\ll\bar{\lambda}$。否则气体通过小孔的流动不是分子流（自由分子流），而是黏滞流，需要用流体力学的方法处理。</div>
 </div>
 
+<h2 id="s21">8.21 非标准分布函数练习（PPT课堂练习）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">题型：给定非Maxwell分布函数，求归一化常数、$v_p$、$\bar{v}$、$v_{rms}$</div>
+<p>PPT中反复训练的一类题：给出一个非标准的速率分布函数 $f(v)$，要求：</p>
+<ol>
+<li>由归一化条件 $\int_0^\infty f(v)\dd v = 1$ 求常数 $A$</li>
+<li>由 $\frac{\dd f}{\dd v}\big|_{v_p}=0$ 求最概然速率 $v_p$</li>
+<li>$\bar{v}=\int_0^\infty vf(v)\dd v$，$\overline{v^2}=\int_0^\infty v^2f(v)\dd v$</li>
+<li>求某速率区间内的分子比率 $\int_{v_1}^{v_2}f(v)\dd v$</li>
+</ol>
+</div>
+
+<div class="ex">
+<strong>例1（PPT补充例）：线性分布</strong>
+$$f(v) = \begin{cases}Av, & 0\le v\le v_0 \\ 0, & \text{其余}\end{cases}$$
+<div class="sol"><div class="st">解</div>
+<p><strong>(1) 归一化</strong>：$\int_0^{v_0}Av\,\dd v = A\frac{v_0^2}{2}=1$ → $A=\frac{2}{v_0^2}$，故 $f(v)=\frac{2v}{v_0^2}$（$0\le v\le v_0$）</p>
+<p><strong>(2) $v_p$</strong>：在 $[0,v_0]$ 上 $f(v)=\frac{2v}{v_0^2}$ 单调递增 → $f$ 在 $v=v_0$ 处取最大值 → $v_p = v_0$</p>
+<p>（注意：这里 $v_p$ 在定义域端点取到，不能用导数为零来求！）</p>
+<p><strong>(3) 平均速率</strong>：$\bar{v}=\int_0^{v_0}v\cdot\frac{2v}{v_0^2}\dd v = \frac{2}{v_0^2}\cdot\frac{v_0^3}{3}=\frac{2}{3}v_0$</p>
+<p><strong>(4) 方均根速率</strong>：$\overline{v^2}=\int_0^{v_0}v^2\cdot\frac{2v}{v_0^2}\dd v = \frac{2}{v_0^2}\cdot\frac{v_0^4}{4}=\frac{v_0^2}{2}$ → $v_{rms}=\frac{v_0}{\sqrt{2}}$</p>
+<p><strong>(5) 三种速率之比</strong>：$v_p:\bar{v}:v_{rms} = 1:\frac{2}{3}:\frac{1}{\sqrt{2}} \approx 1:0.667:0.707$</p>
+<p>注意：这里 $v_p > v_{rms} > \bar{v}$，与Maxwell分布中 $v_p < \bar{v} < v_{rms}$ 相反！</p>
+<p><strong>(6) 速率在 $[0,\,0.3v_0]$ 内的分子比率</strong>：</p>
+<p>$\frac{\Delta N}{N}=\int_0^{0.3v_0}\frac{2v}{v_0^2}\dd v = \frac{(0.3v_0)^2}{v_0^2}=0.09=9\%$</p>
+</div></div>
+
+<div class="ex">
+<strong>例2（PPT补充例）：指数分布 $f(v)=Ave^{-\alpha v}$</strong>
+<div class="sol"><div class="st">解</div>
+<p><strong>归一化</strong>：$\int_0^\infty Ave^{-\alpha v}\dd v = A\cdot\frac{1}{\alpha^2}=1$ → $A=\alpha^2$</p>
+<p><strong>$v_p$</strong>：$\frac{\dd f}{\dd v}=\alpha^2 e^{-\alpha v}(1-\alpha v)=0$ → $v_p=\frac{1}{\alpha}$</p>
+<p><strong>$\bar{v}$</strong>：$\bar{v}=\int_0^\infty v\cdot\alpha^2 ve^{-\alpha v}\dd v = \alpha^2\cdot\frac{2}{\alpha^3}=\frac{2}{\alpha}$</p>
+<p><strong>$\overline{v^2}$</strong>：$\overline{v^2}=\int_0^\infty v^2\cdot\alpha^2 ve^{-\alpha v}\dd v = \alpha^2\cdot\frac{6}{\alpha^4}=\frac{6}{\alpha^2}$ → $v_{rms}=\frac{\sqrt{6}}{\alpha}$</p>
+<p><strong>三种速率之比</strong>：$v_p:\bar{v}:v_{rms}=1:2:\sqrt{6}$</p>
+</div></div>
+
+<div class="ex">
+<strong>例3（PPT补充例）：类Maxwell分布 $f(v)=Av^2e^{-\alpha v}$</strong>
+<div class="sol"><div class="st">解</div>
+<p><strong>归一化</strong>：$\int_0^\infty Av^2 e^{-\alpha v}\dd v = A\cdot\frac{2}{\alpha^3}=1$ → $A=\frac{\alpha^3}{2}$</p>
+<p><strong>$v_p$</strong>：$\frac{\dd}{\dd v}(v^2 e^{-\alpha v})=(2v-\alpha v^2)e^{-\alpha v}=0$ → $v_p=\frac{2}{\alpha}$</p>
+<p><strong>$\bar{v}$</strong>：$\bar{v}=\frac{\alpha^3}{2}\int_0^\infty v^3 e^{-\alpha v}\dd v = \frac{\alpha^3}{2}\cdot\frac{6}{\alpha^4}=\frac{3}{\alpha}$</p>
+<p><strong>$\overline{v^2}$</strong>：$\overline{v^2}=\frac{\alpha^3}{2}\int_0^\infty v^4 e^{-\alpha v}\dd v = \frac{\alpha^3}{2}\cdot\frac{24}{\alpha^5}=\frac{12}{\alpha^2}$ → $v_{rms}=\frac{2\sqrt{3}}{\alpha}$</p>
+<p><strong>三种速率之比</strong>：$v_p:\bar{v}:v_{rms}=2:3:2\sqrt{3} \approx 1:1.5:1.73$</p>
+</div></div>
+
+<div class="ex">
+<strong>例4（PPT补充例）：费米分布 $f(v)=Av^2$（$0\le v\le v_F$）</strong>
+<p>（模拟导体中自由电子的速率分布，$v_F$ 为费米速率）</p>
+<div class="sol"><div class="st">解</div>
+<p><strong>归一化</strong>：$\int_0^{v_F}Av^2\dd v = A\frac{v_F^3}{3}=1$ → $A=\frac{3}{v_F^3}$</p>
+<p><strong>$v_p$</strong>：$f(v)=\frac{3v^2}{v_F^3}$ 在 $[0,v_F]$ 上单调递增 → $v_p = v_F$</p>
+<p><strong>$\bar{v}$</strong>：$\bar{v}=\frac{3}{v_F^3}\int_0^{v_F}v^3\dd v = \frac{3}{v_F^3}\cdot\frac{v_F^4}{4}=\frac{3}{4}v_F$</p>
+<p><strong>$\overline{v^2}$</strong>：$\overline{v^2}=\frac{3}{v_F^3}\int_0^{v_F}v^4\dd v = \frac{3}{v_F^3}\cdot\frac{v_F^5}{5}=\frac{3}{5}v_F^2$ → $v_{rms}=\sqrt{\frac{3}{5}}\,v_F$</p>
+</div></div>
+
+<div class="tip"><strong>非标准分布函数的解题套路</strong>：
+<br>1. 归一化求常数 $A$：$\int_0^\infty f(v)\dd v=1$
+<br>2. 求 $v_p$：对 $f(v)$ 求导令为零。注意：若定义域有限（如 $[0,v_0]$），$v_p$ 可能在端点取到！
+<br>3. 求 $\bar{v}$、$v_{rms}$：直接积分 $\int vf(v)\dd v$、$\int v^2 f(v)\dd v$
+<br>4. 常用积分公式：$\int_0^\infty v^n e^{-\alpha v}\dd v = \frac{n!}{\alpha^{n+1}}$</div>
+</div>
+
+<h2 id="s22">8.22 小孔泄漏变化规律（PPT系列练习）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">等温泄漏 vs 等压泄漏</div>
+<p>PPT中考察了两种小孔泄漏的条件，结果迥异：</p>
+<table>
+<tr><th></th><th>等温泄漏（$T$ 不变）</th><th>等压泄漏（$p$ 不变）</th></tr>
+<tr><td>物理条件</td><td>容器壁导热，温度恒为 $T_0$</td><td>容器绝热，但外力维持压强恒为 $p_0$</td></tr>
+<tr><td>$N(t)$</td><td>$N_0\exp\!\left(-\frac{A}{4V}\sqrt{\frac{8kT_0}{\pi m}}\,t\right)$</td><td>$N_0 - \frac{A}{4V}\sqrt{\frac{p_0}{\pi m V}}\,t$（线性下降）</td></tr>
+<tr><td>$p(t)$</td><td>$p_0\exp\!\left(-\frac{A\bar{v}}{4V}\,t\right)$（指数衰减）</td><td>$p_0$（不变）</td></tr>
+<tr><td>$T(t)$</td><td>$T_0$（不变）</td><td>随分子逸出而变化</td></tr>
+</table>
+</div>
+
+<div class="ex">
+<strong>例（PPT练习：等温泄漏的撞壁频率）</strong>：容器内有 $\nu$ mol O₂，压强 $p$，体积 $V$，分子质量 $m$。求 $\Gamma$。
+<div class="sol"><div class="st">解</div>
+<p>$\Gamma = \frac{1}{4}n\bar{v}$，需要先用给定量表达 $n$ 和 $\bar{v}$。</p>
+<p>由 $pV=\nu RT = Nk_BT$：$T = \frac{pV}{\nu R}$，$N = \frac{\nu R}{k_B}$，$n = N/V = \frac{\nu R}{k_BV}$</p>
+<p>$\bar{v}=\sqrt{\frac{8k_BT}{\pi m}}=\sqrt{\frac{8k_B\cdot pV/(\nu R)}{\pi m}}=\sqrt{\frac{8k_BpV}{\pi m\nu R}}$</p>
+<p>$$\Gamma = \frac{1}{4}\cdot\frac{\nu R}{k_BV}\cdot\sqrt{\frac{8k_BpV}{\pi m\nu R}}$$</p>
+</div></div>
+
+<div class="ex">
+<strong>例（PPT练习：隔板两侧的净分子流）</strong>：容器被隔板分为两部分，分别装有 O₂（$p_1,\,T_1$）和 O₂（$p_2,\,T_2$），分子质量 $m$。在隔板上开面积 $A$ 的小孔，求初始时单位时间穿过小孔的净分子数。
+<div class="sol"><div class="st">解</div>
+<p>从1侧穿过的分子流：$\frac{\dd N_1}{\dd t}=\Gamma_1 A = \frac{1}{4}n_1\bar{v}_1\cdot A = \frac{p_1}{4k_BT_1}\sqrt{\frac{8k_BT_1}{\pi m}}\cdot A = \frac{p_1 A}{\sqrt{2\pi mk_BT_1}}$</p>
+<p>从2侧穿过的分子流：$\frac{\dd N_2}{\dd t} = \frac{p_2 A}{\sqrt{2\pi mk_BT_2}}$</p>
+<p>净分子流：$\frac{\dd N_1}{\dd t} - \frac{\dd N_2}{\dd t} = \frac{A}{\sqrt{2\pi m}}\left(\frac{p_1}{\sqrt{k_BT_1}} - \frac{p_2}{\sqrt{k_BT_2}}\right)$</p>
+<p><strong>特例</strong>：若 $T_1=T_2=T$，则净分子流 $\propto (p_1-p_2)$，从高压侧流向低压侧。</p>
+</div></div>
+
+<div class="warn"><strong>PPT反复强调</strong>：$\Gamma = \frac{1}{4}n\bar{v}$ 中的 $n$ 和 $\bar{v}$ 要用题目给的量（$p,V,T,\nu,m,M,R,k_B$ 等）来表达。不同题目给定不同的已知量，核心公式不变，但表达式形式不同。这是一道"变形题"——每次换已知量就出一道新题！</div>
+</div>
+
+<h2 id="s23">8.23 平均自由程综合练习（PPT课堂练习）</h2>
+<div class="card">
+<div class="ex">
+<strong>例1（PPT）：等容降温</strong>：容积恒定的容器内有理想气体，平均自由程为 $\bar{\lambda}$，平均碰撞频率为 $\bar{Z}$。温度降为原来的 $1/4$。求新的 $\bar{\lambda}'$ 和 $\bar{Z}'$。
+<div class="sol"><div class="st">解</div>
+<p>$\bar{\lambda}=\frac{1}{\sqrt{2}\pi d^2 n}$，等容时 $n$ 不变，故 $\bar{\lambda}'=\bar{\lambda}$（不变！）</p>
+<p>$\bar{Z}=\bar{v}/\bar{\lambda}$，$\bar{v}\propto\sqrt{T}$，$T'=T/4$ → $\bar{v}'=\bar{v}/2$</p>
+<p>$\bar{Z}'=\bar{v}'/ \bar{\lambda}'=\frac{\bar{v}/2}{\bar{\lambda}}=\bar{Z}/2$</p>
+</div></div>
+
+<div class="ex">
+<strong>例2（PPT）：等温加压</strong>：温度不变，压强增大一倍。求 $\bar{\lambda}'$ 和 $\bar{Z}'$。
+<div class="sol"><div class="st">解</div>
+<p>$\bar{\lambda}=\frac{k_BT}{\sqrt{2}\pi d^2 p}$，$T$ 不变、$p'=2p$ → $\bar{\lambda}'=\bar{\lambda}/2$</p>
+<p>$\bar{v}\propto\sqrt{T}$，$T$ 不变 → $\bar{v}'=\bar{v}$</p>
+<p>$\bar{Z}'=\bar{v}'/\bar{\lambda}'=\bar{v}/(\bar{\lambda}/2)=2\bar{Z}$</p>
+</div></div>
+
+<div class="ex">
+<strong>例3（PPT）：热水瓶胆内抽真空</strong>：瓶胆厚度 1.5 cm，开水温度 100°C，空气分子有效直径 $d=3.5\times10^{-10}\,\text{m}$。为使平均自由程大于瓶胆厚度（保证保温性能），需要抽到多低的压强？
+<div class="sol"><div class="st">解</div>
+<p>取 $\bar{\lambda}\ge 1.5\,\text{cm}=0.015\,\text{m}$，$T=373\,\text{K}$</p>
+<p>$$p\le\frac{k_BT}{\sqrt{2}\pi d^2\bar{\lambda}}=\frac{1.38\times10^{-23}\times373}{\sqrt{2}\times\pi\times(3.5\times10^{-10})^2\times0.015}\approx 0.63\,\text{Pa}$$</p>
+<p>即需要抽到约 $0.63\,\text{Pa}\approx 6\times10^{-6}\,\text{atm}$ 的高真空。</p>
+</div></div>
+</div>
+
+<h2 id="s24">8.24 Maxwell速率分布中的 $\delta$ 近似法（PPT专题）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">速率在 $v_p$ 附近窄区间内的分子比率</div>
+<p>PPT中反复练习的题型：求速率在 $v_p$ 到 $(1+\delta)v_p$ 之间（$\delta\ll 1$）的分子比率。</p>
+<p>方法：利用 $f(v_p)=\frac{4}{\sqrt{\pi}\,e}\cdot\frac{1}{v_p}$，窄区间近似得</p>
+$$\frac{\Delta N}{N}\approx f(v_p)\cdot\delta v_p = \frac{4\delta}{\sqrt{\pi}\,e}$$
+<p>这个结果<strong>与温度和分子质量无关</strong>！只取决于 $\delta$ 的大小。</p>
+</div>
+
+<div class="ex">
+<strong>例（PPT）</strong>：在 $\bar{v}$ 附近的窄区间 $[\bar{v},\,\bar{v}+\delta\bar{v}]$（$\delta\ll 1$）内的分子比率。
+<div class="sol"><div class="st">解</div>
+<p>$\bar{v}=\sqrt{\frac{8kT}{\pi m}}$，而 $v_p=\sqrt{\frac{2kT}{m}}$，故 $\bar{v}/v_p=\sqrt{4/\pi}$，记 $u=\bar{v}/v_p$。</p>
+<p>$f(\bar{v})=\frac{4}{\sqrt{\pi}}\left(\frac{\bar{v}}{v_p}\right)^2\exp\left(-\frac{\bar{v}^2}{v_p^2}\right)\cdot\frac{1}{v_p}=\frac{4}{\sqrt{\pi}}\cdot\frac{4}{\pi}\cdot e^{-4/\pi}\cdot\frac{1}{v_p}$</p>
+<p>$\frac{\Delta N}{N}=f(\bar{v})\cdot\delta\bar{v}=\frac{4}{\sqrt{\pi}}\cdot\frac{4}{\pi}\cdot e^{-4/\pi}\cdot\frac{\delta\bar{v}}{v_p}=\frac{16\delta}{\pi\sqrt{\pi}}\cdot\frac{4}{\pi}\cdot e^{-4/\pi}\cdot\frac{\bar{v}}{v_p}$</p>
+<p>化简：$\frac{\Delta N}{N}=\frac{4\delta}{\sqrt{\pi}}\cdot\left(\frac{4}{\pi}\right)^{3/2}\cdot e^{-4/\pi}\approx \frac{4\delta\times1.455\times0.280}{\sqrt{\pi}}=\frac{4\delta\times0.407}{1.773}\approx0.919\delta$</p>
+</div></div>
+
+<div class="ex">
+<strong>例（PPT）</strong>：在 $v_{rms}$ 附近的窄区间 $[v_{rms},\,v_{rms}+\delta v_{rms}]$（$\delta\ll 1$）内的分子比率。
+<div class="sol"><div class="st">解</div>
+<p>$v_{rms}/v_p=\sqrt{3/2}$</p>
+<p>$f(v_{rms})=\frac{4}{\sqrt{\pi}}\cdot\frac{3}{2}\cdot e^{-3/2}\cdot\frac{1}{v_p}$</p>
+<p>$\frac{\Delta N}{N}=f(v_{rms})\cdot\delta v_{rms}=\frac{4}{\sqrt{\pi}}\cdot\frac{3}{2}\cdot e^{-3/2}\cdot\frac{v_{rms}}{v_p}\cdot\delta = \frac{4\delta}{\sqrt{\pi}}\cdot\left(\frac{3}{2}\right)^{3/2}\cdot e^{-3/2}$</p>
+<p>$\approx\frac{4\delta}{1.773}\times1.837\times0.223 = 0.924\delta$</p>
+</div></div>
+
+<div class="tip"><strong>PPT结论</strong>：在三种特征速率附近相同宽度的窄区间内，分子比率的差别不大（都在 $0.83\delta\sim0.92\delta$ 之间），但在 $v_p$ 处最大（$0.83\%$ 对应 $\delta=0.01$）。</div>
+</div>
+
+<h2 id="s25">8.25 补充图形判读题（PPT课堂练习）</h2>
+<div class="card">
+<div class="ex">
+<strong>例1（PPT）</strong>：如图，两条曲线分别是 He 和 O₂ 在相同 $T$ 下的速率分布。
+<p>(1) 曲线 I 表示哪种气体？</p>
+<p>(2) 小长条面积的物理意义？</p>
+<p>(3) 分布曲线下所包围的面积表示什么？</p>
+<div class="sol"><div class="st">解</div>
+<p>(1) $v_p=\sqrt{2k_BT/m}$，$m_{\text{O}_2}>m_{\text{He}}$ → O₂ 的 $v_p$ 小、峰更高更窄。曲线 I（峰高、窄）为 O₂。</p>
+<p>(2) $f(v)\Delta v$ = 速率在 $v\sim v+\Delta v$ 范围内的分子数占总分子数的百分率。</p>
+<p>(3) 整个曲线下面积 = 速率在 $0\sim\infty$ 范围内的分子百分率之和 = 1（100%）。</p>
+</div></div>
+
+<div class="ex">
+<strong>例2（PPT课堂练习）</strong>：Maxwell速率分布曲线中，某速率 $v_0$ 将曲线下面积分为 A、B 两部分且面积相等。则 $v_0$ 表示什么？
+<div class="sol"><div class="st">解</div>
+<p>面积相等意味着速率大于和小于 $v_0$ 的分子数各占一半。</p>
+<p>$v_0$ 既不是 $v_p$，也不是 $\bar{v}$，也不是 $v_{rms}$——它是<strong>速率的中位数</strong>。</p>
+<p>由于 $f(v)$ 不对称（右侧拖尾），中位数 $v_0$ 略大于 $v_p$ 但小于 $\bar{v}$。</p>
+<p>正确答案：(D) 速率大于和小于 $v_0$ 的分子数各占一半。</p>
+</div></div>
+
+<div class="ex">
+<strong>例3（PPT补充例）</strong>：由图中数据求氢气分子和氧气分子的最概然速率及气体温度。已知氢气 $v_p^{\text{H}_2}=2000\,\text{m/s}$。
+<div class="sol"><div class="st">解</div>
+<p>$v_p=\sqrt{2k_BT/m}$ → $v_p\propto 1/\sqrt{m}$ → $v_p^{\text{O}_2}=v_p^{\text{H}_2}\sqrt{m_{\text{H}_2}/m_{\text{O}_2}}=2000\times\sqrt{2/32}=500\,\text{m/s}$</p>
+<p>由 $v_p^{\text{H}_2}=\sqrt{2k_BT/m_{\text{H}_2}}$ 求温度：</p>
+<p>$T=\frac{m_{\text{H}_2}(v_p^{\text{H}_2})^2}{2k_B}=\frac{1.67\times10^{-27}\times2000^2}{2\times1.38\times10^{-23}}=\frac{6.68\times10^{-21}}{2.76\times10^{-23}}=242\,\text{K}$</p>
+</div></div>
+</div>
+
+<h2 id="s26">8.26 压强公式的完整推导（PPT详细版）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">推导的物理图像与完整步骤</div>
+<p>PPT用"斜柱体"模型给出了撞壁频率 $\Gamma$ 的严格推导，这是考试推导题的标准答案。</p>
+
+<p><strong>Step 1：构造斜柱体</strong></p>
+<p>以器壁面元 $\dd A$ 为底，以 $v_x\dd t$ 为斜高（$v_x$ 为分子速度的法向分量），作一斜柱体。正高为 $v_x\dd t$，体积为 $v_x\dd t\cdot\dd A$。</p>
+
+<p><strong>Step 2：斜柱体内特定速度的分子数</strong></p>
+<p>速度在 $(v_x,v_y,v_z)\sim(v_x+\dd v_x, v_y+\dd v_y, v_z+\dd v_z)$ 范围内、且位于斜柱体内的分子数为：</p>
+$$\dd N = n\cdot F(v_x,v_y,v_z)\dd v_x\dd v_y\dd v_z\cdot v_x\dd t\cdot\dd A$$
+<p>其中 $F(v_x,v_y,v_z)$ 是Maxwell速度分布函数，$n$ 是分子数密度。</p>
+
+<p><strong>Step 3：单位面积单位时间的碰撞次数</strong></p>
+<p>对所有 $v_x > 0$ 的速度积分（只有朝壁运动的分子才撞壁）：</p>
+$$\Gamma = \int_0^\infty\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} nv_x F(v_x,v_y,v_z)\dd v_x\dd v_y\dd v_z$$
+
+<p><strong>Step 4：利用Maxwell分布计算</strong></p>
+<p>$F(v_x,v_y,v_z) = g(v_x)g(v_y)g(v_z)$，其中 $g(v_x)=\left(\frac{m}{2\pi kT}\right)^{1/2}e^{-mv_x^2/(2kT)}$。</p>
+<p>$y,z$ 方向积分给出归一化因子1，只需算 $x$ 方向：</p>
+$$\Gamma = n\int_0^\infty v_x g(v_x)\dd v_x = n\left(\frac{m}{2\pi kT}\right)^{1/2}\cdot\frac{kT}{m} = \frac{n}{2}\sqrt{\frac{kT}{2\pi m}}$$
+<p>利用 $\bar{v}=\sqrt{8kT/(\pi m)}$，可以验证：</p>
+$$\boxed{\Gamma = \frac{1}{4}n\bar{v}}$$
+</div>
+
+<div class="ex">
+<strong>例（PPT完整推导题）</strong>：从 $\Gamma = \frac{1}{4}n\bar{v}$ 出发，推导压强公式 $p = \frac{1}{3}nm\overline{v^2}$。
+<div class="sol"><div class="st">解</div>
+<p>每个撞壁分子传递的动量为 $2mv_x$（弹性碰撞）。</p>
+<p>单位面积单位时间传递的总动量（即压强）：</p>
+$$p = \int_0^\infty 2mv_x\cdot nv_x g(v_x)\dd v_x = 2mn\int_0^\infty v_x^2 g(v_x)\dd v_x$$
+<p>利用 $\int_0^\infty v_x^2 g(v_x)\dd v_x = \frac{1}{2}\overline{v_x^2}$（只积分正半轴，是全轴积分的一半）：</p>
+$$p = 2mn\cdot\frac{1}{2}\overline{v_x^2} = nm\overline{v_x^2} = \frac{1}{3}nm\overline{v^2}$$
+<p>最后一步用了各向同性条件 $\overline{v_x^2}=\frac{1}{3}\overline{v^2}$。</p>
+</div></div>
+</div>
+
+<h2 id="s27">8.27 速率分布综合计算题（PPT高频考题）</h2>
+<div class="card">
+
+<div class="ex">
+<strong>例1（PPT）：同温下不同气体的 $v_p$ 比较</strong>
+<p>同一温度下氧气和氢气的Maxwell速率分布曲线，判断哪条对应哪种气体。</p>
+<div class="sol"><div class="st">解</div>
+<p>$v_p = \sqrt{2kT/m}$，同温下 $v_p \propto 1/\sqrt{m}$。</p>
+<p>$m_{\text{O}_2} = 16\,m_{\text{H}_2}$，故 $v_p^{\text{H}_2} = 4\,v_p^{\text{O}_2}$。</p>
+<p>结论：峰值靠右（$v_p$ 大）的是 H$_2$，峰值靠左且更高更窄的是 O$_2$。</p>
+<p>$f(v_p) = \frac{4}{\sqrt{\pi}\,e\,v_p}$，$v_p$ 小的气体 $f(v_p)$ 更大，即 O$_2$ 的峰更高。</p>
+</div></div>
+
+<div class="ex">
+<strong>例2（PPT）：同种气体不同温度下 $f(v_p)$ 之比</strong>
+<p>氢气在温度 $T_1$ 和 $T_2$ 下的分布曲线，已知 $v_p^{(1)} < v_p^{(2)}$。求 $f(v_p^{(1)})/f(v_p^{(2)})$ 和 $v_p^{(1)}/v_p^{(2)}$。</p>
+<div class="sol"><div class="st">解</div>
+<p>$f(v_p) = \frac{4}{\sqrt{\pi}\,e}\cdot\frac{1}{v_p}$，故</p>
+$$\frac{f(v_p^{(1)})}{f(v_p^{(2)})} = \frac{v_p^{(2)}}{v_p^{(1)}}$$
+<p>又 $v_p \propto \sqrt{T}$，故 $\frac{v_p^{(1)}}{v_p^{(2)}} = \sqrt{T_1/T_2}$。</p>
+<p>$v_p^{(1)} < v_p^{(2)}$ → $T_1 < T_2$（温度低的曲线峰更高更窄）。</p>
+</div></div>
+
+<div class="ex">
+<strong>例3（PPT）：同温下 He 和 N$_2$ 的分布曲线判断</strong>
+<p>下列四幅图中，哪一幅能正确表示同一温度下 N$_2$（红色）和 He（绿色）的分布曲线？</p>
+<div class="sol"><div class="st">分析</div>
+<p>判据有三条：</p>
+<p>(1) $v_p = \sqrt{2kT/m}$，$m_{\text{He}} < m_{\text{N}_2}$ → He 的 $v_p$ 更大（峰更靠右）</p>
+<p>(2) $f(v_p) = \frac{4}{\sqrt{\pi}\,e\,v_p}$，He 的 $v_p$ 大 → He 的 $f(v_p)$ 更小（峰更矮）</p>
+<p>(3) 两条曲线下面积都等于1</p>
+<p>正确图形应为：N$_2$ 峰高且靠左，He 峰矮且靠右。</p>
+</div></div>
+
+<div class="ex">
+<strong>例4（PPT）：已知 $v_p^{\text{He}}$，求同温下 $v_p^{\text{N}_2}$ 及 $f(v_p)$ 之比</strong>
+<p>He 和 N$_2$ 在同一温度下，已知蓝色曲线（He）的最概然速率为 $v_0$。求 $v_p^{\text{N}_2}$、两者 $f(v_p)$ 之比、温度 $T$。</p>
+<div class="sol"><div class="st">解</div>
+<p>$v_p \propto 1/\sqrt{m}$ → $v_p^{\text{N}_2} = v_0\sqrt{m_{\text{He}}/m_{\text{N}_2}} = v_0\sqrt{4/28} = \frac{v_0}{\sqrt{7}}$</p>
+<p>$\frac{f(v_p^{\text{N}_2})}{f(v_p^{\text{He}})} = \frac{v_p^{\text{He}}}{v_p^{\text{N}_2}} = \sqrt{7}$（N$_2$ 的峰值更高）</p>
+<p>温度：$T = \frac{m_{\text{He}}\,v_0^2}{2k_B} = \frac{4\times1.66\times10^{-27}\times v_0^2}{2\times1.38\times10^{-23}}$</p>
+</div></div>
+
+<div class="ex">
+<strong>例5（PPT）：速率在 $v_p$ 到 $\bar{v}$ 之间的分子比率</strong>
+<p>求速率在 $[v_p,\,\bar{v}]$ 范围内的分子比率（用无量纲积分表示）。</p>
+<div class="sol"><div class="st">解</div>
+<p>令 $u = v/v_p$，$x = u^2$，则 $f(v)\dd v = \frac{4}{\sqrt{\pi}}u^2 e^{-u^2}\dd u$。</p>
+<p>$\bar{v}/v_p = \sqrt{4/\pi}$，故需计算：</p>
+$$\frac{\Delta N}{N} = \int_1^{\sqrt{4/\pi}}\frac{4}{\sqrt{\pi}}u^2 e^{-u^2}\dd u$$
+<p>令 $x = u^2$：</p>
+$$= \frac{4}{\sqrt{\pi}}\int_1^{4/\pi}\frac{1}{2}\sqrt{x}\,e^{-x}\dd x$$
+<p>此积分无解析结果，需数值计算，约为 $0.083$（约8.3%的分子在 $v_p$ 和 $\bar{v}$ 之间）。</p>
+</div></div>
+</div>
+
+<h2 id="s28">8.28 内能与混合气体综合题（PPT课堂练习）</h2>
+<div class="card">
+
+<div class="ex">
+<strong>例1（PPT）：已知 $p$、$V$，求内能之比</strong>
+<p>相同压强下，氧气（$i=5$）和氦气（$i=3$）体积比 $V_1/V_2 = 1/2$，求内能之比。</p>
+<div class="sol"><div class="st">解</div>
+<p>$E = \frac{i}{2}pV$（由 $E = \frac{i}{2}\nu RT = \frac{i}{2}pV$）</p>
+$$\frac{E_1}{E_2} = \frac{i_1}{i_2}\cdot\frac{V_1}{V_2} = \frac{5}{3}\times\frac{1}{2} = \frac{5}{6}$$
+</div></div>
+
+<div class="ex">
+<strong>例2（PPT）：质量相同、温度相同的 N$_2$ 和 He</strong>
+<p>求：(1) 平均平动动能之比；(2) 内能之比。</p>
+<div class="sol"><div class="st">解</div>
+<p>(1) 平均平动动能 $\bar{\varepsilon}_k = \frac{3}{2}kT$，温度相同 → $\bar{\varepsilon}_k^{\text{N}_2}/\bar{\varepsilon}_k^{\text{He}} = 1$</p>
+<p>(2) 内能 $E = \frac{m}{M}\cdot\frac{i}{2}RT$，质量 $m$ 和温度 $T$ 相同：</p>
+$$\frac{E_{\text{N}_2}}{E_{\text{He}}} = \frac{i_{\text{N}_2}}{i_{\text{He}}}\cdot\frac{M_{\text{He}}}{M_{\text{N}_2}} = \frac{5}{3}\times\frac{4}{28} = \frac{5}{21}$$
+</div></div>
+
+<div class="ex">
+<strong>例3（PPT）：$N_1$ 个单原子 + $N_2$ 个双原子分子的内能</strong>
+<p>容器内有 $N_1$ 个单原子理想气体分子和 $N_2$ 个刚性双原子理想气体分子，温度为 $T$，求内能。</p>
+<div class="sol"><div class="st">解</div>
+$$E = N_1\cdot\frac{3}{2}kT + N_2\cdot\frac{5}{2}kT = \frac{kT}{2}(3N_1 + 5N_2)$$
+</div></div>
+
+<div class="ex">
+<strong>例4（PPT）：分子分解前后内能变化</strong>
+<p>$\nu$ mol 水蒸气（$i=6$）在温度 $T$ 下以效率 $\eta$ 分解为 H$_2$ 和 O$_2$。求分解前后内能。</p>
+<div class="sol"><div class="st">解</div>
+<p><strong>分解前</strong>：$E_1 = \nu\cdot\frac{6}{2}RT = 3\nu RT$</p>
+<p><strong>分解后</strong>：未分解的水蒸气 $(1-\eta)\nu$ mol（$i=6$），分解产生 $\eta\nu$ mol H$_2$（$i=5$）和 $\frac{\eta\nu}{2}$ mol O$_2$（$i=5$）：</p>
+$$E_2 = (1-\eta)\nu\cdot 3RT + \eta\nu\cdot\frac{5}{2}RT + \frac{\eta\nu}{2}\cdot\frac{5}{2}RT$$
+$$= 3\nu RT - 3\eta\nu RT + \frac{5}{2}\eta\nu RT + \frac{5}{4}\eta\nu RT = 3\nu RT + \frac{\eta\nu RT}{4}$$
+<p>内能增加了 $\Delta E = \frac{\eta\nu RT}{4}$（分解使自由度总数增加，内能增大）。</p>
+</div></div>
+
+<div class="ex">
+<strong>例5（PPT）：氧气瓶用气前后内能之比</strong>
+<p>容积 $V$ 的氧气瓶，充气压强 $p_1$，用后压强降为 $p_2$，温度不变。求剩余氧气内能与原内能之比。</p>
+<div class="sol"><div class="st">解</div>
+<p>等温等容过程，$E = \frac{i}{2}pV$（$i,V$ 不变），故</p>
+$$\frac{E_2}{E_1} = \frac{p_2}{p_1}$$
+</div></div>
+
+<div class="ex">
+<strong>例6（PPT）：由内能和分子数求温度</strong>
+<p>$2\times10^{-3}\,\text{m}^3$ 的刚性双原子理想气体（$i=5$），内能 $E=675\,\text{J}$，分子总数 $N=5.4\times10^{22}$。求：(1) 压强；(2) 平均平动动能和温度。</p>
+<div class="sol"><div class="st">解</div>
+<p>(1) $E = \frac{i}{2}pV$ → $p = \frac{2E}{iV} = \frac{2\times675}{5\times2\times10^{-3}} = 1.35\times10^5\,\text{Pa}$</p>
+<p>(2) $\bar{\varepsilon}_k = \frac{3}{2}kT = \frac{3}{Ni}\cdot E = \frac{3\times675}{5\times5.4\times10^{22}} = 7.5\times10^{-21}\,\text{J}$</p>
+<p>$T = \frac{2\bar{\varepsilon}_k}{3k} = \frac{2\times7.5\times10^{-21}}{3\times1.38\times10^{-23}} = 362\,\text{K}$</p>
+</div></div>
+</div>
+
+<h2 id="s29">8.29 等压泄漏与等温泄漏的对比（PPT专题）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">等压泄漏：分子数线性下降</div>
+<p>容器保持压强 $p_0$ 不变（等压条件），器壁有面积 $A$ 的小孔。</p>
+<p>由 $p = nkT$ 和 $\Gamma = \frac{1}{4}n\bar{v}$，等压意味着 $n\sqrt{T} = \text{const}$。</p>
+<p>PPT推导结果：</p>
+$$\frac{\dd N}{\dd t} = -\Gamma A = -\frac{A}{4V}\sqrt{\frac{p_0}{\pi m V}}\cdot\text{const}$$
+<p>分子数 $N$ 随时间<strong>线性下降</strong>（而非指数衰减）。</p>
+</div>
+
+<div class="fb">
+<div class="t">等温泄漏：压强指数衰减（复习）</div>
+<p>容器保持温度 $T_0$ 不变，$\bar{v}$ 为常数：</p>
+$$p(t) = p_0\exp\left(-\frac{A\bar{v}}{4V}t\right)$$
+<p>关键区别：等温泄漏中 $\bar{v}$ 恒定，微分方程为线性 → 指数解。</p>
+</div>
+
+<div class="ex">
+<strong>例（PPT）：等压泄漏时温度的变化</strong>
+<p>容器装 H$_2$，初温 $T_0$，压强 $p_0$，体积 $V$，器壁小孔面积 $A$。保持压强不变，求容器内温度随时间的变化。</p>
+<div class="sol"><div class="st">解</div>
+<p>等压条件：$p_0 = nkT$，分子逸出后 $n$ 减小，$T$ 必须升高以维持 $p_0$ 不变。</p>
+<p>$\Gamma = \frac{1}{4}n\bar{v} = \frac{p_0}{4kT}\sqrt{\frac{8kT}{\pi m}} = \frac{p_0}{\sqrt{2\pi mkT}}$</p>
+<p>$N = \frac{p_0 V}{kT}$，故 $\frac{\dd N}{\dd t} = -\frac{p_0 V}{kT^2}\frac{\dd T}{\dd t}$（$p_0,V$ 不变）</p>
+<p>而 $\frac{\dd N}{\dd t} = -\Gamma A = -\frac{p_0 A}{\sqrt{2\pi mkT}}$</p>
+<p>化简得 $\frac{\dd\sqrt{T}}{\dd t} = \frac{Ak}{2V}\sqrt{\frac{1}{2\pi m}}$，积分：</p>
+$$\boxed{\sqrt{T} = \sqrt{T_0} + \frac{A}{2V}\sqrt{\frac{k}{2\pi m}}\,t}$$
+<p>温度随时间<strong>抛物线式上升</strong>（$\sqrt{T}$ 线性增长）。</p>
+</div></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 8-4, 8-5, 8-8, 8-10, 8-11, 8-14, 8-18, 8-21</div>
 
 <script src="toc.js"></script>
