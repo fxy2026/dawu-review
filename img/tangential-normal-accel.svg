@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350">
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1a5276"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c0392b"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#27ae60"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e67e22"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="250" y="28" text-anchor="middle" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" fill="#1a5276">切向与法向加速度</text>
+
+  <!-- Curved trajectory -->
+  <path d="M 60,300 Q 120,300 160,260 Q 200,220 220,180 Q 240,140 280,120 Q 320,100 380,90" fill="none" stroke="#888" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Trajectory label -->
+  <text x="75" y="318" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="12" fill="#888">轨迹</text>
+
+  <!-- Point P on curve -->
+  <circle cx="220" cy="180" r="5" fill="#1a5276"/>
+  <text x="208" y="200" font-family="serif" font-size="16" font-weight="bold" fill="#1a5276">P</text>
+
+  <!-- Center of curvature O -->
+  <circle cx="340" cy="290" r="4" fill="#888" stroke="#888"/>
+  <text x="348" y="295" font-family="serif" font-size="15" fill="#888">O</text>
+
+  <!-- Radius of curvature R (dashed) -->
+  <line x1="220" y1="180" x2="340" y2="290" stroke="#888" stroke-width="1.2" stroke-dasharray="6,4"/>
+  <text x="295" y="250" font-family="serif" font-size="14" font-style="italic" fill="#888">R</text>
+
+  <!-- Dashed arc showing curvature -->
+  <path d="M 195,205 Q 230,260 280,280" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Velocity vector v (tangent at P) -->
+  <!-- Tangent direction at P: roughly 45 degrees up-right -->
+  <line x1="220" y1="180" x2="310" y2="118" stroke="#1a5276" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <text x="305" y="108" font-family="serif" font-size="16" font-weight="bold" font-style="italic" fill="#1a5276">v</text>
+
+  <!-- Tangential acceleration aτ (along v direction, shorter) -->
+  <line x1="220" y1="180" x2="268" y2="147" stroke="#27ae60" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="255" y="140" font-family="serif" font-size="14" font-weight="bold" fill="#27ae60">a<tspan font-size="10" dy="3">τ</tspan></text>
+
+  <!-- Normal acceleration aₙ (perpendicular to v, pointing toward center) -->
+  <!-- Perpendicular to tangent (45° up-right) is 45° down-right, toward O -->
+  <line x1="220" y1="180" x2="275" y2="240" stroke="#c0392b" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+  <text x="280" y="248" font-family="serif" font-size="14" font-weight="bold" fill="#c0392b">a<tspan font-size="10" dy="3">n</tspan></text>
+
+  <!-- Total acceleration a (vector sum of aτ + aₙ) -->
+  <line x1="220" y1="180" x2="323" y2="207" stroke="#e67e22" stroke-width="2.8" marker-end="url(#arrowOrange)"/>
+  <text x="330" y="210" font-family="serif" font-size="16" font-weight="bold" font-style="italic" fill="#e67e22">a</text>
+
+  <!-- Dashed lines showing vector sum -->
+  <line x1="268" y1="147" x2="323" y2="207" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="275" y1="240" x2="323" y2="207" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Angle arc between v and a -->
+  <path d="M 248,162 Q 258,170 255,180" fill="none" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="258" y="172" font-family="serif" font-size="13" font-style="italic" fill="#e67e22">φ</text>
+
+  <!-- Formulas -->
+  <text x="30" y="55" font-family="serif" font-size="13" fill="#27ae60">a<tspan font-size="10" dy="2">τ</tspan><tspan dy="-2"> = dv/dt</tspan></text>
+  <text x="30" y="78" font-family="serif" font-size="13" fill="#c0392b">a<tspan font-size="10" dy="2">n</tspan><tspan dy="-2"> = v²/R</tspan></text>
+  <text x="30" y="101" font-family="serif" font-size="13" fill="#e67e22">a = √(a<tspan font-size="10" dy="2">τ</tspan><tspan dy="-2">² + a</tspan><tspan font-size="10" dy="2">n</tspan><tspan dy="-2">²)</tspan></text>
+</svg>

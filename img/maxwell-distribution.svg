@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="600" height="350" font-family="'SimSun','STSong','Noto Serif CJK SC',serif">
+  <defs>
+    <marker id="arrowX" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#333"/>
+    </marker>
+    <marker id="arrowY" markerWidth="6" markerHeight="8" refX="3" refY="0" orient="auto">
+      <path d="M0,8 L3,0 L6,8" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="350" fill="#fafafa" rx="6"/>
+
+  <!-- Title -->
+  <text x="300" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">Maxwell速率分布曲线</text>
+
+  <!-- Axes -->
+  <line x1="70" y1="290" x2="560" y2="290" stroke="#333" stroke-width="1.5" marker-end="url(#arrowX)"/>
+  <line x1="70" y1="290" x2="70" y2="40" stroke="#333" stroke-width="1.5" marker-end="url(#arrowY)"/>
+  <text x="565" y="308" font-size="14" fill="#333" font-style="italic">v</text>
+  <text x="50" y="48" font-size="14" fill="#333" font-style="italic">f(v)</text>
+  <text x="62" y="305" font-size="12" fill="#333">O</text>
+
+  <!-- T1 curve (lower temp, taller narrower peak) - blue -->
+  <path d="M70,290 Q90,288 110,280 Q140,255 170,200 Q190,150 210,100 Q225,70 240,62 Q260,58 270,62 Q290,72 310,100 Q340,150 370,200 Q400,240 430,262 Q460,275 490,282 Q520,287 550,289"
+        fill="none" stroke="#1a5276" stroke-width="2.5"/>
+  <!-- T1 label -->
+  <text x="340" y="145" font-size="13" fill="#1a5276" font-weight="bold">T₁</text>
+
+  <!-- T2 curve (higher temp, shorter wider peak) - red -->
+  <path d="M70,290 Q100,288 130,282 Q170,268 210,245 Q250,215 290,190 Q320,175 340,170 Q360,168 380,170 Q400,175 420,185 Q450,200 480,220 Q510,242 530,260 Q545,272 555,280"
+        fill="none" stroke="#c0392b" stroke-width="2.5"/>
+  <!-- T2 label -->
+  <text x="440" y="190" font-size="13" fill="#c0392b" font-weight="bold">T₂ &gt; T₁</text>
+
+  <!-- vp dashed line (most probable speed) -->
+  <line x1="255" y1="58" x2="255" y2="290" stroke="#27ae60" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="245" y="310" font-size="11" fill="#27ae60" font-style="italic">v</text>
+  <text x="255" y="313" font-size="9" fill="#27ae60">p</text>
+
+  <!-- v_mean dashed line -->
+  <line x1="290" y1="72" x2="290" y2="290" stroke="#e67e22" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="283" y="310" font-size="11" fill="#e67e22" font-style="italic">v̄</text>
+
+  <!-- v_rms dashed line -->
+  <line x1="320" y1="90" x2="320" y2="290" stroke="#8e44ad" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="308" y="310" font-size="11" fill="#8e44ad" font-style="italic">v</text>
+  <text x="320" y="313" font-size="9" fill="#8e44ad">rms</text>
+
+  <!-- Small dots on T1 curve at the three speeds -->
+  <circle cx="255" cy="58" r="3.5" fill="#27ae60"/>
+  <circle cx="290" cy="72" r="3.5" fill="#e67e22"/>
+  <circle cx="320" cy="90" r="3.5" fill="#8e44ad"/>
+
+  <!-- Ordering label -->
+  <text x="300" y="335" text-anchor="middle" font-size="13" fill="#333">
+    <tspan font-style="italic" fill="#27ae60">v</tspan><tspan font-size="9" fill="#27ae60">p</tspan>
+    <tspan> &lt; </tspan>
+    <tspan font-style="italic" fill="#e67e22">v̄</tspan>
+    <tspan> &lt; </tspan>
+    <tspan font-style="italic" fill="#8e44ad">v</tspan><tspan font-size="9" fill="#8e44ad">rms</tspan>
+  </text>
+
+  <!-- Area = 1 labels -->
+  <text x="400" y="255" font-size="11" fill="#1a5276">面积=1</text>
+  <path d="M398,252 Q370,240 350,220" fill="none" stroke="#1a5276" stroke-width="0.8" marker-end="none"/>
+
+  <text x="480" y="240" font-size="11" fill="#c0392b">面积=1</text>
+  <path d="M478,237 Q460,230 440,218" fill="none" stroke="#c0392b" stroke-width="0.8"/>
+</svg>

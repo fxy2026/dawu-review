@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="400" viewBox="0 0 450 400">
+  <defs>
+    <marker id="arrBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1a5276"/>
+    </marker>
+    <marker id="arrRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c0392b"/>
+    </marker>
+    <marker id="arrGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#27ae60"/>
+    </marker>
+    <marker id="arrOrange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e67e22"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="225" y="28" text-anchor="middle" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" fill="#1a5276">圆周运动</text>
+
+  <!-- Circle -->
+  <circle cx="210" cy="215" r="130" fill="none" stroke="#aaa" stroke-width="2"/>
+
+  <!-- Center O -->
+  <circle cx="210" cy="215" r="3" fill="#1a5276"/>
+  <text x="195" y="230" font-family="serif" font-size="15" font-weight="bold" fill="#1a5276">O</text>
+
+  <!-- Radius line to particle position at ~40° from horizontal right -->
+  <!-- Particle at angle 40° above positive x: cos40≈0.766, sin40≈0.643 -->
+  <!-- Position: (210+130*0.766, 215-130*0.643) = (309.6, 131.4) -->
+  <line x1="210" y1="215" x2="310" y2="131" stroke="#1a5276" stroke-width="1.8"/>
+
+  <!-- Particle -->
+  <circle cx="310" cy="131" r="7" fill="#1a5276"/>
+  <text x="322" y="125" font-family="serif" font-size="14" font-weight="bold" fill="#1a5276">P</text>
+
+  <!-- R label on radius -->
+  <text x="248" y="165" font-family="serif" font-size="15" font-style="italic" font-weight="bold" fill="#1a5276">R</text>
+
+  <!-- Angle θ arc from x-axis to radius -->
+  <path d="M 250,215 A 40,40 0 0,0 241,189" fill="none" stroke="#e67e22" stroke-width="2"/>
+  <text x="250" y="200" font-family="serif" font-size="15" font-style="italic" font-weight="bold" fill="#e67e22">θ</text>
+
+  <!-- Horizontal reference line (dashed) -->
+  <line x1="210" y1="215" x2="350" y2="215" stroke="#aaa" stroke-width="1" stroke-dasharray="5,3"/>
+
+  <!-- Angular velocity ω curved arrow (counterclockwise, near top of circle) -->
+  <path d="M 260,90 A 80,80 0 0,0 150,100" fill="none" stroke="#e67e22" stroke-width="2.2" marker-end="url(#arrOrange)"/>
+  <text x="175" y="80" font-family="serif" font-size="16" font-weight="bold" font-style="italic" fill="#e67e22">ω</text>
+
+  <!-- Velocity vector v (tangent at P, perpendicular to radius, pointing CCW) -->
+  <!-- Tangent direction at 40°: perpendicular to radius, CCW = (-sin40, -cos40) rotated = pointing upper-left-ish -->
+  <!-- Direction: (-sin40, -cos40) = (-0.643, -0.766) -->
+  <line x1="310" y1="131" x2="258" y2="71" stroke="#1a5276" stroke-width="2.5" marker-end="url(#arrBlue)"/>
+  <text x="245" y="63" font-family="serif" font-size="15" font-weight="bold" font-style="italic" fill="#1a5276">v</text>
+  <text x="250" y="53" font-family="serif" font-size="11" fill="#1a5276">= Rω</text>
+
+  <!-- Centripetal acceleration aₙ (pointing inward, from P toward O) -->
+  <line x1="310" y1="131" x2="248" y2="170" stroke="#c0392b" stroke-width="2.5" marker-end="url(#arrRed)"/>
+  <text x="233" y="182" font-family="serif" font-size="14" font-weight="bold" fill="#c0392b">a<tspan font-size="10" dy="3">n</tspan></text>
+  <text x="228" y="198" font-family="serif" font-size="11" fill="#c0392b">= v²/R</text>
+
+  <!-- Tangential acceleration aτ (along velocity direction) -->
+  <line x1="310" y1="131" x2="278" y2="93" stroke="#27ae60" stroke-width="2.5" marker-end="url(#arrGreen)"/>
+  <text x="282" y="86" font-family="serif" font-size="14" font-weight="bold" fill="#27ae60">a<tspan font-size="10" dy="3">τ</tspan></text>
+  <text x="278" y="75" font-family="serif" font-size="11" fill="#27ae60">= Rα</text>
+
+  <!-- Position label -->
+  <text x="330" y="145" font-family="serif" font-size="13" fill="#888">(R, θ)</text>
+
+  <!-- Formulas box -->
+  <rect x="15" y="310" width="200" height="80" rx="6" fill="#f4f6f7" stroke="#ccc" stroke-width="1"/>
+  <text x="25" y="332" font-family="serif" font-size="13" fill="#1a5276">v = Rω</text>
+  <text x="25" y="352" font-family="serif" font-size="13" fill="#c0392b">a<tspan font-size="10" dy="2">n</tspan><tspan dy="-2"> = v²/R = Rω²</tspan></text>
+  <text x="25" y="372" font-family="serif" font-size="13" fill="#27ae60">a<tspan font-size="10" dy="2">τ</tspan><tspan dy="-2"> = Rα = R(dω/dt)</tspan></text>
+</svg>

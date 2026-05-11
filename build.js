@@ -87,7 +87,19 @@ function build() {
     const srcPath = path.join(SRC, file);
     const destPath = path.join(DIST, file);
 
-    if (fs.statSync(srcPath).isDirectory()) continue;
+    if (fs.statSync(srcPath).isDirectory()) {
+      // Recursively copy directories (e.g. img/)
+      fs.mkdirSync(destPath, { recursive: true });
+      const subFiles = fs.readdirSync(srcPath);
+      for (const sf of subFiles) {
+        const sp = path.join(srcPath, sf);
+        if (!fs.statSync(sp).isDirectory()) {
+          fs.copyFileSync(sp, path.join(destPath, sf));
+        }
+      }
+      console.log(`Copied directory: ${file}/ (${subFiles.length} files)`);
+      continue;
+    }
 
     if (file.endsWith('.html')) {
       console.log(`Processing: ${file}`);

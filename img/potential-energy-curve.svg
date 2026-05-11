@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="600" height="350" font-family="'SimSun','SimHei','Microsoft YaHei',serif">
+  <defs>
+    <marker id="arrowR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#1a5276"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#c0392b"/>
+    </marker>
+    <marker id="arrowL" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <path d="M8,0 L0,3 L8,6" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="350" fill="#fafafa" rx="8"/>
+
+  <!-- Title -->
+  <text x="300" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">势能曲线分析  Ep(x)</text>
+
+  <!-- Axes -->
+  <line x1="70" y1="300" x2="570" y2="300" stroke="#1a5276" stroke-width="1.5" marker-end="url(#arrowR)"/>
+  <line x1="70" y1="300" x2="70" y2="45" stroke="#1a5276" stroke-width="1.5" marker-end="url(#arrowR)"/>
+  <text x="565" y="318" font-size="13" fill="#1a5276" font-style="italic">x</text>
+  <text x="50" y="55" font-size="13" fill="#1a5276">Ep</text>
+
+  <!-- Forbidden region shading (where E < Ep) -->
+  <!-- Left forbidden: x < 130 -->
+  <path d="M90,135 Q110,80 130,135 L130,300 L90,300 Z" fill="#c0392b" opacity="0.08"/>
+  <!-- Middle forbidden hump: around x=350 -->
+  <path d="M310,135 Q350,55 390,135 L390,300 L310,300 Z" fill="#c0392b" opacity="0.08"/>
+  <!-- Right forbidden: x > 480 -->
+  <path d="M480,135 Q510,70 540,100 L540,300 L480,300 Z" fill="#c0392b" opacity="0.08"/>
+
+  <!-- Ep(x) curve -->
+  <path d="M90,100 Q110,80 130,135 Q170,250 240,230 Q280,218 310,135 Q340,55 370,80 Q390,100 420,200 Q445,260 480,135 Q510,70 540,100"
+        fill="none" stroke="#1a5276" stroke-width="2.5"/>
+
+  <!-- Total energy line E -->
+  <line x1="90" y1="135" x2="540" y2="135" stroke="#c0392b" stroke-width="1.8" stroke-dasharray="8,4"/>
+  <text x="545" y="132" font-size="13" fill="#c0392b" font-weight="bold">E (总能量)</text>
+
+  <!-- Turning points (where E line intersects Ep curve) -->
+  <!-- Point A: x≈130 -->
+  <circle cx="130" cy="135" r="5" fill="#c0392b"/>
+  <text x="115" y="122" font-size="11" fill="#c0392b">转折点A</text>
+
+  <!-- Point B: x≈310 -->
+  <circle cx="310" cy="135" r="5" fill="#c0392b"/>
+  <text x="295" y="122" font-size="11" fill="#c0392b">转折点B</text>
+
+  <!-- Point C: x≈390 -->
+  <circle cx="390" cy="135" r="5" fill="#c0392b"/>
+  <text x="392" y="122" font-size="11" fill="#c0392b">转折点C</text>
+
+  <!-- Point D: x≈480 -->
+  <circle cx="480" cy="135" r="5" fill="#c0392b"/>
+  <text x="465" y="122" font-size="11" fill="#c0392b">转折点D</text>
+
+  <!-- Stable equilibrium label at local minimum (~x=240, y=230) -->
+  <circle cx="240" cy="230" r="4" fill="#27ae60"/>
+  <line x1="240" y1="238" x2="240" y2="270" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="240" y="285" text-anchor="middle" font-size="12" fill="#27ae60" font-weight="bold">稳定平衡</text>
+  <text x="240" y="298" text-anchor="middle" font-size="10" fill="#27ae60">(dEp/dx=0, d²Ep/dx²>0)</text>
+
+  <!-- Unstable equilibrium label at local maximum (~x=350, y=55 → adjusted to hump peak) -->
+  <circle cx="345" cy="62" r="4" fill="#c0392b"/>
+  <line x1="345" y1="50" x2="345" y2="42" stroke="#c0392b" stroke-width="1"/>
+  <text x="345" y="50" text-anchor="middle" font-size="12" fill="#c0392b" font-weight="bold" dy="-8">不稳定平衡</text>
+
+  <!-- Ek annotation: vertical gap between E line and Ep curve at x≈240 -->
+  <line x1="215" y1="135" x2="215" y2="235" stroke="#27ae60" stroke-width="1.5" marker-end="url(#arrowR)" stroke-dasharray="4,2"/>
+  <line x1="215" y1="235" x2="215" y2="135" stroke="#27ae60" stroke-width="0"/>
+  <!-- Ek brace/arrow -->
+  <line x1="210" y1="135" x2="220" y2="135" stroke="#27ae60" stroke-width="1"/>
+  <line x1="210" y1="230" x2="220" y2="230" stroke="#27ae60" stroke-width="1"/>
+  <line x1="215" y1="135" x2="215" y2="230" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="195" y="185" text-anchor="end" font-size="11" fill="#27ae60" font-weight="bold">Ek = E − Ep</text>
+
+  <!-- Oscillation arrow between turning points A and B -->
+  <path d="M145,155 Q220,175 295,155" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+  <path d="M295,165 Q220,185 145,165" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#arrowL)"/>
+  <text x="220" y="200" text-anchor="middle" font-size="10" fill="#c0392b">粒子在转折点间振荡</text>
+
+  <!-- Forbidden region label -->
+  <text x="100" y="80" font-size="9" fill="#c0392b" opacity="0.7">禁区</text>
+  <text x="100" y="91" font-size="9" fill="#c0392b" opacity="0.7">E &lt; Ep</text>
+</svg>

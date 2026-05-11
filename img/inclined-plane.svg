@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350">
+  <defs>
+    <marker id="iArrBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1a5276"/>
+    </marker>
+    <marker id="iArrRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c0392b"/>
+    </marker>
+    <marker id="iArrGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#27ae60"/>
+    </marker>
+    <marker id="iArrOrange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e67e22"/>
+    </marker>
+    <marker id="iArrGray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="250" y="28" text-anchor="middle" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" fill="#1a5276">斜面受力分析</text>
+
+  <!-- Inclined plane: angle ~30° -->
+  <!-- Base: (60,290) to (420,290), slope top: (420,290) up to (420, 110) — wait, let me do a proper triangle -->
+  <!-- Triangle: bottom-left (80,290), bottom-right (420,290), top-right (420,110) -->
+  <!-- Angle at bottom-left ≈ arctan(180/340) ≈ 28° -->
+  <polygon points="80,290 420,290 420,110" fill="#e8e8e8" stroke="#555" stroke-width="2"/>
+
+  <!-- Ground line -->
+  <line x1="40" y1="290" x2="460" y2="290" stroke="#555" stroke-width="2"/>
+  <!-- Hatching under ground -->
+  <line x1="50" y1="295" x2="40" y2="305" stroke="#888" stroke-width="1"/>
+  <line x1="70" y1="295" x2="60" y2="305" stroke="#888" stroke-width="1"/>
+  <line x1="90" y1="295" x2="80" y2="305" stroke="#888" stroke-width="1"/>
+  <line x1="110" y1="295" x2="100" y2="305" stroke="#888" stroke-width="1"/>
+  <line x1="130" y1="295" x2="120" y2="305" stroke="#888" stroke-width="1"/>
+  <line x1="150" y1="295" x2="140" y2="305" stroke="#888" stroke-width="1"/>
+  <line x1="170" y1="295" x2="160" y2="305" stroke="#888" stroke-width="1"/>
+
+  <!-- Angle θ arc at bottom-left -->
+  <path d="M 130,290 A 50,50 0 0,0 120,264" fill="none" stroke="#e67e22" stroke-width="2"/>
+  <text x="135" y="280" font-family="serif" font-size="16" font-style="italic" font-weight="bold" fill="#e67e22">θ</text>
+
+  <!-- Block on the incline -->
+  <!-- Slope direction vector: from (80,290) to (420,110) => (340,-180), normalized ≈ (0.884,-0.467) -->
+  <!-- Perpendicular (outward from surface): (0.467, 0.884) rotated = pointing upper-left => actually (-(-0.467), 0.884)... -->
+  <!-- Let me place block center at roughly midpoint of slope -->
+  <!-- Slope midpoint area: around x=270, y=190 -->
+  <!-- Block: rotated rectangle. Slope angle = atan(180/340)=27.9° ≈ 28° -->
+  <!-- Using transform for the block -->
+  <g transform="translate(270,190) rotate(-27.9)">
+    <!-- Block rectangle centered at origin -->
+    <rect x="-30" y="-35" width="60" height="35" fill="#bdd7ee" stroke="#1a5276" stroke-width="2" rx="2"/>
+    <text x="0" y="-12" text-anchor="middle" font-family="serif" font-size="13" font-weight="bold" fill="#1a5276">m</text>
+  </g>
+
+  <!-- Center of mass of block approximately at (270, 190) adjusted for block sitting on surface -->
+  <!-- Block sits on slope, so center is offset perpendicular. Let's use (258, 178) as CoM -->
+
+  <!-- Gravity mg (straight down) -->
+  <line x1="258" y1="178" x2="258" y2="268" stroke="#1a5276" stroke-width="2.5" marker-end="url(#iArrBlue)"/>
+  <text x="262" y="280" font-family="serif" font-size="14" font-weight="bold" font-style="italic" fill="#1a5276">mg</text>
+
+  <!-- mg sinθ component (along plane, downward along slope) -->
+  <!-- Direction along slope downward: (0.884, 0.467) * 75 from CoM -->
+  <line x1="258" y1="178" x2="192" y2="213" stroke="#c0392b" stroke-width="2.5" marker-end="url(#iArrRed)"/>
+  <text x="168" y="225" font-family="serif" font-size="13" font-weight="bold" fill="#c0392b">mg sinθ</text>
+
+  <!-- mg cosθ component (perpendicular to plane, into surface) -->
+  <!-- Direction into surface: (0.467, 0.884) but pointing into slope = (0.467, 0.884) -->
+  <line x1="258" y1="178" x2="290" y2="240" stroke="#c0392b" stroke-width="2.5" marker-end="url(#iArrRed)"/>
+  <text x="296" y="250" font-family="serif" font-size="13" font-weight="bold" fill="#c0392b">mg cosθ</text>
+
+  <!-- Dashed lines showing decomposition parallelogram -->
+  <line x1="258" y1="268" x2="192" y2="213" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="258" y1="268" x2="290" y2="240" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Normal force N (perpendicular to plane, outward) -->
+  <!-- Outward normal: (-sin28, cos28) direction = (-0.467, -0.884) * length -->
+  <line x1="258" y1="178" x2="222" y2="108" stroke="#27ae60" stroke-width="2.5" marker-end="url(#iArrGreen)"/>
+  <text x="205" y="100" font-family="serif" font-size="15" font-weight="bold" font-style="italic" fill="#27ae60">N</text>
+
+  <!-- Friction force f (along plane, upward = opposing downhill motion) -->
+  <!-- Up the slope: (-0.884, 0.467) => but going up slope from block = toward top-right -->
+  <line x1="258" y1="178" x2="328" y2="141" stroke="#e67e22" stroke-width="2.5" marker-end="url(#iArrOrange)"/>
+  <text x="332" y="135" font-family="serif" font-size="15" font-weight="bold" font-style="italic" fill="#e67e22">f</text>
+
+  <!-- Coordinate axes at block -->
+  <!-- x-axis along plane upward, y-axis perpendicular outward -->
+  <g>
+    <!-- x-axis (along slope, upward) -->
+    <line x1="258" y1="178" x2="348" y2="130" stroke="#555" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#iArrGray)"/>
+    <text x="352" y="125" font-family="serif" font-size="14" font-style="italic" fill="#555">x</text>
+
+    <!-- y-axis (perpendicular, outward) -->
+    <line x1="258" y1="178" x2="216" y2="97" stroke="#555" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#iArrGray)"/>
+    <text x="205" y="90" font-family="serif" font-size="14" font-style="italic" fill="#555">y</text>
+  </g>
+
+  <!-- Right-angle mark at decomposition -->
+  <rect x="253" y="233" width="8" height="8" fill="none" stroke="#c0392b" stroke-width="1" transform="rotate(-28, 258, 240)"/>
+
+  <!-- Formulas -->
+  <rect x="310" y="45" width="175" height="70" rx="6" fill="#f4f6f7" stroke="#ccc" stroke-width="1"/>
+  <text x="320" y="65" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="12" fill="#555">沿斜面: ma = mgsinθ − f</text>
+  <text x="320" y="85" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="12" fill="#555">垂直斜面: N = mgcosθ</text>
+  <text x="320" y="105" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="12" fill="#555">摩擦力: f = μN</text>
+</svg>

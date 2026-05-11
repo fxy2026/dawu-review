@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 350" width="550" height="350" font-family="'SimSun','SimHei','Microsoft YaHei',serif">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#1a5276"/>
+    </marker>
+    <marker id="arrR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#c0392b"/>
+    </marker>
+    <marker id="arrG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#27ae60"/>
+    </marker>
+  </defs>
+
+  <rect width="550" height="350" fill="#fafafa" rx="8"/>
+
+  <!-- Title -->
+  <text x="275" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">纯滚动示意图</text>
+
+  <!-- Incline surface -->
+  <line x1="80" y1="300" x2="480" y2="300" stroke="#aaa" stroke-width="0.5"/>
+  <!-- Inclined plane -->
+  <polygon points="120,290 470,290 470,120" fill="#e8e8e8" stroke="#888" stroke-width="1.5"/>
+
+  <!-- Angle θ arc -->
+  <path d="M440,290 A40,40 0 0,0 460,265" fill="none" stroke="#1a5276" stroke-width="1.2"/>
+  <text x="430" y="280" font-size="13" fill="#1a5276" font-style="italic">θ</text>
+
+  <!-- Calculate incline: from (470,290) to (470,120). Slope angle ~ 28°. -->
+  <!-- Cylinder center on incline: approximately at (300, 210) -->
+  <!-- The incline goes from bottom-left (120,290) to top-right (470,120) -->
+  <!-- Slope: rise = 170, run = 350, angle ≈ 26° -->
+  <!-- A point on incline at x=300: y = 290 - (300-120)*(170/350) = 290 - 87.4 ≈ 203 -->
+  <!-- Cylinder radius ~35, center perpendicular to surface above contact point -->
+  <!-- Normal direction: perpendicular to slope. Slope direction = (350, -170)/norm -->
+  <!-- Normal = (170, 350)/norm ≈ (0.437, 0.899). Normalized: (0.437, 0.899) -->
+  <!-- Contact point at (290, 207). Center = (290+0.437*35, 207-0.899*35) = (305, 175) -->
+
+  <!-- Cylinder -->
+  <circle cx="305" cy="175" r="35" fill="#1a5276" opacity="0.12" stroke="#1a5276" stroke-width="2.5"/>
+  <circle cx="305" cy="175" r="3" fill="#1a5276"/>
+  <text x="305" y="172" text-anchor="middle" font-size="9" fill="#1a5276" dy="-5">C</text>
+
+  <!-- Contact point P on incline -->
+  <!-- P is at the bottom of the cylinder touching the surface -->
+  <!-- P = center + normal_down * R = (305 - 0.437*35, 175 + 0.899*35) = (290, 206) -->
+  <circle cx="290" cy="206" r="4" fill="#c0392b"/>
+  <text x="262" y="225" font-size="11" fill="#c0392b" font-weight="bold">P</text>
+  <text x="220" y="240" font-size="10" fill="#c0392b">v=0 (瞬时静止)</text>
+
+  <!-- Velocity vc arrow at center, along the incline (downhill direction) -->
+  <!-- Incline direction (downhill): (350, -170)/|...| wait, downhill is toward lower left -->
+  <!-- Actually going DOWN the incline: direction from (470,120) toward (120,290) = (-350, 170)/norm = (-0.899, 0.437) -->
+  <!-- vc arrow from center going down-left along incline -->
+  <line x1="305" y1="175" x2="240" y2="207" stroke="#1a5276" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="235" y="200" font-size="12" fill="#1a5276" font-weight="bold" text-anchor="end">v꜀</text>
+
+  <!-- Angular velocity ω (curved arrow, clockwise for rolling down-left) -->
+  <path d="M325,155 A28,28 0 0,1 330,195" fill="none" stroke="#1a5276" stroke-width="1.8" marker-end="url(#arr)"/>
+  <text x="340" y="178" font-size="13" fill="#1a5276" font-style="italic" font-weight="bold">ω</text>
+
+  <!-- Constraint equation -->
+  <rect x="340" y="40" width="170" height="28" fill="white" stroke="#1a5276" stroke-width="1.5" rx="5"/>
+  <text x="425" y="59" text-anchor="middle" font-size="13" fill="#1a5276" font-weight="bold">v꜀ = Rω</text>
+
+  <!-- Forces -->
+  <!-- mg: straight down from center -->
+  <line x1="305" y1="180" x2="305" y2="260" stroke="#c0392b" stroke-width="2" marker-end="url(#arrR)"/>
+  <text x="312" y="268" font-size="12" fill="#c0392b" font-weight="bold" font-style="italic">mg</text>
+
+  <!-- N: perpendicular to surface, pointing away from surface (upward-left from surface) -->
+  <!-- Normal direction outward from surface: (170, 350) normalized ≈ (0.437, 0.899) → pointing up-left: (0.437, -0.899) -->
+  <!-- But we need "away from surface" which is: the direction that goes away from the incline body -->
+  <!-- Surface normal pointing up-left from the incline face: let's use (-170/389, -350/389) → no -->
+  <!-- The incline face goes from (120,290) to (470,120). Outward normal (away from solid) points upper-left -->
+  <!-- Direction: rotate slope 90° CCW. Slope vector: (350, -170). Rotated 90° CCW: (170, 350) → normalize → (0.437, 0.899) -->
+  <!-- That points down-right, INTO the surface. We want the opposite: (-0.437, -0.899) → no that's up-left above the incline -->
+  <!-- Hmm. Let me think simply. Normal from contact point pointing perpendicular AWAY from incline surface. -->
+  <!-- The incline surface is below the cylinder. Normal points "upward" from the surface. -->
+  <!-- From contact point P=(290,206), going toward center (305,175) is the outward normal direction. -->
+  <!-- Direction: (15, -31), normalize: len=34.4, unit=(0.436, -0.901) -->
+  <!-- N arrow from contact point area upward perpendicular to surface, length ~55 -->
+  <line x1="290" y1="206" x2="314" y2="156" stroke="#27ae60" stroke-width="2" marker-end="url(#arrG)"/>
+  <text x="325" y="148" font-size="12" fill="#27ae60" font-weight="bold" font-style="italic">N</text>
+
+  <!-- Friction f: along incline surface, pointing UP the incline (opposing motion) -->
+  <!-- Up-incline direction from P: (0.899, -0.437) → toward (470,120) direction -->
+  <!-- f arrow from contact point going up-right along incline -->
+  <line x1="290" y1="206" x2="340" y2="182" stroke="#27ae60" stroke-width="2" marker-end="url(#arrG)"/>
+  <text x="348" y="185" font-size="12" fill="#27ae60" font-weight="bold" font-style="italic">f</text>
+
+  <!-- Friction label -->
+  <text x="370" y="198" font-size="10" fill="#27ae60">(静摩擦)</text>
+
+  <!-- R label on cylinder -->
+  <line x1="305" y1="175" x2="330" y2="155" stroke="#555" stroke-width="0.8"/>
+  <text x="325" y="148" font-size="10" fill="#555" font-style="italic" dx="10" dy="-5">R</text>
+
+  <!-- Additional note -->
+  <text x="275" y="330" text-anchor="middle" font-size="11" fill="#1a5276">纯滚动条件：接触点瞬时速度为零，v꜀ = Rω</text>
+  <text x="275" y="345" text-anchor="middle" font-size="10" fill="#888">滚动摩擦不做功（静摩擦）</text>
+</svg>

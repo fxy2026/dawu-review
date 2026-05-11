@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 350" width="450" height="350" font-family="'SimSun','STSong','Noto Serif CJK SC',serif">
+  <defs>
+    <marker id="tsaxX" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#333"/>
+    </marker>
+    <marker id="tsaxY" markerWidth="6" markerHeight="8" refX="3" refY="0" orient="auto">
+      <path d="M0,8 L3,0 L6,8" fill="#333"/>
+    </marker>
+  </defs>
+
+  <rect width="450" height="350" fill="#fafafa" rx="6"/>
+
+  <!-- Title -->
+  <text x="225" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">卡诺循环 T-S 图</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="290" x2="420" y2="290" stroke="#333" stroke-width="1.5" marker-end="url(#tsaxX)"/>
+  <line x1="80" y1="290" x2="80" y2="40" stroke="#333" stroke-width="1.5" marker-end="url(#tsaxY)"/>
+  <text x="422" y="306" font-size="14" fill="#333" font-style="italic">S</text>
+  <text x="58" y="48" font-size="14" fill="#333" font-style="italic">T</text>
+  <text x="66" y="305" font-size="12" fill="#333">O</text>
+
+  <!-- Rectangle corners:
+       Bottom-left (S1,T2): (150, 220)
+       Bottom-right (S2,T2): (360, 220)
+       Top-right (S2,T1): (360, 90)
+       Top-left (S1,T1): (150, 90)
+  -->
+
+  <!-- Shaded rectangle (net work area) -->
+  <rect x="150" y="90" width="210" height="130" fill="#1a5276" fill-opacity="0.12" stroke="none"/>
+
+  <!-- Rectangle sides with arrows -->
+  <!-- Top: 1→2 isothermal expansion T1 (left to right) RED -->
+  <line x1="150" y1="90" x2="360" y2="90" stroke="#c0392b" stroke-width="2.5"/>
+  <polygon points="265,90 255,84 255,96" fill="#c0392b"/>
+
+  <!-- Right: 2→3 adiabatic expansion (top to bottom) BLUE -->
+  <line x1="360" y1="90" x2="360" y2="220" stroke="#1a5276" stroke-width="2.5"/>
+  <polygon points="360,165 354,155 366,155" fill="#1a5276"/>
+
+  <!-- Bottom: 3→4 isothermal compression T2 (right to left) GREEN -->
+  <line x1="360" y1="220" x2="150" y2="220" stroke="#27ae60" stroke-width="2.5"/>
+  <polygon points="245,220 255,214 255,226" fill="#27ae60"/>
+
+  <!-- Left: 4→1 adiabatic compression (bottom to top) ORANGE -->
+  <line x1="150" y1="220" x2="150" y2="90" stroke="#e67e22" stroke-width="2.5"/>
+  <polygon points="150,145 144,155 156,155" fill="#e67e22"/>
+
+  <!-- Corner dots and state labels -->
+  <circle cx="150" cy="90" r="4.5" fill="#333"/>
+  <text x="132" y="82" font-size="14" font-weight="bold" fill="#333">1</text>
+
+  <circle cx="360" cy="90" r="4.5" fill="#333"/>
+  <text x="366" y="82" font-size="14" font-weight="bold" fill="#333">2</text>
+
+  <circle cx="360" cy="220" r="4.5" fill="#333"/>
+  <text x="366" y="235" font-size="14" font-weight="bold" fill="#333">3</text>
+
+  <circle cx="150" cy="220" r="4.5" fill="#333"/>
+  <text x="132" y="235" font-size="14" font-weight="bold" fill="#333">4</text>
+
+  <!-- Process labels -->
+  <text x="255" y="78" text-anchor="middle" font-size="12" fill="#c0392b">等温膨胀 T₁</text>
+  <text x="380" y="160" font-size="11" fill="#1a5276">绝热</text>
+  <text x="380" y="174" font-size="11" fill="#1a5276">膨胀</text>
+  <text x="255" y="245" text-anchor="middle" font-size="12" fill="#27ae60">等温压缩 T₂</text>
+  <text x="110" y="155" font-size="11" fill="#e67e22" text-anchor="middle">绝热</text>
+  <text x="110" y="169" font-size="11" fill="#e67e22" text-anchor="middle">压缩</text>
+
+  <!-- Dashed lines to axes -->
+  <line x1="80" y1="90" x2="148" y2="90" stroke="#999" stroke-width="0.8" stroke-dasharray="4,3"/>
+  <line x1="80" y1="220" x2="148" y2="220" stroke="#999" stroke-width="0.8" stroke-dasharray="4,3"/>
+  <line x1="150" y1="222" x2="150" y2="290" stroke="#999" stroke-width="0.8" stroke-dasharray="4,3"/>
+  <line x1="360" y1="222" x2="360" y2="290" stroke="#999" stroke-width="0.8" stroke-dasharray="4,3"/>
+
+  <!-- Axis tick labels -->
+  <text x="65" y="95" font-size="12" fill="#333">T₁</text>
+  <text x="65" y="225" font-size="12" fill="#333">T₂</text>
+  <text x="145" y="308" font-size="12" fill="#333">S₁</text>
+  <text x="355" y="308" font-size="12" fill="#333">S₂</text>
+
+  <!-- W label in center -->
+  <text x="255" y="155" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">W</text>
+  <text x="255" y="175" text-anchor="middle" font-size="12" fill="#555">(面积 = 净功)</text>
+
+  <!-- Formula -->
+  <text x="255" y="335" text-anchor="middle" font-size="13" fill="#333">W = (T₁ − T₂)(S₂ − S₁) = Q₁ − Q₂</text>
+</svg>

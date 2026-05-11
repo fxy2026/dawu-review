@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300" font-family="'Segoe UI', 'Microsoft YaHei', sans-serif">
+  <rect width="600" height="300" fill="#fffef9"/>
+
+  <!-- Title -->
+  <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">多普勒效应示意图</text>
+
+  <!-- Center of source motion path -->
+  <!-- Source is moving right, so wavefronts have shifted centers -->
+  <!-- Current source position: x=320, older positions further left -->
+
+  <g transform="translate(0,160)">
+    <!-- Wavefronts: concentric circles with shifted centers (older = more left) -->
+    <!-- Oldest wavefront (largest, center furthest left) -->
+    <circle cx="220" cy="0" r="130" fill="none" stroke="#2980b9" stroke-width="1" opacity="0.3"/>
+    <!-- Second oldest -->
+    <circle cx="250" cy="0" r="100" fill="none" stroke="#2980b9" stroke-width="1.2" opacity="0.4"/>
+    <!-- Third -->
+    <circle cx="275" cy="0" r="72" fill="none" stroke="#2980b9" stroke-width="1.3" opacity="0.55"/>
+    <!-- Fourth -->
+    <circle cx="296" cy="0" r="47" fill="none" stroke="#2980b9" stroke-width="1.4" opacity="0.7"/>
+    <!-- Newest (smallest, closest to current position) -->
+    <circle cx="312" cy="0" r="24" fill="none" stroke="#2980b9" stroke-width="1.5" opacity="0.85"/>
+
+    <!-- Source (current position) -->
+    <circle cx="325" cy="0" r="8" fill="#c0392b" stroke="#922b21" stroke-width="1.5"/>
+    <text x="325" y="-16" text-anchor="middle" font-size="12" fill="#c0392b" font-weight="bold">声源</text>
+
+    <!-- Source velocity arrow -->
+    <line x1="338" y1="0" x2="380" y2="0" stroke="#c0392b" stroke-width="2.5" marker-end="url(#arrowRedV)"/>
+    <text x="359" y="-8" text-anchor="middle" font-size="11" fill="#c0392b" font-style="italic">v_s</text>
+
+    <!-- Observer on the right (approaching) -->
+    <g transform="translate(520,0)">
+      <rect x="-10" y="-18" width="20" height="36" rx="4" fill="#1a5276" opacity="0.15" stroke="#1a5276" stroke-width="1.2"/>
+      <circle cx="0" cy="-10" r="5" fill="none" stroke="#1a5276" stroke-width="1.2"/>
+      <line x1="0" y1="-5" x2="0" y2="8" stroke="#1a5276" stroke-width="1.2"/>
+      <line x1="-7" y1="0" x2="7" y2="0" stroke="#1a5276" stroke-width="1.2"/>
+      <line x1="0" y1="8" x2="-5" y2="18" stroke="#1a5276" stroke-width="1.2"/>
+      <line x1="0" y1="8" x2="5" y2="18" stroke="#1a5276" stroke-width="1.2"/>
+      <text x="0" y="34" text-anchor="middle" font-size="11" fill="#1a5276" font-weight="bold">观察者</text>
+    </g>
+
+    <!-- Observer on the left (receding) -->
+    <g transform="translate(60,0)">
+      <rect x="-10" y="-18" width="20" height="36" rx="4" fill="#1a5276" opacity="0.15" stroke="#1a5276" stroke-width="1.2"/>
+      <circle cx="0" cy="-10" r="5" fill="none" stroke="#1a5276" stroke-width="1.2"/>
+      <line x1="0" y1="-5" x2="0" y2="8" stroke="#1a5276" stroke-width="1.2"/>
+      <line x1="-7" y1="0" x2="7" y2="0" stroke="#1a5276" stroke-width="1.2"/>
+      <line x1="0" y1="8" x2="-5" y2="18" stroke="#1a5276" stroke-width="1.2"/>
+      <line x1="0" y1="8" x2="5" y2="18" stroke="#1a5276" stroke-width="1.2"/>
+      <text x="0" y="34" text-anchor="middle" font-size="11" fill="#1a5276" font-weight="bold">观察者</text>
+    </g>
+
+    <!-- Annotation: compressed side (right) -->
+    <text x="440" y="-85" text-anchor="middle" font-size="11" fill="#27ae60" font-weight="bold">波长缩短 λ'&lt;λ</text>
+    <text x="440" y="-70" text-anchor="middle" font-size="11" fill="#27ae60">频率升高 f'&gt;f</text>
+
+    <!-- Annotation: stretched side (left) -->
+    <text x="140" y="-85" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="bold">波长增大 λ'&gt;λ</text>
+    <text x="140" y="-70" text-anchor="middle" font-size="11" fill="#c0392b">频率降低 f'&lt;f</text>
+
+    <!-- Small arrows showing compression/stretching -->
+    <!-- Right side: compressed -->
+    <line x1="395" y1="-50" x2="420" y2="-56" stroke="#27ae60" stroke-width="1.2" stroke-dasharray="3,2"/>
+    <!-- Left side: stretched -->
+    <line x1="130" y1="-50" x2="115" y2="-56" stroke="#c0392b" stroke-width="1.2" stroke-dasharray="3,2"/>
+  </g>
+
+  <!-- Formula at bottom -->
+  <text x="300" y="285" text-anchor="middle" font-size="12" fill="#1a5276" font-style="italic">f' = f (v ± v_o) / (v ∓ v_s)</text>
+
+  <defs>
+    <marker id="arrowRedV" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7" fill="#c0392b"/>
+    </marker>
+  </defs>
+</svg>

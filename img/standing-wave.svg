@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300" font-family="'Segoe UI', 'Microsoft YaHei', sans-serif">
+  <rect width="600" height="300" fill="#fffef9"/>
+
+  <!-- Title -->
+  <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">驻波示意图</text>
+
+  <g transform="translate(50,155)">
+    <!-- Axis -->
+    <line x1="0" y1="0" x2="510" y2="0" stroke="#999" stroke-width="0.8"/>
+    <text x="515" y="4" font-size="10" fill="#666">x</text>
+
+    <!-- t=0: full amplitude (darkest) -->
+    <path d="M 0,0 C 20,-70 45,-70 62.5,-70 C 80,-70 105,-70 125,0 C 145,70 170,70 187.5,70 C 205,70 230,70 250,0 C 270,-70 295,-70 312.5,-70 C 330,-70 355,-70 375,0 C 395,70 420,70 437.5,70 C 455,70 480,70 500,0"
+      fill="none" stroke="#1a5276" stroke-width="2.2" opacity="1"/>
+
+    <!-- t=T/4: zero (nodes only) — flat line, skip as it's just the axis -->
+
+    <!-- t=T/8: partial amplitude -->
+    <path d="M 0,0 C 20,-49.5 45,-49.5 62.5,-49.5 C 80,-49.5 105,-49.5 125,0 C 145,49.5 170,49.5 187.5,49.5 C 205,49.5 230,49.5 250,0 C 270,-49.5 295,-49.5 312.5,-49.5 C 330,-49.5 355,-49.5 375,0 C 395,49.5 420,49.5 437.5,49.5 C 455,49.5 480,49.5 500,0"
+      fill="none" stroke="#2980b9" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- t=T/2: full amplitude inverted -->
+    <path d="M 0,0 C 20,70 45,70 62.5,70 C 80,70 105,70 125,0 C 145,-70 170,-70 187.5,-70 C 205,-70 230,-70 250,0 C 270,70 295,70 312.5,70 C 330,70 355,70 375,0 C 395,-70 420,-70 437.5,-70 C 455,-70 480,-70 500,0"
+      fill="none" stroke="#c0392b" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- t=3T/8: partial inverted -->
+    <path d="M 0,0 C 20,49.5 45,49.5 62.5,49.5 C 80,49.5 105,49.5 125,0 C 145,-49.5 170,-49.5 187.5,-49.5 C 205,-49.5 230,-49.5 250,0 C 270,49.5 295,49.5 312.5,49.5 C 330,49.5 355,49.5 375,0 C 395,-49.5 420,-49.5 437.5,-49.5 C 455,-49.5 480,-49.5 500,0"
+      fill="none" stroke="#e67e22" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- Envelope (dashed) -->
+    <path d="M 0,0 C 20,-70 45,-70 62.5,-70 C 80,-70 105,-70 125,0 C 145,70 170,70 187.5,70 C 205,70 230,70 250,0 C 270,-70 295,-70 312.5,-70 C 330,-70 355,-70 375,0 C 395,70 420,70 437.5,70 C 455,70 480,70 500,0"
+      fill="none" stroke="#1a5276" stroke-width="1" stroke-dasharray="5,4" opacity="0.4"/>
+    <path d="M 0,0 C 20,70 45,70 62.5,70 C 80,70 105,70 125,0 C 145,-70 170,-70 187.5,-70 C 205,-70 230,-70 250,0 C 270,70 295,70 312.5,70 C 330,70 355,70 375,0 C 395,-70 420,-70 437.5,-70 C 455,-70 480,-70 500,0"
+      fill="none" stroke="#1a5276" stroke-width="1" stroke-dasharray="5,4" opacity="0.4"/>
+
+    <!-- Node dots (波节) -->
+    <circle cx="0" cy="0" r="4" fill="#c0392b"/>
+    <circle cx="125" cy="0" r="4" fill="#c0392b"/>
+    <circle cx="250" cy="0" r="4" fill="#c0392b"/>
+    <circle cx="375" cy="0" r="4" fill="#c0392b"/>
+    <circle cx="500" cy="0" r="4" fill="#c0392b"/>
+
+    <!-- Node labels -->
+    <text x="125" y="22" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="bold">波节</text>
+    <text x="375" y="22" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="bold">波节</text>
+
+    <!-- Antinode labels (波腹) -->
+    <text x="62.5" y="-80" text-anchor="middle" font-size="11" fill="#1a5276" font-weight="bold">波腹</text>
+    <line x1="62.5" y1="-76" x2="62.5" y2="-72" stroke="#1a5276" stroke-width="0.8"/>
+    <text x="312.5" y="-80" text-anchor="middle" font-size="11" fill="#1a5276" font-weight="bold">波腹</text>
+    <line x1="312.5" y1="-76" x2="312.5" y2="-72" stroke="#1a5276" stroke-width="0.8"/>
+
+    <!-- λ/2 bracket between nodes -->
+    <line x1="125" y1="35" x2="125" y2="42" stroke="#27ae60" stroke-width="1"/>
+    <line x1="250" y1="35" x2="250" y2="42" stroke="#27ae60" stroke-width="1"/>
+    <line x1="125" y1="39" x2="250" y2="39" stroke="#27ae60" stroke-width="1.5" marker-start="url(#arrowGreenL)" marker-end="url(#arrowGreen)"/>
+    <text x="187.5" y="54" text-anchor="middle" font-size="12" fill="#27ae60" font-weight="bold">λ/2</text>
+
+    <!-- λ bracket -->
+    <line x1="0" y1="62" x2="0" y2="70" stroke="#8e44ad" stroke-width="1"/>
+    <line x1="250" y1="62" x2="250" y2="70" stroke="#8e44ad" stroke-width="1"/>
+    <line x1="0" y1="67" x2="250" y2="67" stroke="#8e44ad" stroke-width="1.5" marker-start="url(#arrowPurpleL)" marker-end="url(#arrowPurple)"/>
+    <text x="125" y="82" text-anchor="middle" font-size="12" fill="#8e44ad" font-weight="bold">λ</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(40,280)">
+    <line x1="0" y1="0" x2="20" y2="0" stroke="#1a5276" stroke-width="2"/>
+    <text x="24" y="4" font-size="10" fill="#333">t = 0</text>
+    <line x1="80" y1="0" x2="100" y2="0" stroke="#2980b9" stroke-width="1.5" opacity="0.7"/>
+    <text x="104" y="4" font-size="10" fill="#333">t = T/8</text>
+    <line x1="170" y1="0" x2="190" y2="0" stroke="#c0392b" stroke-width="1.5" opacity="0.6"/>
+    <text x="194" y="4" font-size="10" fill="#333">t = T/2</text>
+    <line x1="260" y1="0" x2="280" y2="0" stroke="#e67e22" stroke-width="1.5" opacity="0.5"/>
+    <text x="284" y="4" font-size="10" fill="#333">t = 3T/8</text>
+  </g>
+
+  <defs>
+    <marker id="arrowGreen" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+      <path d="M0,0 L6,2 L0,4" fill="#27ae60"/>
+    </marker>
+    <marker id="arrowGreenL" markerWidth="6" markerHeight="4" refX="0" refY="2" orient="auto">
+      <path d="M6,0 L0,2 L6,4" fill="#27ae60"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+      <path d="M0,0 L6,2 L0,4" fill="#8e44ad"/>
+    </marker>
+    <marker id="arrowPurpleL" markerWidth="6" markerHeight="4" refX="0" refY="2" orient="auto">
+      <path d="M6,0 L0,2 L6,4" fill="#8e44ad"/>
+    </marker>
+  </defs>
+</svg>
