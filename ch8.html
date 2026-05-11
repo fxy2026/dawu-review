@@ -428,6 +428,110 @@ $$\bar{Z} = \frac{\bar{v}}{\bar{\lambda}} = \sqrt{2}\pi d^2 n\bar{v} = \sqrt{2}\
 </ul></div>
 </div>
 
+<h2 id="s13">8.13 Maxwell速率分布的推导思路（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">启发性推导（PPT讲授思路）</div>
+<p>Maxwell分布可以分三步理解：</p>
+<ol>
+<li><strong>速度分量的分布</strong>：由各向同性假设，$v_x$、$v_y$、$v_z$ 独立且同分布。每个分量服从 Gauss 分布：
+$$g(v_x) = \left(\frac{m}{2\pi kT}\right)^{1/2}\exp\left(-\frac{mv_x^2}{2kT}\right)$$</li>
+<li><strong>速度空间的联合分布</strong>：三个方向独立，联合概率密度为：
+$$F(v_x,v_y,v_z) = g(v_x)g(v_y)g(v_z) = \left(\frac{m}{2\pi kT}\right)^{3/2}\exp\left(-\frac{m(v_x^2+v_y^2+v_z^2)}{2kT}\right)$$</li>
+<li><strong>从速度分布到速率分布</strong>：速率 $v=\sqrt{v_x^2+v_y^2+v_z^2}$ 对应速度空间中半径为 $v$ 的球壳，"体积"为 $4\pi v^2\dd v$，因此：
+$$f(v) = 4\pi v^2\cdot F = 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2}v^2\exp\left(-\frac{mv^2}{2kT}\right)$$</li>
+</ol>
+</div>
+
+<div class="tip"><strong>$f(v)$ 中 $v^2$ 因子的物理含义</strong>：
+<ul>
+<li>$e^{-mv^2/(2kT)}$ 因子——Boltzmann因子，高速分子少（能量高、概率小）</li>
+<li>$v^2$ 因子——速度空间中球壳面积 $\propto v^2$，高速对应更大的"状态数"</li>
+<li>两者竞争：低速段 $v^2$ 占主导（$f$ 上升），高速段 $e^{-}$ 占主导（$f$ 下降）</li>
+<li>峰值 $v_p$ 是两个因子平衡的结果</li>
+</ul></div>
+</div>
+
+<h2 id="s14">8.14 三种速率的推导与比较（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">三种速率的推导</div>
+<p><strong>最概然速率 $v_p$</strong>：令 $\frac{\dd f}{\dd v}\bigg|_{v=v_p}=0$</p>
+<p>对 $f(v)\propto v^2 e^{-mv^2/(2kT)}$ 求导令其为零：$2v_p-\frac{mv_p^3}{kT}=0$</p>
+$$\boxed{v_p = \sqrt{\frac{2kT}{m}}}$$
+
+<p><strong>平均速率 $\bar{v}$</strong>：$\bar{v}=\int_0^\infty vf(v)\dd v$</p>
+<p>利用 Gauss 积分公式 $\int_0^\infty v^3 e^{-\alpha v^2}\dd v=\frac{1}{2\alpha^2}$：</p>
+$$\boxed{\bar{v} = \sqrt{\frac{8kT}{\pi m}}}$$
+
+<p><strong>方均根速率 $v_{rms}$</strong>：$\overline{v^2}=\int_0^\infty v^2f(v)\dd v$</p>
+<p>利用 $\int_0^\infty v^4 e^{-\alpha v^2}\dd v=\frac{3\sqrt{\pi}}{8\alpha^{5/2}}$：</p>
+$$\boxed{v_{rms} = \sqrt{\overline{v^2}} = \sqrt{\frac{3kT}{m}}}$$
+</div>
+
+<div class="fb">
+<div class="t">三种速率数值比</div>
+$$v_p : \bar{v} : v_{rms} = \sqrt{2} : \sqrt{\frac{8}{\pi}} : \sqrt{3} = 1 : 1.128 : 1.225$$
+<p>三者均正比于 $\sqrt{T/m}$（温度越高、分子越轻，速率越大）。</p>
+</div>
+
+<div class="warn"><strong>选择题常考</strong>：
+<ul>
+<li>"温度升高时 $v_p$ 处的 $f(v_p)$ 如何变化？"——答：$f(v_p)=\frac{4}{\sqrt{\pi}ev_p}$，$v_p$ 增大则 $f(v_p)$ 减小</li>
+<li>"$\bar{v}$ 和 $v_{rms}$ 哪个大？"——答：$v_{rms}>\bar{v}$，因为 $\overline{v^2}\geq(\bar{v})^2$（柯西不等式）</li>
+<li>"不同气体在同一温度下，$v_p$ 是否相同？"——答：不同，$v_p\propto 1/\sqrt{m}$，轻分子更快</li>
+</ul></div>
+</div>
+
+<h2 id="s15">8.15 Boltzmann能量分布（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">按能量的分布函数</div>
+<p>将 Maxwell 速率分布用平动动能 $\varepsilon=\frac{1}{2}mv^2$ 改写：</p>
+$$f(\varepsilon) = \frac{2\pi}{(\pi kT)^{3/2}}\sqrt{\varepsilon}\,\exp\left(-\frac{\varepsilon}{kT}\right)$$
+<p>$f(\varepsilon)\dd\varepsilon$ = 平动动能在 $\varepsilon\sim\varepsilon+\dd\varepsilon$ 范围内的分子比率</p>
+</div>
+
+<div class="fb">
+<div class="t">Boltzmann分布的一般形式</div>
+<p>在任何外场（重力场、离心力场等）中，粒子数密度与势能的关系：</p>
+$$n(\vv{r}) = n_0\exp\left(-\frac{E_p(\vv{r})}{kT}\right)$$
+<p>即粒子倾向于聚集在势能低的地方，温度越高分布越均匀。</p>
+</div>
+
+<div class="ex">
+<strong>例（离心分离器原理）</strong>：质量为 $m$ 的气体分子在以角速度 $\omega$ 旋转的圆筒中（温度 $T$），求分子数密度随半径 $r$ 的分布。
+<div class="sol"><div class="st">解</div>
+<p>在旋转参考系中，分子受到离心力，对应的"势能"为 $E_p = -\frac{1}{2}m\omega^2 r^2$（势能在外侧更低）。</p>
+<p>由 Boltzmann 分布：</p>
+$$n(r) = n(0)\exp\left(\frac{m\omega^2 r^2}{2kT}\right)$$
+<p>分子密度向外壁指数增长。重分子（$m$ 大）在外壁富集更明显——这就是<strong>气体离心分离</strong>（铀浓缩）的原理。</p>
+</div></div>
+</div>
+
+<h2 id="s16">8.16 速率分布函数的应用技巧（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">利用 $f(v)$ 求各种物理量</div>
+<p>已知 $f(v)$ 后，各种统计平均量都可表示为积分：</p>
+<table>
+<tr><th>物理量</th><th>表达式</th></tr>
+<tr><td>速率 $v\sim v+\dd v$ 的分子比率</td><td>$f(v)\dd v$</td></tr>
+<tr><td>速率大于 $v_0$ 的分子比率</td><td>$\int_{v_0}^\infty f(v)\dd v$</td></tr>
+<tr><td>任意物理量 $Q(v)$ 的平均值</td><td>$\overline{Q}=\int_0^\infty Q(v)f(v)\dd v$</td></tr>
+<tr><td>单位面积单位时间撞壁分子数</td><td>$\Gamma=\frac{1}{4}n\bar{v}$</td></tr>
+<tr><td>单位面积单位时间撞壁分子动量传递</td><td>$p=\frac{1}{3}nm\overline{v^2}=\frac{2}{3}n\bar{\varepsilon}_k$</td></tr>
+</table>
+</div>
+
+<div class="ex">
+<strong>例（分子平均动能的另一种推导）</strong>：利用 $f(v)$ 直接计算 $\bar{\varepsilon}_k$。
+<div class="sol"><div class="st">解</div>
+<p>$\bar{\varepsilon}_k=\int_0^\infty\frac{1}{2}mv^2\cdot f(v)\dd v=\frac{1}{2}m\overline{v^2}=\frac{1}{2}mv_{rms}^2=\frac{1}{2}m\cdot\frac{3kT}{m}=\frac{3}{2}kT$</p>
+<p>这与能量均分定理的结果完全一致（3个平动自由度，每个 $\frac{1}{2}kT$）。</p>
+</div></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 8-4, 8-5, 8-8, 8-10, 8-11, 8-14, 8-18, 8-21</div>
 
 <script src="toc.js"></script>

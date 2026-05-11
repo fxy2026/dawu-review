@@ -501,6 +501,70 @@ $$a_B = 0$$
 </ul></div>
 </div>
 
+<h2 id="s12">2.12 Coriolis力与旋转参考系（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">旋转参考系中的惯性力</div>
+<p>在以角速度 $\vv{\omega}$ 旋转的非惯性系中，物体除了受真实力外，还需加入两个惯性力：</p>
+<ol>
+<li><strong>离心力</strong>：$\vv{F}_{cf} = -m\vv{\omega}\times(\vv{\omega}\times\vv{r}) = m\omega^2\vv{r}_\perp$（方向沿径向指向外侧）</li>
+<li><strong>Coriolis力</strong>：$\vv{F}_{Cor} = -2m\vv{\omega}\times\vv{v}'$（$\vv{v}'$ 为旋转系中的速度）</li>
+</ol>
+</div>
+
+<div class="fb">
+<div class="t">Coriolis力的特点</div>
+<ul>
+<li>大小：$F_{Cor} = 2m\omega v'\sin\theta$（$\theta$ 为 $\vv{\omega}$ 与 $\vv{v}'$ 的夹角）</li>
+<li>方向：垂直于 $\vv{v}'$（类似洛伦兹力），不做功</li>
+<li>只在物体相对旋转系有运动（$\vv{v}'\neq 0$）时才存在</li>
+</ul>
+</div>
+
+<div class="ex">
+<strong>例（地球上的Coriolis效应）</strong>：地球自转 $\omega\approx 7.3\times10^{-5}\,\text{rad/s}$。在北半球：
+<div class="sol"><div class="st">分析</div>
+<ul>
+<li>水平运动的物体偏向<strong>右方</strong>（北半球），河流冲刷右岸更严重</li>
+<li>自由落体：不严格沿铅垂线下落，略偏东（因地球自转赤道线速度随高度增加）</li>
+<li>Foucault摆：摆平面缓慢旋转，$T_{旋转}=24/\sin\phi$ 小时（$\phi$ 为纬度）</li>
+</ul>
+<p>在赤道（$\phi=0$）Coriolis力水平分量为零，Foucault摆不转动。在两极（$\phi=90°$）旋转周期恰好24小时。</p>
+</div></div>
+
+<div class="tip"><strong>判断Coriolis力方向的快速方法</strong>（北半球）：面朝运动方向，Coriolis力指向你的右手边。南半球相反。</div>
+</div>
+
+<h2 id="s13">2.13 非惯性系中Newton定律的修正形式（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">非惯性系中的运动方程</div>
+<p><strong>线性加速参考系</strong>（加速度 $\vv{a}_0$）：</p>
+$$m\vv{a}' = \vv{F} + (-m\vv{a}_0)$$
+<p>只需添加一个惯性力 $\vv{F}^* = -m\vv{a}_0$。</p>
+
+<p><strong>旋转参考系</strong>（完整形式）：</p>
+$$m\vv{a}' = \vv{F} + m\omega^2\vv{r}_\perp - 2m\vv{\omega}\times\vv{v}'$$
+<p>真实力 + 离心力 + Coriolis力</p>
+</div>
+
+<div class="ex">
+<strong>例（加速电梯中的弹簧测力计）</strong>：电梯以 $a$ 向上加速，弹簧秤挂一质量 $m$ 的物体。求示数。
+<div class="sol"><div class="st">解</div>
+<p>在电梯（非惯性系）中，物体静止。平衡方程：</p>
+$$T - mg - ma = 0 \implies T = m(g+a)$$
+<p>"示数增大"——等效重力加速度 $g'=g+a$。</p>
+<p>若电梯向下加速 $a$（或自由落体 $a=g$），则 $T=m(g-a)$。$a=g$ 时 $T=0$（完全失重）。</p>
+</div></div>
+
+<div class="warn"><strong>惯性力的本质</strong>：
+<ul>
+<li>惯性力<strong>不是真实的力</strong>——没有施力物体，不满足Newton第三定律</li>
+<li>惯性力是非惯性系中的"数学修正项"，使Newton定律在形式上仍成立</li>
+<li>所有在非惯性系中感受到的"额外力"（电梯中变重/变轻、转弯时向外甩、旋转木马上的离心感）都是惯性力</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 1-36, 1-37, 1-44, 1-49, 1-50, 1-53, 1-54, 1-55</div>
 
 <script src="toc.js"></script>

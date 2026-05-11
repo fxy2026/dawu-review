@@ -1,92 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 450" width="400" height="450" font-family="'SimSun','SimHei','Microsoft YaHei',serif">
-  <defs>
-    <marker id="aDown" markerWidth="8" markerHeight="6" refX="4" refY="6" orient="auto">
-      <path d="M0,0 L4,6 L8,0" fill="#1a5276"/>
-    </marker>
-    <marker id="aUp" markerWidth="8" markerHeight="6" refX="4" refY="0" orient="auto">
-      <path d="M0,6 L4,0 L8,6" fill="#1a5276"/>
-    </marker>
-    <marker id="aDownR" markerWidth="8" markerHeight="6" refX="4" refY="6" orient="auto">
-      <path d="M0,0 L4,6 L8,0" fill="#c0392b"/>
-    </marker>
-    <marker id="aUpG" markerWidth="8" markerHeight="6" refX="4" refY="0" orient="auto">
-      <path d="M0,6 L4,0 L8,6" fill="#27ae60"/>
-    </marker>
-    <marker id="arCW" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-      <path d="M0,0 L8,3 L0,6" fill="#1a5276"/>
-    </marker>
-  </defs>
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Wikimedia Error</title>
+<style>
+* { margin: 0; padding: 0; }
+body { background: #fff; font: 15px/1.6 sans-serif; color: #333; }
+.content { margin: 7% auto 0; padding: 2em 1em 1em; max-width: 640px; display: flex; flex-direction: row; flex-wrap: wrap; }
+.footer { clear: both; margin-top: 14%; border-top: 1px solid #e5e5e5; background: #f9f9f9; padding: 2em 0; font-size: 0.8em; text-align: center; }
+img { margin: 0 2em 2em 0; }
+a img { border: 0; }
+h1 { margin-top: 1em; font-size: 1.2em; }
+.content-text { flex: 1; }
+p { margin: 0.7em 0 1em 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { font-family: sans-serif; }
+summary { font-weight: bold; cursor: pointer; }
+details[open] { background: #970302; color: #dfdedd; }
+.text-muted { color: #777; }
+@media (prefers-color-scheme: dark) {
+  a { color: #9e9eff; }
+  body { background: transparent; color: #ddd; }
+  .footer { border-top: 1px solid #444; background: #060606; }
+  #logo { filter: invert(1) hue-rotate(180deg); }
+  .text-muted { color: #888; }
+}
+</style>
+<meta name="color-scheme" content="light dark">
+<div class="content" role="main">
+<a href="https://www.wikimedia.org"><img id="logo" src="https://www.wikimedia.org/static/images/wmf-logo.png" srcset="https://www.wikimedia.org/static/images/wmf-logo-2x.png 2x" alt="Wikimedia" width="135" height="101">
+</a>
+<div class="content-text">
+<h1>Error</h1>
 
-  <!-- Background -->
-  <rect width="400" height="450" fill="#fafafa" rx="8"/>
-
-  <!-- Title -->
-  <text x="200" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">有质量滑轮的Atwood机</text>
-
-  <!-- Ceiling / support -->
-  <rect x="140" y="40" width="120" height="8" fill="#888" rx="2"/>
-  <line x1="200" y1="48" x2="200" y2="75" stroke="#555" stroke-width="2"/>
-
-  <!-- Pulley -->
-  <circle cx="200" cy="95" r="30" fill="none" stroke="#1a5276" stroke-width="3"/>
-  <circle cx="200" cy="95" r="4" fill="#1a5276"/>
-  <text x="200" y="99" text-anchor="middle" font-size="11" fill="#1a5276" font-weight="bold">J, R</text>
-
-  <!-- Angular acceleration α (curved arrow on pulley) -->
-  <path d="M218,72 A25,25 0 0,1 225,100" fill="none" stroke="#1a5276" stroke-width="1.5" marker-end="url(#arCW)"/>
-  <text x="240" y="82" font-size="12" fill="#1a5276" font-style="italic">α</text>
-
-  <!-- Left string -->
-  <line x1="170" y1="95" x2="170" y2="260" stroke="#333" stroke-width="2"/>
-  <!-- Right string -->
-  <line x1="230" y1="95" x2="230" y2="220" stroke="#333" stroke-width="2"/>
-
-  <!-- String wraps over pulley (arcs) -->
-  <path d="M170,95 A30,30 0 0,1 200,65" fill="none" stroke="#333" stroke-width="2"/>
-  <path d="M200,65 A30,30 0 0,1 230,95" fill="none" stroke="#333" stroke-width="2"/>
-
-  <!-- Mass m₁ (left, heavier, lower) -->
-  <rect x="145" y="260" width="50" height="45" fill="#1a5276" rx="4" opacity="0.85"/>
-  <text x="170" y="287" text-anchor="middle" font-size="14" fill="white" font-weight="bold">m₁</text>
-
-  <!-- Mass m₂ (right, lighter, higher) -->
-  <rect x="205" y="220" width="50" height="38" fill="#1a5276" rx="4" opacity="0.65"/>
-  <text x="230" y="243" text-anchor="middle" font-size="14" fill="white" font-weight="bold">m₂</text>
-
-  <!-- Forces on m₁ -->
-  <!-- T₁ up -->
-  <line x1="170" y1="255" x2="170" y2="200" stroke="#27ae60" stroke-width="2" marker-end="url(#aUpG)"/>
-  <text x="155" y="195" font-size="12" fill="#27ae60" font-weight="bold">T₁</text>
-  <!-- m₁g down -->
-  <line x1="170" y1="310" x2="170" y2="355" stroke="#c0392b" stroke-width="2" marker-end="url(#aDownR)"/>
-  <text x="155" y="370" font-size="12" fill="#c0392b" font-weight="bold">m₁g</text>
-  <!-- acceleration a down -->
-  <line x1="130" y1="275" x2="130" y2="310" stroke="#1a5276" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#aDown)"/>
-  <text x="115" y="325" font-size="11" fill="#1a5276" font-style="italic">a ↓</text>
-
-  <!-- Forces on m₂ -->
-  <!-- T₂ up -->
-  <line x1="230" y1="215" x2="230" y2="170" stroke="#27ae60" stroke-width="2" marker-end="url(#aUpG)"/>
-  <text x="237" y="165" font-size="12" fill="#27ae60" font-weight="bold">T₂</text>
-  <!-- m₂g down -->
-  <line x1="230" y1="262" x2="230" y2="300" stroke="#c0392b" stroke-width="2" marker-end="url(#aDownR)"/>
-  <text x="237" y="315" font-size="12" fill="#c0392b" font-weight="bold">m₂g</text>
-  <!-- acceleration a up -->
-  <line x1="270" y1="250" x2="270" y2="215" stroke="#1a5276" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#aUp)"/>
-  <text x="275" y="210" font-size="11" fill="#1a5276" font-style="italic">a ↑</text>
-
-  <!-- Torques on pulley labels -->
-  <text x="143" y="115" font-size="10" fill="#27ae60">T₁向下</text>
-  <text x="240" y="115" font-size="10" fill="#27ae60">T₂向下</text>
-
-  <!-- Key equation: T₁ ≠ T₂ -->
-  <rect x="95" y="390" width="210" height="32" fill="#fff3f3" stroke="#c0392b" stroke-width="2" rx="6"/>
-  <text x="200" y="412" text-anchor="middle" font-size="15" fill="#c0392b" font-weight="bold">关键：T₁ ≠ T₂</text>
-
-  <!-- Condition label -->
-  <text x="200" y="440" text-anchor="middle" font-size="11" fill="#1a5276">m₁ > m₂ , a = (m₁−m₂)g / (m₁+m₂+J/R²)</text>
-
-  <!-- m₁ > m₂ indicator -->
-  <text x="170" y="252" text-anchor="middle" font-size="9" fill="#fff" opacity="0.8">(重)</text>
-  <text x="230" y="213" text-anchor="middle" font-size="9" fill="#1a5276" opacity="0.6">(轻)</text>
-</svg>
+<p>Too many requests (f061ab2)</p>
+</div>
+</div>
+<div class="footer"><p>If you report this error to the Wikimedia System Administrators, please include the details below.</p><p class="text-muted"><code>Request served via cp5025 cp5025, Varnish XID 185797033<br>Upstream caches: cp5025 int<br>Error: 429, Too many requests (f061ab2) at Mon, 11 May 2026 02:31:08 GMT<br><details><summary>Sensitive client information</summary>IP address: 168.138.45.184</details></code></p>
+</div>
+</html>

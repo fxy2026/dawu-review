@@ -351,6 +351,76 @@ $$\frac{m_0}{m} = e^{2.633} \approx 13.9$$
 </ul></div>
 </div>
 
+<h2 id="s14">4.14 对称性与守恒律（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">Noether定理——对称性与守恒律的深层联系</div>
+<p>物理规律的每一种对称性都对应一个守恒量（Noether, 1918）：</p>
+<table>
+<tr><th>对称性</th><th>含义</th><th>对应守恒量</th></tr>
+<tr><td><strong>时间平移对称性</strong></td><td>物理定律不随时间改变</td><td>能量守恒</td></tr>
+<tr><td><strong>空间平移对称性</strong></td><td>物理定律不因位置改变</td><td>动量守恒</td></tr>
+<tr><td><strong>空间旋转对称性</strong></td><td>物理定律不因方向改变</td><td>角动量守恒</td></tr>
+</table>
+</div>
+
+<div class="tip"><strong>物理理解</strong>：
+<ul>
+<li>如果空间是均匀的（平移不变），则没有"优先位置"对粒子施力 → 动量守恒</li>
+<li>如果空间是各向同性的（旋转不变），则没有"优先方向"产生力矩 → 角动量守恒</li>
+<li>如果物理规律不随时间变化，则系统的总能量不变 → 能量守恒</li>
+</ul>
+<p>这个联系在经典力学和量子力学中都成立，是物理学中最深刻的结论之一。</p></div>
+</div>
+
+<h2 id="s15">4.15 恢复系数与碰撞分类详解（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">恢复系数 $e$ 的定义与意义</div>
+<p>恢复系数描述碰撞的"弹性程度"：</p>
+$$\boxed{e = -\frac{v_2'-v_1'}{v_2-v_1} = \frac{\text{碰后相对分离速率}}{\text{碰前相对接近速率}}}$$
+<table>
+<tr><th>碰撞类型</th><th>$e$ 值</th><th>动能</th><th>特点</th></tr>
+<tr><td>完全弹性碰撞</td><td>$e=1$</td><td>完全守恒</td><td>相对速度反向不变</td></tr>
+<tr><td>非完全弹性碰撞</td><td>$0<e<1$</td><td>部分损失</td><td>实际碰撞大多属此类</td></tr>
+<tr><td>完全非弹性碰撞</td><td>$e=0$</td><td>最大损失</td><td>碰后粘合，共速运动</td></tr>
+</table>
+</div>
+
+<div class="ex">
+<strong>例（用恢复系数解碰撞）</strong>：质量 $m_1=2\,\text{kg}$ 以 $v_1=4\,\text{m/s}$ 碰静止的 $m_2=3\,\text{kg}$，恢复系数 $e=0.6$。求碰后速度和动能损失。
+<div class="sol"><div class="st">解</div>
+<p>动量守恒：$2\times4+3\times0=2v_1'+3v_2'$，即 $2v_1'+3v_2'=8$ ...(1)</p>
+<p>恢复系数：$e=\frac{v_2'-v_1'}{v_1-v_2}=\frac{v_2'-v_1'}{4}=0.6$，即 $v_2'-v_1'=2.4$ ...(2)</p>
+<p>由 (1)(2) 解得：$v_1'=0.16\,\text{m/s}$，$v_2'=2.56\,\text{m/s}$</p>
+<p>动能损失：$\Delta E_k=\frac{1}{2}\times2\times16-\frac{1}{2}\times2\times0.16^2-\frac{1}{2}\times3\times2.56^2=16-0.026-9.83=6.14\,\text{J}$</p>
+<p>损失率：$6.14/16=38.4\%$</p>
+</div></div>
+
+<div class="warn"><strong>解题技巧</strong>：用恢复系数 $e$ 代替动能守恒方程，可以统一处理所有类型的碰撞。动量守恒+恢复系数关系 = 两个方程解两个未知数（$v_1'$, $v_2'$），比处理二次方程简单得多。</div>
+</div>
+
+<h2 id="s16">4.16 动量定理的积分形式与平均力（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">短时间碰撞中的平均力</div>
+<p>碰撞时间 $\Delta t$ 极短，但力 $F(t)$ 极大。定义<strong>平均力</strong>：</p>
+$$\bar{F} = \frac{\Delta p}{\Delta t} = \frac{m(v_2-v_1)}{\Delta t}$$
+<p>这是动量定理最常见的应用之一。</p>
+</div>
+
+<div class="ex">
+<strong>例（水流冲击力）</strong>：水以速率 $v=10\,\text{m/s}$ 从截面积 $A=5\times10^{-4}\,\text{m}^2$ 的管口射出，垂直打在墙上后沿墙面流走（不反弹）。求水流对墙的平均力。
+<div class="sol"><div class="st">解</div>
+<p>单位时间内打到墙上的水的质量：$\dot{m}=\rho Av=1000\times5\times10^{-4}\times10=5\,\text{kg/s}$</p>
+<p>水流方向的动量变化率（水从速度 $v$ 变为 0）：</p>
+$$F=\dot{m}\cdot v=5\times10=50\,\text{N}$$
+<p>若水流被墙弹回（反向以 $v$ 离开），则 $F=\dot{m}\cdot2v=100\,\text{N}$。</p>
+</div></div>
+
+<div class="tip"><strong>连续流体的动量定理</strong>：对于持续的质量流（水流、气流、传送带上的沙等），用 $F=\dot{m}\cdot\Delta v$（$\dot{m}=\dd m/\dd t$ 为质量流率）比逐个分析方便得多。</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 3-3, 3-4, 3-7, 3-10, 3-13, 3-19, 3-23, 3-27, 3-28</div>
 
 <script src="toc.js"></script>

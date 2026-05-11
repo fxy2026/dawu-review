@@ -1,92 +1,118 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300" font-family="'Segoe UI', 'Microsoft YaHei', sans-serif">
-  <rect width="600" height="300" fill="#fffef9"/>
-
-  <!-- Title -->
-  <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">驻波示意图</text>
-
-  <g transform="translate(50,155)">
-    <!-- Axis -->
-    <line x1="0" y1="0" x2="510" y2="0" stroke="#999" stroke-width="0.8"/>
-    <text x="515" y="4" font-size="10" fill="#666">x</text>
-
-    <!-- t=0: full amplitude (darkest) -->
-    <path d="M 0,0 C 20,-70 45,-70 62.5,-70 C 80,-70 105,-70 125,0 C 145,70 170,70 187.5,70 C 205,70 230,70 250,0 C 270,-70 295,-70 312.5,-70 C 330,-70 355,-70 375,0 C 395,70 420,70 437.5,70 C 455,70 480,70 500,0"
-      fill="none" stroke="#1a5276" stroke-width="2.2" opacity="1"/>
-
-    <!-- t=T/4: zero (nodes only) — flat line, skip as it's just the axis -->
-
-    <!-- t=T/8: partial amplitude -->
-    <path d="M 0,0 C 20,-49.5 45,-49.5 62.5,-49.5 C 80,-49.5 105,-49.5 125,0 C 145,49.5 170,49.5 187.5,49.5 C 205,49.5 230,49.5 250,0 C 270,-49.5 295,-49.5 312.5,-49.5 C 330,-49.5 355,-49.5 375,0 C 395,49.5 420,49.5 437.5,49.5 C 455,49.5 480,49.5 500,0"
-      fill="none" stroke="#2980b9" stroke-width="1.5" opacity="0.7"/>
-
-    <!-- t=T/2: full amplitude inverted -->
-    <path d="M 0,0 C 20,70 45,70 62.5,70 C 80,70 105,70 125,0 C 145,-70 170,-70 187.5,-70 C 205,-70 230,-70 250,0 C 270,70 295,70 312.5,70 C 330,70 355,70 375,0 C 395,-70 420,-70 437.5,-70 C 455,-70 480,-70 500,0"
-      fill="none" stroke="#c0392b" stroke-width="1.5" opacity="0.6"/>
-
-    <!-- t=3T/8: partial inverted -->
-    <path d="M 0,0 C 20,49.5 45,49.5 62.5,49.5 C 80,49.5 105,49.5 125,0 C 145,-49.5 170,-49.5 187.5,-49.5 C 205,-49.5 230,-49.5 250,0 C 270,49.5 295,49.5 312.5,49.5 C 330,49.5 355,49.5 375,0 C 395,-49.5 420,-49.5 437.5,-49.5 C 455,-49.5 480,-49.5 500,0"
-      fill="none" stroke="#e67e22" stroke-width="1.5" opacity="0.5"/>
-
-    <!-- Envelope (dashed) -->
-    <path d="M 0,0 C 20,-70 45,-70 62.5,-70 C 80,-70 105,-70 125,0 C 145,70 170,70 187.5,70 C 205,70 230,70 250,0 C 270,-70 295,-70 312.5,-70 C 330,-70 355,-70 375,0 C 395,70 420,70 437.5,70 C 455,70 480,70 500,0"
-      fill="none" stroke="#1a5276" stroke-width="1" stroke-dasharray="5,4" opacity="0.4"/>
-    <path d="M 0,0 C 20,70 45,70 62.5,70 C 80,70 105,70 125,0 C 145,-70 170,-70 187.5,-70 C 205,-70 230,-70 250,0 C 270,70 295,70 312.5,70 C 330,70 355,70 375,0 C 395,-70 420,-70 437.5,-70 C 455,-70 480,-70 500,0"
-      fill="none" stroke="#1a5276" stroke-width="1" stroke-dasharray="5,4" opacity="0.4"/>
-
-    <!-- Node dots (波节) -->
-    <circle cx="0" cy="0" r="4" fill="#c0392b"/>
-    <circle cx="125" cy="0" r="4" fill="#c0392b"/>
-    <circle cx="250" cy="0" r="4" fill="#c0392b"/>
-    <circle cx="375" cy="0" r="4" fill="#c0392b"/>
-    <circle cx="500" cy="0" r="4" fill="#c0392b"/>
-
-    <!-- Node labels -->
-    <text x="125" y="22" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="bold">波节</text>
-    <text x="375" y="22" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="bold">波节</text>
-
-    <!-- Antinode labels (波腹) -->
-    <text x="62.5" y="-80" text-anchor="middle" font-size="11" fill="#1a5276" font-weight="bold">波腹</text>
-    <line x1="62.5" y1="-76" x2="62.5" y2="-72" stroke="#1a5276" stroke-width="0.8"/>
-    <text x="312.5" y="-80" text-anchor="middle" font-size="11" fill="#1a5276" font-weight="bold">波腹</text>
-    <line x1="312.5" y1="-76" x2="312.5" y2="-72" stroke="#1a5276" stroke-width="0.8"/>
-
-    <!-- λ/2 bracket between nodes -->
-    <line x1="125" y1="35" x2="125" y2="42" stroke="#27ae60" stroke-width="1"/>
-    <line x1="250" y1="35" x2="250" y2="42" stroke="#27ae60" stroke-width="1"/>
-    <line x1="125" y1="39" x2="250" y2="39" stroke="#27ae60" stroke-width="1.5" marker-start="url(#arrowGreenL)" marker-end="url(#arrowGreen)"/>
-    <text x="187.5" y="54" text-anchor="middle" font-size="12" fill="#27ae60" font-weight="bold">λ/2</text>
-
-    <!-- λ bracket -->
-    <line x1="0" y1="62" x2="0" y2="70" stroke="#8e44ad" stroke-width="1"/>
-    <line x1="250" y1="62" x2="250" y2="70" stroke="#8e44ad" stroke-width="1"/>
-    <line x1="0" y1="67" x2="250" y2="67" stroke="#8e44ad" stroke-width="1.5" marker-start="url(#arrowPurpleL)" marker-end="url(#arrowPurple)"/>
-    <text x="125" y="82" text-anchor="middle" font-size="12" fill="#8e44ad" font-weight="bold">λ</text>
-  </g>
-
-  <!-- Legend -->
-  <g transform="translate(40,280)">
-    <line x1="0" y1="0" x2="20" y2="0" stroke="#1a5276" stroke-width="2"/>
-    <text x="24" y="4" font-size="10" fill="#333">t = 0</text>
-    <line x1="80" y1="0" x2="100" y2="0" stroke="#2980b9" stroke-width="1.5" opacity="0.7"/>
-    <text x="104" y="4" font-size="10" fill="#333">t = T/8</text>
-    <line x1="170" y1="0" x2="190" y2="0" stroke="#c0392b" stroke-width="1.5" opacity="0.6"/>
-    <text x="194" y="4" font-size="10" fill="#333">t = T/2</text>
-    <line x1="260" y1="0" x2="280" y2="0" stroke="#e67e22" stroke-width="1.5" opacity="0.5"/>
-    <text x="284" y="4" font-size="10" fill="#333">t = 3T/8</text>
-  </g>
-
-  <defs>
-    <marker id="arrowGreen" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
-      <path d="M0,0 L6,2 L0,4" fill="#27ae60"/>
-    </marker>
-    <marker id="arrowGreenL" markerWidth="6" markerHeight="4" refX="0" refY="2" orient="auto">
-      <path d="M6,0 L0,2 L6,4" fill="#27ae60"/>
-    </marker>
-    <marker id="arrowPurple" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
-      <path d="M0,0 L6,2 L0,4" fill="#8e44ad"/>
-    </marker>
-    <marker id="arrowPurpleL" markerWidth="6" markerHeight="4" refX="0" refY="2" orient="auto">
-      <path d="M6,0 L0,2 L6,4" fill="#8e44ad"/>
-    </marker>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="72.674187"
+   height="123.70002"
+   id="svg2487"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   version="1.0"
+   sodipodi:docname="drawing.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs2489">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective2495" />
+    <inkscape:perspective
+       id="perspective2581"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="13"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="70.987734"
+     inkscape:cy="84.832759"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:object-nodes="true"
+     inkscape:window-width="906"
+     inkscape:window-height="669"
+     inkscape:window-x="23"
+     inkscape:window-y="23" />
+  <metadata
+     id="metadata2492">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-173.74448,-468.19077)">
+    <path
+       id="path3510"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.20000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 222.64796,591.29077 C 214.76279,591.29076 206.87762,591.29076 198.99245,591.29076 C 198.99245,550.57544 198.99245,509.86012 198.99245,469.1448 C 206.8223,469.14478 214.65215,469.1448 222.482,469.1448M 174.54401,469.14481 C 182.69349,469.1448 190.84297,469.1448 198.99245,469.1448 C 206.6222,476.9785 216.27696,484.482 218.06479,495.98989 C 219.55378,502.37432 217.70316,509.25541 213.38508,514.15557 C 203.88607,527.04773 189.80268,536.38458 182.65807,551.01704 C 179.06665,558.09361 179.78001,566.97458 184.62932,573.28549 C 189.09448,579.42629 195.43608,584.2112 198.57143,591.29079" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.20000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 198.59181,591.29077 C 190.50937,591.29076 182.42692,591.29076 174.34448,591.29076"
+       id="path3512" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.20000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.60000014,1.20000005;stroke-opacity:1;stroke-dashoffset:0"
+       d="M 178.21429,468.79077 C 182.11647,484.9669 195.3197,496.18746 206.55783,507.48889 C 211.28022,512.75018 217.41334,517.47305 219.51132,524.49484 C 221.6707,531.93747 218.53326,539.63474 213.86876,545.41814 C 205.50932,556.90637 194.67375,566.27198 185.64006,577.17842 C 182.59318,581.18328 180.39333,586.15823 181.07143,591.29076"
+       id="path3506" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.20000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 229.92681,494.47059 L 217.78395,494.82773"
+       id="path3504" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.20000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 229.92681,528.7563 L 220.28395,529.11344"
+       id="path2599" />
+    <text
+       xml:space="preserve"
+       style="font-size:22px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman Italic"
+       x="229.29465"
+       y="504.96851"
+       id="text3470"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan3472"><tspan
+           x="229.29465"
+           y="504.96851"
+           id="tspan3474">E</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman Italic"
+       x="228.5759"
+       y="539.62469"
+       id="text3476"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan3478"><tspan
+           x="228.5759"
+           y="539.62469"
+           id="tspan3480">H</tspan></tspan></text>
+  </g>
 </svg>

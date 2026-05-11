@@ -376,6 +376,91 @@ $$\Delta E_k = \frac{Mkx_0^2}{2(m+M)}$$
 </div>
 </div>
 
+<h2 id="s13">3.13 保守力判定方法详解（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">保守力的三个等价判据</div>
+<ol>
+<li><strong>做功与路径无关</strong>：$\int_A^B\vv{F}\cdot\dd\vv{r}$ 仅取决于 $A$、$B$ 的位置</li>
+<li><strong>环路积分为零</strong>：$\oint\vv{F}\cdot\dd\vv{r}=0$</li>
+<li><strong>偏导数条件</strong>（二维）：$\frac{\partial F_x}{\partial y} = \frac{\partial F_y}{\partial x}$；（三维）：$\nabla\times\vv{F}=0$</li>
+</ol>
+<p>三者完全等价，考试中用偏导数条件最快。</p>
+</div>
+
+<div class="ex">
+<strong>例（判断保守力并求势能）</strong>：力 $\vv{F}=(2xy+3)\ii+(x^2-4y)\jj$，判断是否为保守力，若是，求势能函数。
+<div class="sol"><div class="st">解</div>
+<p><strong>Step 1：判断</strong></p>
+$$\frac{\partial F_x}{\partial y}=\frac{\partial(2xy+3)}{\partial y}=2x,\quad \frac{\partial F_y}{\partial x}=\frac{\partial(x^2-4y)}{\partial x}=2x$$
+<p>二者相等，故 $\vv{F}$ 是保守力。</p>
+
+<p><strong>Step 2：求势能函数</strong></p>
+<p>由 $F_x=-\frac{\partial E_p}{\partial x}$：</p>
+$$E_p=-\int F_x\dd x=-\int(2xy+3)\dd x=-(x^2y+3x)+g(y)$$
+<p>由 $F_y=-\frac{\partial E_p}{\partial y}$：</p>
+$$-\frac{\partial E_p}{\partial y}=x^2-g'(y)=x^2-4y \implies g'(y)=4y \implies g(y)=2y^2+C$$
+$$\boxed{E_p=-(x^2y+3x)+2y^2+C}$$
+</div></div>
+
+<div class="tip"><strong>求势能的一般方法</strong>：
+<ul>
+<li>先对 $F_x$ 关于 $x$ 积分，得到含 $g(y)$ 的中间结果</li>
+<li>再对 $y$ 求偏导，与 $F_y$ 比较确定 $g(y)$</li>
+<li>常数 $C$ 由势能零点条件确定</li>
+</ul></div>
+</div>
+
+<h2 id="s14">3.14 广义动能定理（质点系）（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">质点系的功能关系总览</div>
+<table>
+<tr><th>定理</th><th>公式</th><th>含义</th></tr>
+<tr><td>质点动能定理</td><td>$W_{合}=\Delta E_k$</td><td>合力功 = 单个质点动能变化</td></tr>
+<tr><td>质点系动能定理</td><td>$W_{外}+W_{内}=\Delta E_k$</td><td>所有力（含内力）的总功 = 系统总动能变化</td></tr>
+<tr><td>功能原理</td><td>$W_{外}+W_{非保内}=\Delta E$</td><td>非保守力做功 = 机械能变化</td></tr>
+<tr><td>机械能守恒</td><td>$\Delta E=0$</td><td>无外力做功且无非保守内力做功</td></tr>
+</table>
+</div>
+
+<div class="warn"><strong>关键区别</strong>：
+<ul>
+<li><strong>质点动能定理</strong>中的"功"包括所有力（含内力），适用于<strong>单个质点</strong></li>
+<li><strong>功能原理</strong>中把保守内力的功"折算"为势能变化，只剩外力和非保守内力</li>
+<li>质点系动能定理→功能原理的推导关键：$W_{保内}=-\Delta E_p$</li>
+</ul></div>
+</div>
+
+<h2 id="s15">3.15 能量图与束缚态（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">粒子在势能场中的运动状态分类</div>
+<ul>
+<li><strong>束缚态</strong>：总能量 $E < $ 势阱边界高度，粒子被限制在有限区域内做往复运动</li>
+<li><strong>非束缚态</strong>：$E$ 大于势阱边界，粒子可以逃逸到无穷远</li>
+<li><strong>临界态</strong>：$E$ 恰好等于势阱边界，粒子可以到达边界但速度为零</li>
+</ul>
+</div>
+
+<div class="ex">
+<strong>例（逃逸速度推导）</strong>：地球表面一物体需要多大初速度才能脱离地球引力（不再返回）？
+<div class="sol"><div class="st">解</div>
+<p>势能：$E_p(r) = -\frac{GMm}{r}$，$E_p(\infty)=0$</p>
+<p>临界条件：$r\to\infty$ 时 $v\to 0$，即 $E=0$</p>
+$$\frac{1}{2}mv_{esc}^2 + \left(-\frac{GMm}{R}\right) = 0$$
+$$v_{esc} = \sqrt{\frac{2GM}{R}} = \sqrt{2gR} \approx 11.2\,\text{km/s}$$
+<p>这就是<strong>第二宇宙速度</strong>（逃逸速度）。$E>0$ 即可逃逸，$E<0$ 则被束缚（做椭圆轨道运动）。</p>
+</div></div>
+
+<div class="tip"><strong>宇宙速度汇总</strong>：
+<ul>
+<li>第一宇宙速度 $v_1=\sqrt{gR}\approx 7.9\,\text{km/s}$（环绕速度，贴地圆轨道）</li>
+<li>第二宇宙速度 $v_2=\sqrt{2gR}\approx 11.2\,\text{km/s}$（逃逸速度）</li>
+<li>关系：$v_2=\sqrt{2}\,v_1$</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 2-4, 2-5, 2-6, 2-8, 2-10, 2-11, 2-13, 2-14</div>
 
 <script src="toc.js"></script>

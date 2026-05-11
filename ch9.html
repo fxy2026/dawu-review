@@ -526,6 +526,58 @@ $$\eta=\frac{W_{净}}{Q_{吸}}=\frac{2RT_A}{18RT_A}=\frac{1}{9}\approx11.1\%$$
 <div class="warn"><strong>易错</strong>：T-S图上不可逆绝热过程<strong>不是竖直线</strong>！不可逆绝热过程 $Q=0$ 但 $\Delta S > 0$，所以是向右倾斜的线。只有可逆绝热（等熵）过程才是竖直线。</div>
 </div>
 
+<h2 id="s16">9.16 熵的统计意义（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">Boltzmann熵公式</div>
+$$\boxed{S = k\ln\Omega}$$
+<p>$\Omega$ = 宏观状态对应的<strong>微观状态数</strong>（热力学概率）</p>
+<p>$k = 1.38\times10^{-23}\,\text{J/K}$（Boltzmann常量）</p>
+<p>这个公式刻在Boltzmann的墓碑上，是连接宏观热力学与微观统计力学的桥梁。</p>
+</div>
+
+<div class="fb">
+<div class="t">熵的微观含义</div>
+<ul>
+<li><strong>熵是系统"无序度"的量度</strong>：$\Omega$ 越大（微观状态越多），系统越"混乱"，熵越大</li>
+<li><strong>熵增原理的统计解释</strong>：孤立系统自发地从 $\Omega$ 小的状态向 $\Omega$ 大的状态演化，因为后者出现的概率压倒性地大</li>
+<li><strong>热力学第二定律的统计本质</strong>：不是"不可能"，而是"极其不可能"——违反熵增的概率在宏观系统中小到可以忽略</li>
+</ul>
+</div>
+
+<div class="ex">
+<strong>例（自由膨胀的微观解释）</strong>：$N$ 个分子从容器的左半部分自由膨胀到整个容器。
+<div class="sol"><div class="st">分析</div>
+<p>初态：$N$ 个分子都在左半边，$\Omega_1=1$（只有一种排列方式——都在左边）</p>
+<p>末态：每个分子可以在左或右，$\Omega_2=2^N$</p>
+<p>熵变：$\Delta S=k\ln\Omega_2-k\ln\Omega_1=k\ln 2^N=Nk\ln 2$</p>
+<p>对 1 mol 气体：$\Delta S=N_Ak\ln 2=R\ln 2=5.76\,\text{J/K}$</p>
+<p>与宏观计算结果 $\Delta S=\nu R\ln(V_2/V_1)=R\ln 2$ 完全一致！</p>
+</div></div>
+
+<div class="tip"><strong>为什么不会自发收缩？</strong>：$N$ 个分子全部回到左半边的概率 $=1/2^N$。对 $N=N_A\approx 6\times10^{23}$，这个概率是 $1/2^{6\times10^{23}}\approx 10^{-1.8\times10^{23}}$——比宇宙年龄内任何事件的概率都小得多。"不是不可能，是等不到"。</div>
+</div>
+
+<h2 id="s17">9.17 热力学发展简史（PPT补充）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">关键人物与贡献</div>
+<table>
+<tr><th>人物</th><th>年代</th><th>贡献</th></tr>
+<tr><td>Carnot</td><td>1824</td><td>理想热机效率上限（Carnot循环）</td></tr>
+<tr><td>Mayer</td><td>1842</td><td>首次提出能量守恒思想；观察热带血液颜色差异推断热功等价</td></tr>
+<tr><td>Joule</td><td>1843-1850</td><td>精确测量热功当量 $1\,\text{cal}=4.18\,\text{J}$</td></tr>
+<tr><td>Clausius</td><td>1850</td><td>热力学第二定律（Clausius表述）；定义熵</td></tr>
+<tr><td>Kelvin</td><td>1851</td><td>热力学第二定律（Kelvin表述）；绝对温标</td></tr>
+<tr><td>Maxwell</td><td>1860</td><td>分子速率分布律</td></tr>
+<tr><td>Boltzmann</td><td>1877</td><td>$S=k\ln\Omega$；H定理；熵增的统计解释</td></tr>
+<tr><td>Gibbs</td><td>1902</td><td>统计力学的系统数学框架</td></tr>
+</table>
+</div>
+
+<div class="tip"><strong>Mayer的故事（PPT特别提及）</strong>：Mayer作为医生在热带航行时，发现当地人的静脉血比温带更红。他推断这是因为热带环境温度高，身体不需要消耗那么多食物来维持体温，静脉血中含氧更多。由此他大胆推断——热是一种能量形式，与机械功可以相互转换。他首次计算出热功当量约为 $365\,\text{kg·m/kcal}$（实际值为 $427\,\text{kg·m/kcal}$），虽不够精确但思想极为超前。</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 9-4, 9-6, 9-7, 9-9, 9-13, 9-15, 9-17, 9-18</div>
 
 <script src="toc.js"></script>
