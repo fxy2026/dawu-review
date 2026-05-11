@@ -1146,20 +1146,25 @@ $$\frac{y' - \mu_s}{1 + \mu_s y'} = \frac{\omega^2 x}{g}$$
 </div>
 
 <div class="ex">
-<strong>例39（PPT：斜面上的连接体）</strong>：如图，质量为 $m_1$ 的楔形块 A 放在光滑水平面上，斜面倾角 $\alpha$，上面放质量为 $m_2$ 的滑块 B。所有面光滑，求 $a_1$。
+<strong>例39（PPT：斜面上的连接体）</strong>：质量为 $m_1$ 的楔形块 A 放在光滑水平面上，斜面倾角 $\alpha$，上面放质量为 $m_2$ 的滑块 B。所有面光滑，求 A 的加速度 $a_1$。
 <div class="sol">
-<div class="st">解</div>
-<p><strong>A 的受力</strong>：重力 $m_1 g$、地面支持力 $N_1$、B 对 A 的法向力 $N_2$（沿斜面法线方向）。</p>
-<p>取水平 $x$ 和竖直 $y$，设 A 的加速度 $a_1$（水平向左）：</p>
-$$x:\; N_2\sin\alpha = m_1 a_1 \tag{1}$$
-$$y:\; N_1 - m_1 g - N_2\cos\alpha = 0 \tag{2}$$
-<p><strong>B 的受力</strong>：重力 $m_2 g$、A 对 B 的法向力 $N_2$（沿斜面法线方向）。B 的加速度 $a_2$（竖直向下）。</p>
-$$m_2 g - N_2 = m_2 a_2 \tag{3}$$
-<p><strong>约束条件</strong>：B 沿斜面下滑，A 沿水平移动。B 在竖直方向的下降量等于 A 水平移动量乘以 $\sin\alpha$（几何关系）：</p>
-$$a_2 = a_1\sin\alpha \tag{4}$$
-<p>由 (1)：$N_2 = m_1 a_1 / \sin\alpha$。代入 (3)：</p>
-$$m_2 g - \frac{m_1 a_1}{\sin\alpha} = m_2 a_1\sin\alpha$$
-$$a_1 = \frac{m_2 g\sin\alpha}{m_1 + m_2\sin^2\alpha}$$
+<div class="st">解（地面系+分量法）</div>
+<p>设 A 向左加速度为 $a_1$，B 相对 A 沿斜面加速度为 $a_{rel}$。</p>
+<p>B 在地面系中的加速度分量（取向左、向下为正）：</p>
+<ul>
+<li>水平：$a_{Bx} = a_1 - a_{rel}\cos\alpha$（B随A向左，同时沿斜面分量向右）</li>
+<li>竖直：$a_{By} = a_{rel}\sin\alpha$（B沿斜面下滑的竖直分量）</li>
+</ul>
+<p><strong>A 的水平方程</strong>：$N_2\sin\alpha = m_1 a_1$ ...(1)</p>
+<p><strong>B 的水平方程</strong>：$-N_2\sin\alpha = m_2(a_1-a_{rel}\cos\alpha)$ ...(2)</p>
+<p><strong>B 的竖直方程</strong>：$m_2g - N_2\cos\alpha = m_2 a_{rel}\sin\alpha$ ...(3)</p>
+<p>由 (1)+(2)：$0 = (m_1+m_2)a_1 - m_2 a_{rel}\cos\alpha$，即 $a_{rel} = \frac{(m_1+m_2)a_1}{m_2\cos\alpha}$ ...(4)</p>
+<p>由 (1)：$N_2 = m_1 a_1/\sin\alpha$。代入 (3)：</p>
+$$m_2 g - \frac{m_1 a_1\cos\alpha}{\sin\alpha} = m_2\sin\alpha\cdot\frac{(m_1+m_2)a_1}{m_2\cos\alpha}$$
+$$m_2 g = \frac{m_1 a_1\cos\alpha}{\sin\alpha} + \frac{(m_1+m_2)a_1\sin\alpha}{\cos\alpha}$$
+$$m_2 g = a_1\left[\frac{m_1\cos^2\alpha + (m_1+m_2)\sin^2\alpha}{\sin\alpha\cos\alpha}\right] = a_1\cdot\frac{m_1 + m_2\sin^2\alpha}{\sin\alpha\cos\alpha}$$
+$$\boxed{a_1 = \frac{m_2 g\sin\alpha\cos\alpha}{m_1 + m_2\sin^2\alpha}}$$
+<p><strong>验证</strong>：$\alpha\to 0$（水平面）：$a_1\to 0$ ✓；$\alpha\to\pi/2$（竖直面）：$a_1 = 0$（B自由落体，不推A）✓；$m_1\to\infty$：$a_1\to 0$（A太重不动）✓。</p>
 </div>
 </div>
 
@@ -1172,7 +1177,7 @@ $$\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{200}{4}} = 7.07\,\text{rad/s}$$
 <p>$t = 0$ 时刻：$x_0 = S - F/k = 0.5 - 0.5 = 0\,\text{m}$（恰好在平衡位置）。</p>
 <p>向下拉的过程中，由功能原理求振动振幅：</p>
 $$FS = \frac{1}{2}kA^2 \implies A = \sqrt{\frac{2FS}{k}} = \sqrt{\frac{2\times100\times0.5}{200}} = \frac{\sqrt{2}}{2} \approx 0.707\,\text{m}$$
-<p>$t = 0$ 时 $x_0 = 0$ 且速度向上（$v_0 < 0$），对应相位 $\varphi_0 = \pi/4$（因为 $x = A\cos(\omega t + \varphi_0)$，$x_0 = A\cos\varphi_0 = 0$ 给出 $\varphi_0 = \pm\pi/2$；$v_0 = -A\omega\sin\varphi_0 < 0$ 要求 $\sin\varphi_0 > 0$，故 $\varphi_0 = \pi/2$）。</p>
+<p>$t = 0$ 时 $x_0 = 0$ 且速度向上（$v_0 < 0$）。由 $x = A\cos(\omega t + \varphi_0)$：$x_0 = A\cos\varphi_0 = 0$ 给出 $\varphi_0 = \pm\pi/2$；$v_0 = -A\omega\sin\varphi_0 < 0$ 要求 $\sin\varphi_0 > 0$，故 $\varphi_0 = \pi/2$。</p>
 $$\boxed{x = 0.707\cos\!\left(7.07t + \frac{\pi}{2}\right)\;\text{m}}$$
 </div>
 </div>
