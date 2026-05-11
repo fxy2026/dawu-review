@@ -248,6 +248,78 @@ $$\vv{v} = \vv{v}' + \vv{u}$$
 </div>
 </div>
 
+<!-- ===== 1.8 极坐标 ===== -->
+<h2 id="s8">1.8 极坐标描述</h2>
+<div class="card">
+<div class="fb">
+<div class="t">平面极坐标 $(r,\theta)$</div>
+<p>位矢：$\vv{r}=r\ee_r$</p>
+<p>速度：$\vv{v}=\dot{r}\ee_r+r\dot{\theta}\ee_\theta$</p>
+<ul>
+<li>$v_r=\dot{r}$：径向速度（远离/靠近原点）</li>
+<li>$v_\theta=r\dot{\theta}=r\omega$：横向速度（绕原点旋转）</li>
+</ul>
+<p>加速度：$\vv{a}=(\ddot{r}-r\dot{\theta}^2)\ee_r+(r\ddot{\theta}+2\dot{r}\dot{\theta})\ee_\theta$</p>
+</div>
+<div class="tip"><strong>圆周运动特例</strong>：$r=R=\text{const}$，则 $\dot{r}=\ddot{r}=0$，$a_r=-R\omega^2$（向心），$a_\theta=R\alpha$（切向）。</div>
+</div>
+
+<!-- ===== 1.9 重要二级结论 ===== -->
+<h2 id="s9">1.9 重要二级结论与技巧</h2>
+<div class="card">
+<div class="fb">
+<div class="t">匀变速直线运动公式汇总</div>
+<ol>
+<li>$v=v_0+at$</li>
+<li>$x=v_0t+\frac{1}{2}at^2$</li>
+<li>$v^2=v_0^2+2ax$</li>
+<li>$x=\frac{v_0+v}{2}\cdot t$（中间时刻速度 = 平均速度）</li>
+<li>$x_n-x_{n-1}=aT^2$（连续等时间间隔位移之差为恒量）</li>
+</ol>
+</div>
+
+<div class="fb">
+<div class="t">竖直平面内曲线运动分析技巧</div>
+<p>对光滑曲面/钢丝约束的质点，使用自然坐标系：</p>
+<p>沿曲面运动满足：$v\dfrac{\dd v}{\dd s}=a_\tau$ → 可改写为 $v\dd v=a_\tau\dd s$</p>
+<p>对竖直面上的运动：$a_\tau=-g\sin\theta$，而 $\dd s\sin\theta=\dd y$，故：</p>
+$$v\dd v=-g\dd y \implies v^2=v_0^2-2g(y-y_0)$$
+<p>这与能量守恒一致！说明在光滑曲面上，速度只取决于高度差，与轨迹形状无关。</p>
+</div>
+
+<div class="fb">
+<div class="t">抛体运动中任意时刻的曲率半径</div>
+<p>任意时刻速度方向与水平夹角 $\phi$，则：</p>
+<p>$a_n=g\cos\phi$（加速度在法向的分量）</p>
+$$\rho=\frac{v^2}{g\cos\phi}$$
+<p>其中 $v=\sqrt{v_x^2+v_y^2}$，$\cos\phi=v_x/v=v_0\cos\theta/v$</p>
+</div>
+
+<div class="ex">
+<strong>例7（PPT课堂练习）</strong>：密度等于水的长方体（高h、底面积S），平衡时全部浸入水中。将顶面提出水面 $y_0$（$<h$）后静止释放，求刚好全部浸入时速度。
+<div class="sol">
+<div class="st">解</div>
+<p>设顶面距水面为 $y$（$0<y<h$），浮力不足以支撑水面以上部分：</p>
+<p>合力 $=\rho Syg$（向下），质量 $=\rho Sh$</p>
+<p>$\rho Sh\cdot a=\rho Syg$ → $a=gy/h$</p>
+<p>利用 $v\dd v=a\dd y=(g/h)y\dd y$：</p>
+$$\int_0^v v\dd v=\int_{y_0}^0\frac{g}{h}y\dd y$$
+$$\frac{v^2}{2}=-\frac{g}{2h}y_0^2 \implies v=y_0\sqrt{g/h}$$
+</div>
+</div>
+
+<div class="ex">
+<strong>例8（PPT拓展：最速降线问题）</strong>：两定点A、B高度不同，所有连接曲线中哪条使质点从A到B时间最短？
+<div class="sol">
+<div class="st">解</div>
+<p>答案是<strong>摆线</strong>（旋轮线），不是直线也不是圆弧！这是变分法的经典问题（Johann Bernoulli, 1696）。</p>
+<p>下落到高度 $y$ 时速率 $v=\sqrt{2gy}$，沿曲线元 $\dd s$的时间 $\dd t=\dd s/v$。</p>
+$$t=\int_A^B\frac{\sqrt{1+y'^2}}{\sqrt{2gy}}\dd x$$
+<p>使此积分最小的曲线就是摆线。这说明"最短"和"最快"不是一回事。</p>
+</div>
+</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 1-7, 1-17, 1-19, 1-21, 1-23, 1-24, 1-25, 1-31, 1-32</div>
 
 <script src="toc.js"></script>

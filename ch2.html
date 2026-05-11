@@ -156,7 +156,68 @@ $$\vv{F}_{cf} = m\omega^2 r\,\hat{\vv{r}}$$
 </div>
 </div>
 
-<div class="tip"><strong>2022期中真题考点</strong>：均匀绳子旋转的张力问题（习题1-44）——取微元，用牛顿第二定律建立关于张力的微分方程。</div>
+<h2 id="s5">1.2.5 重要注意事项（PPT强调）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">牛顿第二定律使用要点</div>
+<ol>
+<li><strong>瞬时性</strong>：加速度与力同时存在、同时消失、同时变化</li>
+<li><strong>仅适用于质点</strong>：广延物体需分解为无穷多质点分别应用</li>
+<li><strong>静摩擦力不正比于支持力</strong>：静摩擦力由牛顿第二定律确定，$f_s\leq\mu_s N$ 只是上限</li>
+<li><strong>仅适用于惯性系</strong>：非惯性系需引入惯性力</li>
+</ol>
+</div>
+
+<div class="fb">
+<div class="t">约束条件汇总</div>
+<table>
+<tr><th>约束类型</th><th>条件</th></tr>
+<tr><td>不可伸长绳</td><td>两端加速度相等</td></tr>
+<tr><td>轻绳</td><td>绳中张力处处相等 $T=\text{const}$</td></tr>
+<tr><td>轻滑轮+轻绳</td><td>两侧张力相等</td></tr>
+<tr><td>滑动摩擦</td><td>$f=\mu N$</td></tr>
+<tr><td>纯滚动</td><td>$v_C=R\omega$，$a_C=R\alpha$</td></tr>
+</table>
+</div>
+
+<div class="ex">
+<strong>例5（PPT课堂练习：斜面+绳+滑轮）</strong>：倾角 $\theta$ 的光滑斜面上的物块A（质量 $M+m_0$）用绳连接一挂在斜面顶端光滑滑轮上的物体B（质量 $m_0$），A在斜面底端。A先加速后减速，求加速度的转换条件。
+<div class="sol">
+<div class="st">解</div>
+<p>A沿斜面上滑加速阶段（B下降）：</p>
+<p>对B：$m_0 g-T=m_0 a$</p>
+<p>对A：$T-(M+m_0)g\sin\theta=(M+m_0)a$</p>
+<p>$a=\dfrac{m_0 g-(M+m_0)g\sin\theta}{m_0+M+m_0}=\dfrac{m_0-（M+m_0)\sin\theta}{M+2m_0}g$</p>
+<p>当 $m_0 > (M+m_0)\sin\theta$ 时 $a>0$，即 A 加速上滑。当B落地后只剩A在斜面上减速。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例6（PPT重点：变力运动——终端速度推导）</strong>：质量 $m$ 的物体从静止下落，空气阻力 $f=bv^2$。求终端速度和 $v(t)$。
+<div class="sol">
+<div class="st">解</div>
+<p>运动方程：$mg-bv^2=m\dfrac{\dd v}{\dd t}$</p>
+<p>终端速度（$a=0$）：$v_t=\sqrt{mg/b}$</p>
+<p>分离变量：$\dfrac{m\dd v}{mg-bv^2}=\dd t$，即 $\dfrac{\dd v}{v_t^2-v^2}=\dfrac{g}{v_t^2}\dd t$</p>
+<p>利用部分分式或双曲正切：</p>
+$$v(t)=v_t\tanh\left(\frac{gt}{v_t}\right)$$
+<p>当 $t\to\infty$ 时 $v\to v_t$；当 $t\to0$ 时 $v\approx gt$（自由落体）。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>例7（PPT重点：微元法——旋转绳张力）</strong>：均匀绳子（总质量 $m$、长 $L$）绕一端匀速转动，角速度 $\omega$。求距轴 $r$ 处张力。
+<div class="sol">
+<div class="st">解</div>
+<p>取 $r$ 到 $r+\dd r$ 的微元 $\dd m=(m/L)\dd r$</p>
+<p>向心力由张力差提供：$T(r)-T(r+\dd r)=\dd m\cdot\omega^2 r$</p>
+<p>即 $-\dd T=(m/L)\omega^2 r\dd r$</p>
+<p>边界条件：$T(L)=0$（绳末端自由端）</p>
+$$T(r)=\frac{m\omega^2}{2L}(L^2-r^2)$$
+<p>最大张力在 $r=0$（轴端）：$T_{\max}=m\omega^2 L/2$</p>
+</div>
+</div>
+</div>
 
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 1-36, 1-37, 1-44, 1-49, 1-50, 1-53, 1-54, 1-55</div>
 

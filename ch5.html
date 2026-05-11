@@ -103,6 +103,62 @@ $$v = \sqrt{\frac{10gh}{7}}$$
 <div class="tip"><strong>比较</strong>：同一斜面同一高度，纯滑动最快，圆环最慢（$J$最大），顺序：滑动 > 实心球 > 圆盘 > 球壳 > 圆环</div>
 </div>
 
+<h2 id="s6">4.6 转动惯量的积分计算（PPT重点）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">转动惯量积分法详解</div>
+<p>$J=\int r^2\dd m$，其中 $r$ 是质量微元到转轴的距离。</p>
+<p>关键：根据物体形状选择合适的微元。</p>
+</div>
+
+<div class="ex">
+<strong>例（均匀圆盘绕中心轴）</strong>：质量 $M$、半径 $R$。
+<div class="sol"><div class="st">解</div>
+<p>面密度 $\sigma=M/(\pi R^2)$。取同心圆环微元（半径 $r$，宽 $\dd r$）：</p>
+$$\dd m=\sigma\cdot2\pi r\dd r$$
+$$J=\int_0^R r^2\cdot\sigma\cdot2\pi r\dd r=\frac{2M}{R^2}\int_0^R r^3\dd r=\frac{2M}{R^2}\cdot\frac{R^4}{4}=\frac{1}{2}MR^2$$
+</div></div>
+
+<div class="ex">
+<strong>例（均匀球体绕直径轴）</strong>：质量 $M$、半径 $R$。
+<div class="sol"><div class="st">解</div>
+<p>将球分割为垂直于轴的薄圆盘。距中心 $z$ 处盘半径 $r=\sqrt{R^2-z^2}$，厚 $\dd z$。</p>
+<p>每个薄盘的转动惯量 $\dd J=\frac{1}{2}\dd m\cdot r^2$。</p>
+<p>$\dd m=\rho\pi r^2\dd z=\rho\pi(R^2-z^2)\dd z$</p>
+$$J=\int_{-R}^{R}\frac{1}{2}\rho\pi(R^2-z^2)^2\dd z=\frac{2}{5}MR^2$$
+</div></div>
+</div>
+
+<h2 id="s7">4.7 刚体问题解题模板</h2>
+<div class="card">
+<div class="fb">
+<div class="t">平动+转动联立方程</div>
+<p>对于涉及滑轮/绕绳/滚动的问题，通常需要联立：</p>
+<ol>
+<li>各物体的牛顿第二定律（平动或转动）</li>
+<li>约束条件（绳不伸长、纯滚动 $v=R\omega$）</li>
+</ol>
+<p>有质量滑轮的Atwood机需要3个方程（两个物体+滑轮转动方程）。</p>
+</div>
+
+<div class="ex">
+<strong>例（PPT重点：杆的释放问题）</strong>：均匀杆（$M,L$）绕一端水平轴自由转动，从水平位置静止释放。求转过 $\theta$ 角时角速度。
+<div class="sol"><div class="st">解</div>
+<p>用功能定理：重力做功 = 转动动能增量</p>
+<p>重心下降 $h=\frac{L}{2}\sin\theta$：</p>
+$$Mg\frac{L}{2}\sin\theta=\frac{1}{2}J\omega^2=\frac{1}{2}\cdot\frac{ML^2}{3}\cdot\omega^2$$
+$$\omega=\sqrt{\frac{3g\sin\theta}{L}}$$
+<p>在 $\theta=0$（水平）：$\alpha_0=3g/(2L)$，杆端加速度 $a=L\alpha_0=3g/2>g$！</p>
+</div></div>
+
+<div class="warn"><strong>常见错误</strong>：
+<ul>
+<li>忘记有质量滑轮两侧绳张力不等</li>
+<li>滚动问题中混淆"滑动摩擦"和"静摩擦"——纯滚动用静摩擦</li>
+<li>平行轴定理只能从质心轴平移，不能从任意轴平移</li>
+</ul></div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 4-4, 4-6, 4-10, 4-11, 4-14, 4-16, 4-19, 4-23, 4-24</div>
 
 <script src="toc.js"></script>

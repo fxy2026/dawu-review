@@ -199,6 +199,79 @@ $$\Delta S_{总} = \frac{Q}{T_2} - \frac{Q}{T_1} = Q\left(\frac{1}{T_2}-\frac{1}
 <div class="tip"><strong>T-S图</strong>中，曲线下面积 = $\int T\dd S = Q_{rev}$（可逆过程吸收的热量）。等温线为水平线，绝热可逆为竖直线，卡诺循环为矩形。</div>
 </div>
 
+<h2 id="s8">8.8 四种过程完整对比（PPT核心表格）</h2>
+<div class="card">
+<div class="fb">
+<div class="t">理想气体四种准静态过程总结</div>
+<table>
+<tr><th>过程</th><th>特征</th><th>过程方程</th><th>$W$</th><th>$Q$</th><th>$\Delta E$</th></tr>
+<tr><td>等体</td><td>$V=C$</td><td>$p/T=C$</td><td>$0$</td><td>$\nu C_V\Delta T$</td><td>$\nu C_V\Delta T$</td></tr>
+<tr><td>等压</td><td>$p=C$</td><td>$V/T=C$</td><td>$p\Delta V=\nu R\Delta T$</td><td>$\nu C_p\Delta T$</td><td>$\nu C_V\Delta T$</td></tr>
+<tr><td>等温</td><td>$T=C$</td><td>$pV=C$</td><td>$\nu RT\ln\frac{V_2}{V_1}$</td><td>$W$</td><td>$0$</td></tr>
+<tr><td>绝热</td><td>$Q=0$</td><td>$pV^\gamma=C$</td><td>$\frac{\nu R(T_1-T_2)}{\gamma-1}$</td><td>$0$</td><td>$-W$</td></tr>
+</table>
+<p><strong>恒成立</strong>：$\Delta E=\nu C_V\Delta T$（与过程无关！因理想气体内能只是温度函数）</p>
+</div>
+
+<div class="fb">
+<div class="t">绝热过程三个方程</div>
+$$pV^\gamma=C_1,\quad TV^{\gamma-1}=C_2,\quad T^\gamma p^{1-\gamma}=C_3$$
+<p>推导方法：由 $pV=\nu RT$ 消去一个变量即得。</p>
+</div>
+</div>
+
+<h2 id="s9">8.9 循环过程分析方法</h2>
+<div class="card">
+<div class="fb">
+<div class="t">循环过程解题步骤</div>
+<ol>
+<li><strong>画p-V图</strong>，标明各状态点的 $(p,V,T)$（用状态方程互相关联）</li>
+<li>逐段分析每个过程的 $W$、$Q$、$\Delta E$</li>
+<li>整个循环：$\Delta E_{循环}=0$，$W_{净}=Q_{吸}-|Q_{放}|$</li>
+<li>效率 $\eta=W_{净}/Q_{吸}=1-|Q_{放}|/Q_{吸}$</li>
+</ol>
+</div>
+
+<div class="ex">
+<strong>例（PPT高频题型：三角形循环）</strong>：1 mol 单原子理想气体经历循环 $A(p_0,V_0)\to B(2p_0,V_0)\to C(p_0,2V_0)\to A$。AB等体，BC直线，CA等压。求效率。
+<div class="sol"><div class="st">解</div>
+<p>温度：$T_A=p_0V_0/R$，$T_B=2p_0V_0/R$，$T_C=2p_0V_0/R$（注意 $T_B=T_C$！）</p>
+<p><strong>AB（等体）</strong>：$W_{AB}=0$，$Q_{AB}=C_V(T_B-T_A)=\frac{3}{2}R\cdot\frac{p_0V_0}{R}=\frac{3}{2}p_0V_0>0$（吸热）</p>
+<p><strong>BC（直线过程）</strong>：$W_{BC}=\frac{(2p_0+p_0)(2V_0-V_0)}{2}=\frac{3}{2}p_0V_0$</p>
+<p>$\Delta E_{BC}=C_V(T_C-T_B)=0$，$Q_{BC}=W_{BC}=\frac{3}{2}p_0V_0>0$（吸热）</p>
+<p><strong>CA（等压）</strong>：$W_{CA}=p_0(V_0-2V_0)=-p_0V_0$</p>
+<p>$Q_{CA}=C_p(T_A-T_C)=\frac{5}{2}R\cdot(-\frac{p_0V_0}{R})=-\frac{5}{2}p_0V_0<0$（放热）</p>
+<p>$W_{净}=0+\frac{3}{2}p_0V_0-p_0V_0=\frac{1}{2}p_0V_0$</p>
+<p>$Q_{吸}=\frac{3}{2}+\frac{3}{2}=3p_0V_0$</p>
+$$\eta=\frac{W_{净}}{Q_{吸}}=\frac{p_0V_0/2}{3p_0V_0}=\frac{1}{6}\approx16.7\%$$
+</div></div>
+</div>
+
+<h2 id="s10">8.10 熵变计算技巧总结</h2>
+<div class="card">
+<div class="fb">
+<div class="t">理想气体熵变万能公式</div>
+$$\Delta S=\nu C_V\ln\frac{T_2}{T_1}+\nu R\ln\frac{V_2}{V_1}=\nu C_p\ln\frac{T_2}{T_1}-\nu R\ln\frac{p_2}{p_1}$$
+<p>适用于任何过程（可逆或不可逆），因为熵是状态量。</p>
+</div>
+
+<div class="fb">
+<div class="t">不可逆过程熵变计算法</div>
+<p>找一条连接始末态的<strong>可逆路径</strong>，沿可逆路径计算 $\Delta S=\int\delta Q_{rev}/T$。</p>
+<p>常用可逆路径：等体+等温，等压+等温，等温+绝热等。</p>
+</div>
+
+<div class="ex">
+<strong>例（自由膨胀熵变）</strong>：1 mol 理想气体从 $V_1$ 自由膨胀到 $2V_1$。求熵变。
+<div class="sol"><div class="st">解</div>
+<p>自由膨胀：$Q=0$，$W=0$，$\Delta E=0$，$T$ 不变。</p>
+<p>用可逆等温过程替代：$\Delta S=\nu R\ln(V_2/V_1)=R\ln2=5.76\,\text{J/K}$</p>
+<p>虽然 $Q=0$，但 $\Delta S>0$！这是不可逆过程，不能用 $\Delta S=Q/T=0$。</p>
+</div></div>
+
+<div class="warn"><strong>致命错误</strong>：不可逆过程中 $\Delta S\neq Q/T$！$\dd S=\delta Q/T$ 只对可逆过程成立。熵变要用可逆路径算。</div>
+</div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 9-4, 9-6, 9-7, 9-9, 9-13, 9-15, 9-17, 9-18</div>
 
 <script src="toc.js"></script>
