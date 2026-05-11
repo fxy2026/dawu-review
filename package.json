@@ -1,0 +1,10 @@
+{
+  "name": "dawu-review",
+  "private": true,
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "katex": "^0.16.11"
+  }
+}
