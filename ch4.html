@@ -184,6 +184,36 @@ $$W=\frac{1}{2}m(v_2^2-v_1^2)=\frac{1}{2}mv_1^2\left(\frac{r_1^2}{r_2^2}-1\right
 </div></div>
 </div>
 
+<h2 id="s9b">4.9★ 真题原型：角动量守恒 / 变质量动量（必拿高频）</h2>
+<div class="card">
+<div class="note"><strong>📌 真题地位</strong>：「角动量守恒」与「软绳下落/变质量动量」是本章的两大 <span style="color:#c0392b;font-weight:bold;">★★★★★</span> 母题——几乎跨年复用，认出母题就锁分。下面三个原型按真题原卷整理（年份已对源核：2011-12 / 2014-15 / 2016-17 / 2017-18 / 2019-20 / 2021-22 A&amp;B）。</div>
+<div style="text-align:center;margin:16px 0;"><img src="img/momentum-prototypes.png" alt="角动量守恒/变质量动量三大真题原型" style="max-width:100%;height:auto;"></div>
+
+<div class="ex">
+<strong>原型 A · 小球穿孔绳收缩 <span style="color:#c0392b;">（2021-22 A&amp;B 计算题）</span></strong>：光滑桌面小球以 $\omega_0$、半径 $r_0$ 转动，绳从孔下拉使半径减小，求 $\omega(t)$ 与拉力做功。
+<div class="sol"><div class="st">解</div>
+<p>绳张力过中心轴，力矩为零 → 角动量守恒：$mr^2\omega=mr_0^2\omega_0$，故 $\omega(t)=\dfrac{r_0^2\omega_0}{r^2(t)}$。</p>
+<p>拉力做功用动能定理（注意末态含<strong>切向 + 径向</strong>两部分速度）：$W=\Delta E_k=\frac12 m(v_t^2+v_r^2)_{末}-\frac12 mv_0^2$。</p>
+<p><strong>关键</strong>：角动量守恒，但<strong>机械能不守恒</strong>（拉力做功）——三者条件分开判断。</p>
+</div></div>
+
+<div class="ex">
+<strong>原型 B · 小孩走转台 <span style="color:#c0392b;">（2014-15）</span></strong>：人以相对台速率 $v_{相对}$ 在静止转台边缘走动，系统总角动量守恒为零，求台角速度 $\omega_台$。
+<div class="sol"><div class="st">解（先把人速度换成相对地面）</div>
+<p>$v_{地}=v_{相对}-\omega_台 R$（台反向退转，取减号）。总 $L=0$：$m\,v_{地}\,R-I_台\,\omega_台=0$，即 $m(v_{相对}-\omega_台 R)R=I_台\,\omega_台$。</p>
+<p>$\boxed{\omega_台=\dfrac{m v_{相对} R}{I_台+mR^2}}$。<strong>转台题最大坑：「相对地面」≠「相对转台」速度，务必先换算。</strong></p>
+</div></div>
+
+<div class="ex">
+<strong>原型 C · 软绳下落 <span style="color:#c0392b;">（2017-18 / 2019-20 / 2021-22 A&amp;B，超高频）</span></strong>：两端 $A、B$ 悬同一固定点，$B$ 端脱离自由下落。求质心速度、固定点张力、质心加速度。
+<div class="sol"><div class="st">解（以含张力的 2021-22 版本为主线）</div>
+<p>下落侧 $B$：$v=\sqrt{2gh}$；静止侧 $A$：$v=0$；质心速度 $v_C=\dfrac{m_B v}{m_总}$。</p>
+<p>固定点张力用<strong>变质量动量定理</strong>（微元法）：$\dd t$ 内 $\dd m$ 从下落侧转到静止侧，对系统 $\dfrac{\dd p}{\dd t}=T-m_总 g$ 解 $T$（结果 $T$ 远大于绳重，含动量转移项）。质心加速度 $m_总 a_C=m_总 g-T$。</p>
+<p><strong>关键</strong>：变质量系统<strong>不能直接 $F=ma$</strong>，必须用 $\dfrac{\dd p}{\dd t}=F_外$（整体法比逐微元法更快）。</p>
+</div></div>
+<div class="warn"><strong>高频易错红线</strong>：① <strong>角动量守恒 ≠ 动量守恒 ≠ 机械能守恒</strong>，三者条件分开判；② 子弹嵌入转动惯量要加 $mR^2$；③ 「相对地面」vs「相对转台」速度别混；④ 变质量系统用 $\frac{\dd p}{\dd t}$ 不用 $F=ma$。</div>
+</div>
+
 <h2 id="s10">4.10 冲量计算与应用</h2>
 <div class="card">
 <div class="fb">
@@ -398,7 +428,7 @@ $$\boxed{e = -\frac{v_2'-v_1'}{v_2-v_1} = \frac{\text{碰后相对分离速率}}
 </div></div>
 
 <div class="warn"><strong>解题技巧</strong>：用恢复系数 $e$ 代替动能守恒方程，可以统一处理所有类型的碰撞。动量守恒+恢复系数关系 = 两个方程解两个未知数（$v_1'$, $v_2'$），比处理二次方程简单得多。</div>
-<div style="text-align:center;margin:16px 0;"><img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Elastic_collision.svg&width=600" alt="弹性碰撞示意图" style="max-width:100%;height:auto;"></div>
+<div style="text-align:center;margin:16px 0;"><img src="img/elastic-collision.png" alt="一维弹性碰撞前后速度" style="max-width:100%;height:auto;"></div>
 </div>
 
 <h2 id="s16">4.16 动量定理的积分形式与平均力（PPT补充）</h2>
@@ -422,7 +452,7 @@ $$F=\dot{m}\cdot v=5\times10=50\,\text{N}$$
 <div class="tip"><strong>连续流体的动量定理</strong>：对于持续的质量流（水流、气流、传送带上的沙等），用 $F=\dot{m}\cdot\Delta v$（$\dot{m}=\dd m/\dd t$ 为质量流率）比逐个分析方便得多。</div>
 </div>
 
-<h2 id="s17">4.17 锥摆的冲量分析（真题2023/2024考原题）</h2>
+<h2 id="s17">4.17 锥摆的冲量分析（真题高频）</h2>
 <div class="card">
 <div class="fb">
 <div class="t">锥摆一个周期内各力的冲量</div>
@@ -449,14 +479,12 @@ $$\boxed{\vv{I}_{net} = \vv{I}_g + \vv{I}_T = 0}$$
 
 <div class="tip"><strong>物理理解</strong>：匀速圆周运动一个完整周期后，小球回到原位置，速度方向也回到初始方向，因此 $\Delta\vv{p} = 0$，由动量定理 $\vv{I}_{net} = \Delta\vv{p} = 0$。这是验证结果的最快方法。</div>
 
-<div class="warn"><strong>真题原题提醒</strong>：
+<div class="warn"><strong>真题提醒</strong>（圆锥摆冲量见 2016-17 真题，冲量类填空年年有）：
 <ul>
-<li>2023和2024年期中/期末都考过此题，是高频考点</li>
 <li>虽然绳张力方向在不断变化，但其竖直分量始终等于 $mg$，水平分量一周内矢量和为零</li>
 <li>合冲量为零是因为匀速圆周运动一周后动量不变，不要误以为"各力冲量分别为零"</li>
 <li>若问半个周期的冲量，则合冲量不为零！水平方向绳张力冲量 $= 2m\omega l\sin\theta$（方向需具体分析）</li>
 </ul></div>
-<div style="text-align:center;margin:16px 0;"><img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Conical_pendulum.svg&width=400" alt="锥摆示意图" style="max-width:100%;height:auto;"></div>
 </div>
 
 <h2 id="s18">4.18 人船问题（经典模型）</h2>
@@ -664,7 +692,7 @@ $$\boxed{F = F_1 + F_2 = \lambda gx + 2\lambda gx = 3\lambda gx}$$
 </ul></div>
 </div>
 
-<h2 id="s22">4.22 椭圆轨道中的角动量与能量（真题2022/2024考）</h2>
+<h2 id="s22">4.22 椭圆轨道中的角动量与能量（有心力·真题）</h2>
 <div class="card">
 <div class="fb">
 <div class="t">有心力场中的角动量守恒</div>
@@ -686,7 +714,7 @@ $$\frac{\dd A}{\dd t} = \frac{L}{2m} = \frac{1}{2}rv\sin\phi = \text{const}$$
 </div>
 
 <div class="ex">
-<strong>例（已知近地距和速度，求远地距——真题2022/2024）</strong>：人造卫星在椭圆轨道上运动，近地点距地心 $r_1$，速度 $v_1$。求远地点距地心 $r_2$ 和速度 $v_2$。
+<strong>例（已知近地距和速度，求远地距）</strong>：人造卫星在椭圆轨道上运动，近地点距地心 $r_1$，速度 $v_1$。求远地点距地心 $r_2$ 和速度 $v_2$。（有心力角动量守恒见 2019-20 真题）
 <div class="sol"><div class="st">解</div>
 <p><strong>方程一：角动量守恒</strong>（近地点和远地点速度都垂直于径矢）</p>
 $$mv_1 r_1 = mv_2 r_2 \implies v_2 = \frac{v_1 r_1}{r_2} \quad\cdots(1)$$

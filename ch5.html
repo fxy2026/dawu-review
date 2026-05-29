@@ -180,16 +180,43 @@ $$\omega=\sqrt{\frac{3g\sin\theta}{L}}$$
 </ul></div>
 </div>
 
-<h2 id="s8">5.8 进动（定性了解）</h2>
+<h2 id="s8">5.8 进动（陀螺）</h2>
 <div class="card">
 <div class="fb">
 <div class="t">陀螺进动</div>
-<p>快速旋转的陀螺绕竖直轴缓慢转动的现象称为<strong>进动</strong>。</p>
-<p>进动角速度：$\Omega=\frac{Mgl}{J\omega}$</p>
-<p>其中 $M$ 为陀螺质量，$l$ 为质心到支点距离，$J$ 为绕自转轴转动惯量，$\omega$ 为自转角速度。</p>
-<p>自转越快 → 进动越慢。</p>
+<p>快速旋转的陀螺，其自转轴绕竖直轴缓慢转圈的现象称为<strong>进动</strong>。</p>
+<p>进动角速度：$$\Omega=\frac{mgr}{J\omega}$$</p>
+<p>其中 $m$ 为陀螺质量，$r$ 为质心到支点距离，$J$ 为绕<strong>自转轴</strong>的转动惯量，$\omega$ 为<strong>自转</strong>角速度。两条核心规律：<strong>$\Omega$ 与倾角 $\theta$ 无关；$\Omega\propto1/\omega$（自转越快、进动越慢，所以高速陀螺"立得稳"）。</strong></p>
 </div>
-<div style="text-align:center;margin:16px 0;"><img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Gyroscope_precession.png&width=500" alt="陀螺进动示意图" style="max-width:100%;height:auto;"></div>
+<div style="text-align:center;margin:16px 0;"><img src="img/precession.png" alt="陀螺进动：L=Jω 绕竖直轴扫圆，重力矩 M=r×mg 水平且垂直于 L" style="max-width:100%;height:auto;"></div>
+
+<div style="background:#fdecea;border:2px solid #c0392b;border-radius:8px;padding:16px 18px;margin:16px 0;">
+<div style="font-weight:bold;color:#c0392b;font-size:1.1em;margin-bottom:8px;">⚠️ 你在这反复卡：进动「物理图像没建立」（系统第 3 次问刚体/角动量）</div>
+<p>进动是全科目最反直觉的点。你 5/18 问过一次，5/24 做题仍"不会算"，连追"还是没理解，从底层说""进动角速度怎么推导的"——你能套公式，但<strong>脑子里没画面</strong>。下面用一句话 + 一张图锁死。</p>
+<div class="fb" style="margin-top:10px;">
+<div class="t">破法一：一句话锁死物理图像</div>
+<p>重力矩 $\vec M=\vec r\times m\vec g$ 是<strong>水平的、且垂直于角动量 $\vec L$</strong>。它只改变 $\vec L$ 的<strong>方向</strong>、不改变大小——<strong>完全类比向心力</strong>（向心力垂直于速度，只让物体拐弯、不改变速率）。所以 $\vec L$ 的箭头被"水平地推着走"，在水平面上扫出一个圆锥面，陀螺<strong>横着转圈而不倒下</strong>。</p>
+</div>
+<div class="fb">
+<div class="t">破法二：$\sin\theta$ 为什么必然约掉（这就是"与倾角无关"）</div>
+<p>进动时 $\vec L$ 的箭头扫出的水平圆，半径 $=L\sin\theta$；$\dd t$ 内 $|\dd\vec L|=M\,\dd t=mgr\sin\theta\,\dd t$，又 $|\dd\vec L|=(L\sin\theta)\,\dd\varphi$。两边的 $\sin\theta$ 相约：</p>
+$$\Omega=\frac{\dd\varphi}{\dd t}=\frac{mgr\sin\theta}{L\sin\theta}=\frac{mgr}{J\omega}$$
+<p><strong>直觉</strong>：倾角越大，重力矩越大（分子，更想扳倒它），但要画的圆半径也越大（分母，更难推动），两个效应正好成正比抵消 → 与倾角无关。<strong>选项里凡是带 $\sin\theta$ 的进动角速度都是错的。</strong></p>
+</div>
+<div class="fb">
+<div class="t">破法三：方向判据 $\vec M=\vec\Omega\times\vec L$（自转反向 → 进动反向）</div>
+<p>$\vec M$ 方向<strong>只看 $\vec r$ 和重力、与自转方向无关</strong>，永远水平、纹丝不动。若自转反向 → $\vec L\to-\vec L$，要保持 $\vec M=\vec\Omega\times\vec L$ 成立，只能 $\vec\Omega\to-\vec\Omega$（负负得正）。所以<strong>自转反向，进动就反向</strong>。</p>
+</div>
+<div class="warn" style="margin-top:10px;"><strong>致命易错</strong>：① <strong>别混 $\omega$（自转）与 $\Omega$（进动）</strong>，二者成<strong>反比</strong>；② 叉乘顺序 $\vec\Omega$ 在前（$\vec M=\vec\Omega\times\vec L$），反了方向就错；③ 别以为重力会把陀螺"拉倒"——重力矩垂直 $\vec L$，改方向不改大小。</div>
+<div class="tip"><strong>👉 针对动作</strong>：默写 $\Omega=\frac{mgr}{J\omega}$（无 $\theta$），再对着上图用 $\vec M=\vec\Omega\times\vec L$ 判一遍方向；遇到"自转反向问进动"直接答"反向"。</div>
+</div>
+
+<div class="ex">
+<strong>真题原型（圆锥陀螺求进动角速度）</strong>：一陀螺绕支点 $O$ 高速自转，自转角速度 $\omega$、绕对称轴转动惯量 $J$、质量 $m$、质心到 $O$ 距离 $l$，对称轴与竖直成 $\theta$。求进动角速度大小。
+<div class="sol"><div class="st">解（快速自转近似 $L\approx J\omega$）</div>
+<p>重力矩 $M=mgl\sin\theta$；$\vec L$ 水平圆半径 $=L\sin\theta=J\omega\sin\theta$。</p>
+<p>$\Omega=\dfrac{M}{L\sin\theta}=\dfrac{mgl\sin\theta}{J\omega\sin\theta}=\boxed{\dfrac{mgl}{J\omega}}$（$\sin\theta$ 约掉，与 $\theta$ 无关）。</p>
+</div></div>
 </div>
 
 <h2 id="s9">5.9 刚体综合问题解题模板</h2>
@@ -488,11 +515,41 @@ $$T = 2\pi\sqrt{\frac{\frac{3}{2}MR^2}{MgR}} = 2\pi\sqrt{\frac{3R}{2g}}$$
 <div class="tip"><strong>实验应用</strong>：复摆是实验中测量重力加速度 $g$ 的重要方法。只需测量 $T$、$J$、$m$、$l$，即可由 $g = \frac{4\pi^2 J}{mT^2 l}$ 计算 $g$。实际中常利用"可逆摆"原理提高精度。</div>
 
 <div class="warn"><strong>注意</strong>：复摆周期公式仅适用于<strong>微小振动</strong>（$\theta \ll 1$），此时才能做 $\sin\theta\approx\theta$ 的近似。</div>
-<div style="text-align:center;margin:16px 0;"><img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Pendulum_with_period_formula.svg&width=400" alt="物理摆示意图" style="max-width:100%;height:auto;"></div>
+<div style="text-align:center;margin:16px 0;"><img src="img/physical-pendulum.png" alt="物理摆（复摆）示意图：T=2π√(J/mgl)" style="max-width:100%;height:auto;"></div>
+
+<div style="background:#fdecea;border:2px solid #c0392b;border-radius:8px;padding:16px 18px;margin:16px 0;">
+<div style="font-weight:bold;color:#c0392b;font-size:1.1em;margin-bottom:8px;">⚠️ 你在这反复卡：刚体周期——「力矩法」vs「直接把力相加」（持续 3 天 5/24→27）</div>
+<p>你看到一张 PPT 把作用在杆<strong>不同位置</strong>的重力和弹簧力<strong>直接相加</strong>当合力套 $F=ma$，结果"没理解"（5/24 标 ❌，5/26、5/27 仍 ⚠️）。这是刚体力学最经典的大坑——记死下面这条铁律。</p>
+<div class="fb" style="margin-top:10px;">
+<div class="t">为什么不能直接加力？（错在哪）</div>
+<p>$F=ma$ 描述的是<strong>质点/质心的平动</strong>。但杆绕固定轴<strong>转动</strong>时，同一个力作用在离轴远近不同的点，"转动效果"（力矩 = 力 × 力臂）完全不同——离轴远的力，力臂大，更能让杆转。<strong>直接把力相加</strong>等于假装它们都作用在同一点，丢掉了力臂信息，所以错。正确量是<strong>力矩</strong>，转动版牛顿定律是 $\tau=I\alpha$。</p>
+</div>
+<div class="fb">
+<div class="t">破法：绕固定轴刚体一律走「力矩 → 转动定律 / 能量法」（分步）</div>
+<ol>
+<li>设小偏角 $\theta$，小角近似 $\sin\theta\approx\theta$。</li>
+<li>逐个算每个力对<strong>转轴</strong>的力矩（力 × 力臂），恢复力取负号。</li>
+<li>求对轴的总转动惯量 $I$。</li>
+<li>列 $I\ddot\theta=\sum\tau$，整理成 $\ddot\theta=-\omega^2\theta$ 读出 $\omega^2$，$T=2\pi/\omega$。</li>
+</ol>
+</div>
+<div class="ex" style="margin-top:10px;">
+<strong>纠正版例题（你 5/24 的 PPT 题）</strong>：长 $L$ 轻杆顶端 $O$ 为轴、末端挂质量 $m$ 小球；距 $O$ 为 $a$ 处接一水平弹簧（劲度 $k$）。求小摆动周期。
+<div class="sol"><div class="st">解（力矩法）</div>
+<p>重力矩 $\tau_g=-mgL\theta$（力 $mg$、力臂 $\approx L\theta$）；弹簧力矩 $\tau_k=-(ka\theta)\cdot a=-ka^2\theta$（弹簧力 $ka\theta$、力臂 $a$，那个 $a$ 出现<strong>两次</strong>）。</p>
+<p>转动惯量 $I=mL^2$（轻杆只有末端质点）。转动定律：</p>
+$$mL^2\ddot\theta=-(mgL+ka^2)\theta\ \Rightarrow\ \omega^2=\frac{mgL+ka^2}{mL^2}$$
+$$\boxed{T=2\pi\sqrt{\frac{mL^2}{mgL+ka^2}}}$$
+<p>PPT 的错误答案 $2\pi\sqrt{\dfrac{mL}{mg+ka}}$ <strong>仅在 $a=L$（弹簧恰好挂在杆末端）时才偶然成立</strong>；$a\ne L$ 时它漏掉了力臂带来的 $a^2$。</p>
+</div></div>
+<div class="warn" style="margin-top:8px;"><strong>致命易错</strong>：① <strong>凡是绕固定轴转动的刚体（杆、盘、复摆），回复力分析一律走力矩/能量，绝不走质点的切向力相加</strong>；② 弹簧力矩是 $ka^2\theta$ 不是 $ka\theta$（$a$ 在位移和力臂里各出现一次）；③ 转动惯量选对——轻杆末端质点 $mL^2$、匀质杆绕端点 $\frac13mL^2$。</div>
+<div class="tip"><strong>👉 针对动作</strong>：用 $\tau=I\alpha$ 独立把单摆/复摆/这道弹簧杆题各推一遍，和错误的"加力法"逐行对比，看 $a^2$ 是怎么丢的。</div>
+</div>
 </div>
 
 <h2 id="s17">5.17 子弹射入悬挂杆问题（PPT/真题经典）</h2>
 <div class="card">
+<div class="note"><strong>📌 真题地位</strong>：刚体定轴转动是大题主力（约占卷面 18–22%），「角动量守恒」题型 <span style="color:#c0392b;font-weight:bold;">★★★★★</span>（2011-12 半圆环小珠 / 2014-15 小孩走转台 / 2016-17 子弹打盘 / 2021-22 A&amp;B 小球穿孔绳收缩 全覆盖）。子弹打杆/打盘是其中最高频的母题。<strong>核心判据三连必背：碰撞瞬间「动量不守恒（轴有反力）、角动量对轴守恒、机械能不守恒（完全非弹性）」</strong>。</div>
 <div class="fb">
 <div class="t">问题模型</div>
 <p>质量为 $m$ 的子弹以水平速度 $v_0$ 射入悬挂在铰链上的静止均匀杆（质量 $M$，长度 $L$）的末端并嵌入其中。杆可绕顶端的光滑水平轴自由转动。</p>

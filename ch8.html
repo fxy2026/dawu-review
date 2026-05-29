@@ -473,8 +473,18 @@ $$\boxed{v_{rms} = \sqrt{\overline{v^2}} = \sqrt{\frac{3kT}{m}}}$$
 <div class="fb">
 <div class="t">三种速率数值比</div>
 $$v_p : \bar{v} : v_{rms} = \sqrt{2} : \sqrt{\frac{8}{\pi}} : \sqrt{3} = 1 : 1.128 : 1.225$$
-<p>三者均正比于 $\sqrt{T/m}$（温度越高、分子越轻，速率越大）。</p>
+<p>三者均正比于 $\sqrt{T/m}$（温度越高、分子越轻，速率越大）。<strong>大小关系 $v_p<\bar v<v_{rms}$ 记死</strong>，对应分布图上从左到右三条竖线。</p>
 </div>
+<div style="text-align:center;margin:16px 0;"><img src="img/maxwell-three-speeds.png" alt="Maxwell速率分布与三速率 vp<v̄<vrms" style="max-width:100%;height:auto;"></div>
+
+<div class="ex">
+<strong>真题原型（麦氏速率分布图像归一化求 $a$）<span style="color:#c0392b;">　★★★★★ 每年必出（2011-12 / 2021-22 A&amp;B 同款图）</span></strong>：$N$ 个粒子，$f(v)$ 图像为三角形（$0\to v_0$ 线性升、$v_0\to 2v_0$ 线性降），峰值为 $a$。求 $a$，及速率小于 $v_0$ 的粒子数。
+<div class="sol"><div class="st">解</div>
+<p>归一化即图像总面积 $=1$：三角形面积 $\frac12\cdot 2v_0\cdot a=1\Rightarrow \boxed{a=\dfrac{1}{v_0}}$。</p>
+<p>速率小于 $v_0$ 的粒子数 = 左侧三角形面积 $\times N=\frac12 v_0 a\cdot N=\frac12 N$（对称三角形左右各半）。</p>
+<p>★ 同款题常见两类问法：<strong>区间内分子数 $=N\!\int_{v_1}^{v_2}\! f(v)\,\dd v=$ 图像下面积</strong>；平均速率 $\bar v=\int_0^\infty v f(v)\,\dd v$；方均根 $\sqrt{\overline{v^2}}=\sqrt{\int_0^\infty v^2 f(v)\,\dd v}$。</p>
+</div></div>
+<div class="warn">⚠️ <strong>原扫描件图形可能不同</strong>：若实际图为「$0\to 2v_0$ 单调上升的直角三角形」（峰在 $2v_0$），则 $a$ 仍 $=\frac1{v_0}$，但速率小于 $v_0$ 的粒子数变为 $\frac14 N$。<strong>务必按试卷实际图形判断。</strong></div>
 
 <div class="warn"><strong>选择题常考</strong>：
 <ul>
@@ -508,7 +518,6 @@ $$n(\vv{r}) = n_0\exp\left(-\frac{E_p(\vv{r})}{kT}\right)$$
 $$n(r) = n(0)\exp\left(\frac{m\omega^2 r^2}{2kT}\right)$$
 <p>分子密度向外壁指数增长。重分子（$m$ 大）在外壁富集更明显——这就是<strong>气体离心分离</strong>（铀浓缩）的原理。</p>
 </div></div>
-<div style="text-align:center;margin:16px 0;"><img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Boltzmann_distribution_many_particles.svg&width=500" alt="Boltzmann分布示意图" style="max-width:100%;height:auto;"></div>
 </div>
 
 <h2 id="s16">8.16 速率分布函数的应用技巧（PPT补充）</h2>

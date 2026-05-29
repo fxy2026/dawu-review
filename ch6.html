@@ -37,7 +37,25 @@ $$x' = \gamma(x-vt),\quad y'=y,\quad z'=z,\quad t' = \gamma\left(t-\frac{vx}{c^2
 $$x = \gamma(x'+vt'),\quad t = \gamma\left(t'+\frac{vx'}{c^2}\right)$$
 <p>其中 $\gamma = \frac{1}{\sqrt{1-\beta^2}},\quad \beta = v/c$</p>
 </div>
-<div style="text-align:center;margin:16px 0;"><img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Lorentz_boost_electric_charge.svg&width=500" alt="Lorentz变换示意图" style="max-width:100%;height:auto;"></div>
+<div style="text-align:center;margin:16px 0;"><img src="img/lorentz-pos-neg.png" alt="洛伦兹正反变换：正减反加" style="max-width:100%;height:auto;"></div>
+
+<div style="background:#fdecea;border:2px solid #c0392b;border-radius:8px;padding:16px 18px;margin:16px 0;">
+<div style="font-weight:bold;color:#c0392b;font-size:1.1em;margin-bottom:8px;">⚠️ 你在这反复卡：洛伦兹正/反变换「顺过来逆过去」（近两周第 4 次问）</div>
+<p>系统记录：同一个「正变换和反变换的关系、怎么推导」你在 5/22 一天内连问 3 次、5/19 还问过一次，弹出"第 4 次重复弱点"预警——说明<strong>公式形式记不牢、靠反复看才安心</strong>。下面这套口诀直接背死：</p>
+<div class="fb" style="margin-top:10px;">
+<div class="t">破法一：一句口诀「正减反加」</div>
+<ul>
+<li><strong>求带撇</strong>（$x',t'$，S→S′）用<strong>正变换</strong>，分子全是<strong>减号</strong>：$x'=\gamma(x-ut)$，$t'=\gamma\!\left(t-\frac{u}{c^2}x\right)$。</li>
+<li><strong>求不带撇</strong>（$x,t$，S′→S）用<strong>反变换</strong>，分子全是<strong>加号</strong>（$u\to-u$）：$x=\gamma(x'+ut')$，$t=\gamma\!\left(t'+\frac{u}{c^2}x'\right)$。</li>
+</ul>
+</div>
+<div class="fb">
+<div class="t">破法二：为什么反变换是「加」——一秒自证</div>
+<p>相对性原理：从 $S$ 看 $S'$ 往 $+x$ 跑，则从 $S'$ 看 $S$ 往 $-x$ 跑。所以反变换 = 正变换里<strong>对调带撇/不带撇 + 把 $u\to-u$</strong>。代进去 $-(-u)=+u$，减号自然变加号。顺推、逆推逻辑自洽，记不住公式时现推也来得及。</p>
+</div>
+<div class="warn" style="margin-top:10px;"><strong>三条致命易错（你踩过的）</strong>：① 正减反加别记反，和"求带撇/不带撇"绑定；② $\gamma=\frac{1}{\sqrt{1-u^2/c^2}}\ge1$，<strong>不要写成 $\sqrt{1-u^2/c^2}$</strong>（那是它的倒数，5/19 栽过）；③ <strong>不同时又不同地</strong>的两事件必须用完整洛伦兹变换取差，<u>不能</u>直接套钟慢 $\Delta t=\gamma\Delta t_0$ / 尺缩——这是作战手册点名考点，也是 2021-22 飞船光脉冲真题的陷阱（见 §6.17）。</div>
+<div class="tip"><strong>👉 针对动作</strong>：考前默写卡——写"正变换"立刻在分子写 −、写"反变换"立刻写 +；再找 1～2 道"不同时不同地"的计算题（如 §6.8、§6.17 火车开枪 / 跑道题）限时练，把"该用变换还是该用钟慢"练成条件反射。</div>
+</div>
 </div>
 
 <h2 id="s2">6.2 时间膨胀与长度收缩</h2>
@@ -214,6 +232,7 @@ $$(\Delta s)^2 = c^2(\Delta t)^2 - (\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2$$
 
 <h2 id="s8">6.8 Lorentz变换典型应用</h2>
 <div class="card">
+<div class="note"><strong>📌 真题地位</strong>：相对论每年填空 1–3 小题（2011-12 / 2014-15 / 2016-17 / 2017-18 / 2019-20 / 2021-22 A&amp;B 全覆盖，约占卷面 10–12%），套路化、性价比极高。其中<strong>「洛伦兹变换正反用」是 2021-22 飞船光脉冲填空的核心</strong>——船内同地不同时事件求另一系时间间隔，<u>不能简单套钟慢</u>。这一节务必练熟「该用变换还是该用钟慢」的判断。</div>
 <div class="fb">
 <div class="t">Lorentz变换应用要点</div>
 <p>使用Lorentz变换时，首先明确：</p>
@@ -427,7 +446,7 @@ $$\Delta E = 0.0189\times931.5\,\text{MeV} = \boxed{17.6\,\text{MeV}}$$
 </div></div>
 
 <div class="warn"><strong>重要</strong>：类空间隔的两个事件，时间顺序在不同参考系中可以不同——但这不违反因果律，因为这两个事件本就没有因果关系。只有类时间隔的事件才有确定的因果顺序。</div>
-<div style="text-align:center;margin:16px 0;"><img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Light_cone.svg&width=500" alt="光锥与因果关系" style="max-width:100%;height:auto;"></div>
+<div style="text-align:center;margin:16px 0;"><img src="img/light-cone.png" alt="光锥与因果关系" style="max-width:100%;height:auto;"></div>
 </div>
 
 <h2 id="s14">6.14 相对论性碰撞与粒子物理（MOOC/真题）</h2>
@@ -554,7 +573,7 @@ $$\Delta E = \Delta m\cdot c^2 = 17.6\,\text{MeV}$$
 </div>
 
 <div class="tip"><strong>记忆技巧</strong>：$v/c = 0.1$ 时 $\gamma$ 几乎为 $1$（经典力学足够好）；$v/c = 0.5$ 时 $\gamma \approx 1.15$（相对论效应约 $15\%$）；$v/c > 0.9$ 后 $\gamma$ 急剧增大。</div>
-<div style="text-align:center;margin:16px 0;"><img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Lorentz_factor.svg&width=500" alt="Lorentz因子γ与速度的关系" style="max-width:100%;height:auto;"></div>
+<div style="text-align:center;margin:16px 0;"><img src="img/lorentz-factor-gamma.png" alt="Lorentz因子γ与速度的关系" style="max-width:100%;height:auto;"></div>
 </div>
 
 <h2 id="s16">6.16 Lorentz变换的应用技巧（真题总结）</h2>

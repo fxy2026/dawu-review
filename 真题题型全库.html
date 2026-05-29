@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>真题题型全库 | 大物复习</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],macros:{'\\dd':'\\mathrm{d}','\\vv':'\\boldsymbol'},throwOnError:false});">
+</script>
+<style>
+:root{--pri:#1a5276;--acc:#c0392b;--bg:#fffef9;--card:#fff;--border:#e0d8c8;--form:#f0f4ff;--ex:#fffbf0;--tip:#e8f5e9;--warn:#fff3e0;--note:#f3e5f5;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;line-height:1.9;padding:20px;max-width:1000px;margin:0 auto;}h1{text-align:center;color:var(--acc);font-size:1.8em;margin:20px 0;border-bottom:3px solid var(--acc);padding-bottom:10px;}h2{color:#fff;font-size:1.4em;margin:35px 0 15px;padding:10px 18px;background:linear-gradient(135deg,var(--acc),#e74c3c);border-radius:6px;}h3{color:var(--pri);font-size:1.15em;margin:20px 0 10px;border-left:4px solid var(--acc);padding-left:12px;}h4{color:#555;margin:12px 0 6px;font-size:1.05em;}.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0;}.fb{background:var(--form);border:2px solid #3498db;border-radius:8px;padding:14px 18px;margin:12px 0;}.fb .t{font-weight:bold;color:#2471a3;margin-bottom:6px;}.ex{background:var(--ex);border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;}.sol{background:#f5f5f5;border:1px dashed #aaa;border-radius:5px;padding:14px;margin-top:8px;}.sol .st{font-weight:bold;color:var(--acc);margin-bottom:4px;}.tip{background:var(--tip);border-left:4px solid #27ae60;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.warn{background:var(--warn);border-left:4px solid #e67e22;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}.note{background:var(--note);border-left:4px solid #8e24aa;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;}table{width:100%;border-collapse:collapse;margin:12px 0;}th,td{border:1px solid var(--border);padding:6px 10px;text-align:center;}th{background:var(--acc);color:#fff;}tr:nth-child(even){background:#f9f7f2;}ul,ol{margin-left:20px;margin-bottom:8px;}.nav-bar{position:sticky;top:0;z-index:100;background:#fffef9;padding:10px 15px;border-bottom:2px solid #e0d8c8;margin:-20px -20px 20px;font-size:.9em;display:flex;gap:12px;flex-wrap:wrap;}.nav-bar a{color:#1a5276;text-decoration:none;font-weight:bold;padding:3px 8px;border-radius:4px;}.nav-bar a:hover{background:#1a5276;color:#fff;}.star{color:#e67e22;font-weight:bold;}.freq{display:inline-block;background:#fce4e4;color:#c0392b;font-size:.78em;font-weight:bold;padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle;}
+</style>
+<link rel="stylesheet" href="toc.css">
+</head>
+<body>
+<div class="nav-bar"><a href="index.html">📖 目录</a><a href="cheatsheet.html">二级结论</a><a href="我的薄弱点.html">🔴 我的弱点</a><a href="guide.html">备考指南</a></div>
+
+<h1>真题题型全库（B 卷 · 守 90+）</h1>
+<p style="text-align:center;color:#888;font-size:.9em;margin-top:-10px;margin-bottom:20px;">基于 SJTU《大学物理（1）》A/B 类历年期末真题：2011-12 / 2014-15 / 2016-17 / 2017-18 / 2019-20 / 2021-22(A&amp;B) | 考期 2026-07-02</p>
+
+<div class="note"><strong>怎么用这一页</strong>：左侧目录按"高频题型"组织，每个题型给出 <strong>出现年份 · 标准解法步骤 · 真题原型 · 易错红线</strong>。B 类与 A 类同源（B 去掉部分难证明、降低计算量，知识点集合相同），A 类真题完全适用。题型按真题频次（★越多越高频）排序——<span class="star">★★★★★</span> 的几乎年年必出，优先吃透。</div>
+
+<!-- ============ 全局考情 ============ -->
+<h2 id="s0">一、全局考情：分值地图</h2>
+<div class="card">
+<h3>试卷结构（A 类典型 · B 类同源简化）</h3>
+<table>
+<tr><th>部分</th><th>题型</th><th>分值</th><th>题量</th></tr>
+<tr><td>一</td><td>填空题（少数年份含简答）</td><td>35–57 分</td><td>9–14 小题</td></tr>
+<tr><td>二</td><td>计算 / 综合大题</td><td>43–65 分</td><td>4–10 题</td></tr>
+<tr><td colspan="2"><strong>总计</strong></td><td colspan="2"><strong>100 分</strong></td></tr>
+</table>
+<p style="font-size:.9em;color:#666;">B 类：填空 ≈38 分 + 计算 ≈62 分；2021-22 B 类计算第 6、7 题与 A 类第 2、5 题几乎相同。</p>
+
+<h3>各板块分值占比（按真题实际频次与分值估算）</h3>
+<table>
+<tr><th>板块</th><th>占比</th><th>真题地位</th></tr>
+<tr><td><strong>热学</strong>（热力学+气体动理论）</td><td><strong>25–30%</strong></td><td>最高频，填空+大题双覆盖</td></tr>
+<tr><td><strong>刚体定轴转动</strong></td><td>18–22%</td><td>大题主力（角动量守恒）</td></tr>
+<tr><td>质点力学（运动学+牛顿+动量功能）</td><td>18–20%</td><td>计算第 1 题必出运动学积分</td></tr>
+<tr><td>振动与波动</td><td>12–15%</td><td>简谐初相填空 + 驻波/行波大题</td></tr>
+<tr><td>狭义相对论</td><td>10–12%</td><td>填空 2–3 小题 + 偶尔 1 道大题</td></tr>
+</table>
+<div class="tip"><strong>守 90+ 主线</strong>：热学 + 刚体约占半壁江山，是"必拿分 + 区分度"双重战场，务必吃透。<strong>质点运动学积分题（计算第 1 题）几乎年年第一题、必拿满</strong>。相对论填空套路化、性价比极高。</div>
+</div>
+
+<!-- ============ 跨年原型题 ============ -->
+<h2 id="s1">二、反复复用的"原型题"（识别=锁分）</h2>
+<div class="card">
+<p>真题存在大量<strong>跨年完全复用</strong>的母题，认出母题就锁定分数：</p>
+<ul>
+<li><strong>软绳下落</strong>（两端悬同一点，一端脱离自由落体）：2017-18、2019-20、2021-22(A&amp;B) 连续出现，问法各年不同。</li>
+<li><strong>小球穿孔绳收缩</strong>（角动量守恒 + 拉力做功）：2021-22(A&amp;B)。</li>
+<li><strong>两端固定驻波</strong>：2011-12、2019-20 几乎逐字相同。</li>
+<li><strong>三点行波 P/Q/R 相位差</strong>：2014-15、2016-17、2021-22(B) 复用。</li>
+<li><strong>刚性双原子循环</strong>（直线膨胀+绝热+等压）：2021-22(A&amp;B) 完全相同的 13 分大题。</li>
+<li><strong>麦氏速率分布填空</strong>（图像归一化求 $a$）：2011-12、2021-22(A&amp;B) 同款图。</li>
+</ul>
+<div class="warn"><strong>同壳不同芯</strong>：「吸热求终态体积+熵增」是同一题壳但过程不同——2011-12 是<strong>等温</strong>吸热（用 $W=Q$、$\Delta S=\nu R\ln\frac{V_2}{V_1}$）；2021-22(A&amp;B) 改成<strong>等压</strong>吸热（用 $Q=\nu C_p\Delta T$、盖-吕萨克定律求 $V_2$、$\Delta S=\nu C_p\ln\frac{T_2}{T_1}$）。两年公式别套错。</div>
+</div>
+
+<!-- ============ 题型1 ============ -->
+<h2 id="s2">题型1 · 质点变加速度运动学积分<span class="freq">★★★★★ 年年计算第1题</span></h2>
+<div class="card">
+<p><strong>出现年份</strong>：2011-12(计算1)、2019-20(计算2)、2021-22 A&amp;B(综合/计算1)。</p>
+<div class="fb">
+<div class="t">标准解法：分离变量积分</div>
+<ul>
+<li>已知 $a(t)$：$v=v_0+\int_0^t a\,\dd t$，$x=x_0+\int_0^t v\,\dd t$。</li>
+<li>已知 $a=a(x)$（如 $a=cx^{-2}$）：用 $a=v\dfrac{\dd v}{\dd x}$，得 $v\,\dd v=a\,\dd x$。</li>
+<li>已知 $a=a(v)$（如阻力 $\propto v$）：用 $a=\dfrac{\dd v}{\dd t}$ 或 $a=v\dfrac{\dd v}{\dd x}$ 分离变量。</li>
+</ul>
+</div>
+<div class="ex">
+<strong>真题原型（2011-12 计算1）</strong>：质点沿 $x$ 正向运动，$a=-kv^2$（$k$ 为已知正常数），初速 $v_0$，求运动方程 $x(t)$。
+<div class="sol">
+<div class="st">解</div>
+<p>$\dfrac{\dd v}{\dd t}=-kv^2 \Rightarrow \displaystyle\int_{v_0}^{v}\dfrac{\dd v}{v^2}=-\int_0^t k\,\dd t \Rightarrow \dfrac{1}{v}-\dfrac{1}{v_0}=kt$</p>
+<p>得 $v=\dfrac{v_0}{1+kv_0 t}$，再积分 $x=\dfrac{1}{k}\ln(1+kv_0 t)$。</p>
+</div>
+</div>
+<div class="ex">
+<strong>真题原型（2021-22 A 综合1）</strong>：已知矢量 $\vec a(t)$，$t=0$ 速度已知，求 (1) $\vec v(t)$；(2) 某时刻切向/法向加速度；(3) 该处轨道曲率半径 $\rho$。
+<div class="sol">
+<div class="st">解（切法分解三连）</div>
+<p>切向加速度 $a_t=\dfrac{\dd|\vec v|}{\dd t}=\dfrac{\vec a\cdot\vec v}{|\vec v|}$（$\vec a$ 在 $\vec v$ 方向的投影）。</p>
+<p>法向加速度 $a_n=\sqrt{|\vec a|^2-a_t^2}$。</p>
+<p>曲率半径 $\rho=\dfrac{|\vec v|^2}{a_n}$。</p>
+</div>
+</div>
+<div class="warn"><strong>易错</strong>：① 积分上下限对应时刻/位置要写对；② 矢量题切向单位向量 $\hat\tau=\vec v/|\vec v|$，法向用勾股，别混；③ $\rho$ 分母是 $a_n$ <strong>不是</strong> $|\vec a|$。</div>
+</div>
+
+<!-- ============ 题型2 ============ -->
+<h2 id="s3">题型2 · 角动量守恒（刚体/质点）<span class="freq">★★★★★</span></h2>
+<div class="card">
+<p><strong>出现年份</strong>：2011-12(半圆环小珠)、2014-15(小孩走转台)、2016-17(子弹打盘)、2019-20(有心力角动量)、2021-22 A&amp;B(小球穿孔绳收缩)。</p>
+<div class="fb">
+<div class="t">核心判据</div>
+<p>合外力矩 $=0$ 则对该点/轴角动量守恒。绳张力、向心力对中心轴力矩为零 → 角动量守恒；但<strong>机械能未必守恒</strong>（外力做功）。</p>
+</div>
+<div class="ex">
+<strong>原型 A（2021-22 小球穿孔绳收缩）</strong>：光滑桌面小球以 $\omega_0$、半径 $r_0$ 转动，绳从孔下拉使半径减小，求 $\omega(t)$ 与拉力做功。
+<div class="sol">
+<div class="st">解</div>
+<p>绳张力过中心轴，力矩为零 → $mr^2\omega = mr_0^2\omega_0$（角动量守恒）。</p>
+<p>半径随时间 $r(t)=r_0-\frac12 a t^2$（手匀加速下拉），代入得 $\omega(t)=\dfrac{r_0^2\omega_0}{r^2(t)}$。</p>
+<p>拉力做功用动能定理：$W=\Delta E_k=\frac12 m(v_t^2+v_r^2)_{末}-\frac12 m v_0^2$（末态含切向 + 径向两部分速度）。</p>
+</div>
+</div>
+<div class="ex">
+<strong>原型 B（2016-17 子弹打盘）</strong>：子弹水平打入静止圆盘边缘并嵌入，求盘的角速度，及摩擦力矩使盘停止的时间。
+<div class="sol">
+<div class="st">解</div>
+<p>打入瞬间角动量守恒：$mv_0 R=(I_{盘}+mR^2)\omega$，其中 $I_{盘}=\frac12 MR^2$。</p>
+<p>停止时间：用 $\int r\,\dd m$ 算盘的摩擦力矩 $M_f$，再 $M_f\,t=I\omega$（角冲量=角动量变化）。</p>
+</div>
+</div>
+<div class="ex">
+<strong>原型 C（2014-15 小孩走转台）</strong>：人以相对台速率 $v_{相对}$ 在转台边缘走动，系统初始静止 → 总角动量守恒为零。
+<div class="sol">
+<div class="st">解（先换成相对地面速度）</div>
+<p>$v_{地}=v_{相对}-\omega_{台}R$（台反向退转，取减号）。守恒式 $m\,v_{地}\,R-I_{台}\,\omega_{台}=0$，即 $m(v_{相对}-\omega_{台}R)R=I_{台}\,\omega_{台}$。</p>
+<p>解出 $\omega_{台}=\dfrac{m v_{相对} R}{I_{台}+mR^2}$。</p>
+</div>
+</div>
+<div class="warn"><strong>易错</strong>：① "相对地面" vs "相对转台"速度区分（转台题最常错）；② 子弹嵌入后转动惯量要加 $mR^2$；③ 角动量守恒 ≠ 动量守恒 ≠ 机械能守恒，三者条件分开判断。</div>
+</div>
+
+<!-- ============ 题型3 ============ -->
+<h2 id="s4">题型3 · 热力学循环 / 多方过程综合大题<span class="freq">★★★★★ 大题最高分</span></h2>
+<div class="card">
+<p><strong>出现年份</strong>：2011-12、2014-15、2016-17、2017-18、2019-20、2021-22 A&amp;B 全覆盖。<strong>大题最高频、最高分（10–16 分）的板块。</strong></p>
+<div class="ex">
+<strong>真题原型（2021-22 循环 13 分）</strong>：$\nu$ mol 刚性双原子气体，初态 $A(p_1,V_1)$ → 沿直线膨胀至 $B$ → 沿绝热线膨胀至压强 $p_2$ 得 $C$ → 沿等压线压缩回 $A$。求 $V_C$、各段 $Q/W$、循环效率。
+<div class="sol">
+<div class="st">解</div>
+<p>绝热线：$p_B V_B^\gamma=p_2 V_C^\gamma$，刚性双原子 $\gamma=\frac75=1.4$。</p>
+<p>直线过程 $p=p(V)$ 线性：$W=\int p\,\dd V=$ 梯形面积；吸热 $Q=\Delta U+W$。</p>
+<p>效率 $\eta=\dfrac{W_{净}}{Q_{吸}}=1-\dfrac{|Q_{放}|}{Q_{吸}}$。</p>
+</div>
+</div>
+<div class="fb">
+<div class="t">多方摩尔热容（必背）—— 2014-15、2017-18 过程方程题</div>
+<p>$C_n=C_V-\dfrac{R}{n-1}=C_V\cdot\dfrac{n-\gamma}{n-1}$。多方过程功 $W=\dfrac{p_1V_1-p_2V_2}{n-1}\ (n\neq1)$。</p>
+<table>
+<tr><th>过程</th><th>等温</th><th>绝热</th><th>等压</th><th>等容</th></tr>
+<tr><td>$n$</td><td>${1}$</td><td>$\gamma$</td><td>${0}$</td><td>$\to\infty$</td></tr>
+<tr><td>$C_n$</td><td>$\to\infty$</td><td>${0}$</td><td>$C_p$</td><td>$C_V$</td></tr>
+</table>
+</div>
+<div class="warn"><strong>易错</strong>：① 刚性双原子 $i=5$、$C_V=\frac52 R$、$C_p=\frac72 R$、$\gamma=1.4$；单原子 $i=3$、$\gamma\approx1.67$。② 效率<strong>分母是吸热总量、分子是净功</strong>，放热段取绝对值。</div>
+</div>
+
+<!-- ============ 题型4 ============ -->
+<h2 id="s5">题型4 · 麦克斯韦速率分布 / 气体动理论填空<span class="freq">★★★★★ 每年必出</span></h2>
+<div class="card">
+<p><strong>出现年份</strong>：每年都有，全覆盖。两类：</p>
+<div class="fb">
+<div class="t">(a) 自定义分布函数归一化</div>
+<ul>
+<li>归一化：$\int_0^\infty f(v)\,\dd v=1$（或 $\int Nf=N$）求待定常数。</li>
+<li>平均速率 $\bar v=\int_0^\infty v f(v)\,\dd v$；方均根 $\sqrt{\overline{v^2}}=\sqrt{\int_0^\infty v^2 f(v)\,\dd v}$。</li>
+<li>区间内分子数 $=N\int_{v_1}^{v_2} f(v)\,\dd v=$ 图像下面积。</li>
+</ul>
+</div>
+<div class="ex">
+<strong>真题原型（2021-22 图像题）</strong>：$N$ 个粒子，$f(v)$ 图像为三角形（${0}$→$v_0$ 线性升、$v_0$→${2v_0}$ 线性降），求峰值 $a$。
+<div class="sol">
+<div class="st">解</div>
+<p>归一化即图像总面积 $=1$：三角形面积 $\frac12\cdot 2v_0\cdot a=1\Rightarrow a=\dfrac{1}{v_0}$。</p>
+<p>速率小于 $v_0$ 的粒子数 = 左侧三角形面积 $\times N=\frac12 v_0 a\cdot N=\frac12 N$（对称三角形左右各半）。</p>
+</div>
+</div>
+<div class="warn">⚠️ 原始扫描图缺失：若实际图为「${0}$→${2v_0}$ 单调上升的直角三角形」（峰在 ${2v_0}$），则 $a$ 仍 $=\frac1{v_0}$，但速率小于 $v_0$ 的粒子数变为 $\frac14 N$。<strong>务必按试卷实际图形判断。</strong></div>
+<div class="fb">
+<div class="t">(b) 标准麦氏三速率（直接套）</div>
+<p>$v_p=\sqrt{\dfrac{2RT}{M}}$，$\bar v=\sqrt{\dfrac{8RT}{\pi M}}$，$v_{rms}=\sqrt{\dfrac{3RT}{M}}$。</p>
+<p>大小关系 $v_p\lt\bar v\lt v_{rms}$，比值 $\sqrt2:\sqrt{8/\pi}:\sqrt3\approx 1.41:1.60:1.73$。</p>
+<p>速率分布 $f(v)=4\pi v^2\left(\dfrac{m}{2\pi kT}\right)^{3/2}e^{-mv^2/2kT}$（对速度空间球壳积分）。</p>
+</div>
+<div class="warn"><strong>易错</strong>：① 区分"速度分布"（带方向、各分量平均为 0）与"速率分布"（恒正）；② 平均平动动能 $\bar\varepsilon_t=\frac32 kT$ 只与 $T$ 有关、与分子种类无关；③ 内能 $U=\nu\cdot\frac i2 RT$ 含自由度 $i$。</div>
+</div>
+
+<!-- ============ 题型5 ============ -->
+<h2 id="s6">题型5 · 简谐振动初相 / 旋转矢量法<span class="freq">★★★★★ 每年填空</span></h2>
+<div class="card">
+<p><strong>出现年份</strong>：2011-12、2014-15、2019-20、2021-22(同方向合成)、2017-18(滴油间隔)。</p>
+<div class="fb">
+<div class="t">标准解法（旋转矢量/相量法）</div>
+<p>写 $x=A\cos(\omega t+\varphi_0)$，由 $x_0=A\cos\varphi_0$ 和 $v_0=-A\omega\sin\varphi_0$ 定初相象限。</p>
+</div>
+<div class="fb">
+<div class="t">初相象限判据（核心必记）</div>
+<ul>
+<li>$x_0\gt0,\ v_0\lt0$ → 第一象限，$\varphi_0\in(0,\frac\pi2)$</li>
+<li>$x_0\lt0,\ v_0\lt0$ → 第二象限，$\varphi_0\in(\frac\pi2,\pi)$</li>
+<li>$x_0\lt0,\ v_0\gt0$ → 第三象限，$\varphi_0\in(\pi,\frac{3\pi}{2})$</li>
+<li>$x_0\gt0,\ v_0\gt0$ → 第四象限，$\varphi_0\in(-\frac\pi2,0)$</li>
+</ul>
+</div>
+<div class="ex">
+<strong>真题原型（2011-12 / 2019-20）</strong>：振幅 $A$、周期 $T$，$t=0$ 时 $x_0=A/2$ 且向 $x$ 正方向运动，求振动方程及第一次回到平衡位置的时间。
+<div class="sol">
+<div class="st">解</div>
+<p>$\omega=2\pi/T$；$\cos\varphi_0=1/2$ 且 $v_0\gt0$ → $\varphi_0=-\frac\pi3$（第四象限）。</p>
+<p>方程 $x=A\cos\!\left(\frac{2\pi}{T}t-\frac\pi3\right)$。</p>
+<p>回平衡位置：相位走到 $\frac\pi2$，相位差 $\Delta\varphi=\frac\pi2-(-\frac\pi3)=\frac{5\pi}{6}$，时间 $t=\dfrac{\Delta\varphi}{\omega}=\dfrac{5T}{12}$。</p>
+</div>
+</div>
+<div class="ex">
+<strong>真题原型（2017-18 滴油 · 陷阱题）</strong>：弹簧（劲度 $k$）连容器（质量 $M$）做简谐振动，每过平衡位置滴入一滴质量 $m$ 的油，求第 $n$ 与第 $n+1$ 滴间隔。
+<div class="sol">
+<div class="st">解</div>
+<p>振子每<strong>半周期</strong>过一次平衡位置；但每滴一滴质量在累加，滴入第 $n$ 滴后系统质量为 $M+nm$，周期 $T_n=2\pi\sqrt{\dfrac{M+nm}{k}}$。</p>
+<p>故间隔 $=\dfrac{T_n}{2}=\pi\sqrt{\dfrac{M+nm}{k}}$（<strong>随 $n$ 增大、不是常数</strong>——这正是本题陷阱）。</p>
+</div>
+</div>
+<div class="fb">
+<div class="t">同方向同频合成（2021-22）</div>
+<p>合振幅 $A=\sqrt{A_1^2+A_2^2+2A_1A_2\cos(\varphi_2-\varphi_1)}$；合初相 $\tan\varphi=\dfrac{A_1\sin\varphi_1+A_2\sin\varphi_2}{A_1\cos\varphi_1+A_2\cos\varphi_2}$。</p>
+</div>
+<div class="warn"><strong>易错</strong>：① 初相象限第一大坑，务必 $x_0$ 与 $v_0$ <strong>双符号</strong>定位；② "第一次回平衡"画旋转矢量看相位转过多少，别直接 $T/4$；③ $v=-A\omega\sin(\omega t+\varphi_0)$ 前面负号别丢。</div>
+</div>
+
+<!-- ============ 题型6 ============ -->
+<h2 id="s7">题型6 · 机械波 / 驻波表达式<span class="freq">★★★★</span></h2>
+<div class="card">
+<p><strong>出现年份</strong>：2011-12(驻波)、2014-15(三点行波)、2016-17(行波)、2019-20(驻波)、2021-22 B(三点行波)。</p>
+<div class="fb">
+<div class="t">(a) 行波表达式 + 相位差</div>
+<p>已知某点振动方程 $y_O=A\cos(\omega t+\varphi_0)$，波速 $u$ 沿 $+x$：波动式 $y(x,t)=A\cos\!\left[\omega\!\left(t-\dfrac{x}{u}\right)+\varphi_0\right]$。</p>
+<p>两点相位差 $\Delta\varphi=\dfrac{2\pi}{\lambda}\Delta x=\dfrac{\omega}{u}\Delta x$（沿传播方向，后方点相位<strong>落后</strong>）。</p>
+</div>
+<div class="fb">
+<div class="t">(b) 两端固定驻波（2011-12、2019-20 逐字复用）</div>
+<p>长 $L$ 绳两端固定，含两端共 $(k+2)$ 个波节、$(k+1)$ 个波腹 → $L=(k+1)\dfrac{\lambda}{2}$，$\lambda=\dfrac{2L}{k+1}$。</p>
+<p>频率 $\nu=\dfrac{u}{\lambda}=\dfrac{(k+1)u}{2L}$。</p>
+</div>
+<div class="warn">⚠️ 驻波时间因子（$\sin\omega t$ 还是 $\cos(\omega t+\frac\pi2)$）取决于"$t=0$ 各点过平衡位置且向哪运动"，需结合题目朝向推导，<strong>以试卷给定初始条件为准</strong>。</div>
+<div class="fb">
+<div class="t">多普勒效应（2014-15、2016-17、2017-18、2021-22 B）</div>
+<p>一般式 $\nu'=\dfrac{u\pm v_{观}}{u\mp v_{源}}\nu$（靠近升高、远离降低判正负）。</p>
+<p>测速/反射：先算车收到的频率（车是观察者），再算反射回来（车变波源），两次多普勒；拍频 $=|\nu_1-\nu_2|$。</p>
+</div>
+<div class="warn"><strong>易错</strong>：① 驻波波节计数（端点算不算）最易错，画图数；② 多普勒正负靠"靠近升高、远离降低"判断别死记；③ 行波 $x$ 增大相位减小（后方点落后）。</div>
+</div>
+
+<!-- ============ 题型7 ============ -->
+<h2 id="s8">题型7 · 狭义相对论填空（尺缩钟慢/洛伦兹/质能动量）<span class="freq">★★★★ 每年填空</span></h2>
+<div class="card">
+<p><strong>出现年份</strong>：每年填空 1–3 小题，全覆盖。</p>
+<div class="fb">
+<div class="t">(a) 尺缩钟慢</div>
+<p>钟慢 $\Delta t=\gamma\,\Delta t_0$（$\Delta t_0$ 为固有时，在物体静止系测）；$\gamma=\dfrac{1}{\sqrt{1-v^2/c^2}}$。</p>
+<p>尺缩 $L=L_0/\gamma=L_0\sqrt{1-v^2/c^2}$（$L_0$ 固有长，沿运动方向收缩；垂直方向不变）。</p>
+<p>斜放尺（2011-12）：$L_{0x}=L_0\cos\theta$ 收缩、$L_{0y}=L_0\sin\theta$ 不变，再合成 $L=\sqrt{(L_{0x}/\gamma)^2+L_{0y}^2}$。</p>
+</div>
+<div class="fb">
+<div class="t">(b) 洛伦兹变换正反用（2021-22 飞船光脉冲）</div>
+$$x'=\gamma(x-vt),\quad t'=\gamma\!\left(t-\dfrac{vx}{c^2}\right)$$
+<p>反变换 $v\to-v$。船内同地不同时事件，用变换求另一系时间间隔（<strong>不能简单套钟慢</strong>，因两事件不同地）。</p>
+</div>
+<div class="fb">
+<div class="t">(c) 质能 / 动量关系</div>
+<p>总能 $E=\gamma m_0 c^2$，静能 $E_0=m_0c^2$，动能 $E_k=(\gamma-1)m_0c^2$，动量 $p=\gamma m_0 v$。</p>
+<p>能量动量关系 $E^2=(pc)^2+(m_0c^2)^2$；加速做功 $W=\Delta E_k=(\gamma_2-\gamma_1)m_0c^2$。</p>
+</div>
+<div class="ex">
+<strong>(d) 相对论碰撞 —— 两年不同情形别套混</strong>
+<div class="sol">
+<div class="st">合成粒子静质量 $M_0=\dfrac{\sqrt{E_{总}^2-(p_{总}c)^2}}{c^2}$</div>
+<p><strong>2021-22 等速相向对撞</strong>：$p_{总}=0$ → $M_0=\dfrac{E_{总}}{c^2}=2\gamma m_0\gt2m_0$。</p>
+<p><strong>2016-17 一静一动</strong>（靶静止，$B$ 以 $v$ 撞）：$p_{总}=\gamma m_0 v\neq0$，$E_{总}=\gamma m_0c^2+m_0c^2$，代入得 $M_0=m_0\sqrt{2(\gamma+1)}$，别套等速对撞的 ${2\gamma m_0}$。</p>
+</div>
+</div>
+<div class="warn"><strong>易错</strong>：① 原时/固有长是"在物体自身参考系测的"，想清谁是 $\Delta t_0$；② 钟慢只适用"同地两事件"，否则必须用完整洛伦兹变换（2021-22 飞船题陷阱）；③ 合成粒子静质量增大，不等于 ${2m_0}$。</div>
+</div>
+
+<!-- ============ 题型8 ============ -->
+<h2 id="s9">题型8 · 动量定理 / 冲量 / 质心运动<span class="freq">★★★★</span></h2>
+<div class="card">
+<p><strong>出现年份</strong>：2011-12(碰撞冲量)、2016-17(圆锥摆冲量)、2017-18(软绳质心)、2019-20(砂袋落船)、2021-22 A&amp;B(软绳下落)。</p>
+<div class="ex">
+<strong>(a) 软绳下落（超高频原型）</strong>：两端 $A、B$ 悬挂同一固定点，$B$ 端脱离自由下落。
+<div class="sol">
+<div class="st">解（以含张力的 2021-22 版本为主线）</div>
+<p>下落侧 $B$ 自由落体 $v=\sqrt{2gh}$，静止侧 $A$ 端 $v=0$；质心速度 $v_C=\dfrac{m_B v}{m_总}$。</p>
+<p>固定点张力用<strong>变质量动量定理</strong>（微元法）：$\dd t$ 内 $\dd m$ 从下落侧转到静止侧，对系统 $\dfrac{\dd p}{\dd t}=T-m_总 g$ 解 $T$（结论 $T$ 远大于绳重）。</p>
+<p>质心加速度由 $m_总 a_C=m_总 g-T$ 求。</p>
+</div>
+</div>
+<div class="fb">
+<div class="t">(b) 抛体冲量 / (c) 砂袋落船</div>
+<p>抛体：竖直方向冲量 $=\Delta p_y=m(v_{y末}-v_{y初})$，水平 $=m\Delta v_x$（含重力冲量、分方向算）。</p>
+<p>砂袋落船：水平动量守恒求共同初速，再 $m\dfrac{\dd v}{\dd t}=-kv$ 阻力，积分求总路程 $s=\dfrac{m v_0}{k}$。</p>
+</div>
+<div class="warn"><strong>易错</strong>：① 软绳题"局部微元法"与"整体动量求导法"都要会，整体法更快；② <strong>变质量系统不能直接 $F=ma$</strong>，要用 $\dfrac{\dd p}{\dd t}=F_外$；③ 冲量是矢量，竖直/水平分开算。</div>
+</div>
+
+<!-- ============ 题型9 ============ -->
+<h2 id="s10">题型9 · 刚体微振动（复摆/弹簧摆）求角频率<span class="freq">★★★</span></h2>
+<div class="card">
+<p><strong>出现年份</strong>：2017-18(斥力简谐)、2021-22 A(杆+盘复摆)、2021-22 B(杆+弹簧)。</p>
+<div class="fb">
+<div class="t">标准解法（能量法最快）</div>
+<p>写总能量 $E=\frac12 I\dot\theta^2+E_p(\theta)$，对 $t$ 求导令 $\frac{\dd E}{\dd t}=0$，小角近似 $\sin\theta\approx\theta$，化成 $\ddot\theta+\omega^2\theta=0$ 读出 $\omega$。</p>
+<p>复摆 $\omega=\sqrt{\dfrac{mgd}{I}}$（$d$ 质心到轴距离）；弹簧+重力联合 $\omega=\sqrt{\dfrac{k_{等效}}{I}}$（$k_{等效}$ 含 $kl^2$ 与 $mgd$ 项）。</p>
+</div>
+<div class="ex">
+<strong>真题原型（2021-22 A 杆+盘）</strong>：长 $l$ 质量 $m_1$ 杆 + 半径 $R$ 质量 $m_2$ 盘组成摆——固连 vs 自由转动是点睛。
+<div class="sol">
+<div class="st">解</div>
+<p><strong>(1) 盘与杆固连</strong>：盘对轴 $I_盘=\frac12 m_2 R^2+m_2 l^2$（平行轴），总 $I=\frac13 m_1 l^2+I_盘$，$\omega=\sqrt{\dfrac{(m_1+m_2)g d}{I}}$。</p>
+<p><strong>(2) 盘自由转动</strong>（光滑轴）：盘不随摆转，只贡献平动惯量 $m_2 l^2$，故 $I=\frac13 m_1 l^2+m_2 l^2$，角频率变大。</p>
+</div>
+</div>
+<div class="warn"><strong>易错</strong>：① 固连 vs 自由转动是本题点睛，自由盘只算平动惯量；② 平行轴定理别漏 $md^2$；③ 能量法求导时动能项也要对 $\theta$ 求导。</div>
+</div>
+
+<!-- ============ 题型10 ============ -->
+<h2 id="s11">题型10 · 牛顿定律 + 变力 / 滑轮系统<span class="freq">★★★</span></h2>
+<div class="card">
+<p><strong>出现年份</strong>：2014-15(人爬绳滑轮)、2017-18(飞机变阻力、电扇变阻力矩)、2019-20(立交桥曲线)。</p>
+<ul>
+<li><strong>变阻力积分</strong>（飞机 $f=mg-kv^2$、电扇阻力矩 $\propto\omega$）：列微分方程，用 $m\dfrac{\dd v}{\dd t}$ 或 $mv\dfrac{\dd v}{\dd x}$ 分离变量积分。</li>
+<li><strong>滑轮+人爬绳</strong>（2014-15）：人对绳加速度是"相对绳"，需转为相对地；对人、重物、滑轮分别列方程（含 $M=I\beta$）联立。</li>
+<li><strong>曲线运动切法分解</strong>（2019-20 立交桥）：保持 $v_x$ 不变，$y=y(x)$，求 $\vec v、\vec a$ 再投影到切向法向。</li>
+</ul>
+</div>
+
+<!-- ============ 必背 ============ -->
+<h2 id="s12">三、必背速记（考前最后一遍扫）</h2>
+<div class="card">
+<h3>常用转动惯量表</h3>
+<table>
+<tr><th>刚体</th><th>轴</th><th>$I$</th></tr>
+<tr><td>细杆（长 $l$）</td><td>过中心垂直杆</td><td>$\frac{1}{12}ml^2$</td></tr>
+<tr><td>细杆（长 $l$）</td><td>过一端垂直杆</td><td>$\frac{1}{3}ml^2$</td></tr>
+<tr><td>圆盘/圆柱（半径 $R$）</td><td>过中心垂直盘面</td><td>$\frac{1}{2}mR^2$</td></tr>
+<tr><td>圆环（半径 $R$）</td><td>过中心垂直环面</td><td>$mR^2$</td></tr>
+<tr><td>实心球（半径 $R$）</td><td>过中心</td><td>$\frac{2}{5}mR^2$</td></tr>
+<tr><td>球壳（半径 $R$）</td><td>过中心</td><td>$\frac{2}{3}mR^2$</td></tr>
+</table>
+<p>平行轴定理 $I=I_C+md^2$；垂直轴定理（薄板）$I_z=I_x+I_y$。</p>
+
+<h3>自由度速查</h3>
+<table>
+<tr><th>分子</th><th>$i$</th><th>$C_V$</th><th>$C_p$</th><th>$\gamma$</th></tr>
+<tr><td>单原子（He, Ar）</td><td>3</td><td>$\frac32 R$</td><td>$\frac52 R$</td><td>$\frac53\approx1.67$</td></tr>
+<tr><td>刚性双原子（H₂, O₂, N₂）</td><td>5</td><td>$\frac52 R$</td><td>$\frac72 R$</td><td>$\frac75=1.40$</td></tr>
+<tr><td>刚性多原子</td><td>6</td><td>$3R$</td><td>$4R$</td><td>$\frac43\approx1.33$</td></tr>
+</table>
+
+<h3>热力学四过程速记（$W$ = 气体对外做功）</h3>
+<table>
+<tr><th>过程</th><th>$W$</th><th>$\Delta U$</th><th>$Q$</th></tr>
+<tr><td>等容</td><td>${0}$</td><td>$\nu C_V\Delta T$</td><td>$\nu C_V\Delta T$</td></tr>
+<tr><td>等压</td><td>$\nu R\Delta T$</td><td>$\nu C_V\Delta T$</td><td>$\nu C_p\Delta T$</td></tr>
+<tr><td>等温</td><td>$\nu RT\ln\frac{V_2}{V_1}$</td><td>${0}$</td><td>$=W$</td></tr>
+<tr><td>绝热</td><td>$\frac{p_1V_1-p_2V_2}{\gamma-1}$</td><td>$\nu C_V\Delta T$</td><td>${0}$</td></tr>
+</table>
+<p>绝热过程方程 $pV^\gamma=$ 常；卡诺效率 $\eta_C=1-\frac{T_2}{T_1}$；等温熵变 $\Delta S=\nu R\ln\frac{V_2}{V_1}$，等压 $\Delta S=\nu C_p\ln\frac{T_2}{T_1}$。</p>
+
+<h3>物理常数</h3>
+<table>
+<tr><th>常数</th><th>数值</th></tr>
+<tr><td>真空光速 $c$</td><td>${3.00\times10^8}$ m/s</td></tr>
+<tr><td>普适气体常数 $R$</td><td>${8.31}$ J/(mol·K)</td></tr>
+<tr><td>玻尔兹曼常数 $k$</td><td>$1.38\times10^{-23}$ J/K</td></tr>
+<tr><td>阿伏伽德罗常数 $N_A$</td><td>$6.02\times10^{23}$ mol$^{-1}$</td></tr>
+<tr><td>关系</td><td>$R=N_A k$</td></tr>
+</table>
+<p style="font-size:.9em;color:#888;">具体临界数值（如 $g$、试卷给定常数）以试卷附表为准。</p>
+</div>
+
+<!-- ============ 红线 ============ -->
+<h2 id="s13">四、高频易错红线（12 条）</h2>
+<div class="card">
+<ol>
+<li><strong>平均速度用位移不是路程</strong>（2011-12 填空1）。</li>
+<li><strong>初相象限</strong>必须 $x_0$ 与 $v_0$ 双符号定位，光算 $\cos\varphi_0$ 会丢象限。</li>
+<li><strong>钟慢只对"同地两事件"</strong>；不同地两事件必须用完整洛伦兹变换（2021-22 飞船陷阱）。</li>
+<li><strong>角动量守恒 ≠ 动量守恒 ≠ 机械能守恒</strong>，三者条件分开判断；绳收缩题角动量守恒但机械能不守恒。</li>
+<li><strong>子弹嵌入</strong>转动惯量要加 $mR^2$；"相对地面"与"相对转台"速度别混。</li>
+<li><strong>驻波波节计数</strong>：端点算不算波节决定波长，画图数。</li>
+<li><strong>多方/绝热 $\gamma$</strong>：刚性双原子 1.4、单原子 1.67，别套错。</li>
+<li><strong>效率分母是吸热总量、分子是净功</strong>，放热段符号取绝对值。</li>
+<li><strong>变质量系统</strong>（软绳、火箭、落船）不能直接 $F=ma$，用 $\frac{\dd p}{\dd t}=F_外$。</li>
+<li><strong>平行轴定理</strong>在复摆/打盘题中极易漏加 $md^2$。</li>
+<li><strong>内能/平动动能</strong>只与 $T$ 有关；内能含自由度 $i$，平动动能恒 $\frac32 kT$。</li>
+<li>⚠️ 部分系数（复摆具体 $I$ 组合、驻波时间因子相位）<strong>以试卷附图/附表为准</strong>，做题时按题目条件重新代入推导，不要直接套数字。</li>
+</ol>
+</div>
+
+<div class="note"><strong>守 90+ 的考场顺序</strong>：先抢满"必出 + 高性价比"——质点积分计算第1题、相对论填空、麦氏分布填空、简谐初相填空；再啃"高分大题"——热学循环 + 刚体角动量。把抢分精力压在自己反复卡的<a href="我的薄弱点.html">洛伦兹变换计算 + 刚体周期力矩法</a>两个点上。</div>
+
+<p style="text-align:center;color:#aaa;font-size:.8em;margin-top:30px;">
+真题题型全库 | 数据源：SJTU 大学物理 A/B 类历年期末真题（6+ 年份）+ 自编答案<br>
+所有标 ⚠️ 处为原扫描件公式图缺失，已注明以方法重推 / 试卷附表为准
+</p>
+
+<script src="toc.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>
