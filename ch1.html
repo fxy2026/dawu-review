@@ -1189,6 +1189,75 @@ $$\boxed{x = 0.707\cos\!\left(7.07t + \frac{\pi}{2}\right)\;\text{m}}$$
 </ul></div>
 </div>
 
+<!-- ===== 真题强化区（自动补充） ===== -->
+<h2 id="exam-boost">⭐ 真题强化：变加速度积分（年年计算第1题）</h2>
+<div class="card">
+<div class="warn"><strong>考情</strong>：质点变加速度运动学积分是大物计算题<strong>几乎年年的第1题</strong>（2011-12 计算1、2019-20 计算2、2021-22 A&amp;B 综合1），属于"必拿满分"题。核心就是判断已知量是 $a(t)$、$a(x)$ 还是 $a(v)$，选对分离变量的换元方式。</div>
+
+<div class="ex">
+<strong>真题原型（2011-12 计算第1题）</strong>：质点沿 $x$ 正向运动，加速度 $a=-kv^2$（$k$ 为已知正常数），初速度为 $v_0$。求运动方程 $x(t)$。
+<div class="sol">
+<div class="st">解（$a=a(v)$ 型，先分离变量求 $v(t)$）</div>
+<p>$\dfrac{\dd v}{\dd t}=-kv^2$，分离变量并取积分上下限：</p>
+$$\int_{v_0}^{v}\frac{\dd v}{v^2}=-\int_0^t k\,\dd t'$$
+<p>$\Rightarrow\ \dfrac{1}{v}-\dfrac{1}{v_0}=kt$，即</p>
+$$v=\frac{v_0}{1+kv_0 t}$$
+<div class="st">再积分求 $x(t)$</div>
+$$x=\int_0^t \frac{v_0}{1+kv_0 t'}\,\dd t'=\frac{1}{k}\ln(1+kv_0 t)$$
+<p>这就是所求运动方程。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>真题原型（2021-22 A 综合第1题）</strong>：已知质点加速度矢量 $\vv{a}(t)$，$t=0$ 时速度已知。求：(1) $\vv{v}(t)$；(2) 某时刻的切向、法向加速度分量；(3) 该处轨道的曲率半径 $\rho$。
+<div class="sol">
+<div class="st">解（矢量分解三连，必背套路）</div>
+<p>(1) 积分：$\vv{v}(t)=\vv{v}_0+\displaystyle\int_0^t \vv{a}(t')\,\dd t'$。</p>
+<p>(2) <strong>切向加速度</strong> = $\vv{a}$ 在速度方向上的投影：</p>
+$$a_\tau=\frac{\dd|\vv{v}|}{\dd t}=\frac{\vv{a}\cdot\vv{v}}{|\vv{v}|}$$
+<p><strong>法向加速度</strong>用勾股反求（不要再去算方向）：</p>
+$$a_n=\sqrt{|\vv{a}|^2-a_\tau^2}$$
+<p>(3) <strong>曲率半径</strong>：</p>
+$$\rho=\frac{|\vv{v}|^2}{a_n}$$
+</div>
+</div>
+
+<div class="warn"><strong>真题易错（来自历年阅卷）</strong>：
+<ul>
+<li>① 积分上下限要与"时刻/位置"严格对应（$\int_{v_0}^{v}\cdots=\int_0^t\cdots$），写成不定积分丢常数是常见扣分点。</li>
+<li>② 矢量题里切向单位向量 $\hat\tau=\vv{v}/|\vv{v}|$，法向用勾股 $a_n=\sqrt{a^2-a_\tau^2}$，<strong>不要把 $a_\tau$、$a_n$ 混了</strong>。</li>
+<li>③ 曲率半径公式分母是 $a_n$，<strong>不是 $|\vv{a}|$</strong> —— 这是 2021-22 阅卷高频错。</li>
+</ul></div>
+</div>
+
+<h2 id="must-memo">📌 第1章必背块</h2>
+<div class="card">
+<div class="fb">
+<div class="t">运动学换元三件套（决定整章计算）</div>
+<table>
+<tr><th>已知关系</th><th>换元 / 积分方法</th></tr>
+<tr><td>$a=f(t)$</td><td>$v=v_0+\displaystyle\int_0^t a\,\dd t'$，$x=x_0+\displaystyle\int_0^t v\,\dd t'$</td></tr>
+<tr><td>$a=f(v)$（阻力 $\propto v$ 或 $\propto v^2$）</td><td>$\dfrac{\dd v}{f(v)}=\dd t$，或 $\dfrac{v\,\dd v}{f(v)}=\dd x$</td></tr>
+<tr><td>$a=f(x)$</td><td>$v\,\dd v=f(x)\,\dd x$（由 $a=v\dfrac{\dd v}{\dd x}$）</td></tr>
+</table>
+</div>
+<div class="fb">
+<div class="t">切向-法向-曲率（真题三连公式）</div>
+$$a_\tau=\frac{\dd v}{\dd t}=\frac{\vv{a}\cdot\vv{v}}{|\vv{v}|},\qquad a_n=\frac{v^2}{\rho}=\sqrt{a^2-a_\tau^2},\qquad \rho=\frac{v^2}{a_n}$$
+</div>
+<div class="fb">
+<div class="t">易混定义</div>
+<p>平均速度 $\bar{\vv{v}}=\dfrac{\Delta\vv{r}}{\Delta t}$（用<strong>位移</strong>），平均速率 $\bar v=\dfrac{\Delta s}{\Delta t}$（用<strong>路程</strong>）。$|\Delta\vv{r}|\le\Delta s$，等号仅在单向直线运动时成立。</p>
+</div>
+</div>
+
+<div class="warn"><strong>第1章易错点（考前再扫）</strong>：
+<ul>
+<li>① <strong>平均速度用位移、不用路程</strong>——2011-12 填空第1题就考这个陷阱。问"平均速度"答 $\Delta\vv{r}/\Delta t$，问"平均速率"才用 $\Delta s/\Delta t$。</li>
+<li>② $a=f(x)$ 型必须用 $v\,\dd v=f(x)\,\dd x$ 换元，<strong>不能</strong>直接对 $t$ 积分（因为不知道 $x(t)$）。</li>
+<li>③ 用 $\rho=\dfrac{[1+(y')^2]^{3/2}}{|y''|}$ 时，$y'、y''$ 是对 $x$ 的导数；给的是参数方程就必须用参数方程版公式，别混。</li>
+</ul></div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 1-7, 1-17, 1-19, 1-21, 1-23, 1-24, 1-25, 1-31, 1-32</div>
 
 <script src="toc.js"></script>

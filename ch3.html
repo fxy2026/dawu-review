@@ -831,6 +831,61 @@ $$\boxed{H = \frac{\rho_1 l}{2(\rho_1-\rho_2)}}$$
 </ul></div>
 </div>
 
+<!-- ===== 真题强化区（自动补充） ===== -->
+<h2 id="exam-boost">⭐ 真题强化：动量定理 / 质心 / 动能定理</h2>
+<div class="card">
+<div class="warn"><strong>考情</strong>：本板块真题高频点为① 软绳下落（2017-18、2019-20、2021-22 A&amp;B 连续出现，超高频原型）；② 质点系动能定理 $\Delta E_k=W_{外}+W_{内}$（2021-22 填空1）；③ 保守力做功 $=-\Delta E_p$（2017-18 势能函数题）。</div>
+
+<div class="ex">
+<strong>真题原型（2021-22 A&amp;B 软绳下落）</strong>：软绳两端 $A、B$ 挂于同一固定点，$B$ 端脱离后自由下落。求某时刻质心速度 $v_C$、固定点对 $A$ 端的张力 $T$、质心加速度 $a_C$。
+<div class="sol">
+<div class="st">解（变质量动量定理 + 质心运动定理）</div>
+<p>设绳总质量 $m$。下落侧（$B$ 侧）自由落体速率 $v=\sqrt{2gh}$，静止侧（$A$ 侧）速度为 0。</p>
+<p><strong>质心速度</strong>（分段质量×速度）：$v_C=\dfrac{m_B\,v}{m}$。</p>
+<p><strong>固定点张力</strong>用变质量动量定理：$\dd t$ 内有 $\dd m$ 从下落侧转到静止侧，对整体 $\dfrac{\dd p}{\dd t}=F_{外}=T-mg$，解出 $T$（含动量转移项，故 $T$ 远大于绳重）。</p>
+<p><strong>质心加速度</strong>由 $m\,a_C=mg-T$ 求得，方向常竖直向上。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>真题原型（2017-18 势能函数）</strong>：已知保守力场势能 $E_p(x)$，求从 $x_1$ 到 $x_2$ 保守力做的功，及力 $F(x)$。
+<div class="sol">
+<div class="st">解（保守力与势能的互化）</div>
+<p>保守力做功 = 势能减少量：</p>
+$$W_{保}=-\Delta E_p=E_p(x_1)-E_p(x_2)$$
+<p>力由势能梯度（一维）：$F(x)=-\dfrac{\dd E_p}{\dd x}$。</p>
+</div>
+</div>
+
+<div class="warn"><strong>真题易错</strong>：
+<ul>
+<li>① <strong>质点系动能定理要含内力功</strong>：$\Delta E_k=W_{外}+W_{内}$（单质点才只有 $W_{外}$）。内力成对出现但做的总功一般不为零（摩擦生热）。</li>
+<li>② <strong>变力做功必须积分</strong>（阻力 $\propto x$ 或 $\propto v$、浮力随深度变），不能用 $W=Fs$。</li>
+<li>③ <strong>变质量系统</strong>（软绳/落船）不能直接 $F=ma$，用 $\dfrac{\dd p}{\dd t}=F_{外}$；动量守恒、机械能守恒、角动量守恒三者条件分开判断。</li>
+</ul></div>
+</div>
+
+<h2 id="must-memo">📌 第3章必背块</h2>
+<div class="card">
+<div class="fb">
+<div class="t">功-能核心公式</div>
+$$W=\int \vv{F}\cdot\dd\vv{r},\qquad W_{合}=\Delta E_k,\qquad \Delta E_k=W_{外}+W_{内}\ (质点系)$$
+$$W_{保}=-\Delta E_p,\qquad F=-\frac{\dd E_p}{\dd x}\ (一维)$$
+</div>
+<div class="fb">
+<div class="t">动量 / 冲量 / 质心</div>
+$$\vv{I}=\int \vv{F}\,\dd t=\Delta\vv{p},\qquad \vv{r}_C=\frac{\sum m_i\vv{r}_i}{\sum m_i},\qquad \vv{F}_{外}=m\,\vv{a}_C$$
+<p>变质量系统：$\dfrac{\dd p}{\dd t}=F_{外}$（软绳、火箭、落船）。</p>
+</div>
+</div>
+
+<div class="warn"><strong>第3章易错点（考前再扫）</strong>：
+<ul>
+<li>① 质点系动能定理别漏内力功 $W_{内}$（摩擦、形变）。</li>
+<li>② 变力做功必积分；恒力才用 $W=\vv{F}\cdot\Delta\vv{r}$。</li>
+<li>③ 动量守恒、机械能守恒、角动量守恒，三者条件独立判断（绳收缩题：角动量守但机械能不守、拉力做功）。</li>
+</ul></div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 2-4, 2-5, 2-6, 2-8, 2-10, 2-11, 2-13, 2-14</div>
 
 <script src="toc.js"></script>

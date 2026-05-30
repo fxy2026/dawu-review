@@ -995,6 +995,67 @@ $$T_{max} = \frac{\lambda\omega^2 L^2}{2} = \frac{0.2\times39.48\times1}{2} \app
 <div class="tip"><strong>绳索问题的共同思路</strong>：取微元 $\dd r$（或 $\dd\theta$），对微元列Newton第二定律，得到张力的微分方程，结合边界条件（自由端 $T = 0$）积分求解。这是<strong>微元法</strong>的典型应用。</div>
 </div>
 
+<!-- ===== 真题强化区（自动补充） ===== -->
+<h2 id="exam-boost">⭐ 真题强化：变力 / 变质量与连接体系统</h2>
+<div class="card">
+<div class="warn"><strong>考情</strong>：牛顿定律章的计算题集中在三类：① 变阻力积分（飞机滑行 $f=mg-kv^2$、电扇阻力矩 $\propto\omega$，2017-18）；② 滑轮+人爬绳（2014-15）；③ 曲线运动切向/法向分解（立交桥，2019-20）。凡是变力都要列微分方程积分。</div>
+
+<div class="ex">
+<strong>真题原型（2017-18 飞机变阻力滑行）</strong>：质量 $m$ 的物体沿直线运动，所受阻力 $f=-cv^2$（$c$ 为正常数），初速 $v_0$。求速度随位置变化的关系 $v(x)$。
+<div class="sol">
+<div class="st">解（阻力是 $v$ 的函数、问的是 $x$，用 $a=v\dfrac{\dd v}{\dd x}$）</div>
+<p>$m v\dfrac{\dd v}{\dd x}=-cv^2\ \Rightarrow\ \dfrac{\dd v}{v}=-\dfrac{c}{m}\dd x$</p>
+$$\int_{v_0}^{v}\frac{\dd v}{v}=-\frac{c}{m}\int_0^x \dd x'\ \Rightarrow\ \ln\frac{v}{v_0}=-\frac{c}{m}x$$
+$$v=v_0\,e^{-cx/m}$$
+<p>这说明纯二次阻力下速度随路程指数衰减，理论上永不为零（但路程有限）。</p>
+</div>
+</div>
+
+<div class="ex">
+<strong>真题原型（Atwood 机 / 连接体）</strong>：跨过定滑轮（转动惯量 $I$、半径 $R$）的轻绳两端挂 $m_1>m_2$，绳不打滑。求加速度 $a$ 与两侧张力。
+<div class="sol">
+<div class="st">解（隔离法 + 滑轮转动定律）</div>
+<p>对 $m_1$：$m_1 g-T_1=m_1 a$；对 $m_2$：$T_2-m_2 g=m_2 a$。</p>
+<p>对滑轮（有转动惯量，两侧张力不相等）：$(T_1-T_2)R=I\beta=I\dfrac{a}{R}$。</p>
+<p>三式消去 $T_1,T_2$：</p>
+$$a=\frac{(m_1-m_2)g}{m_1+m_2+I/R^2}$$
+<p>再回代得 $T_1=m_1(g-a)$，$T_2=m_2(g+a)$。</p>
+</div>
+</div>
+
+<div class="warn"><strong>真题易错</strong>：
+<ul>
+<li>① <strong>有转动惯量的滑轮，两侧张力 $T_1\neq T_2$</strong>（正是 $T_1-T_2$ 提供力矩让滑轮转）；只有“轻绳+光滑轮”才能当 $T_1=T_2$。</li>
+<li>② <strong>变质量系统（软绳下落、码头卸船、火箭）不能直接 $F=ma$</strong>，必须用 $\dfrac{\dd p}{\dd t}=F_{外}$。这是多个章节反复点名的红线。</li>
+<li>③ 变力 $f=f(v)$ 问位置用 $v\dfrac{\dd v}{\dd x}$；问时间用 $\dfrac{\dd v}{\dd t}$。先看问什么再选换元。</li>
+</ul></div>
+</div>
+
+<h2 id="must-memo">📌 第2章必背块</h2>
+<div class="card">
+<div class="fb">
+<div class="t">变力问题选择表</div>
+<table>
+<tr><th>力的形式</th><th>用什么定理</th></tr>
+<tr><td>$F=F(t)$</td><td>动量定理 $\int F\,\dd t=\Delta p$</td></tr>
+<tr><td>$F=F(v)$</td><td>$m\dfrac{\dd v}{\dd t}=F(v)$ 求 $t$；$mv\dfrac{\dd v}{\dd x}=F(v)$ 求 $x$</td></tr>
+<tr><td>$F=F(x)$</td><td>$mv\dfrac{\dd v}{\dd x}=F(x)$，即 $mv\,\dd v=F(x)\,\dd x$</td></tr>
+</table>
+</div>
+<div class="fb">
+<div class="t">连接体 / 滑轮公式</div>
+$$a=\frac{(m_1-m_2)g}{m_1+m_2+I/R^2}\quad(含转动惯量的 Atwood 机)$$
+<p>变质量通用式：$\dfrac{\dd p}{\dd t}=F_{外}$，展开 $m\dfrac{\dd v}{\dd t}+v\dfrac{\dd m}{\dd t}=F_{外}$。</p>
+</div>
+</div>
+
+<div class="warn"><strong>第2章易错点（考前再扫）</strong>：
+<ul>
+<li>① 有转动惯量的滑轮两侧张力不等；“轻绳跳满”别随口当成等张力。</li>
+<li>② 变质量 / 软绳 / 落船类一律用 $\dfrac{\dd p}{\dd t}=F_{外}$，不能 $F=ma$。</li>
+<li>③ 非惯性系要加惯性力 $-m\vv{a}_0$（牵连力）后再在该系列 $F=ma'$。</li>
+</ul></div>
+
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 1-36, 1-37, 1-44, 1-49, 1-50, 1-53, 1-54, 1-55</div>
 
 <script src="toc.js"></script>

@@ -917,6 +917,89 @@ $$\omega = \sqrt{\frac{k}{m+M/2}}$$
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：<br>
 振动：7-2, 7-7, 7-11, 7-14, 7-16, 7-18, 7-22, 7-24</div>
 
+<h2 id="exam7">7.26 历年真题原型（强化）</h2>
+<div class="card">
+<div class="ex">
+<strong>真题原型1（2011-12 / 2019-20 简谐振动初相 + 回平衡时间）</strong>：质点做简谐振动，振幅 $A$、周期 $T$，$t=0$ 时位移 $x_0=\dfrac{A}{2}$ 且<strong>向 $x$ 正方向</strong>运动。求振动方程，以及第一次回到平衡位置的时间。
+<div class="sol"><div class="st">解</div>
+<p>角频率 $\omega=\dfrac{2\pi}{T}$。</p>
+<p>由 $x_0=A\cos\varphi_0=\dfrac{A}{2}\Rightarrow\cos\varphi_0=\dfrac12\Rightarrow\varphi_0=\pm\dfrac{\pi}{3}$。</p>
+<p>向正方向 $\Rightarrow v_0=-A\omega\sin\varphi_0>0\Rightarrow\sin\varphi_0<0$，取 $\varphi_0=-\dfrac{\pi}{3}$（旋转矢量在第四象限）。</p>
+$$x=A\cos\!\left(\frac{2\pi}{T}t-\frac{\pi}{3}\right)$$
+<p><strong>回平衡位置</strong>：$x=0$ 时相位达 $\dfrac{\pi}{2}$（第一次过平衡，从下半向上转）。相位需转过 $\Delta\varphi=\dfrac{\pi}{2}-\left(-\dfrac{\pi}{3}\right)=\dfrac{5\pi}{6}$。</p>
+$$t=\frac{\Delta\varphi}{\omega}=\frac{5\pi/6}{2\pi/T}=\frac{5T}{12}$$
+<p>⚠️ 不是 $T/4$！必须画旋转矢量数转过的角度。</p>
+</div></div>
+
+<div class="ex">
+<strong>真题原型2（2014-15 / 2016-17 / 2021-22B 行波表达式 + 三点相位差）</strong>：已知原点 $O$ 振动 $y_O=A\cos(\omega t+\varphi_0)$，波沿 $+x$ 方向以波速 $u$ 传播，波长 $\lambda$。写出波动方程，并求 $x=\dfrac{\lambda}{4}$ 处 $P$ 点相对 $O$ 的相位差。
+<div class="sol"><div class="st">解</div>
+<p><strong>波动方程</strong>（$+x$ 传播，$x$ 处比原点延迟 $x/u$）：</p>
+$$y(x,t)=A\cos\!\left[\omega\left(t-\frac{x}{u}\right)+\varphi_0\right]=A\cos\!\left(\omega t-kx+\varphi_0\right),\quad k=\frac{2\pi}{\lambda}=\frac{\omega}{u}$$
+<p><strong>相位差</strong>：沿传播方向，后方点相位<strong>落后</strong>。$P$ 比 $O$ 落后 $\Delta\varphi=k\,\Delta x=\dfrac{2\pi}{\lambda}\cdot\dfrac{\lambda}{4}=\dfrac{\pi}{2}$。即 $P$ 点相位为 $\varphi_0-\dfrac{\pi}{2}$。</p>
+<p>⚠️ $x$ 增大相位减小（落后），别把符号搞反。</p>
+</div></div>
+
+<div class="ex">
+<strong>真题原型3（2011-12 / 2019-20 两端固定驻波）</strong>：长 $L$ 的绳两端固定，除两端外中间有 $k$ 个波节，波速 $u$，波腹振幅 $A$。求波长、频率，并写驻波表达式。
+<div class="sol"><div class="st">解</div>
+<p>两端是波节，含两端共 $(k+2)$ 个波节、$(k+1)$ 个波腹（半波段数）。故 $L=(k+1)\dfrac{\lambda}{2}\Rightarrow\lambda=\dfrac{2L}{k+1}$。</p>
+<p>频率 $\nu=\dfrac{u}{\lambda}=\dfrac{(k+1)u}{2L}$，角频率 $\omega=2\pi\nu$。</p>
+<p>左端 $x=0$ 为波节（$\sin$ 形空间因子），$t=0$ 各点过平衡位置：</p>
+$$y=2A\sin\!\left(\frac{2\pi x}{\lambda}\right)\cos\!\left(\omega t+\frac{\pi}{2}\right)$$
+<p>⚠️ 波节计数是本题第一坑：端点算波节，$(k+1)$ 个半波长才对，画图数最稳。</p>
+</div></div>
+</div>
+
+<div class="card warn-card" style="border-left:4px solid #d33;background:#fff5f5;">
+<h3>🔴 你在这卡过：单摆/刚体周期——力矩法 vs 直接加力（持续 5/24→5/26→5/27）</h3>
+<p>你反复在"绕固定轴转动的刚体（杆、盘、复摆）求周期"上走错路，把质点的切向力直接相加。<strong>怎么破：凡是绕固定轴转动的刚体，回复一律走"力矩 → 转动定律/能量法"，不要走质点切向力相加。</strong></p>
+<ul>
+<li><strong>转动定律法</strong>：$I\ddot\theta=M_{合}$。把所有回复力矩（重力矩 $-mgd\sin\theta\approx-mgd\,\theta$、弹簧力矩 $-ka^2\theta$）相加，小角近似化成 $\ddot\theta+\omega^2\theta=0$，读出 $\omega$。</li>
+<li><strong>复摆通式</strong>：$\omega=\sqrt{\dfrac{mgd}{I}}$，$d$ 是质心到轴距离，$I$ 是对轴转动惯量（别漏平行轴定理 $I=I_C+md^2$）。</li>
+<li><strong>杆+弹簧例（薄弱点精析记录的正确答案）</strong>：弹簧挂在距轴 $a$ 处，$I=mL^2$，回复力矩 = 重力矩 $-mgL\theta$ + 弹簧力矩 $-ka^2\theta$：</li>
+</ul>
+$$T=2\pi\sqrt{\frac{mL^2}{mgL+ka^2}}$$
+<p>⚠️ PPT 上的 $2\pi\sqrt{\frac{mL}{mg+ka}}$ 只在弹簧恰挂在 $a=L$ 端时才偶然成立，一般情形是错的——力臂要用 $a$，力矩用 $ka^2$。</p>
+</div>
+
+<div class="card warn-card" style="border-left:4px solid #d33;background:#fff5f5;">
+<h3>🔴 你在这卡过：阻尼振动三态分类（5/24、5/26 两次，判断题判错）</h3>
+<p>你卡在"根号下会不会是负号"以及"过阻尼下是否振荡"。<strong>怎么破：用 $\omega_0$ 与 $\beta$ 的大小关系定性，记牢只有欠阻尼才来回越过平衡。</strong></p>
+<ul>
+<li><strong>欠阻尼</strong> $\omega_0>\beta$：振荡衰减，$x=A_0e^{-\beta t}\cos(\omega' t+\varphi)$，$\omega'=\sqrt{\omega_0^2-\beta^2}$（有 $\cos$，来回过平衡）。</li>
+<li><strong>临界阻尼</strong> $\omega_0=\beta$：最快回平衡、<strong>不振荡</strong>，$x=(C_1+C_2t)e^{-\beta t}$。</li>
+<li><strong>过阻尼</strong> $\omega_0<\beta$：<strong>缓慢爬回平衡、不振荡</strong>，纯实指数 $x=e^{-\beta t}(C_1e^{\gamma t}+C_2e^{-\gamma t})$，$\gamma=\sqrt{\beta^2-\omega_0^2}$。</li>
+</ul>
+<p>⚠️ <strong>过阻尼 / 临界阻尼都不振荡</strong>（无三角函数），判断题常拿"过阻尼会振荡"做错误项——记住"只有欠阻尼有 $\cos$"。</p>
+</div>
+
+<div class="card">
+<h3>💪 必背块（振动与波动）</h3>
+<ul>
+<li><strong>简谐方程</strong>：$x=A\cos(\omega t+\varphi_0)$，$v=-A\omega\sin(\cdot)$，$a=-\omega^2x$；判据 $\ddot x+\omega^2x=0$。</li>
+<li><strong>初相象限判据</strong>（核心）：$\cos\varphi_0=\frac{x_0}{A}$ 定两个候选，$v_0$ 符号定上/下半平面——$v_0>0\Rightarrow\sin\varphi_0<0$（下半，三四象限）；$v_0<0\Rightarrow\sin\varphi_0>0$（上半，一二象限）。</li>
+<li><strong>固有角频率</strong>：弹簧振子 $\omega=\sqrt{k/m}$；单摆 $\omega=\sqrt{g/l}$；复摆 $\omega=\sqrt{mgd/I}$。</li>
+<li><strong>能量</strong>：$E=\frac12kA^2=\frac12m\omega^2A^2$（守恒），平均动能=平均势能=$E/2$；能量以 $2\omega$ 交换。</li>
+<li><strong>同向同频合成</strong>：$A=\sqrt{A_1^2+A_2^2+2A_1A_2\cos(\varphi_2-\varphi_1)}$。</li>
+<li><strong>波速</strong>：$u=\lambda\nu=\lambda/T$，波数 $k=\frac{2\pi}{\lambda}=\frac{\omega}{u}$。</li>
+<li><strong>波动方程</strong>：$+x$ 传播 $y=A\cos[\omega(t-x/u)+\varphi_0]$；$-x$ 传播改 $+x/u$；相位差 $\Delta\varphi=\frac{2\pi}{\lambda}\Delta x$（后方落后）。</li>
+<li><strong>驻波</strong>：$y=2A\cos(kx)\cos(\omega t)$；波节波腹间距均为 $\lambda/2$，相邻节腹间距 $\lambda/4$；两端固定弦 $\nu_n=\frac{nu}{2L}$。</li>
+<li><strong>多普勒</strong>：$\nu'=\frac{u\pm v_{观}}{u\mp v_{源}}\nu$（观察者靠近取分子+，波源靠近取分母−；"靠近升高、远离降低"）。</li>
+</ul>
+</div>
+
+<div class="card warn-card" style="border-left:4px solid #e67e22;background:#fff3e0;">
+<h3>⚠️ 易错点（强化补充）</h3>
+<ul>
+<li><strong>初相只算 $\cos$ 会丢象限</strong>：余弦给两个角，必须用 $v_0$ 符号（上/下半平面）锁定唯一解。这是简谐题第一大坑。</li>
+<li><strong>"第一次回平衡"不是 $T/4$</strong>：要画旋转矢量数相位转过的角度，按起始象限算（如 $x_0=A/2$ 向正向时是 $5T/12$）。</li>
+<li><strong>速度负号别丢</strong>：$v=-A\omega\sin(\omega t+\varphi_0)$，求 $v_0$ 时漏负号会判错运动方向。</li>
+<li><strong>驻波波节计数</strong>：端点算不算波节决定波长，两端固定时端点是波节，$(k+1)$ 个半波长——画图数。</li>
+<li><strong>行波相位差方向</strong>：沿传播方向后方点相位落后，$x$ 增大相位减小，符号别反。</li>
+</ul>
+</div>
+
 <script src="toc.js"></script>
 <script src="progress.js"></script>
 </body>

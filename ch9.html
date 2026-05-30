@@ -1020,6 +1020,66 @@ $$\Delta S_{iso} = -2.273 + 2.029 = -0.244\;\text{kJ/K} < 0$$
 
 <div class="note"><strong>本章课后作业</strong>（PPT指定）：习题 9-4, 9-6, 9-7, 9-9, 9-13, 9-15, 9-17, 9-18</div>
 
+<h2 id="exam9">9.24 历年真题原型（强化）</h2>
+<div class="card">
+<div class="ex">
+<strong>真题原型1（2021-22 A&amp;B 循环大题 13分：直线+绝热+等压）</strong>：$\nu$ mol 刚性双原子气体（$\gamma=\frac{7}{5}$，$C_V=\frac52 R$，$C_p=\frac72 R$），初态 $A(p_1,V_1)$ 沿<strong>直线</strong>膨胀到 $B(p_2,V_2)$，再沿<strong>绝热线</strong>膨胀到压强 $p_2'=p_A$（记状态 $C$），最后沿<strong>等压线</strong>压缩回 $A$。求 $V_C$、各段功与热、循环效率 $\eta$（用符号表达解题骨架）。
+<div class="sol"><div class="st">解</div>
+<p><strong>① 求 $V_C$（绝热线）</strong>：由 $p_B V_B^\gamma = p_C V_C^\gamma$，得 $V_C = V_B\left(\dfrac{p_B}{p_C}\right)^{1/\gamma}$。刚性双原子 $\gamma=1.4$，指数 $1/\gamma=5/7$。</p>
+<p><strong>② $A\to B$（直线过程）</strong>：$W_{AB}=\int_A^B p\,\dd V=$ 梯形面积 $=\dfrac{(p_A+p_B)(V_B-V_A)}{2}$；$\Delta E_{AB}=\nu C_V(T_B-T_A)=\dfrac52\nu R(T_B-T_A)$，温度用 $pV=\nu RT$ 算；$Q_{AB}=\Delta E_{AB}+W_{AB}$。</p>
+<p><strong>③ $B\to C$（绝热）</strong>：$Q_{BC}=0$，$W_{BC}=-\Delta E_{BC}=\dfrac{p_BV_B-p_CV_C}{\gamma-1}=\dfrac{\nu R(T_B-T_C)}{0.4}$。</p>
+<p><strong>④ $C\to A$（等压压缩，$p=p_A$）</strong>：$W_{CA}=p_A(V_A-V_C)<0$；$Q_{CA}=\nu C_p(T_A-T_C)=\dfrac72\nu R(T_A-T_C)<0$（放热）。</p>
+<p><strong>⑤ 效率</strong>：净功 $W_{净}=W_{AB}+W_{BC}+W_{CA}$（=循环围成面积）；吸热只累加 $Q>0$ 的段。</p>
+$$\eta=\frac{W_{净}}{Q_{吸}}=1-\frac{|Q_{放}|}{Q_{吸}}$$
+<p>⚠️ 直线段中可能<strong>一部分吸热、一部分放热</strong>（沿程 $Q$ 变号），严格判断须看 $\dd Q=\nu C_V\dd T+p\,\dd V$ 沿线何处变号；考试常按"先升温吸热、后降温放热"分段，分母只取吸热部分。</p>
+</div></div>
+
+<div class="ex">
+<strong>真题原型2（2011-12 等温吸热 → 求终态体积 + 熵增）</strong>：$\nu=2$ mol 理想气体在温度 $T=300\,\text{K}$ 下<strong>等温</strong>吸热 $Q=3000\,\text{J}$，初体积 $V_1=10\,\text{L}$。求终态体积 $V_2$ 和熵变 $\Delta S$。
+<div class="sol"><div class="st">解</div>
+<p>等温过程 $\Delta E=0$，故 $W=Q=\nu RT\ln\dfrac{V_2}{V_1}$。</p>
+<p>$\ln\dfrac{V_2}{V_1}=\dfrac{Q}{\nu RT}=\dfrac{3000}{2\times8.31\times300}=\dfrac{3000}{4986}=0.6017$</p>
+<p>$\dfrac{V_2}{V_1}=e^{0.6017}=1.825 \Rightarrow V_2=10\times1.825=18.25\,\text{L}$</p>
+<p>等温熵变：$\Delta S=\dfrac{Q}{T}=\nu R\ln\dfrac{V_2}{V_1}=\dfrac{3000}{300}=10\,\text{J/K}$（与 $\nu R\ln\frac{V_2}{V_1}=2\times8.31\times0.6017=10.0\,\text{J/K}$ 一致 ✓）</p>
+</div></div>
+
+<div class="ex">
+<strong>真题原型3（2021-22 A&amp;B 变体：等压吸热 → 求终态体积 + 熵增）</strong>：同一题壳但改为<strong>等压</strong>。$\nu=2$ mol 刚性双原子气体在 $p$ 恒定、初温 $T_1=300\,\text{K}$、初体积 $V_1=10\,\text{L}$ 下吸热 $Q=3000\,\text{J}$。求终态体积 $V_2$ 与熵变。
+<div class="sol"><div class="st">解</div>
+<p>等压 $Q=\nu C_p\Delta T=\dfrac72\nu R(T_2-T_1)$，解出 $\Delta T=\dfrac{Q}{\frac72\nu R}=\dfrac{3000}{3.5\times2\times8.31}=\dfrac{3000}{58.17}=51.6\,\text{K}$，故 $T_2=351.6\,\text{K}$。</p>
+<p>盖-吕萨克定律 $\dfrac{V_1}{T_1}=\dfrac{V_2}{T_2}$：$V_2=V_1\dfrac{T_2}{T_1}=10\times\dfrac{351.6}{300}=11.72\,\text{L}$。</p>
+<p>等压熵变：$\Delta S=\nu C_p\ln\dfrac{T_2}{T_1}=\dfrac72\nu R\ln\dfrac{T_2}{T_1}=3.5\times2\times8.31\times\ln1.172=58.17\times0.1587=9.23\,\text{J/K}$。</p>
+<p>⚠️ <strong>对比红线</strong>：同一题壳，等温用 $W=Q$、$\Delta S=\nu R\ln\frac{V_2}{V_1}$；等压用 $Q=\nu C_p\Delta T$、$\Delta S=\nu C_p\ln\frac{T_2}{T_1}$。两年过程不同，公式别套错。</p>
+</div></div>
+</div>
+
+<div class="card">
+<h3>💪 必背块（热力学）</h3>
+<ul>
+<li><strong>第一定律</strong>：$Q=\Delta E+W$（$Q$吸热为正，$W$对外做功为正）。</li>
+<li><strong>内能（万能）</strong>：$\Delta E=\nu C_V\Delta T$（任何过程都成立，因理想气体内能只随 $T$）。</li>
+<li><strong>迈耶关系</strong>：$C_p=C_V+R$；$\gamma=\dfrac{C_p}{C_V}$。</li>
+<li><strong>自由度速查</strong>：单原子 $i=3$，$C_V=\frac32R$，$C_p=\frac52R$，$\gamma=\frac53\approx1.67$；刚性双原子 $i=5$，$C_V=\frac52R$，$C_p=\frac72R$，$\gamma=\frac75=1.40$；刚性多原子 $i=6$，$C_V=3R$，$C_p=4R$，$\gamma=\frac43\approx1.33$。</li>
+<li><strong>四过程功</strong>：等体 $W=0$；等压 $W=p\Delta V=\nu R\Delta T$；等温 $W=\nu RT\ln\frac{V_2}{V_1}$；绝热 $W=\frac{p_1V_1-p_2V_2}{\gamma-1}=\frac{\nu R(T_1-T_2)}{\gamma-1}$。</li>
+<li><strong>绝热三方程</strong>：$pV^\gamma=C$，$TV^{\gamma-1}=C$，$T^\gamma p^{1-\gamma}=C$。</li>
+<li><strong>多方过程</strong>：$pV^n=C$，$W=\frac{p_1V_1-p_2V_2}{n-1}$，$C_n=C_V\frac{n-\gamma}{n-1}=C_V-\frac{R}{n-1}$。</li>
+<li><strong>效率与制冷</strong>：热机 $\eta=\frac{W_{净}}{Q_{吸}}=1-\frac{|Q_{放}|}{Q_{吸}}$；卡诺 $\eta_C=1-\frac{T_2}{T_1}$；卡诺制冷 $\varepsilon_C=\frac{T_2}{T_1-T_2}$。</li>
+<li><strong>熵变万能公式</strong>：$\Delta S=\nu C_V\ln\frac{T_2}{T_1}+\nu R\ln\frac{V_2}{V_1}=\nu C_p\ln\frac{T_2}{T_1}-\nu R\ln\frac{p_2}{p_1}$（任何过程，因 $S$ 是状态量）。</li>
+<li><strong>常数</strong>：$R=8.31\,\text{J/(mol·K)}$，$k=1.38\times10^{-23}\,\text{J/K}$，$N_A=6.02\times10^{23}$，$R=N_Ak$。</li>
+</ul>
+</div>
+
+<div class="card warn-card" style="border-left:4px solid #e67e22;background:#fff3e0;">
+<h3>⚠️ 易错点（强化补充）</h3>
+<ul>
+<li><strong>$\Delta E=\nu C_V\Delta T$ 适用于任何过程</strong>，不只是等体！很多人只在等体时用，其实等压、等温、绝热都能用（等温时 $\Delta T=0$ 故 $\Delta E=0$）。</li>
+<li><strong>不可逆过程 $\Delta S\neq Q/T$</strong>：$\dd S=\delta Q_{rev}/T$ 只对可逆过程成立。自由膨胀 $Q=0$ 但 $\Delta S=\nu R\ln\frac{V_2}{V_1}>0$，必须设计可逆路径算。</li>
+<li><strong>效率分母只取吸热段</strong>：$\eta=W_{净}/Q_{吸}$，$Q_{吸}$ 只累加 $Q>0$ 的过程，不能用 $Q_{净}$ 代替。放热段取绝对值。</li>
+<li><strong>$\gamma$ 值别套错</strong>：刚性双原子 1.4、单原子 1.67。绝热/多方计算里代错 $\gamma$ 全盘皆错。</li>
+<li><strong>绝热自由膨胀不能用 $pV^\gamma=C$</strong>：该方程只对准静态绝热成立。自由膨胀不可逆，正确结论是 $\Delta T=0$（理想气体）、$\Delta S>0$。</li>
+</ul>
+</div>
+
 <script src="toc.js"></script>
 <script src="progress.js"></script>
 </body>
